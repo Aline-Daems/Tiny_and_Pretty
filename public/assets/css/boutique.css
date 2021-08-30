@@ -320,6 +320,13 @@ body {
     width: 100%;
     height: auto; }
 
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown .dropdown-menu:hover {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s linear; }
+
   /* makes the dropdown full width  */
   .little-drop {
     width: 30vw !important;
@@ -339,7 +346,7 @@ body {
     left: 0;
     right: 0;
     /*  height of nav-item  */
-    top: 12vh;
+    top: 5vh;
     font-size: 1.8vh; } }
 @media (min-width: 1024px) and (orientation: landscape) {
   .little-drop {
@@ -350,6 +357,13 @@ body {
   .navbar .dropdown {
     position: static; }
 
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown .dropdown-menu:hover {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 0.5s linear; }
+
   .navbar .dropdown-menu div[class*="p-2"] {
     flex-direction: row !important; }
 
@@ -359,7 +373,7 @@ body {
     left: 40vw;
     right: 0;
     /*  height of nav-item  */
-    top: 12vh;
+    top: 10vh;
     font-size: 1.8vh; }
 
   .navbar-brand {
@@ -602,7 +616,6 @@ body {
     padding: 0;
     width: 15vw !important;
     height: auto;
-    background-color: red;
     margin-left: 2vw; }
 
   .cards-icon {
@@ -612,7 +625,6 @@ body {
     margin-top: 2rem; } }
 @media (min-width: 1024px) and (orientation: landscape) {
   .logo-img img {
-    background-color: #00bb00;
     width: 10vw !important; } }
 .question {
   font-family: Quicksand, sans-serif;

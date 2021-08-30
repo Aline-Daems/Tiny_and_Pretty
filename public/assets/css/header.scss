@@ -103,6 +103,14 @@ background-color: #DCD3D359;
     width: 100%;
     height: auto;
   }
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown .dropdown-menu:hover {
+    display:block;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
 
 
   /* makes the dropdown full width  */
@@ -125,7 +133,7 @@ background-color: #DCD3D359;
     left: 0;
     right:0;
     /*  height of nav-item  */
-    top:12vh;
+    top:5vh;
       font-size: 1.8vh;
   }
 
@@ -140,6 +148,13 @@ background-color: #DCD3D359;
   .navbar .dropdown {
     position:static;
   }
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown .dropdown-menu:hover {
+    display:block;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 0.5s linear;
+  }
 
   .navbar .dropdown-menu div[class*="p-2"] {
     flex-direction: row!important;
@@ -150,7 +165,7 @@ background-color: #DCD3D359;
     left: 40vw;
     right:0;
     /*  height of nav-item  */
-    top:12vh;
+    top:10vh;
     font-size: 1.8vh;
   }
   .navbar-brand{
