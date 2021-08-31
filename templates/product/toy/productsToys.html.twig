@@ -1,28 +1,68 @@
 {% extends 'base.html.twig' %}
 
 
-{# Affichage pour boys #}
+{# Affichage pour Toys #}
 
 
-{% block title %}Nos produits!{% endblock %}
+{% block title %}Les jouets{% endblock %}
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-3">
-                {% include 'product/toy/_filterToy.html.twig' with {form4: form4} only %}
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion col-md-3 mt-5 "
+                 id="accordionEx" role="tablist"
+                 aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header bg-white"
+                         role="tab" id="headingOne1">
+                        <a data-toggle="collapse show"
+                           data-parent="#accordionEx"
+                           href="#collapseOne1"
+                           aria-expanded="false"
+                           aria-controls="collapseOne1">
+                            <h5 class="mb-0 text-black-50">
+                                FILTRE <i class="fas fa-angle-down rotate-icon float-right"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseOne1"
+                         class="collapse hide" role="tabpanel" aria-labelledby="headingOne1"
+                         data-parent="#accordionEx">
+                        <div class="card-body">
+                            <aside class="">
+                                {% include 'product/toy/_filterToy.html.twig' with {form4: form4} only %}
+                            </aside>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
             </div>
 
 
-            <div class="col-9">
 
-                    {% for product in productsToy %}
+            <div class="col-md-9 d-flex flex-wrap">
+
+                {% for product in productsToy %}
+                    <div class="col-md-3 ">
                         {% include '/product/single_product.html.twig' with {product: product} only %}
-                    {% endfor %}
-
+                    </div>
+                {% endfor %}
             </div>
+
+
         </div>
     </div>
+
 {% endblock %}
+
+
 
 {# {% block content %}
     <div class="content-layout container-fluid pt-sm-4">
