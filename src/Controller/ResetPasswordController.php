@@ -46,7 +46,7 @@ class ResetPasswordController extends AbstractController
 
                 // 2 : Envoyer un email à l'utilisateur avec un lien lui permettant de mettre à jour son mot de passe.
 
-                $url = $this->generateUrl('update_password"', [
+                $url = $this->generateUrl('update_password', [
                     'token' => $reset_password->getToken()
                 ]);
 
