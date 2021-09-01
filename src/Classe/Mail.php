@@ -4,6 +4,7 @@ namespace App\Classe;
 use Mailjet\Client;
 use Mailjet\Resources;
 
+
 class Mail
 {
 
@@ -18,7 +19,7 @@ class Mail
                 [
                     'From' => [
                         'Email' => "service-it@infinity-agency.be",
-                        'Name' => "Léquipe Tiny and Pretty"
+                        'Name' => "L'équipe Tiny and Pretty"
                     ],
                     'To' => [
                         [
