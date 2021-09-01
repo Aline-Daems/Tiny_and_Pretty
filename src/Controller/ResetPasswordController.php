@@ -22,7 +22,9 @@ class ResetPasswordController extends AbstractController
     {
         $this->entityManager = $entityManager;
     }
-    #[Route('/mot-de-passe-oublie', name: 'reset_password')]
+    /**
+     * @Route("/mot-de-passe-oublie", name="reset_password")
+     */
 
     public function index(Request $request): Response
     {
@@ -44,7 +46,7 @@ class ResetPasswordController extends AbstractController
 
                 // 2 : Envoyer un email à l'utilisateur avec un lien lui permettant de mettre à jour son mot de passe.
 
-                $url = $this->generateUrl('update_password', [
+                $url = $this->generateUrl('update_password"', [
                     'token' => $reset_password->getToken()
                 ]);
 
@@ -63,7 +65,7 @@ class ResetPasswordController extends AbstractController
     }
 
 
-    #[Route('/modifier-mon-mot-de-passe/{token}', name: 'update_password"')]
+    #[Route('/modifier-mon-mot-de-passe/{token}', name: 'update_password')]
 
     public function update(Request $request, $token, UserPasswordEncoderInterface $encoder): Response
     {
