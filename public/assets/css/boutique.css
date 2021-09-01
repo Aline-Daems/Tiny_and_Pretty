@@ -128,6 +128,15 @@
   .box {
     width: 60vw;
     height: 45vh; } }
+@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+  .slogan {
+    font-size: 10vh !important; }
+
+  .description {
+    font-size: 8vh; }
+
+  .separator {
+    font-size: 8vh; } }
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
   .box {
     width: 60vw;
@@ -637,6 +646,9 @@ body {
     height: 3rem;
     margin-right: 1rem;
     margin-top: 2rem; } }
+@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+  .logo-img {
+    width: 40vw !important; } }
 @media (min-width: 1024px) and (orientation: landscape) {
   .logo-img img {
     width: 10vw !important; } }

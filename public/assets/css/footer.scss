@@ -50,6 +50,11 @@ color: grey;
 
 
 }
+@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+  .logo-img{
+    width: 40vw!important;
+  }
+}
 @media (min-width: 1024px) and (orientation: landscape) {
   .logo-img img{
     width: 10vw!important;
