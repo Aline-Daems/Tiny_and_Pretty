@@ -2,7 +2,8 @@
 
 {% block content %}
     <div class="video-home">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ssnrzl4PHUE?loop=1&playlist=Ssnrzl4PHUE" title="YouTube video player"
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ssnrzl4PHUE?loop=1&playlist=Ssnrzl4PHUE"
+                title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
@@ -18,11 +19,12 @@
     <div class="container-fluid text-center category">
         <div class="row">
             <div class=" mt-5 col-xl-4 col-lg-4 col-sm-12 col-md-6">
-                <a href="{{ relative_path('/Mode') }}">
-                    <img src="{{ asset('assets/img/VETEMENTS.webp') }}" style="width:80%" class="Pict" alt=""/>
-                </a>
-                <div class="text-white">
-                    <div class="filter">
+
+                <div class="filter">
+                    <div class="text-white">
+                        <a href="{{ relative_path('/Mode') }}">
+                            <img src="{{ asset('assets/img/VETEMENTS.webp') }}" style="width:80%" class="Pict" alt=""/>
+                        </a>
                         <h4 class="description">LA MODE</h4>
                     </div>
                 </div>
@@ -65,20 +67,23 @@
             </div>
         </div>
     </div>
-    <!-- BESTSELLERS -->
-    <div class="container-fluid  bestsellers">
-        <h3 class="separator text-center">BESTSELLERS</h3>
+    <!-- Nouveautes -->
+    <div class="container">
+        <h3 class="separator text-center">NOUVEAUTÉS</h3>
     </div>
 
-    <div class="container-fluid col-sm-6 col-md-6 col-lg col-xl col-xxl bestproducts">
+    <div class="container-fluid container-fluid col-sm-6 col-md-6 col-lg col-xl col-xxl bestproducts">
         <div class="row">
-            {% for product in products %}
-                <div class="col">
-                    {% include 'product/single_product.html.twig' %}
-                </div>
+            {% for product in productN %}
+                {% if product.isNew == true %}
+                    <div class="col">
+                        {% include 'product/single_product.html.twig' %}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
+
     <!--deuxième vie-->
 
 
@@ -102,25 +107,23 @@
 
 
 
-    <!-- Nouveautes -->
-    <div class="container">
-        <h3 class="separator text-center">NOUVEAUTÉS</h3>
+    <!-- BESTSELLERS -->
+    <div class="container-fluid  bestsellers">
+        <h3 class="separator text-center">BESTSELLERS</h3>
     </div>
 
-    <div class="container-fluid container-fluid col-sm-6 col-md-6 col-lg col-xl col-xxl bestproducts">
-    <div class="row">
-        {% for product in productN %}
-        {% if product.isNew == true %}
-        <div class="col">
-            {% include 'product/single_product.html.twig' %}
+    <div class="container-fluid col-sm-6 col-md-6 col-lg col-xl col-xxl bestproducts">
+        <div class="row">
+            {% for product in products %}
+                <div class="col">
+                    {% include 'product/single_product.html.twig' %}
+                </div>
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
-    </div>
     </div>
 
 
-  <!-- LE BLOG
+    <!-- LE BLOG
     <hr class="blog-divider">
     <div class="container blog">
         <h3 class="separator text-center">THE TINY & PRETTY BLOG</h3>
@@ -165,14 +168,16 @@
     <!--#TINYANDPRETTY-->
     <hr class="share-divider">
     <div class="container-fluid text-center share">
-    <div class="col-12">
-        <h3 class="separator text-center">#TINYANDPRETTY</h3>
-        <h5 class="text-share">Partagez avec nous leurs styles uniques !</h5>
-        <div class="reseau justify-between">
-            <a class="logoreseau" href="https://www.facebook.com/TinyandPretty.be" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            <a class="logoreseau" href="https://www.instagram.com/tinyandpretty.be" target="_blank"> <i class="fab fa-instagram"></i></a>
+        <div class="col-12">
+            <h3 class="separator text-center">#TINYANDPRETTY</h3>
+            <h5 class="text-share">Partagez avec nous leurs styles uniques !</h5>
+            <div class="reseau justify-between">
+                <a class="logoreseau" href="https://www.facebook.com/TinyandPretty.be" target="_blank"><i
+                            class="fab fa-facebook-square"></i></a>
+                <a class="logoreseau" href="https://www.instagram.com/tinyandpretty.be" target="_blank"> <i
+                            class="fab fa-instagram"></i></a>
                 <a class="logoreseau"><i class="fab fa-pinterest-square"></i></a>
+            </div>
         </div>
-    </div>
     </div>
 {% endblock %}

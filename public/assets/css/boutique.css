@@ -55,17 +55,21 @@ main {
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
-  transition-duration: 875ms; }
+  transition-duration: 885ms;
+  -webkit-filter: brightness(50%);
+  /* Chrome, Safari, Opera */
+  filter: brightness(50%); }
 
 .Pict:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1); }
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  filter: brightness(110%); }
 
 .description {
   font-family: Quicksand, sans-serif;
-  font-size: 3vh;
+  font-size: 4vh;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
 
@@ -81,9 +85,6 @@ main {
   margin-bottom: 10rem !important;
   width: 90%;
   text-transform: uppercase !important; }
-
-.descriptionBest {
-  font-size: 1.8vh; }
 
 .bg-image-deuxieme {
   background: url("../img/deuxieme-vie-bebe.webp") no-repeat center fixed;
@@ -188,11 +189,17 @@ main {
   position: relative; }
 
 .descriptionBest {
-  font-size: 1.8vh;
+  font-size: 2vh;
   font-family: Quicksand, sans-serif; }
 
 .product-item {
   cursor: pointer; }
+
+.product-text {
+  margin-bottom: 0.5% !important; }
+
+.product-price-text {
+  margin-top: 8%; }
 
 .apercu {
   border: none;
@@ -203,7 +210,7 @@ main {
   margin: 0 auto;
   right: 12.5%;
   top: 45%;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: all 400ms ease-out;
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;

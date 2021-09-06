@@ -53,31 +53,37 @@ main {
   margin-top: 5rem !important;
   margin-bottom: 10rem;
   width: 100%;
+
 }
 
 .Pict {
+
   overflow: hidden;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
-  transition-duration: 875ms;
+  transition-duration: 885ms;
+  -webkit-filter : brightness(50%); /* Chrome, Safari, Opera */
+  filter : brightness(50%);
 }
 
 .Pict:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  filter : brightness(110%);
 }
 
 .description {
   font-family: $titleFontRegular;
-  font-size: 3vh;
+  font-size: 4vh;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
 }
+
 
 .separator {
   font-family: $titleFontRegular;
@@ -96,9 +102,7 @@ main {
   text-transform: uppercase !important;
 }
 
-.descriptionBest {
-  font-size: 1.8vh;
-}
+
 
 // deuxième vie
 .bg-image-deuxieme {
