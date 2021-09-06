@@ -43,6 +43,7 @@
 
 </head>
 <body>
+<div class="wrapper-parallax">
 {% include 'header.html.twig' %}
 
 <main role="main">
@@ -50,7 +51,7 @@
     {% block content %}
     {% endblock %}
 
-
+</main>
     <!-- FOOTER -->
     <hr>
     <footer class="footer-custom mt-3">
@@ -98,17 +99,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 d-flex justify-content-center mx-auto cards-icon">
 
-
-            <img src="{{ asset('assets/img/bancontact.webp') }}" alt="Bancontact" class="cards-icon">
-            <img src="{{ asset('assets/img/maestro.webp') }}" alt="Maestro" class="cards-icon">
-            <img src="{{ asset('assets/img/mastercard.webp') }}" alt="Mastercard" class="cards-icon">
-            <img src="{{ asset('assets/img/paypal.webp') }}" alt="Paypal" class="cards-icon">
-            <img src="{{ asset('assets/img/visa.webp') }}" alt="Visa" class="cards-icon">
-            <img src="{{ asset('assets/img/applepay.webp') }}" alt=" Apple Pay" class="cards-icon">
-
-        </div>
         <!-- Copyright -->
         <div class="text-center p-4" >
             <p>© 2021 Copyright:  <a class="text-reset " href="#">Infinity</a></p>
@@ -120,7 +111,9 @@
 
     </footer>
 
-</main>
+
+
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="{{ asset ('assets/js/bootstrap.bundle.js') }}"></script>
 <script src="{{ asset ('assets/js/all.js') }}"></script>
