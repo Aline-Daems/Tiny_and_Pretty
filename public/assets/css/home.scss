@@ -64,14 +64,16 @@ main {
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   transition-duration: 885ms;
-  -webkit-filter : brightness(50%); /* Chrome, Safari, Opera */
-  filter : brightness(50%);
+  filter : brightness(80%);
+
 }
 
 .Pict:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-  filter : brightness(110%);
+  -webkit-filter : brightness(50%); /* Chrome, Safari, Opera */
+  filter : brightness(50%);
+
 }
 
 .description {
@@ -116,7 +118,7 @@ main {
 }
 
 .box {
-  width: 20vw;
+  width: 25vw;
   height: 45vh;
   background-color: white;
   position: absolute;
@@ -127,17 +129,29 @@ main {
   margin: 2vh;
 
   p {
-    font-size: 1.8vh;
-    color: rgba(106, 104, 104, 80);
+    font-size: 2vh;
+    color: grey;
     font-family: $textFontRegular;
+  }
+  .title-box{
+    font-weight: lighter;
+    color: grey;
+    margin-bottom: 4vh;
   }
 
   .profite {
-    background-color: rgb(252, 212, 116);
+    background-color: $green;
     box-shadow: .050em .050em .050em #aaaaaa;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
     color: white;
     border: none;
+    width: 70%;
+    letter-spacing: 0.5vw;
+    padding: 1vh 2vw 1vh 2vw;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -186,10 +200,15 @@ main {
 
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
   .box {
-    width: 60vw;
-    height: 45vh;
+    width: 70vw;
+    height: 48vh;
+    .title-box{
+      font-weight: lighter;
+      color: grey;
+      margin-bottom: 2vh;
+    }
   }
 
 
@@ -210,6 +229,7 @@ main {
   .box {
     width: 60vw;
     height: 45vh;
+    background-color: yellow;
   }
 }
 
@@ -217,6 +237,7 @@ main {
   .box {
     width: 60vw;
     height: 45vh;
+    background-color: blue;
   }
 }
 

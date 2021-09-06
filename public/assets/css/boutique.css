@@ -56,14 +56,14 @@ main {
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   transition-duration: 885ms;
-  -webkit-filter: brightness(50%);
-  /* Chrome, Safari, Opera */
-  filter: brightness(50%); }
+  filter: brightness(80%); }
 
 .Pict:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-  filter: brightness(110%); }
+  -webkit-filter: brightness(50%);
+  /* Chrome, Safari, Opera */
+  filter: brightness(50%); }
 
 .description {
   font-family: Quicksand, sans-serif;
@@ -95,7 +95,7 @@ main {
   margin-bottom: 5rem; }
 
 .box {
-  width: 20vw;
+  width: 25vw;
   height: 45vh;
   background-color: white;
   position: absolute;
@@ -104,15 +104,26 @@ main {
 .boxtext {
   margin: 2vh; }
   .boxtext p {
-    font-size: 1.8vh;
-    color: #6a6868;
+    font-size: 2vh;
+    color: grey;
     font-family: Cantarell, sans-serif; }
+  .boxtext .title-box {
+    font-weight: lighter;
+    color: grey;
+    margin-bottom: 4vh; }
   .boxtext .profite {
-    background-color: #fcd474;
+    background-color: #a9b97a;
     box-shadow: .050em .050em .050em #aaaaaa;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
     color: white;
-    border: none; }
+    border: none;
+    width: 70%;
+    letter-spacing: 0.5vw;
+    padding: 1vh 2vw 1vh 2vw;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%); }
 
 .imgblog {
   width: 90%;
@@ -148,10 +159,14 @@ main {
 .logoreseau {
   color: dimgrey; }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
   .box {
-    width: 60vw;
-    height: 45vh; } }
+    width: 70vw;
+    height: 48vh; }
+    .box .title-box {
+      font-weight: lighter;
+      color: grey;
+      margin-bottom: 2vh; } }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
     font-size: 10vh !important; }
@@ -164,11 +179,13 @@ main {
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
   .box {
     width: 60vw;
-    height: 45vh; } }
+    height: 45vh;
+    background-color: yellow; } }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .box {
     width: 60vw;
-    height: 45vh; } }
+    height: 45vh;
+    background-color: blue; } }
 .content-layout {
   padding-top: 3vw !important; }
 
