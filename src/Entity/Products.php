@@ -105,7 +105,7 @@ class Products
      * @ORM\Column(type="string", length=255)
      */
 
-    private $size;
+
 
 
 
@@ -170,17 +170,6 @@ class Products
         return $this;
     }
 
-    public function getSize(): ?string
-    {
-        return $this->size;
-    }
-
-    public function setSize(string $size): self
-    {
-        $this->size = $size;
-
-        return $this;
-    }
 
 
     public function getDescription(): ?string

@@ -37,14 +37,24 @@ class OrderSuccessController extends AbstractController
 
             //Modifier le statut isPaid de notre commande en mettant 1 ( est payé )
             $order->setState(1);
+
             $this->entityManager->flush();
 
-            // Envoyer un email à notre client pour lui confirmer sa commande
+            // Envoyer un email à notre client pour lui confirmer sa commande`
+
+
+
 
             $mail = new Mail();
-            $content = 'Bonjour'.$order->getUser()->getFirstname()."<br/> Merci pour votre commande";
-            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est bien validée', $content);
-            $notification='Votre inscription a été validée';
+            $title = ' Bonjour '.$order->getUser()->getFirstname()."<br/>";
+            $name =  $order->getUser()->getFirstname();
+            $ref = $order->getReference();
+            $email = $order->getUser()->getEmail();
+            $address = $order->getUser()->getAddresses();
+
+            $content = 'Merci pour vos achats ! <br/> Nous avons bien reçu votre commande. <br/> Nous vous contacterons une fois que votre colis sera expédié. <br/> Nous trouverez le récapitulatif de votre commande ci-dessous.';
+
+            $mail->sendOrder($order->getUser()->getEmail(), $order->getUser()->getFirstname(),'Votre commande est bien validée', $content, $title, $name, $ref, $email, $address);
 
     }
         return $this->render('order_validate/index.html.twig', [

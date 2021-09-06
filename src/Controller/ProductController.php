@@ -33,7 +33,7 @@ class ProductController extends AbstractController
         $product = $this->entityManager->getRepository(Products::class)->findOneBySlug($slug);
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
-        $size = $this->entityManager->getRepository(Size::class)->findAll();
+
 
         if (!$product) {
             return $this->redirectToRoute('home');
@@ -42,7 +42,7 @@ class ProductController extends AbstractController
             'product' => $product,
             'products' => $products,
             'productN' => $productN,
-            'size' => $size
+
         ]);
 
     }

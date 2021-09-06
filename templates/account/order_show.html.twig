@@ -28,9 +28,7 @@
             <strong>Référence de ma commande:</strong> <small>{{ order.reference }}</small><br/>
             <strong>Transporteur choisi :</strong> {{ order.carrierName }}
         </div>
-        <div class="col-6">
-            <a class="col-6" href="{{ path('return', {'reference' : order.reference}) }}"> Retourner un produit </a>
-        </div>
+        
     </div>
     <hr>
 
