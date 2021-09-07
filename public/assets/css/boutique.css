@@ -3,8 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap");
 .wrapper-parallax {
-  margin-top: 100px;
-  margin-bottom: 200px; }
+  margin-top: 100px; }
 
 main {
   position: relative;
@@ -12,7 +11,7 @@ main {
   background-color: white !important;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-bottom: 50vh;
+  margin-bottom: 40vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
 
 .video-home {
@@ -90,12 +89,24 @@ main {
   display: inline-block;
   font-family: Quicksand, sans-serif;
   font-size: 1.8rem;
-  animation: flip 2s infinite;
+  animation: bounce 1s 2;
   animation-delay: calc(.2s * var(--i)); }
 
+@keyframes bounce {
+  from {
+    top: 106px; }
+  50% {
+    top: 86px; }
+  to {
+    top: 106px; } }
+/*
 @keyframes flip {
   0%,50% {
-    transform: rotateY(360deg); } }
+    transform: rotateY(360deg)
+  }
+}
+
+ */
 .separator {
   font-family: Quicksand, sans-serif;
   width: 100%;
@@ -196,7 +207,13 @@ main {
     padding-left: 20vw; }
 
   .waviy span {
-    font-size: 1.4rem; } }
+    font-size: 1.4rem; }
+
+  .wrapper-parallax {
+    margin-bottom: 100vh; }
+
+  main {
+    margin-bottom: 0; } }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
     font-size: 10vh !important; }
@@ -210,7 +227,10 @@ main {
   .box {
     width: 60vw;
     height: 45vh;
-    transform: translate(10vw, 33.5%); } }
+    transform: translate(10vw, 33.5%); }
+
+  .wrapper-parallax {
+    margin-top: 0; } }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .box {
     width: 50vw;
@@ -221,7 +241,11 @@ main {
     padding-left: 6vw; }
 
   .waviy span {
-    font-size: 1.2rem; } }
+    font-size: 1.2rem; }
+
+  .wrapper-parallax {
+    margin-bottom: 35vh;
+    margin-top: 0; } }
 .content-layout {
   padding-top: 3vw !important; }
 
@@ -323,7 +347,6 @@ body {
   height: 100%; }
 
 header {
-  position: fixed;
   top: 0;
   width: 100vw;
   z-index: 999;
@@ -503,8 +526,14 @@ header {
 
   .navbar .nav-item {
     padding: 1rem 1rem 1rem 1rem;
-    margin: 0 .25rem; } }
+    margin: 0 .25rem; }
+
+  header {
+    position: fixed; } }
 @media screen and (min-device-width: 1025px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  header {
+    position: fixed; }
+
   .navbar-brand {
     margin: 0 !important;
     width: 20vw; }

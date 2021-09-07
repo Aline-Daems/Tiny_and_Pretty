@@ -7,7 +7,7 @@
     height: 100%;
   }
   header {
-    position: fixed;
+   // position: fixed;
     top: 0;
     width: 100vw;
     z-index: 999;
@@ -146,6 +146,7 @@
 
 
 
+
   /* makes the dropdown full width  */
   .little-drop{
     width: 30vw!important;
@@ -222,6 +223,9 @@ margin-left: 20vw;
   margin:0 .25rem;
 
 }
+  header{
+    position: fixed;
+  }
 }
 @media screen
 and (min-device-width: 1025px)
@@ -229,6 +233,9 @@ and (max-device-width: 2000px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (min-resolution: 192dpi)
 {
+  header{
+    position: fixed;
+  }
 
   .navbar-brand{
     margin: 0!important;

@@ -1,14 +1,15 @@
 .wrapper-parallax {
   margin-top: 100px;
-  margin-bottom: 200px;
+  //margin-bottom: 10px;
 }
+
 main {
   position: relative;
   z-index: 1;
   background-color: white!important;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-bottom: 50vh;
+  margin-bottom: 40vh;
  // -webkit-box-shadow: 6px 1px 4px 1px black;
  // -moz-box-shadow: 6px 1px 4px 1px black;
  // box-shadow: 6px 1px 4px 1px black;
@@ -105,14 +106,24 @@ main {
   display: inline-block;
   font-family: $titleFontRegular;
   font-size: 1.8rem;
-  animation: flip 2s infinite;
+  animation: bounce 1s 2;
   animation-delay: calc(.2s * var(--i))
+
 }
+@keyframes bounce {
+  from {top: 106px;}
+  50%  {top: 86px;}
+  to   {top: 106px;}
+
+}
+/*
 @keyframes flip {
   0%,50% {
     transform: rotateY(360deg)
   }
 }
+
+ */
 
 
 
@@ -251,6 +262,13 @@ main {
     font-size: 1.4rem;
 
   }
+  .wrapper-parallax {
+    margin-bottom: 100vh;
+  }
+
+  main{
+    margin-bottom: 0;
+  }
 
 
 }
@@ -274,6 +292,12 @@ main {
     transform: translate(10vw, 33.5%);
   }
 
+  .wrapper-parallax {
+    //margin-bottom: 5vh;
+    margin-top: 0;
+  }
+
+
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -288,6 +312,11 @@ main {
   .waviy span{
     font-size: 1.2rem;
   }
+  .wrapper-parallax {
+    margin-bottom: 35vh;
+    margin-top: 0;
+  }
+
 
 }
 
