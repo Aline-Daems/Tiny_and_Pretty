@@ -129,16 +129,18 @@
 
     <div class="container-fluid  bestsellers">
         <h3 class="separator text-center">BESTSELLERS</h3>
+
     </div>
 
-    <div class="container-fluid col-sm-6 col-md-6 col-lg col-xl col-xxl bestproducts">
+    <div class="container-fluid  bestproducts">
         <div class="row">
-            {% for product in products %}
-                <div class="col">
-                    {% include 'product/single_product.html.twig' %}
-                </div>
+            {% for product in productN %}
+                {% if product.isBest == true %}
+                    <div class="col col-sm-6 col-md-6 col-lg col-xl col-xxl">
+                        {% include 'product/single_product.html.twig' %}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
-
 {% endblock %}
