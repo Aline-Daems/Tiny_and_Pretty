@@ -138,13 +138,13 @@ main {
 .boxtext {
   margin: 2vh; }
   .boxtext p {
-    font-size: 2vh;
+    font-size: 1.8vh;
     color: grey;
     font-family: Cantarell, sans-serif; }
   .boxtext .title-box {
     font-weight: lighter;
     color: grey;
-    margin-bottom: 4vh; }
+    margin-bottom: 2vh; }
   .boxtext .profite {
     background-color: #a9b97a;
     box-shadow: .050em .050em .050em #aaaaaa;
@@ -213,8 +213,8 @@ main {
     margin-top: 0;
     margin-bottom: 120vh; }
 
-  main {
-    margin-bottom: 0; } }
+  .aside-description {
+    background-color: green; } }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
     font-size: 10vh !important; }
@@ -223,7 +223,10 @@ main {
     font-size: 6vh; }
 
   .separator {
-    font-size: 8vh; } }
+    font-size: 8vh; }
+
+  .aside-description {
+    background-color: blue; } }
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
   .box {
     width: 60vw;
@@ -231,7 +234,10 @@ main {
     transform: translate(10vw, 33.5%); }
 
   .wrapper-parallax {
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  .aside-description {
+    background-color: red; } }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .box {
     width: 50vw;
@@ -246,7 +252,10 @@ main {
 
   .wrapper-parallax {
     margin-bottom: 35vh;
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  .aside-description {
+    background-color: yellow; } }
 .content-layout {
   padding-top: 3vw !important; }
 
@@ -278,9 +287,6 @@ main {
 
 .product-price-text {
   margin-top: 8%; }
-
-.aside-description {
-  background-color: #770088; }
 
 .apercu {
   border: none;

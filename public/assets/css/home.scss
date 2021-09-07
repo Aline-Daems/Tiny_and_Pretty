@@ -169,7 +169,7 @@ main {
   margin: 2vh;
 
   p {
-    font-size: 2vh;
+    font-size: 1.8vh;
     color: grey;
     font-family: $textFontRegular;
   }
@@ -177,7 +177,7 @@ main {
 
     font-weight: lighter;
     color: grey;
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
   }
 
   .profite {
@@ -267,10 +267,10 @@ main {
     margin-bottom: 120vh;
   }
 
-  main{
-    margin-bottom: 0;
-
+  .aside-description{
+    background-color: green;
   }
+  //footer ok
 
 
 }
@@ -283,6 +283,9 @@ main {
   }
   .separator{
     font-size: 8vh;
+  }
+  .aside-description{
+    background-color: blue;
   }
 
 }
@@ -298,8 +301,9 @@ main {
     //margin-bottom: 5vh;
     margin-top: 0;
   }
-
-
+  .aside-description{
+    background-color: red;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -317,6 +321,9 @@ main {
   .wrapper-parallax {
     margin-bottom: 35vh;
     margin-top: 0;
+  }
+  .aside-description{
+    background-color: yellow;
   }
 
 
