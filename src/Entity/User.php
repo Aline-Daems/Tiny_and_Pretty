@@ -180,6 +180,12 @@ class User implements UserInterface
     {
         return $this->addresses;
     }
+    public function setAddresses(string $addresses):self
+    {
+        $this->addresses = $addresses;
+
+        return $this;
+    }
 
     public function addAddress(Address $address): self
     {

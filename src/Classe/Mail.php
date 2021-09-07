@@ -71,7 +71,7 @@ class Mail
         $response->success();
     }
 
-    public function sendOrder($to_email, $to_name, $subject, $content, $name, $title, $ref,  $email, $address)
+    public function sendOrder($to_email, $to_name, $subject, $content, $name, $lastname,  $ref,  $email,  $address)
     {
         $mj = new Client($this->api_key, $this->api_key_secret, true, ['version' => 'v3.1']);
         $body = [
@@ -93,7 +93,7 @@ class Mail
                     'Variables' => [
                         'content' => $content,
                         'name' => $name,
-                        'title' => $title,
+                        'lastname' => $lastname,
                         'ref' =>$ref,
                         'email' => $email,
                         'address' => $address,

@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Classe\Cart;
 use App\Classe\Mail;
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Order;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class OrderSuccessController extends AbstractController
 {
@@ -24,6 +26,7 @@ class OrderSuccessController extends AbstractController
     public function index(Cart $cart, $stripeSessionId): Response
     {
         $order = $this->entityManager->getRepository(Order::class)->findOneByStripeSessionId($stripeSessionId);
+
 
         if(!$order || $order->getUser() != $this->getUser()){
             return $this->redirectToRoute('home');
@@ -44,17 +47,19 @@ class OrderSuccessController extends AbstractController
 
 
 
-
             $mail = new Mail();
-            $title = ' Bonjour '.$order->getUser()->getFirstname()."<br/>";
+
+
             $name =  $order->getUser()->getFirstname();
+            $lastname = $order->getUser()->getLastname();
             $ref = $order->getReference();
+
             $email = $order->getUser()->getEmail();
-            $address = $order->getUser()->getAddresses();
+            $address = $order->getDelivery();
 
-            $content = 'Merci pour vos achats ! <br/> Nous avons bien reçu votre commande. <br/> Nous vous contacterons une fois que votre colis sera expédié. <br/> Nous trouverez le récapitulatif de votre commande ci-dessous.';
+            $content = 'Merci pour vos achats ! <br/> <br/> Nous avons bien reçu votre commande. <br/><br/> Nous vous contacterons une fois que votre colis sera expédié. <br/> <br/> Nous trouverez le récapitulatif de votre commande ci-dessous.';
 
-            $mail->sendOrder($order->getUser()->getEmail(), $order->getUser()->getFirstname(),'Votre commande est bien validée', $content, $title, $name, $ref, $email, $address);
+            $mail->sendOrder($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est bien validée', $content,  $name, $lastname, $ref, $email,  $address);
 
     }
         return $this->render('order_validate/index.html.twig', [
