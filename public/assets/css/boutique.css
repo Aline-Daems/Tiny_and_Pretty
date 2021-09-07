@@ -210,7 +210,8 @@ main {
     font-size: 1.4rem; }
 
   .wrapper-parallax {
-    margin-bottom: 100vh; }
+    margin-top: 0;
+    margin-bottom: 120vh; }
 
   main {
     margin-bottom: 0; } }
@@ -277,6 +278,9 @@ main {
 
 .product-price-text {
   margin-top: 8%; }
+
+.aside-description {
+  background-color: #770088; }
 
 .apercu {
   border: none;
