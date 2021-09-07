@@ -1,3 +1,4 @@
+
 .wrapper-parallax {
   margin-top: 100px;
   //margin-bottom: 10px;
@@ -78,9 +79,12 @@ main {
 
 }
 
-.text-presentation-short{
+blockquote{
 font-family: $textFontRegular;
 // transform: translate(25%, 0%);
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
   width: 70%;
   background: rgb(240,237,218);
   background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
@@ -88,12 +92,37 @@ font-family: $textFontRegular;
   background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
-  padding: 5% 5% 5% 5%;
+  padding: 3% 5% 3% 5%;
   margin-bottom: 10%;
   margin-left: 13%;
+
+}
+.text-presentation-short {
+  position: relative;
+  box-sizing: border-box;
+  animation: marquee 12s linear infinite;
+  animation-delay: 1s;
+ text-align: justify;
+  padding-right: 20%;
+}
+@keyframes marquee
+{
+  0% { top: 300px }
+  40% {top: 20px}
+  50% {top: 20px}
+  60% {top: 20px}
+  100% { top: -300px }
+ // 60% { top: 200px}
+ // 100% { top: -300px }
+
 }
 .tiny-emphasis{
   color: $green
+}
+.logo-img-presentation{
+  width: 30%;
+  height: auto;
+  margin-bottom: 5%;
 }
 /*
 .description {
