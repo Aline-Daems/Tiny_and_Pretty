@@ -53,6 +53,7 @@ main {
   margin-top: 5rem !important;
   margin-bottom: 10rem;
   width: 100%;
+  padding-left: 5vw;
 
 }
 
@@ -75,16 +76,44 @@ main {
   filter : brightness(50%);
 
 }
-
+/*
 .description {
   font-family: $titleFontRegular;
-  font-size: 3vh;
+  font-size: 1.5em;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
 }
+.description :hover{
+  font-size: 3em;
+}*/
+
+.waviy {
+  position: absolute;
+  //background-color: yellow;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+
+
+
+}
+.waviy span{
+  position: relative;
+  display: inline-block;
+  font-family: $titleFontRegular;
+  font-size: 1.8rem;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+  0%,50% {
+    transform: rotateY(360deg)
+  }
+}
+
 
 
 .separator {
@@ -134,6 +163,7 @@ main {
     font-family: $textFontRegular;
   }
   .title-box{
+
     font-weight: lighter;
     color: grey;
     margin-bottom: 4vh;
@@ -211,6 +241,16 @@ main {
       margin-bottom: 2vh;
     }
   }
+  .category{
+  padding-left: 20vw;
+
+  }
+  .waviy span{
+
+
+    font-size: 1.4rem;
+
+  }
 
 
 }
@@ -219,11 +259,12 @@ main {
     font-size:10vh!important;
   }
   .description{
-    font-size: 8vh;
+    font-size: 6vh;
   }
   .separator{
     font-size: 8vh;
   }
+
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
@@ -232,6 +273,7 @@ main {
     height: 45vh;
     transform: translate(10vw, 33.5%);
   }
+
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -240,6 +282,13 @@ main {
     height: 45vh;
     transform: translate(10vw, 33.5%);
   }
+  .category{
+    padding-left: 6vw;
+  }
+  .waviy span{
+    font-size: 1.2rem;
+  }
+
 }
 
 

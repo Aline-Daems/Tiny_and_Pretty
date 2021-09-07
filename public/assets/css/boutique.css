@@ -47,7 +47,8 @@ main {
 .category {
   margin-top: 5rem !important;
   margin-bottom: 10rem;
-  width: 100%; }
+  width: 100%;
+  padding-left: 5vw; }
 
 .Pict {
   overflow: hidden;
@@ -65,14 +66,36 @@ main {
   /* Chrome, Safari, Opera */
   filter: brightness(50%); }
 
+/*
 .description {
-  font-family: Quicksand, sans-serif;
-  font-size: 3vh;
+  font-family: $titleFontRegular;
+  font-size: 1.5em;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.description :hover{
+  font-size: 3em;
+}*/
+.waviy {
+  position: absolute;
+  top: 50%;
+  left: 40%;
   transform: translate(-50%, -50%); }
 
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-family: Quicksand, sans-serif;
+  font-size: 1.8rem;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i)); }
+
+@keyframes flip {
+  0%,50% {
+    transform: rotateY(360deg); } }
 .separator {
   font-family: Quicksand, sans-serif;
   width: 100%;
@@ -167,13 +190,19 @@ main {
     .box .title-box {
       font-weight: lighter;
       color: grey;
-      margin-bottom: 2vh; } }
+      margin-bottom: 2vh; }
+
+  .category {
+    padding-left: 20vw; }
+
+  .waviy span {
+    font-size: 1.4rem; } }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
     font-size: 10vh !important; }
 
   .description {
-    font-size: 8vh; }
+    font-size: 6vh; }
 
   .separator {
     font-size: 8vh; } }
@@ -186,7 +215,13 @@ main {
   .box {
     width: 50vw;
     height: 45vh;
-    transform: translate(10vw, 33.5%); } }
+    transform: translate(10vw, 33.5%); }
+
+  .category {
+    padding-left: 6vw; }
+
+  .waviy span {
+    font-size: 1.2rem; } }
 .content-layout {
   padding-top: 3vw !important; }
 
