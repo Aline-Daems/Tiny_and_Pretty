@@ -77,6 +77,24 @@ main {
   filter : brightness(50%);
 
 }
+
+.text-presentation-short{
+font-family: $textFontRegular;
+// transform: translate(25%, 0%);
+  width: 70%;
+  background: rgb(240,237,218);
+  background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  padding: 5% 5% 5% 5%;
+  margin-bottom: 10%;
+  margin-left: 13%;
+}
+.tiny-emphasis{
+  color: $green
+}
 /*
 .description {
   font-family: $titleFontRegular;
