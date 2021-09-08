@@ -85,46 +85,45 @@ font-family: $textFontRegular;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
-  width: 70%;
-  /*
+  width: 100vw;
+
   background: rgb(240,237,218);
   background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
   background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
   background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
 
-   */
+
   padding: 3% 5% 3% 5%;
+  margin-top: 10%;
   margin-bottom: 10%;
-  margin-left: 13%;
+
 
 }
 .text-presentation-short {
   position: relative;
   box-sizing: border-box;
-  animation: marquee 12s linear 2;
-  animation-delay: 1s;
+  animation: marquee 2s linear ;
+  animation-delay: 0.5s;
  text-align: justify;
-  padding-right: 20%;
+  padding-right: 30%;
+  padding-left: 30%;
 }
 @keyframes marquee
 {
-  0% { top: 300px }
-  40% {top: 20px}
-  50% {top: 20px}
-  60% {top: 20px}
-  100% { top: -300px }
+  0% { top: 15rem }
+ // 40% {top: 20px}
+  50% {top: 10rem}
+ // 60% {top: 20px}
+ // 100% { top: -300px }
+  75% {top: 5rem}
+  100% {top: 3rem}
 
 }
 
 .tiny-emphasis{
   color: $green
-}
-.logo-img-presentation{
-  width: 30%;
-  height: auto;
-  margin-bottom: 5%;
 }
 /*
 .description {
@@ -193,7 +192,7 @@ font-family: $textFontRegular;
   text-transform: uppercase !important;
   .profite{
  //visibility: hidden;
-   // display: none;
+  //  display: none;
     background-color: $green;
     box-shadow: .050em .050em .050em #aaaaaa;
     font-size: 1.8vh;
@@ -203,6 +202,13 @@ font-family: $textFontRegular;
     letter-spacing: 0.3vw;
     padding: 1vh 2vw 1vh 2vw;
     position: absolute;
+   opacity: 0;
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out;
+
+
 //    left: 50%;
   //  top: 85%;
    // transform: translate(-50%, 150%);
@@ -210,12 +216,18 @@ font-family: $textFontRegular;
   }
 
 }
-.bestproducts .profite:hover {
+.bestproducts:hover + .profite,  .profite:hover{
+
 //display: inline-block;
    // visibility: visible!important;
-z-index: 9;
-    background-color: $yellow!important;
-  }
+
+  opacity: 1;
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+
+
+
+}
 
 
 
