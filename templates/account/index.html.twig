@@ -5,20 +5,30 @@
 {% block content %}
     <div class="container-fluid text-center mt-5 mb-5">
         <div class="title_sign">
-            <h1 class="mb-3">MON COMPTE</h1>
+            <h1 class="mb-3">Bienvenue dans votre profil</h1>
         </div>
-        <div class="intro mt-auto mb-5">
-        <p><span>Bienvenue {{ app.user.firstname }}.</span></p>
-        <p><span>C'est dans cet espace que vous allez pouvoir gérer toutes vos infos personelles.</span></p>
+
         <hr>
+        <div class="container d-flex justify-content-center text-left mt-5">
+            <div class="col-6 border border-1">
+                <div class="mt-5 mb-5">
+                    <p><span> Nom : {{ app.user.lastname }}</span></p>
+                    <p><span> Prénom: {{ app.user.firstname }}</span></p>
+                    <p><span> Email: {{ app.user.email }}</span></p>
+                </div>
+            </div>
+
+            <div class="col-6 border border-1">
+                <div class="mt-5 mb-5">
+                    <p><span><a href="{{ path('account_password') }}"  style="color:#a9bf7a;"> Modifier mon mot de passe</a></span></p>
+                    <p><span> <a href="{{ path('account_address') }}"  style="color:#a9bf7a;"> Modifier mes adresses</a></span></p>
+                    <p><span><a href="{{ path('account_order') }}"     style="color:#a9bf7a;"> Mes commandes </a></span></p>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                       <p> Vous êtes un administrateur? <a href="/admin"  style="color:#f0cabd;"> accéder au backoffice</a></p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-
-        <p><span><a href="{{ path('account_password') }}"  style="color:#a9bf7a;"> Modifier mon mot de passe</a></span></p>
-        <p><span> <a href="{{ path('account_address') }}"  style="color:#a9bf7a;"> Modifier mes adresses</a></span></p>
-        <p><span><a href="{{ path('account_order') }}"  style="color:#a9bf7a;"> Mes commandes</a></span></p>
-
-        {% if is_granted('ROLE_ADMIN') %}
-           <p> Vous êtes un administrateur? <a href="/admin"  style="color:#f0cabd;"> accéder au backoffice</a></p>
-        {% endif %}
     </div>
 {% endblock %}
