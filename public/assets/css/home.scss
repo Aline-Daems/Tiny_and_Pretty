@@ -100,7 +100,7 @@ font-family: $textFontRegular;
 .text-presentation-short {
   position: relative;
   box-sizing: border-box;
-  animation: marquee 12s linear infinite;
+  animation: marquee 12s linear 2;
   animation-delay: 1s;
  text-align: justify;
   padding-right: 20%;
@@ -112,9 +112,10 @@ font-family: $textFontRegular;
   50% {top: 20px}
   60% {top: 20px}
   100% { top: -300px }
- // 60% { top: 200px}
- // 100% { top: -300px }
 
+}
+.profite{
+  z-index: 1;
 }
 .tiny-emphasis{
   color: $green
