@@ -1,3 +1,11 @@
+footer {
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  background-color: white;
+
+}
 .logo-img img {
   padding: 2vw;
   width: 50vw !important;
@@ -9,8 +17,8 @@
   font-size: 1rem;
 }
 
-a {
-  color: #0b2e13;
+.link_footer {
+color: grey;
   text-decoration: none;
 }
 .footer-custom {
@@ -27,17 +35,18 @@ a {
   width: 1.5rem;
   height: auto;
 
-  margin: 2rem;
+  margin: 0.5rem;
 }
 
 
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
 
   .logo-img img {
-    padding: 1vw;
-    width: 20vw !important;
+    padding: 0;
+    width: 15vw !important;
     height: auto;
+    margin-left: 2vw;
   }
   .cards-icon {
     width: 3rem;
@@ -48,4 +57,14 @@ a {
 
 
 
+}
+@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+  .logo-img{
+    width: 40vw!important;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  .logo-img img{
+    width: 10vw!important;
+  }
 }

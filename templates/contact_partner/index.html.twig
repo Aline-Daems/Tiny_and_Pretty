@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact: Ateliers/Partenaires{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6  text-left mx-auto">
+    {{ form_label(form.who, null, {
+        'label': 'Qui êtes-vous ?',
+        'label_attr': {'class': 'foo'}
+    } )}}
+    {{ form_widget(form.who) }}
+
+    {{ form_label(form.Iam, null, {
+        'label': "Je suis ...",
+        'label_attr': {'class': 'foo'}
+    }) }}
+    {{ form_widget(form.Iam) }}
+
+    {{ form_label(form.tva, null, {
+        'label': "Votre numéro de TVA",
+        'label_attr': {'class': 'foo'}
+    }) }}
+    {{ form_widget(form.tva) }}
+
+    {{ form_label(form.email, "Votre adresse mail" ) }}
+    {{ form_widget(form.email) }}
+
+    {{ form_label(form.siteweb, "Avez-vous un site web ?" )}}
+    {{ form_widget(form.siteweb) }}
+
+    {{ form_label(form.tel, "Votre numéro de téléphone" )}}
+    {{ form_widget(form.tel) }}
+
+    {{ form_label(form.adress, "Votre adresse") }}
+    {{ form_widget(form.adress) }}
+
+    {{ form_label(form.work, "Votre travail est" )}}
+    {{ form_widget(form.work) }}
+
+    {{ form_label(form.description, "Décrivez votre activité") }}
+    {{ form_widget(form.description) }}
+
+
+    {{ form_rest(form) }}
+    <button type="submit">Envoyer</button>
+    {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -35,7 +35,6 @@ class ProductsCrudController extends AbstractCrudController
                 ->setRequired(false),
             TextField::new('Subtitle'),
             TextareaField::new('description'),
-            ArrayField::new('Size'),
             BooleanField::new('isBest'),
             BooleanField::new('isNew'),
             BooleanField::new('soldOut'),

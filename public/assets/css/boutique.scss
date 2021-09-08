@@ -5,8 +5,11 @@
 
 $titleFontRegular: Quicksand, sans-serif;
 $textFontRegular: Cantarell, sans-serif;
-$yellow: rgb(252, 212, 116);
+$yellow: #fbd572;
 $green: #a9b97a;
+$rose: #f0cabd;
+$grey: #f0edda;
+$blue: #d1eee9;
 
 
 
@@ -27,5 +30,5 @@ $green: #a9b97a;
 @import 'partenaires';
 @import 'atelier_debora';
 @import 'comingsoon';
-@import 'order_validate';
+@import 'account';
 

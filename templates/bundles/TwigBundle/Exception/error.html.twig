@@ -1,11 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page introuvable - Tiny And Pretty{% endblock %}
+{% block title %}ERROR 404{% endblock %}
 
 {% block content %}
-    <div class="block-small">
-        <h2>Page introuvable</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+        <h1 class="title">OUPS ! PAGE INTROUVABLE</h1>
+            <div class="col-10 text-left pt-5">
+                <div class="presentation">
         <p>Désolé, cette page ne semble pas être accessible pour le moment.</p>
         <a href="{{ path('home') }}" class="btn btn-info">Revenir à l'accueil</a>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock %}

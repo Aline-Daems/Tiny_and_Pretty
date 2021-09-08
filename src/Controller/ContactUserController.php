@@ -24,6 +24,7 @@ class ContactUserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $entityManager->persist($contactuser);
             $entityManager->flush();
+            return $this->redirectToRoute('home');
         }
 
 

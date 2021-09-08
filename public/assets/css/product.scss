@@ -22,12 +22,18 @@
 }
 
 .descriptionBest{
-  font-size: 1.8vh;
+  font-size: 2vh;
   font-family: $titleFontRegular;
 }
 .product-item{
   cursor: pointer;
 
+}
+.product-text{
+  margin-bottom: 0.5%!important;
+}
+.product-price-text{
+  margin-top: 8%;
 }
 
 .apercu{
@@ -40,7 +46,7 @@
   margin: 0 auto;
   right: 12.5%;
   top: 45%;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: all 400ms ease-out;
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;

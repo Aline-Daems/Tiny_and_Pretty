@@ -4,14 +4,14 @@
 
 {% block content %}
     <div class="row">
-        <div class="container-fluid col-md-5">
-            <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+        <div class="container-fluid col-md-4   mb-5 ">
+            <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
         </div>
         <div class="col-md-7 my-auto aside-description mt-sm-5 mx-sm-auto">
             <p> {{ product.subtitle }}</p>
             <h3>{{  product.name }}</h3>
             <span class="product-page-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
-            <p>Taxes incluses</p>
+            <p class="'taxes">Taxes incluses</p>
             <p>
                 {{ product.description }}
             </p>
@@ -24,7 +24,7 @@
                 <button
                         class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1"
                         type="button">
-                    <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;">AJOUTER AU PANIER</a>
+                    <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;"><div>AJOUTER AU PANIER</div></a>
                 </button>
             {% else %}
                 <button class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1" style="background-color:#f0cabd;">VICTIME DE SON SUCCÈS</button>
@@ -129,16 +129,18 @@
 
     <div class="container-fluid  bestsellers">
         <h3 class="separator text-center">BESTSELLERS</h3>
+
     </div>
 
-    <div class="container-fluid col-sm-6 col-md-6 col-lg col-xl col-xxl bestproducts">
+    <div class="container-fluid  bestproducts">
         <div class="row">
-            {% for product in products %}
-                <div class="col">
-                    {% include 'product/single_product.html.twig' %}
-                </div>
+            {% for product in productN %}
+                {% if product.isBest == true %}
+                    <div class="col col-sm-6 col-md-6 col-lg col-xl col-xxl">
+                        {% include 'product/single_product.html.twig' %}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
-
 {% endblock %}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,MAAM;EACL,OAAO,EAAE,GAAG;EACX,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,kBAAiB",
+"sources": ["account.scss"],
+"names": [],
+"file": "account.css"
+}

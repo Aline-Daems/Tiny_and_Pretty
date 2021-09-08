@@ -32,15 +32,15 @@
 
             </th>
             <td>
-                {{ product.product.name }} <br/>
-               <small> {{ product.product.subtitle }}</small>
+                <span class="article_name"><p>{{ product.product.name }}</p></span>
+               <span class="article_name"><small> {{ product.product.subtitle }}</small></span>
             </td>
             <td><a href="{{ path('decrease_to_cart', {id: product.product.id}) }}">
-                <img src="{{ asset('assets/img/minus.png') }}" height="12px" alt="Retirer mon produit">
+                <img class="mr-3" src="{{ asset('assets/img/remove.webp') }}" height="12px" alt="Retirer mon produit">
                 </a>
                 {{ product.quantity }}
                 <a href="{{ path('add_to_cart', {id : product.product.id}) }}">
-                <img src="{{ asset('assets/img/add.png') }}" height="12px" alt="Ajouter mon produit">
+                <img class="ml-3" src="{{ asset('assets/img/plus.webp') }}" height="12px" alt="Ajouter mon produit">
                 </a>
             </td>
             <td>{{ (product.product.price / 100)|number_format(2,',', '.') }} €</td>
@@ -57,14 +57,14 @@
     </table>
         <hr>
     <div class=" validation text-center d-flex flex-column mb-5 pb-5">
-      <div class="p-2" ><b>nombre de produits</b> {{ cart|length }} <br/></div>
-        <div class="p-2" > <b>total de mon panier</b> {{ ((total / 100)|number_format(2,',', '.')) }} €</div>
+      <div class="p-2" ><p><span><b>Nombre de produit(s): </b> {{ cart|length }}</span></p> </div>
+        <div class="p-2" > <b>Total de mon panier</b> {{ ((total / 100)|number_format(2,',', '.')) }} €</div>
         <div class="p-2" > <a href="{{ path('order') }}" type="btn" class="btn text-white validate mt-3 pt-5">Valider mon panier</a></div>
         <div class="p-2" > <a href="{{ path('home') }}" type="btn" class="btn text-white validate mt-3 pt-5">Continuer mes achats</a></div>
     </div>
     {% else %}
     <hr>
-    <p class="empty">Votre panier est vide</p>
+    <p class="empty validation">Votre panier est vide</p>
     {% endif %}
         </div>
 {% endblock %}

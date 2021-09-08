@@ -43,6 +43,7 @@
 
 </head>
 <body>
+<div class="wrapper-parallax">
 {% include 'header.html.twig' %}
 
 <main role="main">
@@ -50,67 +51,58 @@
     {% block content %}
     {% endblock %}
 
-
+</main>
     <!-- FOOTER -->
     <hr>
     <footer class="footer-custom mt-3">
 
 
         <div class="container-fluid ">
-            <div class="row justify-content-between">
-                <div class="logo-img  col-md  col-sm-12 col-xs-12 my-auto">
+            <div class="row justify-content-between ">
+                <div class="logo-img  col-sm  col-md col-lg col-xl col-xxl">
                     <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
                          class="img-fluid"/>
                 </div>
-                <div class="col-md col-sm-3 ml-3">
+                <div class=" col-sm col-md col-lg col-xl col-xxl">
 
                     <ul>
                         <li class="list-footer"><h6>Tiny&Pretty</h6></li>
-                        <li class="list-footer"><a href="{{ path('qui_sommes_nous') }}">Qui sommes-nous ?</a></li>
-                        <li class="list-footer"><a href="{{ path('comingsoon') }}">The Tiny & Pretty blog</a></li>
-                        <li class="list-footer"><a href="{{ path('conditions_generales') }}">CGV</a></li>
+                        <li class="list-footer"><a class="link_footer" href="{{ path('qui_sommes_nous') }}">Qui sommes-nous ?</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('comingsoon') }}">The Tiny & Pretty blog</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('conditions_generales') }}">CGV</a></li>
                     </ul>
                 </div>
-                <div class="col-md  col-sm-3 ml-4">
+                <div class="  col-sm col-md col-lg col-xl col-xxl">
                     <ul>
                         <li class="list-footer"><h6>Commandes</h6></li>
-                        <li class="list-footer"><a href="">Suivi de commande</a></li>
-                        <li class="list-footer"><a href="{{ path('livraisons_et_retours') }}">Livraisons & retours</a></li>
-                        <li class="list-footer"><a href="{{ path('paiement_securise') }}">Paiement sécurisé</a></li>
+                        <li class="list-footer"><a class="link_footer"href="">Suivi de commande</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('livraisons_et_retours') }}">Livraisons & retours</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('paiement_securise') }}">Paiement sécurisé</a></li>
                     </ul>
                 </div>
-                <div class="col-md  col-sm-3 ml-3">
+
+                <div class="col-sm col-md col-lg col-xl col-xxl">
                     <ul>
                         <li class="list-footer"><h6>Services</h6></li>
-                        <li class="list-footer"><a href="">Devenir partenaire</a></li>
-                        <li class="list-footer"><a href="">Cartes cadeaux</a></li>
-                        <li class="list-footer"><a href="{{ path('cookie') }}">Cookies</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('partenaires') }}">Devenir partenaire</a></li>
+                        <li class="list-footer"><a class="link_footer"href="">Cartes cadeaux</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('cookie') }}">Cookies</a></li>
                     </ul>
                 </div>
-                <div class="col-md  col-sm-3 ml-3">
+                <div class=" col-sm col-md col-lg col-xl col-xxl">
                     <ul>
                         <li class="list-footer"><h6>Besoin d'aide ?</h6></li>
-                        <li class="list-footer"><a href="">Guide des tailles</a></li>
-                        <li class="list-footer"><a href="{{ path('faq') }}">Foire aux questions</a></li>
-                        <li class="list-footer"><a href="">Contactez-nous</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('tailles') }}">Guide des tailles</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('faq') }}">Foire aux questions</a></li>
+                        <li class="list-footer"><a class="link_footer"href="{{ path('contact_user') }}">Contactez-nous</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="col-12 d-flex justify-content-center mx-auto cards-icon">
 
-
-            <img src="{{ asset('assets/img/bancontact.webp') }}" alt="Bancontact" class="cards-icon">
-            <img src="{{ asset('assets/img/maestro.webp') }}" alt="Maestro" class="cards-icon">
-            <img src="{{ asset('assets/img/mastercard.webp') }}" alt="Mastercard" class="cards-icon">
-            <img src="{{ asset('assets/img/paypal.webp') }}" alt="Paypal" class="cards-icon">
-            <img src="{{ asset('assets/img/visa.webp') }}" alt="Visa" class="cards-icon">
-            <img src="{{ asset('assets/img/applepay.webp') }}" alt=" Apple Pay" class="cards-icon">
-
-        </div>
         <!-- Copyright -->
         <div class="text-center p-4" >
-            <p>© 2021 Copyright:  <a class="text-reset" href="#">Infinity</a></p>
+            <p>© 2021 Copyright:  <a class="text-reset " href="#">Infinity</a></p>
 
         </div>
         <!-- Copyright -->
@@ -119,7 +111,9 @@
 
     </footer>
 
-</main>
+
+
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="{{ asset ('assets/js/bootstrap.bundle.js') }}"></script>
 <script src="{{ asset ('assets/js/all.js') }}"></script>

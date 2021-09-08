@@ -1,12 +1,18 @@
 .question{
   font-family: $titleFontRegular;
   background-color: white;
+  color: dimgray;
 }
+.question :hover{
+  color: $green;
+}
+
 .answer{
   font-family: $textFontRegular;
+  color: gray!important;
 }
 a:link
 {
   text-decoration:none;
-  color: #1c3531 ;
+
 }

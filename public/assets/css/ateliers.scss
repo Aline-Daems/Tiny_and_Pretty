@@ -56,7 +56,6 @@
 
 
 
-
 @media (min-width: 992px)
 and (max-device-width: 2000px)
 and (-webkit-min-device-pixel-ratio: 1){
@@ -90,7 +89,7 @@ and (-webkit-min-device-pixel-ratio: 1){
 }
 .coming_soon_box .coming_soon_text .text_soon {
   font-family: $textFontRegular;
-  font-size: 5vh!important;
+  font-size: 6vh!important;
   top: 50%;
   left: 50%;
   width:100%;
@@ -109,13 +108,8 @@ and (-webkit-min-device-pixel-ratio: 1){
   .description_atelier {
     padding-left: 5vw;
     padding-right: 5vw;
-
   }
 
-
-a {
-  color: gray!important;
-}
 .join{
   height: 6vh!important;
   font-size: 2vh;

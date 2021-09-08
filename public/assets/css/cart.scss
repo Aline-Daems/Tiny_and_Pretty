@@ -7,9 +7,12 @@
   padding: 2vw;
 }
 .validation{
-  font-family:$textFontRegular;
+  font-family:$titleFontRegular;
 }
 .validate{
   background-color: $green!important;
 
+}
+.article_name{
+  text-transform: uppercase!important;
 }
