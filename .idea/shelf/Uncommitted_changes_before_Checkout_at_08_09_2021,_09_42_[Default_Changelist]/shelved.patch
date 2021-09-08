@@ -1,0 +1,1410 @@
+Index: src/Entity/Products.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Entity;\n\nuse App\\Repository\\ProductsRepository;\nuse Doctrine\\Common\\Collections\\ArrayCollection;\nuse Doctrine\\Common\\Collections\\Collection;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity(repositoryClass=ProductsRepository::class)\n */\nclass Products\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\GeneratedValue\n     * @ORM\\Column(type=\"integer\")\n     */\n    private $id;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255)\n     */\n    private $name;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255)\n     */\n    private $slug;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255)\n     */\n    private $illustration;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255)\n     */\n    private $subtitle;\n\n    /**\n     * @ORM\\Column(type=\"text\")\n     */\n    private $description;\n\n    /**\n     * @ORM\\Column(type=\"float\")\n     */\n    private $price;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=Category::class, inversedBy=\"products\", orphanRemoval=true)\n     * @ORM\\JoinColumn(nullable=false)\n     */\n    private $category;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=Mode::class, inversedBy=\"products\")\n     * @ORM\\JoinColumn(nullable=false)\n     */\n    private $mode;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=Maison::class, inversedBy=\"products\")\n     * @ORM\\JoinColumn(nullable=false)\n     */\n    private $maison;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=Boy::class, inversedBy=\"products\")\n     * @ORM\\JoinColumn(nullable=false)\n     */\n    private $boy;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=Toys::class, inversedBy=\"products\")\n     * @ORM\\JoinColumn(nullable=false)\n     */\n    private $toys;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=Accessory::class, inversedBy=\"products\")\n     * @ORM\\JoinColumn(nullable=false)\n     */\n    private $accessory;\n\n\n    /**\n     * @ORM\\Column(type=\"boolean\")\n     */\n    private $isBest;\n\n    /**\n     * @ORM\\Column(type=\"boolean\")\n     */\n    private $Soldout;\n\n    /**\n     * @ORM\\Column(type=\"boolean\")\n     */\n    private $isNew;\n\n\n\n\n\n    public function __construct(){\n        $this->category = new ArrayCollection();\n        $this->mode = new ArrayCollection();\n        $this->maison = new ArrayCollection();\n        $this->boy = new ArrayCollection();\n        $this->toys = new ArrayCollection();\n\n    }\n    public function getId(): ?int\n    {\n        return $this->id;\n    }\n\n    public function getName(): ?string\n    {\n        return $this->name;\n    }\n\n    public function setName(string $name): self\n    {\n        $this->name = $name;\n\n        return $this;\n    }\n\n    public function getSlug(): ?string\n    {\n        return $this->slug;\n    }\n\n    public function setSlug(string $slug): self\n    {\n        $this->slug = $slug;\n\n        return $this;\n    }\n\n    public function getIllustration(): ?string\n    {\n        return $this->illustration;\n    }\n\n    public function setIllustration(string $illustration): self\n    {\n        $this->illustration = $illustration;\n\n        return $this;\n    }\n\n    public function getSubtitle(): ?string\n    {\n        return $this->subtitle;\n    }\n\n    public function setSubtitle(string $subtitle): self\n    {\n        $this->subtitle = $subtitle;\n\n        return $this;\n    }\n\n\n\n\n    public function getDescription(): ?string\n    {\n        return $this->description;\n    }\n\n    public function setDescription(string $description): self\n    {\n        $this->description = $description;\n\n        return $this;\n    }\n\n    public function getPrice(): ?float\n    {\n        return $this->price;\n    }\n\n    public function setPrice(float $price): self\n    {\n        $this->price = $price;\n\n        return $this;\n    }\n\n    /**\n    * @return Collection|Category[]\n    */\n    public function getCategory(): Collection\n    {\n        return $this->category;\n    }\n\n    public function setCategory(?Category $category): self\n    {\n        $this->category = $category;\n\n        return $this;\n    }\n\n    /**\n     * @return Collection|Mode[]\n     */\n    public function getMode(): Collection\n    {\n        return $this->mode;\n    }\n\n    public function setMode(?Mode $mode): self\n    {\n        $this->mode = $mode;\n\n        return $this;\n    }\n\n    /**\n     * @return Collection|Maison[]\n     */\n    public function getMaison(): Collection\n    {\n        return $this->maison;\n    }\n\n    public function setMaison(?Maison $maison): self\n    {\n        $this->maison = $maison;\n\n        return $this;\n    }\n\n    /**\n     * @return Collection|Boy[]\n     */\n    public function getBoy(): Collection\n    {\n        return $this->boy;\n    }\n\n    public function setBoy(?Boy $boy): self\n    {\n        $this->boy = $boy;\n\n        return $this;\n    }\n\n    /**\n     * @return Collection|Toys[]\n     */\n    public function getToys(): Collection\n    {\n        return $this->toys;\n    }\n\n    public function setToys(?Toys $toys): self\n    {\n        $this->toys = $toys;\n\n        return $this;\n    }\n\n    /**\n     * @return Collection|Accessory[]\n     */\n    public function getAccessory(): Collection\n    {\n        return $this->accessory;\n    }\n\n    public function setAccessory(?Accessory $accessory): self\n    {\n        $this->accessory = $accessory;\n\n        return $this;\n    }\n//\n//\n\n    public function getIsBest(): ?bool\n    {\n        return $this->isBest;\n    }\n\n    public function setIsBest(bool $isBest): self\n    {\n        $this->isBest = $isBest;\n\n        return $this;\n    }\n\n    public function getSoldout(): ?bool\n    {\n        return $this->Soldout;\n    }\n\n    public function setSoldout(bool $Soldout): self\n    {\n        $this->Soldout = $Soldout;\n\n        return $this;\n    }\n\n    public function getIsNew(): ?bool\n    {\n        return $this->isNew;\n    }\n\n    public function setIsNew(bool $isNew): self\n    {\n        $this->isNew = $isNew;\n\n        return $this;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Entity/Products.php b/src/Entity/Products.php
+--- a/src/Entity/Products.php	(revision fe2417583781aae82c7646c099734725e004b0bb)
++++ b/src/Entity/Products.php	(date 1631085907811)
+@@ -282,8 +282,7 @@
+ 
+         return $this;
+     }
+-//
+-//
++
+ 
+     public function getIsBest(): ?bool
+     {
+Index: public/assets/css/boutique.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import url(\"https://fonts.googleapis.com/css2?family=Quicksand&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Cantarell&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap\");\n.wrapper-parallax {\n  margin-top: 100px;\n  margin-bottom: 200px; }\n\nmain {\n  position: relative;\n  z-index: 1;\n  background-color: white !important;\n  overflow-y: auto;\n  overflow-x: hidden;\n  margin-bottom: 50vh;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }\n\n.video-home {\n  position: relative;\n  padding-bottom: 56.25%;\n  /* 16:9 */\n  padding-top: 25px;\n  height: 0; }\n\n.video-home iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.bg-image-banner {\n  position: relative;\n  background: url(\"../img/banner-mere-et-enfant.webp\") no-repeat center fixed;\n  background-size: cover;\n  height: 60vh;\n  width: 120% !important; }\n\n.slogan {\n  font-family: Quicksand, sans-serif;\n  font-size: 8vh;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.category {\n  margin-top: 5rem !important;\n  margin-bottom: 10rem;\n  width: 100%; }\n\n.Pict {\n  overflow: hidden;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transition: .3s ease-in-out;\n  transition: .3s ease-in-out;\n  transition-duration: 885ms;\n  -webkit-filter: brightness(50%);\n  /* Chrome, Safari, Opera */\n  filter: brightness(50%); }\n\n.Pict:hover {\n  -webkit-transform: scale(1.2);\n  transform: scale(1.2);\n  filter: brightness(110%); }\n\n.description {\n  font-family: Quicksand, sans-serif;\n  font-size: 4vh;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.separator {\n  font-family: Quicksand, sans-serif;\n  width: 100%;\n  font-size: 4vh;\n  letter-spacing: 0.3rem;\n  margin-top: 5rem; }\n\n.bestproducts {\n  margin-top: 5rem !important;\n  margin-bottom: 10rem !important;\n  width: 90%;\n  text-transform: uppercase !important; }\n\n.bg-image-deuxieme {\n  background: url(\"../img/deuxieme-vie-bebe.webp\") no-repeat center fixed;\n  background-size: cover;\n  height: 60vh;\n  width: 100% !important;\n  margin-top: 10rem !important;\n  margin-bottom: 5rem; }\n\n.box {\n  width: 20vw;\n  height: 45vh;\n  background-color: white;\n  position: absolute;\n  transform: translate(10vw, 15.2vh); }\n\n.boxtext {\n  margin: 2vh; }\n  .boxtext p {\n    font-size: 1.8vh;\n    color: #6a6868;\n    font-family: Cantarell, sans-serif; }\n  .boxtext .profite {\n    background-color: #fcd474;\n    box-shadow: .050em .050em .050em #aaaaaa;\n    font-size: 1.5vh;\n    color: white;\n    border: none; }\n\n.imgblog {\n  width: 90%;\n  margin-top: 3rem; }\n\n.btn-blog {\n  border: 0.1em solid !important;\n  border-color: rgba(148, 142, 142, 0.5) !important;\n  background-color: #FFFFFF;\n  padding: 0.5rem;\n  font-size: 0.6rem;\n  letter-spacing: 0.2rem;\n  margin: 1rem;\n  color: #948e8e; }\n\n.category-blog {\n  font-size: 1.2vh;\n  color: #6a6868; }\n\n.title-blog {\n  font-size: 1.8vh;\n  color: #6a6868; }\n\n.text-share {\n  font-family: Quicksand, sans-serif;\n  letter-spacing: 0.3rem;\n  padding-top: 0.3rem;\n  padding-bottom: 2rem; }\n\n.reseau {\n  font-size: 5vh; }\n\n.logoreseau {\n  color: dimgrey; }\n\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .box {\n    width: 60vw;\n    height: 45vh; } }\n@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {\n  .slogan {\n    font-size: 10vh !important; }\n\n  .description {\n    font-size: 8vh; }\n\n  .separator {\n    font-size: 8vh; } }\n@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {\n  .box {\n    width: 60vw;\n    height: 45vh; } }\n@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n  .box {\n    width: 60vw;\n    height: 45vh; } }\n.content-layout {\n  padding-top: 3vw !important; }\n\n.form {\n  padding-left: 2vw; }\n\n#submit {\n  background-color: #fcd474;\n  border: none; }\n\n.category_description {\n  font-size: 2vh;\n  padding-left: 3vw;\n  margin-bottom: 10rem !important;\n  width: 90%;\n  font-family: Cantarell, sans-serif;\n  color: #948E8E;\n  position: relative; }\n\n.descriptionBest {\n  font-size: 2vh;\n  font-family: Quicksand, sans-serif; }\n\n.product-item {\n  cursor: pointer; }\n\n.product-text {\n  margin-bottom: 0.5% !important; }\n\n.product-price-text {\n  margin-top: 8%; }\n\n.apercu {\n  border: none;\n  position: absolute;\n  background-color: #fcd474 !important;\n  width: 75%;\n  z-index: 2;\n  margin: 0 auto;\n  right: 12.5%;\n  top: 45%;\n  opacity: 1;\n  -webkit-transition: all 400ms ease-out;\n  -moz-transition: all 400ms ease-out;\n  -o-transition: all 400ms ease-out;\n  -ms-transition: all 400ms ease-out; }\n\n.apercu:hover {\n  opacity: 1;\n  transition-delay: 0s;\n  transition-duration: 0.4s; }\n\n.accordion {\n  font-family: Quicksand, sans-serif; }\n\n.aside-description {\n  font-family: Quicksand, sans-serif;\n  text-align: center;\n  text-transform: uppercase; }\n\n.btn {\n  border-radius: 0 !important;\n  padding: 2vh !important; }\n\nhr {\n  margin: 0 !important;\n  padding: 0 !important; }\n\n#headingOne {\n  border: none !important; }\n\n@media only screen and (min-device-width: 960px) and (max-device-width: 2000px) {\n  .aside-description {\n    text-align: left !important; } }\n.soldout {\n  border: 1px solid #b6b6b6;\n  color: #b6b6b6;\n  width: 150px;\n  font-size: 14px;\n  background-color: #f6f6f6;\n  cursor: default; }\n\n.title {\n  font-family: Quicksand, sans-serif; }\n\n.presentation {\n  font-family: Cantarell, sans-serif;\n  padding-left: calc(100vw/5);\n  line-height: 3vh;\n  color: #948E8E; }\n\n.subtitle {\n  font-family: Cantarell, sans-serif; }\n\nbody {\n  padding: 0 !important;\n  margin: 0 !important;\n  overflow-x: hidden;\n  height: 100%; }\n\nheader {\n  position: fixed;\n  top: 0;\n  width: 100vw;\n  z-index: 999;\n  background: white; }\n\n.title_drop {\n  color: #797474FF;\n  z-index: -999;\n  background-color: #DCD3D359;\n  padding-top: 2vh;\n  padding-bottom: 2vh; }\n\n.navbar .nav-link .inactive {\n  cursor: default !important; }\n\n.navbar .nav-item {\n  display: flex; }\n\n.navbar-brand {\n  margin: 0 !important;\n  width: 40vw; }\n\n.logo-img-header {\n  padding-top: 1vh;\n  padding-bottom: 1.5vh;\n  margin: 0 !important;\n  width: 150%;\n  height: auto; }\n\n.icones-nav {\n  width: 1.5rem; }\n\n  /*\n  .bag-count{\n    position: relative;\n  }\n  .cercle-bag{\n    width: 1.3rem;\n    height: 1.3rem;\n    background-color: $yellow;\n    border: 0.2rem solid $yellow;\n    border-radius: 50%;\n    position: absolute;\n    top: 100%;\n   left: 110%;\n    transform: translate(-50%, -50%);\n  }\n  .content-bag{\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    font-family: $textFontRegular;\n    font-size: 0.8rem;\n    font-weight: bold;\n  }\n\n   */\n/* adds some margin below the link sets  */\n.navbar .dropdown-menu div[class*=\"p-2\"] {\n  margin-bottom: 1rem;\n  flex-direction: column !important; }\n\n.navbar .dropdown-menu {\n  font-family: Quicksand, sans-serif;\n  font-size: 1rem;\n  color: dimgrey;\n  position: absolute; }\n\n.little-drop {\n  left: 2vw !important;\n  margin: 0 !important;\n  padding: 0 !important; }\n\n.categories-nav {\n  border-bottom-style: solid;\n  border-bottom-color: lightgrey;\n  border-bottom-width: 0.002rem; }\n\n@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {\n  .navbar-brand {\n    margin: 0 !important;\n    width: 18vw; }\n\n  .logo-img-header {\n    margin: 0 !important;\n    width: 100%;\n    height: auto; }\n\n  .icones-nav {\n    width: 1.5rem; }\n\n  .nav-icones {\n    padding-left: 50%; } }\n/* breakpoint and up - mega dropdown styles */\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */\n  .navbar .nav-link {\n    padding-left: 0vw !important; }\n\n  .icones-nav {\n    width: 2vw; }\n\n  .navbar-brand {\n    margin: 0 !important;\n    width: 20%; }\n\n  .logo-img-header {\n    width: 100%;\n    height: auto; }\n\n  .navbar .dropdown:hover .dropdown-menu,\n  .navbar .dropdown .dropdown-menu:hover {\n    display: block;\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 0s, opacity 0.3s linear; }\n\n  /* makes the dropdown full width  */\n  .little-drop {\n    width: 30vw !important;\n    height: 8vh !important;\n    left: 70vw !important;\n    top: 12vh !important; }\n\n  .navbar .dropdown {\n    position: static; }\n\n  .navbar .dropdown-menu div[class*=\"p-2\"] {\n    flex-direction: row !important; }\n\n  .navbar .dropdown-menu {\n    width: 100vw;\n    left: 0;\n    right: 0;\n    /*  height of nav-item  */ } }\n@media (min-width: 1024px) and (orientation: landscape) {\n  .little-drop {\n    width: 20vw !important;\n    height: 10vh !important;\n    left: 50vw !important; }\n\n  .navbar .dropdown {\n    position: static; }\n\n  .navbar .dropdown:hover .dropdown-menu,\n  .navbar .dropdown .dropdown-menu:hover {\n    display: block;\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 1s, opacity 0.5s linear; }\n\n  .navbar .dropdown-menu div[class*=\"p-2\"] {\n    flex-direction: row !important; }\n\n  .navbar .dropdown-menu {\n    width: 70vw;\n    height: 55vh;\n    right: 0;\n    /*  height of nav-item  */\n    top: 10vh;\n    font-size: 1.8vh; }\n\n  .navbar-brand {\n    margin: 0 !important;\n    width: 20%; }\n\n  .icones-nav {\n    width: 1.5rem; }\n\n  .nav-icones {\n    margin-left: 20vw; }\n\n  .logo-img-header {\n    width: 50%;\n    height: auto; }\n\n  .navbar .nav-item {\n    padding: 1rem 1rem 1rem 1rem;\n    margin: 0 .25rem; } }\n@media screen and (min-device-width: 1025px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {\n  .navbar-brand {\n    margin: 0 !important;\n    width: 20vw; }\n\n  .logo-img-header {\n    padding-top: 1vh;\n    padding-bottom: 1.5vh;\n    margin: 0 !important;\n    width: 100%;\n    height: auto; }\n\n  .icones-nav {\n    width: 2rem; } }\n.title {\n  font-family: Quicksand, sans-serif;\n  font-size: 5vh; }\n\n.presentation {\n  font-family: Cantarell, sans-serif;\n  font-size: 2vh;\n  padding-left: calc(100vw/5);\n  line-height: 3vh;\n  color: #948E8E; }\n\n.title_atelier {\n  font-family: Quicksand, sans-serif;\n  font-size: 0.5vh !important;\n  justify-content: center;\n  color: #808080; }\n\n.description_atelier {\n  width: 100%;\n  margin: 0 !important;\n  font-family: Cantarell, sans-serif;\n  font-size: 2vh;\n  color: #808080; }\n\n.img_atelier {\n  width: 100% !important; }\n\n.coming_soon_box {\n  position: relative;\n  padding: 0;\n  width: 100%;\n  display: block;\n  cursor: pointer;\n  overflow: hidden; }\n\n.coming_soon_text {\n  opacity: 1;\n  position: absolute;\n  top: 0;\n  color: gray;\n  background-color: rgba(255, 255, 255, 0.8);\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-size: 1vh !important; }\n\n.coming_soon_box .coming_soon_text .text_soon {\n  font-family: Cantarell, sans-serif;\n  font-size: 1vh !important;\n  top: 50%;\n  left: 50%;\n  width: 100%;\n  height: 100%;\n  opacity: 1; }\n\n@media (min-width: 992px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 1) {\n  .coming_soon_box {\n    position: relative;\n    padding: 0;\n    width: 100%;\n    display: block;\n    cursor: pointer;\n    overflow: hidden; }\n\n  .coming_soon_text {\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 10%;\n    color: gray;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 80%;\n    height: 100%;\n    text-align: center;\n    -webkit-transition: all 400ms ease-out;\n    -moz-transition: all 400ms ease-out;\n    -o-transition: all 400ms ease-out;\n    transition: all 400ms ease-out; }\n\n  .coming_soon_box .coming_soon_text:hover {\n    opacity: 1; }\n\n  .coming_soon_box .coming_soon_text .text_soon {\n    font-family: Cantarell, sans-serif;\n    font-size: 6vh !important;\n    top: 50%;\n    left: 50%;\n    width: 100%;\n    height: 100%;\n    opacity: 1;\n    transition-delay: 0.4ms;\n    transition-duration: 1s; }\n\n  .coming_soon_box .coming_soon_text:hover .text_soon {\n    opacity: 1;\n    transform: translateY(50%); }\n\n  .description_atelier {\n    padding-left: 5vw;\n    padding-right: 5vw; }\n\n  .join {\n    height: 6vh !important;\n    font-size: 2vh;\n    width: 100%; }\n\n  .img_atelier {\n    width: 80% !important; } }\n.empty {\n  font-weight: bold; }\n\n.title_cart {\n  font-family: Quicksand, sans-serif;\n  padding: 2vw; }\n\n.validation {\n  font-family: Quicksand, sans-serif; }\n\n.validate {\n  background-color: #a9b97a !important; }\n\n.article_name {\n  text-transform: uppercase !important; }\n\n.title_sign {\n  font-family: Quicksand, sans-serif;\n  font-size: 1vh; }\n\n.input {\n  font-family: Cantarell, sans-serif; }\n\n.connect {\n  background-color: #a9b97a;\n  padding: 2vh; }\n\n.reset-register {\n  padding: 5vw; }\n\n.inscription {\n  padding-left: 25%; }\n\n.title_order {\n  font-family: Quicksand, sans-serif;\n  padding-top: 5vh;\n  font-size: 1vh !important; }\n\n.text_order {\n  font-family: Cantarell, sans-serif; }\n\n.recap {\n  padding-top: 5vh; }\n\n.btn-success {\n  background-color: #a9b97a !important;\n  border: none; }\n\n@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n  .title_order {\n    font-size: 0.8vh !important;\n    text-align: center; }\n\n  .img-product {\n    padding: 1vw; } }\n@media only screen and (min-device-width: 568px) and (max-device-width: 1024px) {\n  .title_order {\n    font-size: 1.2vh !important;\n    background-color: blue; } }\n.btn-primary {\n  background-color: #a9b97a !important;\n  border: none; }\n\n.btn-info {\n  background-color: #a9b97a !important;\n  border: none; }\n\n.add-address {\n  background-color: #fcd474 !important;\n  border: none; }\n\nfooter {\n  width: 100%;\n  position: fixed;\n  z-index: -1;\n  bottom: 0;\n  background-color: white; }\n\n.logo-img img {\n  padding: 2vw;\n  width: 50vw !important;\n  height: auto;\n  margin-bottom: 2vh; }\n\n.list-footer {\n  list-style-type: none;\n  font-size: 1rem; }\n\n.link_footer {\n  color: grey;\n  text-decoration: none; }\n\n.footer-custom {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-content: center;\n  align-items: center;\n  font-family: Quicksand, sans-serif;\n  margin-top: 8vh !important; }\n\n.cards-icon {\n  width: 1.5rem;\n  height: auto;\n  margin: 0.5rem; }\n\n@media screen and (min-width: 768px) {\n  .logo-img img {\n    padding: 0;\n    width: 15vw !important;\n    height: auto;\n    margin-left: 2vw; }\n\n  .cards-icon {\n    width: 3rem;\n    height: 3rem;\n    margin-right: 1rem;\n    margin-top: 2rem; } }\n@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {\n  .logo-img {\n    width: 40vw !important; } }\n@media (min-width: 1024px) and (orientation: landscape) {\n  .logo-img img {\n    width: 10vw !important; } }\n.question {\n  font-family: Quicksand, sans-serif;\n  background-color: white;\n  color: dimgray; }\n\n.question :hover {\n  color: #a9b97a; }\n\n.answer {\n  font-family: Cantarell, sans-serif;\n  color: gray !important; }\n\na:link {\n  text-decoration: none; }\n\n.banner-debora {\n  position: relative;\n  background: url(\"../img/banner-debora.webp\") no-repeat center fixed;\n  background-size: cover;\n  height: 50vh;\n  width: 120% !important; }\n\n.debora-story {\n  color: dimgrey;\n  font-family: Cantarell, sans-serif; }\n\n.slogan-debora {\n  font-family: Quicksand, sans-serif;\n  font-size: 8vh;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\niframe {\n  width: 80vw;\n  height: auto; }\n\n@media only screen and (min-device-width: 768px) and (max-device-width: 2000px) {\n  iframe {\n    width: 560px;\n    height: 315px; } }\nhtml {\n  height: 100%; }\n\nbody {\n  height: 100%; }\n\n.bckimg {\n  --animate-duration: 5s;\n  width: 100%;\n  height: auto;\n  position: relative; }\n\n.comingtext {\n  font-family: Quicksand, sans-serif;\n  color: black;\n  z-index: 5;\n  margin: auto;\n  position: absolute;\n  top: calc(20%/2);\n  left: calc(25%/2); }\n\n.container-soon {\n  position: absolute;\n  width: 25vw;\n  height: 24vh;\n  background-color: white;\n  margin: auto;\n  z-index: 999;\n  opacity: 0.8;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.container-border {\n  position: relative;\n  width: 23.5vw;\n  height: 21.5vh;\n  border-style: solid;\n  border-width: 0.2rem;\n  border-color: black;\n  margin: auto;\n  top: 5.5%;\n  z-index: 999; }\n\n.background-coming-soon {\n  z-index: -1;\n  width: 100%;\n  height: auto;\n  background-color: black;\n  position: relative; }\n\n.send {\n  background-color: #fcd474;\n  border-color: #fcd474; }\n\n.Tiny {\n  font-family: Quicksand, sans-serif;\n  color: white;\n  z-index: 999;\n  margin: auto;\n  position: absolute;\n  top: 30%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.intro {\n  padding: 4vh;\n  margin: 20%; }\n\n/*# sourceMappingURL=boutique.css.map */\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/public/assets/css/boutique.css b/public/assets/css/boutique.css
+--- a/public/assets/css/boutique.css	(revision fe2417583781aae82c7646c099734725e004b0bb)
++++ b/public/assets/css/boutique.css	(date 1631085766147)
+@@ -4,7 +4,8 @@
+ @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap");
+ .wrapper-parallax {
+   margin-top: 100px;
+-  margin-bottom: 200px; }
++  margin-bottom: 200px;
++}
+ 
+ main {
+   position: relative;
+@@ -13,28 +14,32 @@
+   overflow-y: auto;
+   overflow-x: hidden;
+   margin-bottom: 50vh;
+-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
++  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
++}
+ 
+ .video-home {
+   position: relative;
+   padding-bottom: 56.25%;
+   /* 16:9 */
+   padding-top: 25px;
+-  height: 0; }
++  height: 0;
++}
+ 
+ .video-home iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ .bg-image-banner {
+   position: relative;
+   background: url("../img/banner-mere-et-enfant.webp") no-repeat center fixed;
+   background-size: cover;
+   height: 60vh;
+-  width: 120% !important; }
++  width: 120% !important;
++}
+ 
+ .slogan {
+   font-family: Quicksand, sans-serif;
+@@ -42,28 +47,32 @@
+   position: absolute;
+   top: 50%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .category {
+   margin-top: 5rem !important;
+   margin-bottom: 10rem;
+-  width: 100%; }
++  width: 100%;
++}
+ 
+ .Pict {
+   overflow: hidden;
+   -webkit-transform: scale(1);
+   transform: scale(1);
+-  -webkit-transition: .3s ease-in-out;
+-  transition: .3s ease-in-out;
++  -webkit-transition: 0.3s ease-in-out;
++  transition: 0.3s ease-in-out;
+   transition-duration: 885ms;
+   -webkit-filter: brightness(50%);
+   /* Chrome, Safari, Opera */
+-  filter: brightness(50%); }
++  filter: brightness(50%);
++}
+ 
+ .Pict:hover {
+   -webkit-transform: scale(1.2);
+   transform: scale(1.2);
+-  filter: brightness(110%); }
++  filter: brightness(110%);
++}
+ 
+ .description {
+   font-family: Quicksand, sans-serif;
+@@ -71,20 +80,23 @@
+   position: absolute;
+   top: 50%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .separator {
+   font-family: Quicksand, sans-serif;
+   width: 100%;
+   font-size: 4vh;
+   letter-spacing: 0.3rem;
+-  margin-top: 5rem; }
++  margin-top: 5rem;
++}
+ 
+ .bestproducts {
+   margin-top: 5rem !important;
+   margin-bottom: 10rem !important;
+   width: 90%;
+-  text-transform: uppercase !important; }
++  text-transform: uppercase !important;
++}
+ 
+ .bg-image-deuxieme {
+   background: url("../img/deuxieme-vie-bebe.webp") no-repeat center fixed;
+@@ -92,31 +104,37 @@
+   height: 60vh;
+   width: 100% !important;
+   margin-top: 10rem !important;
+-  margin-bottom: 5rem; }
++  margin-bottom: 5rem;
++}
+ 
+ .box {
+   width: 20vw;
+   height: 45vh;
+   background-color: white;
+   position: absolute;
+-  transform: translate(10vw, 15.2vh); }
++  transform: translate(10vw, 15.2vh);
++}
+ 
+ .boxtext {
+-  margin: 2vh; }
+-  .boxtext p {
+-    font-size: 1.8vh;
+-    color: #6a6868;
+-    font-family: Cantarell, sans-serif; }
+-  .boxtext .profite {
+-    background-color: #fcd474;
+-    box-shadow: .050em .050em .050em #aaaaaa;
+-    font-size: 1.5vh;
+-    color: white;
+-    border: none; }
++  margin: 2vh;
++}
++.boxtext p {
++  font-size: 1.8vh;
++  color: #6a6868;
++  font-family: Cantarell, sans-serif;
++}
++.boxtext .profite {
++  background-color: #fcd474;
++  box-shadow: 0.05em 0.05em 0.05em #aaaaaa;
++  font-size: 1.5vh;
++  color: white;
++  border: none;
++}
+ 
+ .imgblog {
+   width: 90%;
+-  margin-top: 3rem; }
++  margin-top: 3rem;
++}
+ 
+ .btn-blog {
+   border: 0.1em solid !important;
+@@ -126,58 +144,77 @@
+   font-size: 0.6rem;
+   letter-spacing: 0.2rem;
+   margin: 1rem;
+-  color: #948e8e; }
++  color: #948e8e;
++}
+ 
+ .category-blog {
+   font-size: 1.2vh;
+-  color: #6a6868; }
++  color: #6a6868;
++}
+ 
+ .title-blog {
+   font-size: 1.8vh;
+-  color: #6a6868; }
++  color: #6a6868;
++}
+ 
+ .text-share {
+   font-family: Quicksand, sans-serif;
+   letter-spacing: 0.3rem;
+   padding-top: 0.3rem;
+-  padding-bottom: 2rem; }
++  padding-bottom: 2rem;
++}
+ 
+ .reseau {
+-  font-size: 5vh; }
++  font-size: 5vh;
++}
+ 
+ .logoreseau {
+-  color: dimgrey; }
++  color: dimgrey;
++}
+ 
+ @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+   .box {
+     width: 60vw;
+-    height: 45vh; } }
++    height: 45vh;
++  }
++}
+ @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+   .slogan {
+-    font-size: 10vh !important; }
++    font-size: 10vh !important;
++  }
+ 
+   .description {
+-    font-size: 8vh; }
++    font-size: 8vh;
++  }
+ 
+   .separator {
+-    font-size: 8vh; } }
++    font-size: 8vh;
++  }
++}
+ @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+   .box {
+     width: 60vw;
+-    height: 45vh; } }
++    height: 45vh;
++  }
++}
+ @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+   .box {
+     width: 60vw;
+-    height: 45vh; } }
++    height: 45vh;
++  }
++}
+ .content-layout {
+-  padding-top: 3vw !important; }
++  padding-top: 3vw !important;
++}
+ 
+ .form {
+-  padding-left: 2vw; }
++  padding-left: 2vw;
++}
+ 
+ #submit {
+   background-color: #fcd474;
+-  border: none; }
++  border: none;
++}
+ 
+ .category_description {
+   font-size: 2vh;
+@@ -186,20 +223,25 @@
+   width: 90%;
+   font-family: Cantarell, sans-serif;
+   color: #948E8E;
+-  position: relative; }
++  position: relative;
++}
+ 
+ .descriptionBest {
+   font-size: 2vh;
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .product-item {
+-  cursor: pointer; }
++  cursor: pointer;
++}
+ 
+ .product-text {
+-  margin-bottom: 0.5% !important; }
++  margin-bottom: 0.5% !important;
++}
+ 
+ .product-price-text {
+-  margin-top: 8%; }
++  margin-top: 8%;
++}
+ 
+ .apercu {
+   border: none;
+@@ -214,217 +256,261 @@
+   -webkit-transition: all 400ms ease-out;
+   -moz-transition: all 400ms ease-out;
+   -o-transition: all 400ms ease-out;
+-  -ms-transition: all 400ms ease-out; }
++  -ms-transition: all 400ms ease-out;
++}
+ 
+ .apercu:hover {
+   opacity: 1;
+   transition-delay: 0s;
+-  transition-duration: 0.4s; }
++  transition-duration: 0.4s;
++}
+ 
+ .accordion {
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .aside-description {
+   font-family: Quicksand, sans-serif;
+   text-align: center;
+-  text-transform: uppercase; }
++  text-transform: uppercase;
++}
+ 
+ .btn {
+   border-radius: 0 !important;
+-  padding: 2vh !important; }
++  padding: 2vh !important;
++}
+ 
+ hr {
+   margin: 0 !important;
+-  padding: 0 !important; }
++  padding: 0 !important;
++}
+ 
+ #headingOne {
+-  border: none !important; }
++  border: none !important;
++}
+ 
+ @media only screen and (min-device-width: 960px) and (max-device-width: 2000px) {
+   .aside-description {
+-    text-align: left !important; } }
++    text-align: left !important;
++  }
++}
+ .soldout {
+   border: 1px solid #b6b6b6;
+   color: #b6b6b6;
+   width: 150px;
+   font-size: 14px;
+   background-color: #f6f6f6;
+-  cursor: default; }
++  cursor: default;
++}
+ 
+ .title {
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .presentation {
+   font-family: Cantarell, sans-serif;
+   padding-left: calc(100vw/5);
+   line-height: 3vh;
+-  color: #948E8E; }
++  color: #948E8E;
++}
+ 
+ .subtitle {
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ body {
+   padding: 0 !important;
+   margin: 0 !important;
+   overflow-x: hidden;
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ header {
+   position: fixed;
+   top: 0;
+   width: 100vw;
+   z-index: 999;
+-  background: white; }
++  background: white;
++}
+ 
+ .title_drop {
+   color: #797474FF;
+   z-index: -999;
+   background-color: #DCD3D359;
+   padding-top: 2vh;
+-  padding-bottom: 2vh; }
++  padding-bottom: 2vh;
++}
+ 
+ .navbar .nav-link .inactive {
+-  cursor: default !important; }
++  cursor: default !important;
++}
+ 
+ .navbar .nav-item {
+-  display: flex; }
++  display: flex;
++}
+ 
+ .navbar-brand {
+   margin: 0 !important;
+-  width: 40vw; }
++  width: 40vw;
++}
+ 
+ .logo-img-header {
+   padding-top: 1vh;
+   padding-bottom: 1.5vh;
+   margin: 0 !important;
+   width: 150%;
+-  height: auto; }
++  height: auto;
++}
+ 
+ .icones-nav {
+-  width: 1.5rem; }
++  width: 1.5rem;
++}
+ 
+-  /*
+-  .bag-count{
+-    position: relative;
+-  }
+-  .cercle-bag{
+-    width: 1.3rem;
+-    height: 1.3rem;
+-    background-color: $yellow;
+-    border: 0.2rem solid $yellow;
+-    border-radius: 50%;
+-    position: absolute;
+-    top: 100%;
+-   left: 110%;
+-    transform: translate(-50%, -50%);
+-  }
+-  .content-bag{
+-    position: absolute;
+-    top: 50%;
+-    left: 50%;
+-    transform: translate(-50%, -50%);
+-    font-family: $textFontRegular;
+-    font-size: 0.8rem;
+-    font-weight: bold;
+-  }
++/*
++.bag-count{
++  position: relative;
++}
++.cercle-bag{
++  width: 1.3rem;
++  height: 1.3rem;
++  background-color: $yellow;
++  border: 0.2rem solid $yellow;
++  border-radius: 50%;
++  position: absolute;
++  top: 100%;
++ left: 110%;
++  transform: translate(-50%, -50%);
++}
++.content-bag{
++  position: absolute;
++  top: 50%;
++  left: 50%;
++  transform: translate(-50%, -50%);
++  font-family: $textFontRegular;
++  font-size: 0.8rem;
++  font-weight: bold;
++}
+ 
+-   */
++ */
+ /* adds some margin below the link sets  */
+-.navbar .dropdown-menu div[class*="p-2"] {
++.navbar .dropdown-menu div[class*=p-2] {
+   margin-bottom: 1rem;
+-  flex-direction: column !important; }
++  flex-direction: column !important;
++}
+ 
+ .navbar .dropdown-menu {
+   font-family: Quicksand, sans-serif;
+   font-size: 1rem;
+   color: dimgrey;
+-  position: absolute; }
++  position: absolute;
++}
+ 
+ .little-drop {
+   left: 2vw !important;
+   margin: 0 !important;
+-  padding: 0 !important; }
++  padding: 0 !important;
++}
+ 
+ .categories-nav {
+   border-bottom-style: solid;
+   border-bottom-color: lightgrey;
+-  border-bottom-width: 0.002rem; }
++  border-bottom-width: 0.002rem;
++}
+ 
+ @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 18vw; }
++    width: 18vw;
++  }
+ 
+   .logo-img-header {
+     margin: 0 !important;
+     width: 100%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .icones-nav {
+-    width: 1.5rem; }
++    width: 1.5rem;
++  }
+ 
+   .nav-icones {
+-    padding-left: 50%; } }
++    padding-left: 50%;
++  }
++}
+ /* breakpoint and up - mega dropdown styles */
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+   .navbar .nav-link {
+-    padding-left: 0vw !important; }
++    padding-left: 0vw !important;
++  }
+ 
+   .icones-nav {
+-    width: 2vw; }
++    width: 2vw;
++  }
+ 
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 20%; }
++    width: 20%;
++  }
+ 
+   .logo-img-header {
+     width: 100%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .navbar .dropdown:hover .dropdown-menu,
+-  .navbar .dropdown .dropdown-menu:hover {
++.navbar .dropdown .dropdown-menu:hover {
+     display: block;
+     visibility: visible;
+     opacity: 1;
+-    transition: visibility 0s, opacity 0.3s linear; }
++    transition: visibility 0s, opacity 0.3s linear;
++  }
+ 
+   /* makes the dropdown full width  */
+   .little-drop {
+     width: 30vw !important;
+     height: 8vh !important;
+     left: 70vw !important;
+-    top: 12vh !important; }
++    top: 12vh !important;
++  }
+ 
+   .navbar .dropdown {
+-    position: static; }
++    position: static;
++  }
+ 
+-  .navbar .dropdown-menu div[class*="p-2"] {
+-    flex-direction: row !important; }
++  .navbar .dropdown-menu div[class*=p-2] {
++    flex-direction: row !important;
++  }
+ 
+   .navbar .dropdown-menu {
+     width: 100vw;
+     left: 0;
+     right: 0;
+-    /*  height of nav-item  */ } }
++    /*  height of nav-item  */
++  }
++}
+ @media (min-width: 1024px) and (orientation: landscape) {
+   .little-drop {
+     width: 20vw !important;
+     height: 10vh !important;
+-    left: 50vw !important; }
++    left: 50vw !important;
++  }
+ 
+   .navbar .dropdown {
+-    position: static; }
++    position: static;
++  }
+ 
+   .navbar .dropdown:hover .dropdown-menu,
+-  .navbar .dropdown .dropdown-menu:hover {
++.navbar .dropdown .dropdown-menu:hover {
+     display: block;
+     visibility: visible;
+     opacity: 1;
+-    transition: visibility 1s, opacity 0.5s linear; }
++    transition: visibility 1s, opacity 0.5s linear;
++  }
+ 
+-  .navbar .dropdown-menu div[class*="p-2"] {
+-    flex-direction: row !important; }
++  .navbar .dropdown-menu div[class*=p-2] {
++    flex-direction: row !important;
++  }
+ 
+   .navbar .dropdown-menu {
+     width: 70vw;
+@@ -432,65 +518,81 @@
+     right: 0;
+     /*  height of nav-item  */
+     top: 10vh;
+-    font-size: 1.8vh; }
++    font-size: 1.8vh;
++  }
+ 
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 20%; }
++    width: 20%;
++  }
+ 
+   .icones-nav {
+-    width: 1.5rem; }
++    width: 1.5rem;
++  }
+ 
+   .nav-icones {
+-    margin-left: 20vw; }
++    margin-left: 20vw;
++  }
+ 
+   .logo-img-header {
+     width: 50%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .navbar .nav-item {
+     padding: 1rem 1rem 1rem 1rem;
+-    margin: 0 .25rem; } }
++    margin: 0 0.25rem;
++  }
++}
+ @media screen and (min-device-width: 1025px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 20vw; }
++    width: 20vw;
++  }
+ 
+   .logo-img-header {
+     padding-top: 1vh;
+     padding-bottom: 1.5vh;
+     margin: 0 !important;
+     width: 100%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .icones-nav {
+-    width: 2rem; } }
++    width: 2rem;
++  }
++}
+ .title {
+   font-family: Quicksand, sans-serif;
+-  font-size: 5vh; }
++  font-size: 5vh;
++}
+ 
+ .presentation {
+   font-family: Cantarell, sans-serif;
+   font-size: 2vh;
+   padding-left: calc(100vw/5);
+   line-height: 3vh;
+-  color: #948E8E; }
++  color: #948E8E;
++}
+ 
+ .title_atelier {
+   font-family: Quicksand, sans-serif;
+   font-size: 0.5vh !important;
+   justify-content: center;
+-  color: #808080; }
++  color: #808080;
++}
+ 
+ .description_atelier {
+   width: 100%;
+   margin: 0 !important;
+   font-family: Cantarell, sans-serif;
+   font-size: 2vh;
+-  color: #808080; }
++  color: #808080;
++}
+ 
+ .img_atelier {
+-  width: 100% !important; }
++  width: 100% !important;
++}
+ 
+ .coming_soon_box {
+   position: relative;
+@@ -498,7 +600,8 @@
+   width: 100%;
+   display: block;
+   cursor: pointer;
+-  overflow: hidden; }
++  overflow: hidden;
++}
+ 
+ .coming_soon_text {
+   opacity: 1;
+@@ -509,7 +612,8 @@
+   width: 100%;
+   height: 100%;
+   text-align: center;
+-  font-size: 1vh !important; }
++  font-size: 1vh !important;
++}
+ 
+ .coming_soon_box .coming_soon_text .text_soon {
+   font-family: Cantarell, sans-serif;
+@@ -518,7 +622,8 @@
+   left: 50%;
+   width: 100%;
+   height: 100%;
+-  opacity: 1; }
++  opacity: 1;
++}
+ 
+ @media (min-width: 992px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 1) {
+   .coming_soon_box {
+@@ -527,7 +632,8 @@
+     width: 100%;
+     display: block;
+     cursor: pointer;
+-    overflow: hidden; }
++    overflow: hidden;
++  }
+ 
+   .coming_soon_text {
+     opacity: 0;
+@@ -542,10 +648,12 @@
+     -webkit-transition: all 400ms ease-out;
+     -moz-transition: all 400ms ease-out;
+     -o-transition: all 400ms ease-out;
+-    transition: all 400ms ease-out; }
++    transition: all 400ms ease-out;
++  }
+ 
+   .coming_soon_box .coming_soon_text:hover {
+-    opacity: 1; }
++    opacity: 1;
++  }
+ 
+   .coming_soon_box .coming_soon_text .text_soon {
+     font-family: Cantarell, sans-serif;
+@@ -556,114 +664,146 @@
+     height: 100%;
+     opacity: 1;
+     transition-delay: 0.4ms;
+-    transition-duration: 1s; }
++    transition-duration: 1s;
++  }
+ 
+   .coming_soon_box .coming_soon_text:hover .text_soon {
+     opacity: 1;
+-    transform: translateY(50%); }
++    transform: translateY(50%);
++  }
+ 
+   .description_atelier {
+     padding-left: 5vw;
+-    padding-right: 5vw; }
++    padding-right: 5vw;
++  }
+ 
+   .join {
+     height: 6vh !important;
+     font-size: 2vh;
+-    width: 100%; }
++    width: 100%;
++  }
+ 
+   .img_atelier {
+-    width: 80% !important; } }
++    width: 80% !important;
++  }
++}
+ .empty {
+-  font-weight: bold; }
++  font-weight: bold;
++}
+ 
+ .title_cart {
+   font-family: Quicksand, sans-serif;
+-  padding: 2vw; }
++  padding: 2vw;
++}
+ 
+ .validation {
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .validate {
+-  background-color: #a9b97a !important; }
++  background-color: #a9b97a !important;
++}
+ 
+ .article_name {
+-  text-transform: uppercase !important; }
++  text-transform: uppercase !important;
++}
+ 
+ .title_sign {
+   font-family: Quicksand, sans-serif;
+-  font-size: 1vh; }
++  font-size: 1vh;
++}
+ 
+ .input {
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ .connect {
+   background-color: #a9b97a;
+-  padding: 2vh; }
++  padding: 2vh;
++}
+ 
+ .reset-register {
+-  padding: 5vw; }
++  padding: 5vw;
++}
+ 
+ .inscription {
+-  padding-left: 25%; }
++  padding-left: 25%;
++}
+ 
+ .title_order {
+   font-family: Quicksand, sans-serif;
+   padding-top: 5vh;
+-  font-size: 1vh !important; }
++  font-size: 1vh !important;
++}
+ 
+ .text_order {
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ .recap {
+-  padding-top: 5vh; }
++  padding-top: 5vh;
++}
+ 
+ .btn-success {
+   background-color: #a9b97a !important;
+-  border: none; }
++  border: none;
++}
+ 
+ @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+   .title_order {
+     font-size: 0.8vh !important;
+-    text-align: center; }
++    text-align: center;
++  }
+ 
+   .img-product {
+-    padding: 1vw; } }
++    padding: 1vw;
++  }
++}
+ @media only screen and (min-device-width: 568px) and (max-device-width: 1024px) {
+   .title_order {
+     font-size: 1.2vh !important;
+-    background-color: blue; } }
++    background-color: blue;
++  }
++}
+ .btn-primary {
+   background-color: #a9b97a !important;
+-  border: none; }
++  border: none;
++}
+ 
+ .btn-info {
+   background-color: #a9b97a !important;
+-  border: none; }
++  border: none;
++}
+ 
+ .add-address {
+   background-color: #fcd474 !important;
+-  border: none; }
++  border: none;
++}
+ 
+ footer {
+   width: 100%;
+   position: fixed;
+   z-index: -1;
+   bottom: 0;
+-  background-color: white; }
++  background-color: white;
++}
+ 
+ .logo-img img {
+   padding: 2vw;
+   width: 50vw !important;
+   height: auto;
+-  margin-bottom: 2vh; }
++  margin-bottom: 2vh;
++}
+ 
+ .list-footer {
+   list-style-type: none;
+-  font-size: 1rem; }
++  font-size: 1rem;
++}
+ 
+ .link_footer {
+   color: grey;
+-  text-decoration: none; }
++  text-decoration: none;
++}
+ 
+ .footer-custom {
+   display: flex;
+@@ -672,56 +812,71 @@
+   align-content: center;
+   align-items: center;
+   font-family: Quicksand, sans-serif;
+-  margin-top: 8vh !important; }
++  margin-top: 8vh !important;
++}
+ 
+ .cards-icon {
+   width: 1.5rem;
+   height: auto;
+-  margin: 0.5rem; }
++  margin: 0.5rem;
++}
+ 
+ @media screen and (min-width: 768px) {
+   .logo-img img {
+     padding: 0;
+     width: 15vw !important;
+     height: auto;
+-    margin-left: 2vw; }
++    margin-left: 2vw;
++  }
+ 
+   .cards-icon {
+     width: 3rem;
+     height: 3rem;
+     margin-right: 1rem;
+-    margin-top: 2rem; } }
++    margin-top: 2rem;
++  }
++}
+ @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+   .logo-img {
+-    width: 40vw !important; } }
++    width: 40vw !important;
++  }
++}
+ @media (min-width: 1024px) and (orientation: landscape) {
+   .logo-img img {
+-    width: 10vw !important; } }
++    width: 10vw !important;
++  }
++}
+ .question {
+   font-family: Quicksand, sans-serif;
+   background-color: white;
+-  color: dimgray; }
++  color: dimgray;
++}
+ 
+ .question :hover {
+-  color: #a9b97a; }
++  color: #a9b97a;
++}
+ 
+ .answer {
+   font-family: Cantarell, sans-serif;
+-  color: gray !important; }
++  color: gray !important;
++}
+ 
+ a:link {
+-  text-decoration: none; }
++  text-decoration: none;
++}
+ 
+ .banner-debora {
+   position: relative;
+   background: url("../img/banner-debora.webp") no-repeat center fixed;
+   background-size: cover;
+   height: 50vh;
+-  width: 120% !important; }
++  width: 120% !important;
++}
+ 
+ .debora-story {
+   color: dimgrey;
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ .slogan-debora {
+   font-family: Quicksand, sans-serif;
+@@ -729,27 +884,34 @@
+   position: absolute;
+   top: 50%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ iframe {
+   width: 80vw;
+-  height: auto; }
++  height: auto;
++}
+ 
+ @media only screen and (min-device-width: 768px) and (max-device-width: 2000px) {
+   iframe {
+     width: 560px;
+-    height: 315px; } }
++    height: 315px;
++  }
++}
+ html {
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ body {
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ .bckimg {
+   --animate-duration: 5s;
+   width: 100%;
+   height: auto;
+-  position: relative; }
++  position: relative;
++}
+ 
+ .comingtext {
+   font-family: Quicksand, sans-serif;
+@@ -758,7 +920,8 @@
+   margin: auto;
+   position: absolute;
+   top: calc(20%/2);
+-  left: calc(25%/2); }
++  left: calc(25%/2);
++}
+ 
+ .container-soon {
+   position: absolute;
+@@ -770,7 +933,8 @@
+   opacity: 0.8;
+   top: 50%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .container-border {
+   position: relative;
+@@ -781,18 +945,21 @@
+   border-color: black;
+   margin: auto;
+   top: 5.5%;
+-  z-index: 999; }
++  z-index: 999;
++}
+ 
+ .background-coming-soon {
+   z-index: -1;
+   width: 100%;
+   height: auto;
+   background-color: black;
+-  position: relative; }
++  position: relative;
++}
+ 
+ .send {
+   background-color: #fcd474;
+-  border-color: #fcd474; }
++  border-color: #fcd474;
++}
+ 
+ .Tiny {
+   font-family: Quicksand, sans-serif;
+@@ -802,10 +969,12 @@
+   position: absolute;
+   top: 30%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .intro {
+   padding: 4vh;
+-  margin: 20%; }
++  margin: 20%;
++}
+ 
+ /*# sourceMappingURL=boutique.css.map */
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"a7292d5a-ed6a-4158-8cc0-21035c3af110\" name=\"Default Changelist\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.gitignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/StripeController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/StripeController.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Entity/Carrier.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Entity/Carrier.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/account/order_show.html.twig\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/account/order_show.html.twig\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/order/add.html.twig\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/order/add.html.twig\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/order/index.html.twig\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/order/index.html.twig\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20210803083646.php\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/Admin/ProductsCrudController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/Admin/ProductsCrudController.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/HomeController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/HomeController.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/ProductController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/ProductController.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Entity/Products.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Entity/Products.php\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/home/index.html.twig\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/home/index.html.twig\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\n    <execution>\n      <executable path=\"composer\" />\n    </execution>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  <component name=\"ElmWorkspace\">\n    <elmProjects />\n    <settings elmCompilerPath=\"\" elmFormatPath=\"\" elmTestPath=\"\" isElmFormatOnSaveEnabled=\"false\" />\n\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"INCOMING_CHECK_STRATEGY\" value=\"Always\" />\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/OrderCancelController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/public/assets/css/header.scss\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/SecurityController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/OrderSuccessController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/AccountAddressController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/AccountController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/AccountOrderController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/OrderController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/StripeController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/public/assets/css/boutique.css\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/templates/base.html.twig\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/src/Controller/CartController.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/public/assets/js/script.js\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"PhpWorkspaceProjectConfiguration\">\n    <include_path>\n      <path value=\"$PROJECT_DIR$/vendor/webmozart/assert\" />\n      <path value=\"$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts\" />\n      <path value=\"$PROJECT_DIR$/vendor/twig/twig\" />\n      <path value=\"$PROJECT_DIR$/vendor/twig/extra-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/deprecations\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/event-manager\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/dbal\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/cache\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/orm\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/sql-formatter\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/collections\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/persistence\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/annotations\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/migrations\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/common\" />\n      <path value=\"$PROJECT_DIR$/vendor/laminas/laminas-code\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/form\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-exporter\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-core\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php80\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-info\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-access\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/proxy-manager-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-csrf\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/stopwatch\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/flex\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/options-resolver\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/framework-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/validator\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dom-crawler\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-link\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/doctrine-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dependency-injection\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/phpunit-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/config\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-http\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mailer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/debug-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/filesystem\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php73\" />\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/maker-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-guard\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/browser-kit\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/notifier\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/yaml\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/serializer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dotenv\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/asset\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/expression-language\" />\n      <path value=\"$PROJECT_DIR$/vendor/sensio/framework-extra-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/monolog/monolog\" />\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock\" />\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/type-resolver\" />\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-common\" />\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/link\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/cache\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php81\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/uid\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-uuid\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-profiler-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/intl\" />\n      <path value=\"$PROJECT_DIR$/vendor/stripe/stripe-php\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-client\" />\n      <path value=\"$PROJECT_DIR$/vendor/ralouphie/getallheaders\" />\n      <path value=\"$PROJECT_DIR$/vendor/mailjet/mailjet-apiv3-php\" />\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/guzzle\" />\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/promises\" />\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/psr7\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-message\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-factory\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/apache-pack\" />\n    </include_path>\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedIndex\" value=\"2\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1vtcm1n9tyK2gkwZIpUFfoN7jnf\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/public/assets/js\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"editor.preferences.completion\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/public/assets/js\" />\n      <recent name=\"$PROJECT_DIR$/public/assets/css\" />\n    </key>\n\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"org.elm.workspace.PROJECT_DISCOVERY\" value=\"true\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"project.propVCSSupport.Mappings\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"phpunit.xml.dist\" type=\"PHPUnitRunConfigurationType\" factoryName=\"PHPUnit\">\n      <TestRunner scope=\"XML\" />\n      <method v=\"2\" />\n    </configuration>\n\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"a7292d5a-ed6a-4158-8cc0-21035c3af110\" name=\"Default Changelist\" comment=\"\" />\n      <created>1627384980431</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1627384980431</updated>\n      <workItem from=\"1627384981537\" duration=\"10660000\" />\n      <workItem from=\"1627401954274\" duration=\"575000\" />\n      <workItem from=\"1627402549460\" duration=\"69000\" />\n      <workItem from=\"1627402691267\" duration=\"137000\" />\n      <workItem from=\"1627402863113\" duration=\"2875000\" />\n      <workItem from=\"1627409862315\" duration=\"2000\" />\n      <workItem from=\"1627409874762\" duration=\"15000\" />\n\n      <workItem from=\"1627409912583\" duration=\"66262000\" />\n      <workItem from=\"1627409912583\" duration=\"17086000\" />\n      <workItem from=\"1627482235203\" duration=\"1931000\" />\n      <workItem from=\"1627543781415\" duration=\"21249000\" />\n      <workItem from=\"1627642540966\" duration=\"3873000\" />\n      <workItem from=\"1627651526424\" duration=\"227000\" />\n      <workItem from=\"1627651796321\" duration=\"9757000\" />\n      <workItem from=\"1628063559065\" duration=\"14871000\" />\n      <workItem from=\"1628508037949\" duration=\"3363000\" />\n      <workItem from=\"1628063559065\" duration=\"3577000\" />\n\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fe2417583781aae82c7646c099734725e004b0bb)
++++ b/.idea/workspace.xml	(date 1631085774071)
+@@ -1,74 +1,35 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a7292d5a-ed6a-4158-8cc0-21035c3af110" name="Default Changelist" comment="">
+-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
++    <list default="true" id="75773b90-4395-428f-9311-cc8db0d520f5" name="Default Changelist" comment="email config order success in progress">
++      <change afterPath="$PROJECT_DIR$/public/assets/css/order_validate.scss" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controller/StripeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StripeController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Entity/Carrier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Carrier.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/account/order_show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/order_show.html.twig" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/order/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/add.html.twig" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/order/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20210803083646.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductsCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductsCrudController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Entity/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Products.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/public/assets/css/boutique.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/boutique.scss" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Classe/Mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classe/Mail.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Controller/OrderSuccessController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderSuccessController.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/order_cancel/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order_cancel/index.html.twig" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/order_validate/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order_validate/index.html.twig" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+-    <execution>
+-      <executable path="composer" />
+-    </execution>
++  <component name="ComposerSettings">
++    <execution />
+   </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="JavaScript File" />
+-      </list>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="prod" />
++      </map>
+     </option>
+-  <component name="ElmWorkspace">
+-    <elmProjects />
+-    <settings elmCompilerPath="" elmFormatPath="" elmTestPath="" isElmFormatOnSaveEnabled="false" />
+-
+-  </component>
+-  <component name="Git.Settings">
+-    <option name="INCOMING_CHECK_STRATEGY" value="Always" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitSEFilterConfiguration">
+-    <file-type-list>
+-      <filtered-out-file-type name="LOCAL_BRANCH" />
+-      <filtered-out-file-type name="REMOTE_BRANCH" />
+-      <filtered-out-file-type name="TAG" />
+-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+-    </file-type-list>
+-  </component>
+-  <component name="HighlightingSettingsPerFile">
+-    <setting file="file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/OrderCancelController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/public/assets/css/header.scss" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/SecurityController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/OrderSuccessController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/AccountAddressController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/AccountController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/AccountOrderController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/OrderController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/StripeController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/public/assets/css/boutique.css" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controller/CartController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/public/assets/js/script.js" root0="FORCE_HIGHLIGHTING" />
+-  </component>
+   <component name="PhpWorkspaceProjectConfiguration">
+     <include_path>
+       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+@@ -185,87 +146,63 @@
+       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
++      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
++      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
++      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu" />
++      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu-bundle" />
++      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
++      <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
++      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
++      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
++      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
++      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
++      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+     </include_path>
+   </component>
+-  <component name="ProblemsViewState">
+-    <option name="selectedIndex" value="2" />
+-  </component>
+-  <component name="ProjectId" id="1vtcm1n9tyK2gkwZIpUFfoN7jnf" />
++  <component name="ProjectId" id="1xcfdfKcMusMCvU4W3YkEsHL1ir" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+     <option name="showMembers" value="true" />
+   </component>
+   <component name="PropertiesComponent">
+-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+-    <property name="DatabaseDriversLRU" value="mysql" />
++    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+-
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/js" />
+-    <property name="nodejs_package_manager_path" value="npm" />
+-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+-    <property name="vue.rearranger.settings.migration" value="true" />
+-  </component>
+-  <component name="RecentsManager">
+-    <key name="CopyFile.RECENT_KEYS">
+-      <recent name="$PROJECT_DIR$/public/assets/js" />
+-      <recent name="$PROJECT_DIR$/public/assets/css" />
+-    </key>
+-
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-    <property name="node.js.detected.package.eslint" value="true" />
+-    <property name="node.js.detected.package.tslint" value="true" />
+-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+-    <property name="nodejs_package_manager_path" value="npm" />
+-    <property name="org.elm.workspace.PROJECT_DISCOVERY" value="true" />
+-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
++    <property name="nodejs_package_manager_path" value="yarn" />
+     <property name="vue.rearranger.settings.migration" value="true" />
+-  </component>
+-  <component name="RunManager">
+-    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+-      <TestRunner scope="XML" />
+-      <method v="2" />
+-    </configuration>
+-
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="a7292d5a-ed6a-4158-8cc0-21035c3af110" name="Default Changelist" comment="" />
+-      <created>1627384980431</created>
++      <changelist id="75773b90-4395-428f-9311-cc8db0d520f5" name="Default Changelist" comment="" />
++      <created>1630659385441</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1627384980431</updated>
+-      <workItem from="1627384981537" duration="10660000" />
+-      <workItem from="1627401954274" duration="575000" />
+-      <workItem from="1627402549460" duration="69000" />
+-      <workItem from="1627402691267" duration="137000" />
+-      <workItem from="1627402863113" duration="2875000" />
+-      <workItem from="1627409862315" duration="2000" />
+-      <workItem from="1627409874762" duration="15000" />
+-
+-      <workItem from="1627409912583" duration="66262000" />
+-      <workItem from="1627409912583" duration="17086000" />
+-      <workItem from="1627482235203" duration="1931000" />
+-      <workItem from="1627543781415" duration="21249000" />
+-      <workItem from="1627642540966" duration="3873000" />
+-      <workItem from="1627651526424" duration="227000" />
+-      <workItem from="1627651796321" duration="9757000" />
+-      <workItem from="1628063559065" duration="14871000" />
+-      <workItem from="1628508037949" duration="3363000" />
+-      <workItem from="1628063559065" duration="3577000" />
+-
++      <updated>1630659385441</updated>
++      <workItem from="1630659386705" duration="24446000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
+-  <component name="XSLT-Support.FileAssociations.UIState">
+-    <expand />
+-    <select />
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+-</project>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="email config order success in progress" />
++    <option name="LAST_COMMIT_MESSAGE" value="email config order success in progress" />
++  </component>
++</project>
+\ No newline at end of file
+Index: public/assets/css/boutique.css.map
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n\"version\": 3,\n\"mappings\": \"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\",\n\"sources\": [\"boutique.scss\",\"home.scss\",\"product.scss\",\"show.scss\",\"deuxiemevie.scss\",\"header.scss\",\"concept.scss\",\"ateliers.scss\",\"cart.scss\",\"login.scss\",\"order.scss\",\"password.scss\",\"adress.scss\",\"footer.scss\",\"faq.scss\",\"atelier_debora.scss\",\"comingsoon.scss\",\"account.scss\"],\n\"names\": [],\n\"file\": \"boutique.css\"\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/public/assets/css/boutique.css.map b/public/assets/css/boutique.css.map
+--- a/public/assets/css/boutique.css.map	(revision fe2417583781aae82c7646c099734725e004b0bb)
++++ b/public/assets/css/boutique.css.map	(date 1631085766147)
+@@ -1,7 +1,1 @@
+-{
+-"version": 3,
+-"mappings": "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",
+-"sources": ["boutique.scss","home.scss","product.scss","show.scss","deuxiemevie.scss","header.scss","concept.scss","ateliers.scss","cart.scss","login.scss","order.scss","password.scss","adress.scss","footer.scss","faq.scss","atelier_debora.scss","comingsoon.scss","account.scss"],
+-"names": [],
+-"file": "boutique.css"
+-}
++{"version":3,"sourceRoot":"","sources":["boutique.scss","home.scss","product.scss","show.scss","deuxiemevie.scss","header.scss","concept.scss","ateliers.scss","cart.scss","login.scss","order.scss","password.scss","adress.scss","footer.scss","faq.scss","atelier_debora.scss","comingsoon.scss","account.scss"],"names":[],"mappings":"AAAQ;AACA;AACA;AACA;ACHR;EACE;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EAIA;;;AAGA;EACE;EACA;AAAwB;EACxB;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;;;AAIJ;EACE;EACA;EACA;EACA;EACA;;;AAIF;EACE,aDrCiB;ECsCjB;EACA;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;;;AAIF;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;AAAkC;EAClC;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE,aDxEiB;ECyEjB;EACA;EACA;EACA;EACA;;;AAKF;EACE,aDnFiB;ECoFjB;EACA;EACA;EACA;;;AAKF;EACE;EACA;EACA;EACA;;;AAMF;EAEE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;;AAEA;EACE;EACA;EACA,aD7Hc;;ACgIhB;EACE;EACA;EACA;EACA;EACA;;;AAKJ;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;;;AAIF;EACE,aDvKiB;ECwKjB;EACA;EACA;;;AAGF;EACE;;;AAIF;EACE;;;AAIF;EACE;IACE;IACA;;;AAKJ;EACE;IACE;;;EAEF;IACE;;;EAEF;IACE;;;AAIJ;EACE;IACE;IACA;;;AAIJ;EACE;IACE;IACA;;;ACxNJ;EACE;;;AAGF;EACE;;;AAEF;EACE,kBFHO;EEIP;;;AAEF;EACE;EACA;EACA;EACA;EACA,aFZgB;EEahB;EACA;;;AAGF;EACE;EACA,aFpBiB;;;AEsBnB;EACE;;;AAGF;EACE;;;AAEF;EACE;;;AAGF;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAGF;EACE,aFxDiB;;;AGLnB;EACE,aHIiB;EGHlB;EACC;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;;;AAEF;EACE;;;AAGF;EACE;IACE;;;AAIJ;EACE;EACA;EACA;EACA;EACA;EACA;;;AC/BF;EACE,aJIiB;;;AIDnB;EACE,aJCgB;EIAhB;EACA;EACA;;;AAGF;EACE,aJNgB;;;AKJhB;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AA0BA;AACA;EACE;EACA;;;AAGF;EACE,aL5Ee;EK6Ef;EACA;EACD;;;AAED;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAIF;EACE;IACE;IACA;;;EAGF;IACE;IACA;IACA;;;EAEF;IACE;;;EAEF;IACE;;;AAKN;AACA;AACE;EAEA;IACE;;;EAGF;IACE;;;EAEF;IACE;IACA;;;EAEF;IACE;IACA;;;EAEF;AAAA;IAEE;IACA;IACA;IACA;;;AAKF;EACA;IACE;IACA;IACA;IACA;;;EAEF;IACE;;;EAGF;IACE;;;EAEF;IACE;IAEA;IACA;AACA;;;AAMJ;EACE;IACE;IACA;IACA;;;EAGF;IACE;;;EAEF;AAAA;IAEE;IACA;IACA;IACA;;;EAGF;IACE;;;EAEF;IACE;IACA;IAEA;AACA;IACA;IACA;;;EAEF;IACE;IACA;;;EAGF;IACE;;;EAGF;IACF;;;EAEE;IACE;IACA;;;EAEF;IACA;IACA;;;AAIF;EAOE;IACE;IACA;;;EAEF;IACE;IACA;IACA;IACA;IACA;;;EAEF;IACE;;;ACpPJ;EACE,aNIiB;EMHjB;;;AAEF;EACE,aNCgB;EMAhB;EACA;EACA;EACA;;;ACTF;EACE,aPIiB;EOHjB;EACA;EACA;;;AAIF;EAEE;EACA;EACA,aPNgB;EOOhB;EACA;;;AAGF;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE,aPnCgB;EOoChB;EACA;EACA;EACA;EACA;EACA;;;AAWF;EAIA;IACE;IACA;IACA;IACA;IACA;IACA;;;EAEF;IACE;IAEA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;;EAEF;IACE;;;EAEF;IACE,aPpFgB;IOqFhB;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;;EAEF;IACE;IACA;;;EAKA;IACE;IACA;;;EAGJ;IACE;IACA;IACA;;;EAEA;IACE;;;ACrHJ;EACE;;;AAEF;EACE;EACA;;;AAEF;EACE,aRJiB;;;AQMnB;EACE;;;AAGF;EACE;;;AChBF;EACA,aTImB;ESHjB;;;AAEF;EACE,aTCgB;;;ASClB;EACE;EACA;;;AAEF;EACE;;;AAEF;EACC;;;ACfD;EACE,aVIiB;EUHjB;EACA;;;AAEF;EACE;;;AAGF;EACE;;;AAEF;EACE;EACA;;;AAGF;EAEE;IACE;IACA;;;EAEF;IACE;;;AAGJ;EAEE;IACE;IACA;;;AC/BJ;EACE;EACA;;;AAEF;EACE;EACA;;;ACNF;EACE;EACA;;;ACFF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;;;AAGF;EACA;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA,abxBiB;EayBjB;;;AAEF;EAEE;EACA;EAEA;;;AAKF;EAEE;IACE;IACA;IACA;IACA;;;EAEF;IACE;IACA;IACA;IACA;;;AAMJ;EACE;IACE;;;AAGJ;EACE;IACE;;;ACnEJ;EACE,adIiB;EcHjB;EACA;;;AAEF;EACE,OdEM;;;AcCR;EACE,adJgB;EcKhB;;;AAEF;EAEE;;;ACfF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA,afJgB;;;AeMlB;EACE,afRiB;EeSjB;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;;;AAKF;EACE;IACE;IACA;;;AC9BJ;EACA;;;AAEA;EACE;;;AAEF;EAEE;EACA;EACA;EACA;;;AAGF;EACE,ahBViB;EgBWjB;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACF;EACE;;;AAEF;EACE,kBhBlDO;EgBmDP,chBnDO;;;AgBqDT;EACE,ahBxDiB;EgByDjB;EACA;EACA;EACA;EACA;EACA;EACA;;;ACnEF;EACC;EACC","file":"boutique.css"}
+\ No newline at end of file
