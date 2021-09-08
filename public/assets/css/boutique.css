@@ -71,12 +71,15 @@ blockquote {
   position: relative;
   box-sizing: border-box;
   width: 70%;
-  background: #f0edda;
-  background: -moz-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
-  background: -webkit-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
-  background: radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
+  /*
+  background: rgb(240,237,218);
+  background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+
+   */
   padding: 3% 5% 3% 5%;
   margin-bottom: 10%;
   margin-left: 13%; }
@@ -100,9 +103,6 @@ blockquote {
     top: 20px; }
   100% {
     top: -300px; } }
-.profite {
-  z-index: 1; }
-
 .tiny-emphasis {
   color: #a9b97a; }
 
@@ -165,6 +165,19 @@ blockquote {
   margin-bottom: 10rem !important;
   width: 90%;
   text-transform: uppercase !important; }
+  .bestproducts .profite {
+    background-color: #a9b97a;
+    box-shadow: .050em .050em .050em #aaaaaa;
+    font-size: 1.8vh;
+    color: white;
+    border: none;
+    letter-spacing: 0.3vw;
+    padding: 1vh 2vw 1vh 2vw;
+    position: absolute; }
+
+.bestproducts .profite:hover {
+  z-index: 9;
+  background-color: #fbd572 !important; }
 
 .bg-image-deuxieme {
   background: url("../img/deuxieme-vie-bebe.webp") no-repeat center fixed;
