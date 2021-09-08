@@ -37,17 +37,17 @@ class Category
         return $this->getName();
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name)
     {
         $this->name = $name;
 
@@ -57,12 +57,12 @@ class Category
     /**
      * @return Collection|Products[]
      */
-    public function getProducts(): Collection
+    public function getProducts()
     {
         return $this->products;
     }
 
-    public function addProduct(Products $product): self
+    public function addProduct(Products $product)
     {
         if (!$this->products->contains($product)) {
             $this->products[] = $product;
@@ -72,7 +72,7 @@ class Category
         return $this;
     }
 
-    public function removeProduct(Products $product): self
+    public function removeProduct(Products $product)
     {
         if ($this->products->removeElement($product)) {
             // set the owning side to null (unless already changed)

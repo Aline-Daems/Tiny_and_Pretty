@@ -105,6 +105,7 @@ class Products
 
 
 
+
     public function __construct(){
         $this->category = new ArrayCollection();
         $this->mode = new ArrayCollection();
@@ -165,6 +166,7 @@ class Products
 
         return $this;
     }
+
 
 
 

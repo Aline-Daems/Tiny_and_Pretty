@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="App\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="App\Tests\" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/mockery/mockery" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-menu" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-menu-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nelmio/cors-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/willdurand/negotiation" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell/result-type" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/api-platform/core" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/fig/link-util" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/phpoption/phpoption" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/vich/uploader-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/jms/metadata" />
-    </content>
+    <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jquery-3.5.1.slim" level="application" />
-    <orderEntry type="library" name="font-awesome" level="application" />
-    <orderEntry type="library" name="jquery-3.2.1.slim" level="application" />
   </component>
 </module>

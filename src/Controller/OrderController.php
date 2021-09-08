@@ -59,8 +59,8 @@ class OrderController extends AbstractController
             $date = new \DateTime();
             $carriers = $form->get('carriers')->getData();
             $delivery = $form->get('addresses')->getData();
-            $delivery_content = $delivery->getFirstname().''.$delivery->getLastname();
-            $delivery_content .= '<br/>' .$delivery->getPhone();
+            $delivery_content = $delivery->getFirstname().' '.$delivery->getLastname();
+
 
 
             if($delivery->getCompany()) {
@@ -69,7 +69,7 @@ class OrderController extends AbstractController
             $delivery_content .= '<br/>' .$delivery->getAddress();
             $delivery_content .= '<br/>' .$delivery->getPostal().' '.$delivery->getCity();
             $delivery_content .= '<br/>' .$delivery->getCountry();
-
+            $delivery_content .= '<br/>' .$delivery->getPhone();
 
             $order = new Order();
             $reference = $date->format('dmY').''.uniqid();
@@ -94,9 +94,6 @@ class OrderController extends AbstractController
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
                 $this->entityManager->persist($orderDetails);
-
-
-
             }
             $this->entityManager->flush();
 
