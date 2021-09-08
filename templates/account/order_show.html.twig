@@ -3,71 +3,72 @@
 {% block title %}Ma commande{% endblock %}
 
 {% block content %}
-    <h1>Ma commande {{ order.reference }} </h1>
+    <div class="container-fluid text-center mt-5 mb-5">
 
-    <a href="{{ path('account_order') }}">Retour</a>
-    <hr>
+        <h1 class="title pt-5">
+            Ma commande {{ order.reference }}
+        </h1>
 
-    <div class="container d-flex justify-content-evenly w-100">
-        <div class="col-6">
+        <a href="{{ path('account_order') }}" class="btn connect mt-3 pt-5 mb-3">Retour</a>
+        <hr>
 
-            <strong> Statut de la commande : </strong>
+            <div class="col-6 mt-3 mb-3 text-justify presentation">
 
-                {% if order.state == 1 %}
-                    Paiement accepté
-                {% elseif order.state == 2 %}
-                    Préparation en cours
-                {% elseif order.state == 3 %}
-                    Livraison en cours
-                    {% else %}
-                    Non payée
-                {% endif %}
-            <br/>
+                <strong> Statut de la commande : </strong>
 
-            <strong>Commande passée le : </strong>{{ order.createdAt|date('d/m/Y') }}<br/>
-            <strong>Référence de ma commande:</strong> <small>{{ order.reference }}</small><br/>
-            <strong>Transporteur choisi :</strong> {{ order.carrierName }}
+                    {% if order.state == 1 %}
+                        Paiement accepté
+                    {% elseif order.state == 2 %}
+                        Préparation en cours
+                    {% elseif order.state == 3 %}
+                        Livraison en cours
+                        {% else %}
+                        Non payée
+                    {% endif %}
+                <br/>
+
+                <strong>Commande passée le : </strong>{{ order.createdAt|date('d/m/Y') }}<br/>
+                <strong>Référence de ma commande:</strong> <small>{{ order.reference }}</small><br/>
+                <strong>Transporteur choisi :</strong> {{ order.carrierName }}
+            </div>
+
+
+
+        <table class="table mt-4 presentation">
+            <thead>
+                <tr>
+                    <th scope="col">Produit</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for product in order.orderDetails %}
+                <tr>
+
+                    <td>{{ product.product }}</td>
+                    <td> x {{ product.quantity }}</td>
+                    <td>{{ (product.price / 100)|number_format(2, '.', ',')  }}</td>
+                    <td>{{ (product.total / 100)|number_format(2, '.', ',')  }}</td>
+                {#    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                    </td>#}
+
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+        <div class="text-right presentation m-5">
+            <strong>Sous-total:</strong>{{ (order.getTotal / 100)|number_format(2, '.', ',')  }}<br/>
+            <strong>Livraison:</strong> {{ (order.carrierPrice)|number_format(2, '.', ',')  }}<br/>
+            <strong>Total:</strong>{{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2, '.', ',') }} €
         </div>
-        
+
+
     </div>
-    <hr>
-
-    <strong>Details: </strong> <br/>
-
-    <table class="table mt-4">
-        <thead>
-        <tr>
-            <th scope="col">Produit</th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Prix</th>
-            <th scope="col">Total</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for product in order.orderDetails %}
-        <tr>
-
-            <td>{{ product.product }}</td>
-            <td> x {{ product.quantity }}</td>
-            <td>{{ (product.price / 100)|number_format(2, '.', ',')  }}</td>
-            <td>{{ (product.total / 100)|number_format(2, '.', ',')  }}</td>
-            <td><div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </div>
-            </td>
-
-        </tr>
-        {% endfor %}
-
-        </tbody>
-    </table>
-
-    <div class="text-right">
-        <strong>Sous-total:</strong>{{ (order.getTotal / 100)|number_format(2, '.', ',')  }}<br/>
-        <strong>Livraison:</strong> {{ (order.carrierPrice /100)|number_format(2, '.', ',')  }}<br/>
-        <strong>Total:</strong>{{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2, '.', ',') }} €
-    </div>
-
-
-
 {% endblock %}
