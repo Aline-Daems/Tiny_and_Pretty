@@ -18,7 +18,11 @@
   .title_drop {
     color: #797474FF;
     z-index: -999;
-    background-color: #DCD3D359;
+    background-color:  rgb(240,237,218);
+    background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+    background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+    background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
     padding-top: 2vh;
     padding-bottom: 2vh;
   }
@@ -92,7 +96,7 @@
   }
   .categories-nav {
     border-bottom-style: solid;
-    border-bottom-color: lightgrey;
+    border-bottom-color: $grey;
     border-bottom-width: 0.002rem;
   }
 

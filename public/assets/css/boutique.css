@@ -70,46 +70,37 @@ blockquote {
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
-  width: 70%;
-  /*
-  background: rgb(240,237,218);
-  background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
-  background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
-  background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  width: 100vw;
+  background: #f0edda;
+  background: -moz-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
+  background: -webkit-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
+  background: radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
-
-   */
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
   padding: 3% 5% 3% 5%;
-  margin-bottom: 10%;
-  margin-left: 13%; }
+  margin-top: 10%;
+  margin-bottom: 10%; }
 
 .text-presentation-short {
   position: relative;
   box-sizing: border-box;
-  animation: marquee 12s linear 2;
-  animation-delay: 1s;
+  animation: marquee 2s linear;
+  animation-delay: 0.5s;
   text-align: justify;
-  padding-right: 20%; }
+  padding-right: 30%;
+  padding-left: 30%; }
 
 @keyframes marquee {
   0% {
-    top: 300px; }
-  40% {
-    top: 20px; }
+    top: 15rem; }
   50% {
-    top: 20px; }
-  60% {
-    top: 20px; }
+    top: 10rem; }
+  75% {
+    top: 5rem; }
   100% {
-    top: -300px; } }
+    top: 3rem; } }
 .tiny-emphasis {
   color: #a9b97a; }
-
-.logo-img-presentation {
-  width: 30%;
-  height: auto;
-  margin-bottom: 5%; }
 
 /*
 .description {
@@ -173,11 +164,17 @@ blockquote {
     border: none;
     letter-spacing: 0.3vw;
     padding: 1vh 2vw 1vh 2vw;
-    position: absolute; }
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out; }
 
-.bestproducts .profite:hover {
-  z-index: 9;
-  background-color: #fbd572 !important; }
+.bestproducts:hover + .profite, .profite:hover {
+  opacity: 1;
+  transition-delay: 0s;
+  transition-duration: 0.4s; }
 
 .bg-image-deuxieme {
   background: url("../img/deuxieme-vie-bebe.webp") no-repeat center fixed;
@@ -424,7 +421,11 @@ header {
 .title_drop {
   color: #797474FF;
   z-index: -999;
-  background-color: #DCD3D359;
+  background-color: #f0edda;
+  background: -moz-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
+  background: -webkit-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
+  background: radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
   padding-top: 2vh;
   padding-bottom: 2vh; }
 
@@ -492,7 +493,7 @@ header {
 
 .categories-nav {
   border-bottom-style: solid;
-  border-bottom-color: lightgrey;
+  border-bottom-color: #f0edda;
   border-bottom-width: 0.002rem; }
 
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
