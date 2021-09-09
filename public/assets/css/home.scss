@@ -104,23 +104,41 @@ font-family: $textFontRegular;
 .text-presentation-short {
   position: relative;
   box-sizing: border-box;
-  animation: marquee 2s linear ;
-  animation-delay: 0.5s;
+  //animation: marquee 2s linear ;
+ //animation-delay: 0.5s;
  text-align: justify;
   padding-right: 30%;
   padding-left: 30%;
 }
+/*
 @keyframes marquee
 {
-  0% { top: 15rem }
+  0% { top: 20rem }
  // 40% {top: 20px}
-  50% {top: 10rem}
+//  50% {top: 10rem}
  // 60% {top: 20px}
  // 100% { top: -300px }
-  75% {top: 5rem}
+//  75% {top: 5rem}
   100% {top: 3rem}
 
+}*/
+
+h1, p {
+  opacity: 0;
+  position: relative;
+  bottom: -40px;
+  transition: all 0.8s ease-out;
 }
+
+.show {
+  opacity: 1;
+  bottom: 0;
+}
+
+.text-presentation-short  p.show {
+  transition-delay: 0.5s;
+}
+
 
 .tiny-emphasis{
   color: $green
