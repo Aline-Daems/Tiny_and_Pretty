@@ -2,18 +2,13 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Products;
-
-
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-class ProductController extends AbstractController
+class WishController extends AbstractController
 {
     private $entityManager;
 
@@ -24,12 +19,13 @@ class ProductController extends AbstractController
     }
 
 
-    #[Route('/produit/{slug}', name :'product')]
 
-    public function show($slug): Response
+
+    #[Route('/wish', name: 'wish')]
+    public function index(): Response
     {
 
-        $product = $this->entityManager->getRepository(Products::class)->findOneBySlug($slug);
+        $product = $this->entityManager->getRepository(Products::class)->findAll();
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
 
@@ -37,28 +33,11 @@ class ProductController extends AbstractController
         if (!$product) {
             return $this->redirectToRoute('home');
         }
-        return $this->render('product/show.html.twig', [
+        return $this->render('wish/index.html.twig', [
             'product' => $product,
             'products' => $products,
-            'productN' => $productN,
-
+            'productN' => $productN
         ]);
-
-    }
-
-    #[Route('/favoris/ajout/{id}', name :'ajout_favoris')]
-
-    public function ajoutFavoris(Products $products): Response
-    {
-
-
-      $products->addFavori($this->getUser());
-
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($products);
-      $em->flush();
-
-        return $this->redirectToRoute('home');
 
     }
 
@@ -73,9 +52,7 @@ class ProductController extends AbstractController
         $em->persist($products);
         $em->flush();
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('wish');
 
     }
-
-
 }

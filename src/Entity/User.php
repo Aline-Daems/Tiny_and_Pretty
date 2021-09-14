@@ -56,10 +56,21 @@ class User implements UserInterface
      */
     private $orders;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Products::class, mappedBy="favoris")
+     */
+    private $favoris;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Wish::class, mappedBy="name", cascade={"persist", "remove"})
+     */
+
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
         $this->orders = new ArrayCollection();
+        $this->favoris = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -238,4 +249,33 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection|Products[]
+     */
+    public function getFavoris(): Collection
+    {
+        return $this->favoris;
+    }
+
+    public function addFavori(Products $favori): self
+    {
+        if (!$this->favoris->contains($favori)) {
+            $this->favoris[] = $favori;
+            $favori->addFavori($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavori(Products $favori): self
+    {
+        if ($this->favoris->removeElement($favori)) {
+            $favori->removeFavori($this);
+        }
+
+        return $this;
+    }
+
+
 }
