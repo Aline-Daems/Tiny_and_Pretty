@@ -475,32 +475,31 @@ header {
 .icones-nav {
   width: 1.5rem; }
 
-  /*
-  .bag-count{
-    position: relative;
-  }
-  .cercle-bag{
-    width: 1.3rem;
-    height: 1.3rem;
-    background-color: $yellow;
-    border: 0.2rem solid $yellow;
-    border-radius: 50%;
-    position: absolute;
-    top: 100%;
-   left: 110%;
-    transform: translate(-50%, -50%);
-  }
-  .content-bag{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: $textFontRegular;
-    font-size: 0.8rem;
-    font-weight: bold;
-  }
-
-   */
+/*
+.bag-count{
+  position: relative;
+}
+.cercle-bag{
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: $yellow;
+  border: 0.2rem solid $yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 100%;
+ left: 110%;
+  transform: translate(-50%, -50%);
+}
+.content-bag{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $textFontRegular;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+ */
 /* adds some margin below the link sets  */
 .navbar .dropdown-menu div[class*="p-2"] {
   margin-bottom: 1rem;

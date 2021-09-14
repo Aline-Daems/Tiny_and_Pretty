@@ -1,125 +1,122 @@
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+  height: 100%;
+}
+header {
+  // position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 999;
+  background: white;
 
 
-  body {
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow-x: hidden;
-    height: 100%;
-  }
-  header {
-   // position: fixed;
-    top: 0;
-    width: 100vw;
-    z-index: 999;
-    background: white;
+}
+.title_drop {
+  color: #797474FF;
+  z-index: -999;
+  background-color:  rgb(240,237,218);
+  background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
 
+.navbar .nav-link .inactive {
+  cursor: default !important;
+}
 
-  }
-  .title_drop {
-    color: #797474FF;
-    z-index: -999;
-    background-color:  rgb(240,237,218);
-    background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
-    background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
-    background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-  }
+.navbar .nav-item {
+  display: flex;
 
-  .navbar .nav-link .inactive {
-    cursor: default !important;
-  }
+}
+.navbar-brand {
+  margin: 0 !important;
+  width: 40vw;
+}
 
-  .navbar .nav-item {
-    display: flex;
+.logo-img-header {
+  padding-top: 1vh;
+  padding-bottom: 1.5vh;
+  margin: 0 !important;
+  width: 150%;
+  height: auto;
+}
+.icones-nav {
+  width: 1.5rem;
+}
+/*
+.bag-count{
+  position: relative;
+}
+.cercle-bag{
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: $yellow;
+  border: 0.2rem solid $yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 100%;
+ left: 110%;
+  transform: translate(-50%, -50%);
+}
+.content-bag{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $textFontRegular;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+ */
+/* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="p-2"] {
+  margin-bottom: 1rem;
+  flex-direction: column !important;
+}
 
-  }
+.navbar .dropdown-menu {
+  font-family: $titleFontRegular;
+  font-size: 1rem;
+  color: dimgrey;
+  position: absolute;
+}
+.little-drop {
+  left: 2vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+.categories-nav {
+  border-bottom-style: solid;
+  border-bottom-color: $grey;
+  border-bottom-width: 0.002rem;
+}
+
+@media (min-width: 568px) and (max-width: 768px) and(orientation: landscape) {
   .navbar-brand {
     margin: 0 !important;
-    width: 40vw;
+    width: 18vw;
   }
 
   .logo-img-header {
-    padding-top: 1vh;
-    padding-bottom: 1.5vh;
     margin: 0 !important;
-    width: 150%;
+    width: 100%;
     height: auto;
   }
   .icones-nav {
     width: 1.5rem;
   }
-  /*
-  .bag-count{
-    position: relative;
-  }
-  .cercle-bag{
-    width: 1.3rem;
-    height: 1.3rem;
-    background-color: $yellow;
-    border: 0.2rem solid $yellow;
-    border-radius: 50%;
-    position: absolute;
-    top: 100%;
-   left: 110%;
-    transform: translate(-50%, -50%);
-  }
-  .content-bag{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: $textFontRegular;
-    font-size: 0.8rem;
-    font-weight: bold;
+  .nav-icones{
+    padding-left: 50%;
   }
 
-   */
-  /* adds some margin below the link sets  */
-  .navbar .dropdown-menu div[class*="p-2"] {
-    margin-bottom: 1rem;
-    flex-direction: column !important;
-  }
 
-  .navbar .dropdown-menu {
-    font-family: $titleFontRegular;
-    font-size: 1rem;
-    color: dimgrey;
-   position: absolute;
-  }
-  .little-drop {
-    left: 2vw !important;
-    margin: 0 !important;
-    padding: 0 !important;
-
-  }
-  .categories-nav {
-    border-bottom-style: solid;
-    border-bottom-color: $grey;
-    border-bottom-width: 0.002rem;
-  }
-
-  @media (min-width: 568px) and (max-width: 768px) and(orientation: landscape) {
-    .navbar-brand {
-      margin: 0 !important;
-      width: 18vw;
-    }
-
-    .logo-img-header {
-      margin: 0 !important;
-      width: 100%;
-      height: auto;
-    }
-    .icones-nav {
-      width: 1.5rem;
-    }
-    .nav-icones{
-      padding-left: 50%;
-    }
-
-
-  }
+}
 /* breakpoint and up - mega dropdown styles */
 @media screen and (min-width: 768px) and (max-width: 1024px){
   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
@@ -171,7 +168,7 @@
     right:0;
     /*  height of nav-item  */
     //top:5vh;
-     // font-size: 1.8vh;
+    // font-size: 1.8vh;
   }
 
 }
@@ -199,7 +196,7 @@
   .navbar .dropdown-menu {
     width:70vw;
     height: 55vh;
-   // left: 40vw;
+    // left: 40vw;
     right:0;
     /*  height of nav-item  */
     top:10vh;
@@ -215,17 +212,17 @@
 
   }
   .nav-icones{
-margin-left: 20vw;
+    margin-left: 20vw;
   }
   .logo-img-header{
     width: 50%;
     height: auto;
   }
   .navbar .nav-item {
-  padding:1rem 1rem 1rem 1rem;
-  margin:0 .25rem;
+    padding:1rem 1rem 1rem 1rem;
+    margin:0 .25rem;
 
-}
+  }
   header{
     position: fixed;
   }
@@ -256,4 +253,3 @@ and (min-resolution: 192dpi)
   }
 
 }
-
