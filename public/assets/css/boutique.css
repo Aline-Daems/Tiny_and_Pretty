@@ -49,6 +49,14 @@ main {
   width: 100%;
   padding-left: 5vw; }
 
+.description {
+  font-family: Quicksand, sans-serif;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 .Pict {
   overflow: hidden;
   -webkit-transform: scale(1);
@@ -100,7 +108,7 @@ blockquote {
   100% {top: 3rem}
 
 }*/
-h1, p {
+h1, h3, h5, p {
   opacity: 0;
   position: relative;
   bottom: -40px;
@@ -113,43 +121,47 @@ h1, p {
 .text-presentation-short p.show {
   transition-delay: 0.5s; }
 
+.reveal {
+  opacity: 1;
+  position: relative;
+  left: -30%; }
+
+.reveal-visible {
+  opacity: 1;
+  left: 0;
+  transition-delay: 0.5s; }
+
 .tiny-emphasis {
   color: #a9b97a; }
 
 /*
-.description {
-  font-family: $titleFontRegular;
-  font-size: 1.5em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-}
-.description :hover{
-  font-size: 3em;
-}*/
 .waviy {
   position: absolute;
+  //background-color: yellow;
   top: 50%;
   left: 40%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
 
-.waviy span {
+
+
+}
+.waviy span{
   position: relative;
   display: inline-block;
-  font-family: Quicksand, sans-serif;
+  font-family: $titleFontRegular;
   font-size: 1.8rem;
   animation: bounce 1s 2;
-  animation-delay: calc(.2s * var(--i)); }
+  animation-delay: calc(.2s * var(--i))
 
+}
 @keyframes bounce {
-  from {
-    top: 106px; }
-  50% {
-    top: 86px; }
-  to {
-    top: 106px; } }
+  from {top: 106px;}
+  50%  {top: 86px;}
+  to   {top: 106px;}
+
+}
+
+ */
 /*
 @keyframes flip {
   0%,50% {
