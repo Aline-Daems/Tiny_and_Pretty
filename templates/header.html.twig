@@ -55,8 +55,8 @@
                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 À LA MAISON
                             </a>
-                            <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown" data-boundary="overflow">
-                                <a href="{{ relative_path('/maison') }}"><h5 class=" text-center mt-5 mb-5 title_drop">À
+                            <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown">
+                                <a href="{{ relative_path('/maison') }}"><h5 class=" mt-5 mb-5 text-center title_drop">À
                                         LA MAISON</h5></a>
                                 <div class="d-flex  flex-row p-2">
                                     <div class="p-2 bd-highlight">
@@ -136,10 +136,10 @@
 
                                         </div>
                                     </a>
-                                    <a class="nav-link px-4" href="{{path('wish') }}">
+                                    {# <a class="nav-link px-4" href="">
                                         <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
                                     </a>
-
+                                    #}
 
                                     <a class="nav-link px-2" href="{{ path('app_logout') }}">
                                         <img class="icones-nav" src="{{ asset('assets/img/logout.svg') }}">
@@ -152,9 +152,10 @@
                                     <a class="nav-link px-2 pl-5" href="{{ path('app_login') }}">
                                         <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
                                     </a>
-                                    <a href="{{ asset('wish') }}" class="nav-link px-4 ">
+                                    {# <a href="" class="nav-link px-4 ">
                                         <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
                                     </a>
+                                    #}
 
 
                                     <a href="{{ path('cart') }}" class="nav-link px-4">
