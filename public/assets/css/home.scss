@@ -20,7 +20,7 @@ main {
   .video-home {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
+    padding-top: 2rem;
     height: 0;
   }
   .video-home iframe {
@@ -148,7 +148,7 @@ h1, h3, h5, p {
 .text-presentation-short  p.show {
   transition-delay: 0.5s;
 }
-
+/*
 .reveal{
   opacity: 1;
   position: relative;
@@ -162,7 +162,7 @@ h1, h3, h5, p {
  // transform: translateX(0);
   //transition: .1s;
  // animation: slide-in-left 1s ease-in-out both;
-}
+}*/
 
 
 

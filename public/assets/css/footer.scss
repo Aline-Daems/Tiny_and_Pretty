@@ -18,10 +18,15 @@ footer {
   text-decoration: none;
 }
 
-.link_footer {
-color: grey;
-  text-decoration: none;
-}
+
+a { color:$grey } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color:grey; }
+a:hover, a:active { text-decoration: none; color:black }
+
+
 .footer-custom {
   display: flex;
   flex-direction: column;

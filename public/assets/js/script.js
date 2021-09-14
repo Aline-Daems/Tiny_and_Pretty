@@ -29,11 +29,11 @@ $(document).ready(function() {
 
 window.addEventListener('DOMContentLoaded', setup);
 
-const threshold = .2
+const threshold = .1
 function setup() {
     const options = {
         root: null,
-        rootMargin: '0px 0px -200px 0px',
+        rootMargin: '0px',
         threshold
     }
 
@@ -43,7 +43,7 @@ function setup() {
             if(entry.intersectionRatio > threshold) {
                 entry.target.classList.add('show');
                 console.log(entry.intersectionRatio)
-             //   observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
 
         })
@@ -52,15 +52,13 @@ function setup() {
     const h1 = document.querySelector('h1');
     observer.observe(h1);
 
-    const h3 = document.querySelector('h3');
-    observer.observe(h3);
+   /*const h3 = document.querySelector('h3');
+    observer.observe(h3);*/
+    /*
     const h5 = document.querySelector('h5');
     observer.observe(h5);
 
-
-
-
-
+ */
     const paras = document.querySelectorAll('p');
     paras.forEach(p => observer.observe(p));
 
