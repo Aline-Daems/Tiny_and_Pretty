@@ -201,6 +201,13 @@ h1, h3, h5, p {
     -moz-transition: all 400ms ease-out;
     -o-transition: all 400ms ease-out;
     -ms-transition: all 400ms ease-out; }
+  .bestproducts .icone-wish {
+    position: absolute;
+    left: 85%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    width: 1.8rem;
+    background: red; }
 
 .bestproducts:hover + .profite, .profite:hover {
   opacity: 1;
@@ -301,7 +308,15 @@ h1, h3, h5, p {
     margin-bottom: 120vh; }
 
   .aside-description {
-    background-color: green; } }
+    background-color: green; }
+
+  .icone-wish {
+    position: absolute;
+    left: 85%;
+    top: 8%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: blue !important; } }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
     font-size: 10vh !important; }
@@ -313,7 +328,19 @@ h1, h3, h5, p {
     font-size: 8vh; }
 
   .aside-description {
-    background-color: blue; } }
+    background-color: blue; }
+
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: yellow!important;
+
+  }
+
+   */ }
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
   .box {
     width: 60vw;
@@ -324,7 +351,19 @@ h1, h3, h5, p {
     margin-top: 0; }
 
   .aside-description {
-    background-color: red; } }
+    background-color: red; }
+
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: mistyrose!important;
+
+  }
+
+   */ }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .box {
     width: 50vw;
@@ -342,7 +381,15 @@ h1, h3, h5, p {
     margin-top: 0; }
 
   .aside-description {
-    background-color: yellow; } }
+    background-color: yellow; }
+
+  .icone-wish {
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: lawngreen !important; } }
 .content-layout {
   padding-top: 3vw !important; }
 
@@ -370,10 +417,16 @@ h1, h3, h5, p {
   cursor: pointer; }
 
 .product-text {
-  margin-bottom: 0.5% !important; }
+  margin-top: 4% !important;
+  margin-bottom: 0 !important; }
+
+.product-description {
+  margin-top: 0;
+  text-transform: lowercase !important;
+  font-size: 1rem; }
 
 .product-price-text {
-  margin-top: 8%; }
+  margin-top: 6%; }
 
 .apercu {
   border: none;

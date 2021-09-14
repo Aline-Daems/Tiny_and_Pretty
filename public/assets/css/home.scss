@@ -252,6 +252,15 @@ h1, h3, h5, p {
    // transform: translate(-50%, 150%);
 
   }
+.icone-wish{
+position: absolute;
+  left: 85%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 1.8rem;
+  background: red;
+
+}
 
 }
 .bestproducts:hover + .profite,  .profite:hover{
@@ -396,6 +405,15 @@ h1, h3, h5, p {
     background-color: green;
   }
   //footer ok
+  .icone-wish{
+    position: absolute;
+    left: 85%;
+    top: 8%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: blue!important;
+
+  }
 
 
 }
@@ -412,6 +430,17 @@ h1, h3, h5, p {
   .aside-description{
     background-color: blue;
   }
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: yellow!important;
+
+  }
+
+   */
 
 }
 
@@ -429,6 +458,17 @@ h1, h3, h5, p {
   .aside-description{
     background-color: red;
   }
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: mistyrose!important;
+
+  }
+
+   */
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -450,6 +490,18 @@ h1, h3, h5, p {
   .aside-description{
     background-color: yellow;
   }
+
+  .icone-wish{
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: lawngreen!important;
+
+  }
+
+
 
 
 }
