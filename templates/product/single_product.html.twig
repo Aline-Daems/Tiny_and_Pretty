@@ -2,7 +2,7 @@
     <div class="show-btn-cart">
 
     <a href="{{ path('product', {'slug':product.slug}) }}">
-        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+        <img src="{{ vich_uploader_asset(product, 'imageFile')}}" alt="{{ product.name }}" class="img-fluid">
     </a>
     </div>
 

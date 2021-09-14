@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Classe\search;
 use App\Data\SearchData;
 use App\Entity\Products;
-use App\Entity\Size;
 use App\Form\SearchForm;
 use App\Form\SearchType;
 use App\Repository\ProductsRepository;
