@@ -4,13 +4,11 @@ namespace App\Controller;
 
 use App\Classe\Cart;
 use App\Classe\Mail;
-use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Order;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class OrderSuccessController extends AbstractController
 {
@@ -27,7 +25,6 @@ class OrderSuccessController extends AbstractController
     {
         $order = $this->entityManager->getRepository(Order::class)->findOneByStripeSessionId($stripeSessionId);
 
-
         if(!$order || $order->getUser() != $this->getUser()){
             return $this->redirectToRoute('home');
         }
@@ -40,26 +37,14 @@ class OrderSuccessController extends AbstractController
 
             //Modifier le statut isPaid de notre commande en mettant 1 ( est payé )
             $order->setState(1);
-
             $this->entityManager->flush();
 
-            // Envoyer un email à notre client pour lui confirmer sa commande`
-
-
+            // Envoyer un email à notre client pour lui confirmer sa commande
 
             $mail = new Mail();
-
-
-            $name =  $order->getUser()->getFirstname();
-            $lastname = $order->getUser()->getLastname();
-            $ref = $order->getReference();
-
-            $email = $order->getUser()->getEmail();
-            $address = $order->getDelivery();
-
-            $content = 'Merci pour vos achats ! <br/> <br/> Nous avons bien reçu votre commande. <br/><br/> Nous vous contacterons une fois que votre colis sera expédié. <br/> <br/> Nous trouverez le récapitulatif de votre commande ci-dessous.';
-
-            $mail->sendOrder($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est bien validée', $content,  $name, $lastname, $ref, $email,  $address);
+            $content = 'Bonjour'.$order->getUser()->getFirstname()."<br/> Merci pour votre commande";
+            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est bien validée', $content);
+            $notification='Votre inscription a été validée';
 
     }
         return $this->render('order_validate/index.html.twig', [

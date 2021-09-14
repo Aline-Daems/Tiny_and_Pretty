@@ -22,11 +22,9 @@ class ResetPasswordController extends AbstractController
     {
         $this->entityManager = $entityManager;
     }
-    /**
-     * @Route("/mot-de-passe-oublie", name="reset_password")
-     */
+    #[Route('/mot-de-passe-oublie', name: 'reset_password')]
 
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         if ($this->getUser()){
             return $this->redirectToRoute('home');
@@ -50,12 +48,11 @@ class ResetPasswordController extends AbstractController
                     'token' => $reset_password->getToken()
                 ]);
 
-                $content = "Aucun problème cela nous arrive à tous ! <br/><br/>";
-                $content .= "Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe  <br/> <br/>  ";
-                $content .= "<a  style='text-decoration:none;' href='http://pretestit.tinyandpretty.be".$url."'> Réinitialiser mon mot de passe</a>";
+                $content = "Bonjour ".$user->getFirstname()."<br/>Vous avez demandé à réinitialiser votre mot de passe sur le site Tiny And Pretty.<br/><br/>";
+                $content .= "Merci de bien vouloir cliquer sur le lien suivant pour <a href='".$url."'>mettre à jour votre mot de passe.</a>";
 
                 $mail = new Mail();
-                $mail->sendPassword($user->getEmail(), $user->getFirstname().''.$user->getLastname(),'Réinitialiser votre mot de passe sur Tiny And Pretty', $content);
+                $mail->send($user->getEmail(), $user->getFirstname().''.$user->getLastname(),'Réinitialiser votre mot de passe sur Tiny And Pretty', $content);
                 $this->addFlash('notice','Vous allez recevoir dans quelques instant un mail avec la procédure de réinitialisation de votre mot de passe.');
 ;            } else {
                 $this->addFlash('notice','Cette adresse email est inconnue.');
@@ -66,9 +63,9 @@ class ResetPasswordController extends AbstractController
     }
 
 
-    #[Route('/modifier-mon-mot-de-passe/{token}', name: 'update_password')]
+    #[Route('/modifier-mon-mot-de-passe/{token}', name: 'update_password"')]
 
-    public function update(Request $request, $token, UserPasswordEncoderInterface $encoder)
+    public function update(Request $request, $token, UserPasswordEncoderInterface $encoder): Response
     {
         $reset_password = $this->entityManager->getRepository(ResetPassword::class)->findOneByToken($token);
 
