@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -50,6 +51,9 @@ class Products
     /**
      * @Vich\UploadableField(mapping="tiny_images", fileNameProperty="image")
      * @var File
+     * @Assert\Image(
+     *     mimeTypes={"image/png","image/webp"}
+     * )
      */
     private $imageFile;
 
