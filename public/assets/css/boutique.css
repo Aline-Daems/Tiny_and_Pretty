@@ -14,6 +14,9 @@ main {
   margin-bottom: 40vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
 
+h1 {
+  color: grey; }
+
 .video-home {
   position: relative;
   padding-bottom: 56.25%;
@@ -63,7 +66,7 @@ main {
   font-size: 1.5em;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%); }
 
 .Pict {
@@ -97,6 +100,9 @@ blockquote {
   padding: 3% 5% 3% 5%;
   margin-top: 10%;
   margin-bottom: 10%; }
+
+.button-flow {
+  margin-left: 30%; }
 
 .text-presentation-short {
   position: relative;
@@ -146,7 +152,10 @@ h1, h3, h5, p {
   transition: 1.3s; }
 
 .reveal-2 {
-  transition-delay: .2s; }
+  transition-delay: .3s; }
+
+.reveal-3 {
+  transition-delay: .9s; }
 
 .tiny-emphasis {
   color: #a9b97a; }
@@ -469,7 +478,6 @@ h1, h3, h5, p {
   text-transform: uppercase; }
 
 .btn {
-  border-radius: 0 !important;
   padding: 2vh !important; }
 
 hr {

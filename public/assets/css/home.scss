@@ -16,6 +16,9 @@ main {
  // box-shadow: 6px 1px 4px 1px black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+h1{
+  color: grey;
+}
 
   .video-home {
     position: relative;
@@ -73,7 +76,7 @@ main {
   font-size: 1.5em;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
 
 }
@@ -121,14 +124,16 @@ font-family: $textFontRegular;
 
 
 }
+.button-flow{
+  margin-left: 30%;
+}
 .text-presentation-short {
   position: relative;
   box-sizing: border-box;
-  //animation: marquee 2s linear ;
- //animation-delay: 0.5s;
  text-align: justify;
   padding-right: 30%;
   padding-left: 30%;
+
 }
 /*
 @keyframes marquee
@@ -168,22 +173,23 @@ h1, h3, h5, p {
 [class*="reveal-"] {
   opacity: 0;
   transform: translateY(-30px);
- // position: relative;
- // transform: translateX(-50%);
- // left: -30%;
+
 }
 .reveal-visible{
   opacity: 1;
-  //left: 0;
-  //transition-delay: 0.5s;
   transform: translateY(0);
   transition: 1.3s;
- // animation: slide-in-left 1s ease-in-out both;
 }
 
 .reveal-2 {
-  transition-delay: .2s;
+  transition-delay: .3s;
 }
+.reveal-3 {
+  transition-delay: .9s;
+}
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////
