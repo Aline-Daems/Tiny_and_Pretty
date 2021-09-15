@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // executes when HTML-Document is loaded and DOM is ready
 
 // breakpoint and up
@@ -20,13 +20,14 @@ $(document).ready(function() {
         }
     });
 });
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*window.onload = function() {
     $(".background-coming-soon").addClass('zoom');
 };
 
  */
-
+/*
 window.addEventListener('DOMContentLoaded', setup);
 
 const threshold = .1
@@ -54,17 +55,18 @@ function setup() {
 
    /*const h3 = document.querySelector('h3');
     observer.observe(h3);*/
-    /*
-    const h5 = document.querySelector('h5');
-    observer.observe(h5);
+/*
+const h5 = document.querySelector('h5');
+observer.observe(h5);
 
- */
+*/
+/*
     const paras = document.querySelectorAll('p');
     paras.forEach(p => observer.observe(p));
 
 }
 
-
+*/
 /*
 
 
@@ -88,4 +90,62 @@ const observer = new IntersectionObserver(handleIntersect, options2)
 observer.observe(document.querySelector('.reveal'))
 
 */
+/*
+if (document.getElementById)
+{
+    if(document.all)
+        widthe = document.body.clientWidth;
+    else
+        widthe = window.innerWidth;
+    document.getElementById("webaddress").style.left=widthe;
+    document.getElementById("webaddress").style.visibility="visible";
+}
 
+function moveit()
+{
+    if (widthe>15)
+    {
+        document.getElementById("webaddress").style.left=widthe;
+        widthe -= 10;
+    }
+    else{
+        document.getElementById("webaddress").style.fontStyle="normal"
+        document.getElementById("webaddress").style.left= widthe + 10;
+        clearInterval(moving)
+    }
+}
+if (document.getElementById)
+    moving=setInterval("moveit()",1);
+
+*/
+/*
+let callButton = document.getElementById("reveal");
+
+var decallage = 100; // nombre de px de decallage voulue
+callButton.addEventListener("onscroll", function() { // ajout d'un evenement onclick
+    callButton.style.left = callButton.style.left - decallage;
+})
+
+ */
+/////////////////////////////////////////////////////////////////////////////////////////////
+const ratio = .1
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: .1
+}
+
+const handleIntersect = function (entries, observer) {
+    entries.forEach(function (entry) {
+       if (entry.intersectionRatio > ratio) {
+         entry.target.classList.add('reveal-visible')
+         //  observer.unobserve(entry.target)
+       }
+    })
+
+}
+
+const observer = new IntersectionObserver(handleIntersect, options);
+document.querySelectorAll('[class*="reveal-"]').forEach(function(r) {
+    observer.observe(r)
+})
