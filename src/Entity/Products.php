@@ -6,9 +6,8 @@ use App\Repository\ProductsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass=ProductsRepository::class)
@@ -42,20 +41,6 @@ class Products
      */
     private $file;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @var string
-     */
-    private $image;
-
-    /**
-     * @Vich\UploadableField(mapping="tiny_images", fileNameProperty="image")
-     * @var File
-     * @Assert\Image(
-     *     mimeTypes={"image/png","image/webp"}
-     * )
-     */
-    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -124,8 +109,10 @@ class Products
      */
     private $isNew;
 
-
-
+    /**
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="products", orphanRemoval=true, cascade={"persist"})
+     */
+    private $pictures;
 
 
     public function __construct(){
@@ -134,6 +121,7 @@ class Products
         $this->maison = new ArrayCollection();
         $this->boy = new ArrayCollection();
         $this->toys = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
 
     }
     public function getId(): ?int
@@ -177,14 +165,7 @@ class Products
         return $this;
     }
 
-    public function setImageFile(File $image = null)
-    {
-        $this->imageFile = $image;
 
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-    }
 
     public function getFile(): ?string
     {
@@ -196,21 +177,6 @@ class Products
     {
         $this->file = $file;
         return $this;
-    }
-
-    public function getImageFile()
-    {
-        return $this->imageFile;
-    }
-
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    public function getImage()
-    {
-        return $this->image;
     }
 
 
@@ -380,5 +346,38 @@ class Products
 
         return $this;
     }
+
+    /**
+     * @return Collection|Picture[]
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->contains($picture)) {
+            $this->pictures->removeElement($picture);
+            // set the owning side to null (unless already changed)
+            if ($picture->getProducts() === $this) {
+                $picture->setProducts(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 
 }

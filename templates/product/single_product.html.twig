@@ -1,8 +1,9 @@
 <div class="product-item text-center">
     <div class="show-btn-cart">
 
+
     <a href="{{ path('product', {'slug':product.slug}) }}">
-        <img src="{{ vich_uploader_asset(product, 'imageFile')}}" alt="{{ product.name }}" class="img-fluid">
+        <img src="{{ vich_uploader_asset(product, 'file')}}" alt="{{ product.name }}" class="img-fluid">
     </a>
     </div>
 

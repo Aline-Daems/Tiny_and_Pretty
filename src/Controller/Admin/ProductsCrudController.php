@@ -3,12 +3,15 @@
 namespace App\Controller\Admin;
 
 
+use App\Entity\Picture;
 use App\Entity\Products;
+use App\Form\PictureType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
@@ -29,14 +32,14 @@ class ProductsCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             SlugField::new('slug')->setTargetFieldName('name'),
-            TextField::new('imageFile')
-                ->setFormType(VichImageType::class)
-                ->hideOnIndex(),
             ImageField::new('image')
+                ->setFormType(VichImageType::class)
                 ->setBasePath('uploads/')
                 ->setUploadDir('public/uploads/')
                 ->setRequired(false)
-                ->onlyOnIndex(),
+                ->onlyOnDetail(),
+            CollectionField::new('pictures')
+                ->setEntryType(PictureType::class),
             ImageField::new('illustration')
                 ->setBasePath('uploads/')
                 ->setUploadDir('public/uploads/')
