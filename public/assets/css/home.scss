@@ -16,7 +16,7 @@ main {
  // box-shadow: 6px 1px 4px 1px black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-h1{
+h1, h3{
   color: grey;
 }
 
@@ -47,6 +47,7 @@ h1{
 .slogan {
   font-family: $titleFontRegular;
   font-size: 8vh;
+  color: white!important;
   /*
   position: absolute;
   top: 50%;
