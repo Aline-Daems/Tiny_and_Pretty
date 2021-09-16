@@ -5,14 +5,22 @@ body {
   height: 100%;
 }
 header {
-  // position: fixed;
+  // position: fixed; ne pas rétablir pour les smartphones mais rétablir pour grands écrans
   top: 0;
   width: 100vw;
   z-index: 2;
   background: white;
-
-
 }
+
+#home-banner{
+  position: relative;
+  background-color: white;
+  height: 15vh;
+  width: 100vw;
+  z-index: 5;
+}
+
+
 .title_drop {
   color: #797474FF;
   z-index: -999;
@@ -223,9 +231,12 @@ header {
     margin:0 .25rem;
 
   }
+  /*
   header{
     position: fixed;
   }
+  */
+
 }
 @media screen
 and (min-device-width: 1025px)
@@ -233,9 +244,12 @@ and (max-device-width: 2000px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (min-resolution: 192dpi)
 {
+  /*
   header{
     position: fixed;
   }
+
+   */
 
   .navbar-brand{
     margin: 0!important;
