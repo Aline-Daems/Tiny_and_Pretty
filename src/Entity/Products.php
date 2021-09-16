@@ -123,7 +123,7 @@ class Products
     /**
      * @Vich\UploadableField(mapping="top_image", fileNameProperty="topImage")
      * @Assert\Image(
-     *     mimeTypes={"image/png","image/webp"}
+     *     mimeTypes={"image/webp"}
      * )
      */
     private $topImageFile;

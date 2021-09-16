@@ -5,9 +5,9 @@
 {% block content %}
     <div class="row">
         <div class="container-fluid col-md-4   mb-5 ">
-        {% for topimage in products  %}
+
             <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('show')}}" alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
-        {% endfor %}
+
         </div>
         <div class="col-md-7 my-auto aside-description mt-sm-5 mx-sm-auto">
             <p> {{ product.subtitle }}</p>
@@ -47,13 +47,7 @@
             </div>
         </div>
         <div class="col-md-7 my-auto aside-description mt-sm-5 mx-sm-auto">
-            <p> {{ product.subtitle }}</p>
-            <h3>{{  product.name }}</h3>
-            <span class="product-page-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
-            <p class="taxes">Taxes incluses</p>
-            <p>
-                {{ product.description }}
-            </p>
+
 
 
             <hr class="mx-auto col-md-10 col-lg-10 col-xl-10 pl-0 ml-0">
