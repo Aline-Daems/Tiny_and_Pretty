@@ -29,27 +29,65 @@ $(document).ready(function() {
 
 window.addEventListener('DOMContentLoaded', setup);
 
+const threshold = .2
 function setup() {
     const options = {
-        rootMargin: '0px 0px -200px 0px'
+        root: null,
+        rootMargin: '0px 0px -200px 0px',
+        threshold
     }
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if(entry.isIntersecting) {
+            console.log('fonction OK');
+            if(entry.intersectionRatio > threshold) {
                 entry.target.classList.add('show');
-                observer.unobserve(entry.target);
-            } else {
-                return;
+                console.log(entry.intersectionRatio)
+             //   observer.unobserve(entry.target);
             }
+
         })
     }, options);
 
     const h1 = document.querySelector('h1');
     observer.observe(h1);
 
+    const h3 = document.querySelector('h3');
+    observer.observe(h3);
+    const h5 = document.querySelector('h5');
+    observer.observe(h5);
+
+
+
+
+
     const paras = document.querySelectorAll('p');
     paras.forEach(p => observer.observe(p));
+
 }
 
+
+/*
+
+
+const ratio =  1
+const options2 = {
+    root: null,
+    rootMargin: '0px',
+    threshold: ratio
+}
+const handleIntersect = function (entries, observer){
+    entries.forEach(function (entry){
+        if (entry.intersectionRatio > ratio){
+            console.log(entry.intersectionRatio)
+     entry.target.classList.add('reveal-visible')
+         //   observer.unobserve(entry.target)
+    }
+    })
+}
+
+const observer = new IntersectionObserver(handleIntersect, options2)
+observer.observe(document.querySelector('.reveal'))
+
+*/
 

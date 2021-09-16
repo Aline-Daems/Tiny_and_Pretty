@@ -19,7 +19,7 @@
         <p class="text-center">Vous n'avez pas encore d'adresse.</p>
         <a href="">Ajouter une commande</a>
     {% else %}
-        <table class="table mt-4">
+        <table class="table mt-4 presentation">
             <thead>
             <tr>
                 <th scope="col">Référence</th>
@@ -32,13 +32,16 @@
             </thead>
             <tbody>
         {% for order in app.user.orders %}
-            <tr><td> <span class="badge badge-info">{{ order.reference }}</span></td>
+            <tr><td> <span class="badge badge-light">{{ order.reference }}</span></td>
                 <td>{{ order.createdAt|date('d/m/Y') }}</td>
                 <td>
-                    {% if order.State == 1 %}
-                        Paiement accepté
+
+                    {% if order.State == 0 %}
+                        <p class="text-danger">Paiement refusé</p>
+                    {% elseif order.State == 1 %}
+                        <p class="text-success">Paiement accepté</p>
                     {% elseif order.State == 2 %}
-                        Préparation en cours
+                        <p class="text-info">Préparation en cours</p>
                     {% elseif order.State == 3 %}
                         Livraison en cours
                     {% endif %}
@@ -56,8 +59,8 @@
 
 
     {% endif %}
-        </div>
-    </div>
+
+
 </div>
 
 {% endblock %}
