@@ -2,6 +2,7 @@
     <div class="show-btn-cart">
 
             {% for topimage in products  %}
+<div class="product-item text-center mb-5">
 
                 <a href="{{ path('product', {'slug':product.slug}) }}">
                     <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn')}}" alt="{{ product.name }}" class="img-fluid">
@@ -10,6 +11,33 @@
 
 
     </div>
+    <a href="{{ path('product', {'slug':product.slug}) }}">
+        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+        <div>
+            {% if is_granted('ROLE_USER') %}
+                {% set isFavorite = false %}
+                {% for favoris in product.favoris  %}
+
+                    {% if favoris.id == app.user.id %}
+                        {% set isFavorite = true %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if isFavorite %}
+
+                    <a href="{{ path('retrait_favoris', {id: product.id}) }}"> <i class="fas fa-heart"></i></a>
+
+                {% else %}
+
+                    <a href="{{ path('ajout_favoris', {id: product.id}) }}"> <i class="far fa-heart"></i></a>
+
+                {% endif %}
+
+            {% else %}
+                <i class="far fa-heart"></i>
+            {% endif %}
+        </div>
+    </a>
 
     <div class="descriptionBest">
         <p class="product-text"><span>{{ product.name }}</span></p>

@@ -5,8 +5,12 @@
 {% block content %}
     <h1>Ma commande {{ order.reference }} </h1>
 
-    <a href="{{ path('account_order') }}">Retour</a>
-    <hr>
+        <h1 class="title  text-uppercase pt-5">
+            Ma commande
+        </h1>
+
+        <a href="{{ path('account_order') }}" class="btn connect mt-3 pt-5 mb-3 profite text-white">Retour</a>
+        <hr>
 
     <div class="container d-flex justify-content-evenly w-100">
         <div class="col-6">

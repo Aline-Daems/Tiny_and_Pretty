@@ -18,6 +18,33 @@
                 {{ product.description }}
             </p>
 
+            <div>
+                {% if is_granted('ROLE_USER') %}
+                    {% set isFavorite = false %}
+                    {% for favoris in product.favoris  %}
+
+                        {% if favoris.id == app.user.id %}
+                            {% set isFavorite = true %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if isFavorite %}
+
+                        <a href="{{ path('retrait_favoris', {id: product.id}) }}"> <i class="fas fa-heart"></i></a>
+
+                        {% else %}
+
+                            <a href="{{ path('ajout_favoris', {id: product.id}) }}"> <i class="far fa-heart"></i></a>
+
+                    {% endif %}
+
+                {% else %}
+                    <i class="far fa-heart"></i>
+                {% endif %}
+
+               
+
+            </div>
             <hr class="mx-auto col-md-10 col-lg-10 col-xl-10 pl-0 ml-0">
 
 

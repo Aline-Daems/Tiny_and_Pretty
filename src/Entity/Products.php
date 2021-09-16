@@ -107,6 +107,11 @@ class Products
     private $isNew;
 
     /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="favoris")
+     */
+    private $favoris;
+
+    /**
      * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="products", orphanRemoval=true, cascade={"persist"})
      */
     private $pictures;
@@ -132,6 +137,7 @@ class Products
         $this->boy = new ArrayCollection();
         $this->toys = new ArrayCollection();
         $this->pictures = new ArrayCollection();
+        $this->favoris = new ArrayCollection();
 
     }
     public function getId(): ?int
@@ -339,6 +345,30 @@ class Products
     public function setIsNew(bool $isNew): self
     {
         $this->isNew = $isNew;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getFavoris(): Collection
+    {
+        return $this->favoris;
+    }
+
+    public function addFavori(User $favori): self
+    {
+        if (!$this->favoris->contains($favori)) {
+            $this->favoris[] = $favori;
+        }
+
+        return $this;
+    }
+
+    public function removeFavori(User $favori): self
+    {
+        $this->favoris->removeElement($favori);
 
         return $this;
     }
