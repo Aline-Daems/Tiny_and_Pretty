@@ -6,6 +6,7 @@ use App\Repository\ProductsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
@@ -32,10 +33,6 @@ class Products
      */
     private $slug;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $illustration;
     /**
      * ORM\Column(type="string", length=255)
      */
@@ -114,6 +111,19 @@ class Products
      */
     private $pictures;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $topImage;
+    /**
+     * @Vich\UploadableField(mapping="top_image", fileNameProperty="topImage")
+     * @Assert\Image(
+     *     mimeTypes={"image/png","image/webp"}
+     * )
+     */
+    private $topImageFile;
+
+
 
     public function __construct(){
         $this->category = new ArrayCollection();
@@ -152,20 +162,6 @@ class Products
 
         return $this;
     }
-
-    public function getIllustration(): ?string
-    {
-        return $this->illustration;
-    }
-
-    public function setIllustration(string $illustration): self
-    {
-        $this->illustration = $illustration;
-
-        return $this;
-    }
-
-
 
     public function getFile(): ?string
     {
@@ -378,6 +374,43 @@ class Products
         return $this;
     }
 
+
+
+    /**
+     * @return mixed
+     */
+    public function getTopImageFile()
+    {
+        return $this->topImageFile;
+    }
+
+    /**
+     * @param mixed $topImageFile
+     * @return Products
+     */
+    public function setTopImageFile($topImageFile)
+    {
+        $this->topImageFile = $topImageFile;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTopImage()
+    {
+        return $this->topImage;
+    }
+
+    /**
+     * @param mixed $topImage
+     * @return Products
+     */
+    public function setTopImage($topImage)
+    {
+        $this->topImage = $topImage;
+        return $this;
+    }
 
 
 }

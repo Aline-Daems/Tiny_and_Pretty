@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\Picture;
 use App\Entity\Products;
+use App\Entity\TopImage;
 use App\Form\PictureType;
+use App\Form\TopImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -32,6 +34,14 @@ class ProductsCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             SlugField::new('slug')->setTargetFieldName('name'),
+            TextField::new('topImageFile')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex(),
+            ImageField::new('topImage')
+                ->setUploadDir('public/uploads/')
+                ->setBasePath('uploads/')
+                ->setRequired(false)
+                ->onlyOnIndex(),
             ImageField::new('image')
                 ->setFormType(VichImageType::class)
                 ->setBasePath('uploads/')
@@ -40,10 +50,6 @@ class ProductsCrudController extends AbstractCrudController
                 ->onlyOnDetail(),
             CollectionField::new('pictures')
                 ->setEntryType(PictureType::class),
-            ImageField::new('illustration')
-                ->setBasePath('uploads/')
-                ->setUploadDir('public/uploads/')
-                ->setRequired(false),
             TextField::new('Subtitle'),
             TextareaField::new('description'),
             BooleanField::new('isBest'),

@@ -1,7 +1,7 @@
 <?php
 namespace App\Listener;
 
-use App\Entity\Picture;
+use App\Entity\Products;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 
-class ImageCacheSubsriber implements EventSubscriber {
+class ImageCacheSubscriberT implements EventSubscriber {
     /**
      * @var CacheManager
      */
@@ -38,20 +38,20 @@ class ImageCacheSubsriber implements EventSubscriber {
     }
     public function preRemove(LifecycleEventArgs $args){
         $entity = $args->getEntity();
-        if(!$entity instanceof Picture){
+        if(!$entity instanceof Products){
             return;
         }
-        $this->cacheManager->remove($this->uploaderHelper->asset($entity, 'imageFile'));
+        $this->cacheManager->remove($this->uploaderHelper->asset($entity, 'topImageFile'));
     }
     public function preUpdate(PreUpdateEventArgs $args){
 
         $entity = $args->getEntity();
 
-        if(!$entity instanceof Picture){
+        if(!$entity instanceof Products){
             return;
         }
-        if ($entity->getImageFile() instanceof UploadedFile) {
-            $this->cacheManager->remove($this->uploaderHelper->asset($entity, 'imageFile'));
+        if ($entity->getTopImageFile() instanceof UploadedFile) {
+            $this->cacheManager->remove($this->uploaderHelper->asset($entity, 'topImageFile'));
         }
     }
 }

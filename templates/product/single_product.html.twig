@@ -1,10 +1,14 @@
 <div class="product-item text-center">
     <div class="show-btn-cart">
 
+            {% for topimage in products  %}
 
-    <a href="{{ path('product', {'slug':product.slug}) }}">
-        <img src="{{ vich_uploader_asset(product, 'file')}}" alt="{{ product.name }}" class="img-fluid">
-    </a>
+                <a href="{{ path('product', {'slug':product.slug}) }}">
+                    <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn')}}" alt="{{ product.name }}" class="img-fluid">
+                </a>
+            {% endfor %}
+
+
     </div>
 
     <div class="descriptionBest">
