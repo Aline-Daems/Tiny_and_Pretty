@@ -32,9 +32,9 @@
 
                         <a href="{{ path('retrait_favoris', {id: product.id}) }}"> <i class="fas fa-heart"></i></a>
 
-                        {% else %}
+                    {% else %}
 
-                            <a href="{{ path('ajout_favoris', {id: product.id}) }}"> <i class="far fa-heart"></i></a>
+                        <a href="{{ path('ajout_favoris', {id: product.id}) }}"> <i class="far fa-heart"></i></a>
 
                     {% endif %}
 
@@ -42,9 +42,20 @@
                     <i class="far fa-heart"></i>
                 {% endif %}
 
-               
+
 
             </div>
+        </div>
+        <div class="col-md-7 my-auto aside-description mt-sm-5 mx-sm-auto">
+            <p> {{ product.subtitle }}</p>
+            <h3>{{  product.name }}</h3>
+            <span class="product-page-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+            <p class="taxes">Taxes incluses</p>
+            <p>
+                {{ product.description }}
+            </p>
+
+
             <hr class="mx-auto col-md-10 col-lg-10 col-xl-10 pl-0 ml-0">
 
 

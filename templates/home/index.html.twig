@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <div class="video-home">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ssnrzl4PHUE?loop=1&playlist=Ssnrzl4PHUE"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-
-        </iframe>
 
 
-    </div>
+        <div class="video-home">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3NMh1VBHL8s?loop=1&playlist=3NMh1VBHL8s"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+<div class="hidden-video">
+
+</div>
 
 
 
@@ -24,7 +25,7 @@
                 </a>
                 <div class="text-white">
                     <div class="filter">
-                    <h4 class="description">LA MODE</h4>
+                        <h4 class="description">LA MODE</h4>
                     </div>
                 </div>
                 <!--
@@ -44,11 +45,11 @@
                 <a href="{{ relative_path('/maison') }}">
                     <img src="{{ asset('assets/img/BAIN.webp') }}" style="width:80%" class="Pict" alt=""/>
                 </a>
-                   <div class="text-white">
-                        <div class="filter">
-                            <h4 class="description">À LA MAISON</h4>
-                        </div>
+                <div class="text-white">
+                    <div class="filter">
+                        <h4 class="description ">À LA MAISON</h4>
                     </div>
+                </div>
 
                 <!--    <div class="text-white waviy">
 
@@ -72,22 +73,22 @@
                 <a href="{{ relative_path('/toy') }}">
                     <img src="{{ asset('assets/img/JOUETS.webp') }}" style="width:80%" class="Pict" alt=""/>
                 </a>
-                   <div class="text-white">
-                        <div class="filter">
-                            <h4 class="description">JOUETS</h4>
-                        </div>
+                <div class="text-white">
+                    <div class="filter">
+                        <h4 class="description ">JOUETS</h4>
                     </div>
-
-        <!--        <div class="text-white waviy">
-
-                    <span style="--i:1">J</span>
-                    <span style="--i:2">O</span>
-                    <span style="--i:3">U</span>
-                    <span style="--i:4">E</span>
-                    <span style="--i:5">T</span>
-                    <span style="--i:6">S</span>
                 </div>
-                -->
+
+                <!--        <div class="text-white waviy">
+
+                            <span style="--i:1">J</span>
+                            <span style="--i:2">O</span>
+                            <span style="--i:3">U</span>
+                            <span style="--i:4">E</span>
+                            <span style="--i:5">T</span>
+                            <span style="--i:6">S</span>
+                        </div>
+                        -->
 
             </div>
 
@@ -98,10 +99,10 @@
     <!-- banner -->
     <div class="container-fluid col-12">
         <div class="row align-items-center">
-            <div class="bg-image-banner">
+            <div class="bg-image-banner reveal-1">
                 <div class="container-fluid align-items-center justify-content-center text-center">
                     <div class="text-white">
-                        <h1 class="slogan">HAPPY CLOTHING,<br> HAPPY CHILDHOOD</h1>
+                        <h1 class="slogan reveal-2">HAPPY CLOTHING,<br> HAPPY CHILDHOOD</h1>
                     </div>
                 </div>
             </div>
@@ -112,7 +113,7 @@
             <div class=" col ">
                 <figure>
                     <blockquote>
-                        <p class="text-presentation-short">
+                        <p class="text-presentation-short reveal-1">
                             <span><em class="tiny-emphasis">Tiny and Pretty</em></span> est née d’une initiative de son
                             fondateur, récemment devenu papa.
                             Initialement actif dans le secteur du commerce international, il a eu à cœur de créer une
@@ -122,7 +123,7 @@
                         </p>
 
 
-                        <button type="button" class="btn btn-info profite reveal">En savoir plus ...</button>
+                        <button type="button" class="btn btn-info button-flow reveal-2">En savoir plus ...</button>
 
                     </blockquote>
 
@@ -143,9 +144,37 @@
             {% for product in productN %}
                 {% if product.isNew == true %}
                     <div class="col col-sm-6 col-md-6 col-lg col-xl col-xxl">
+                        <div>
+                            {% if is_granted('ROLE_USER') %}
+                                {% set isFavorite = false %}
+                                {% for favoris in product.favoris %}
+
+                                    {% if favoris.id == app.user.id %}
+                                        {% set isFavorite = true %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if isFavorite %}
+
+                                    <a href="{{ path('retrait_favoris', {id: product.id}) }}"> <img class="icone-wish"
+                                                                                                    src="{{ asset('assets/img/heart.svg') }}"></a>
+
+                                {% else %}
+
+                                    <a href="{{ path('ajout_favoris', {id: product.id}) }}"> <img class="icone-wish"
+                                                                                                  src="{{ asset('assets/img/heart.svg') }}"></a>
+
+                                    <img class="icone-wish" src="{{ asset('assets/img/heart.svg') }}">
+
+
+                                {% endif %}
+
+                            {% else %}
+                                <img class="icone-wish" src="{{ asset('assets/img/heart.svg') }}">
+                            {% endif %}
+                        </div>
                         <button type="button" class="profite">JE LE VEUX</button>
                         {% include 'product/single_product.html.twig' %}
-
                     </div>
 
                 {% endif %}
@@ -160,14 +189,14 @@
         <div class="container-fluid box">
 
             <div class="boxtext">
-                <h5 class="title-box"><span>OUR FIRST</span></h5>
-                <p><span>Our First, c’est une collection inspirée de notre enfance. Elle se compose d’un joli mélange de basiques intemporels
+                <h5 class="title-box reveal-2"><span>OUR FIRST</span></h5>
+                <p><span class="reveal-1">Our First, c’est une collection inspirée de notre enfance. Elle se compose d’un joli mélange de basiques intemporels
                         et de pièces délicates pensées en détail pour vos minis. Les coupes unisexes et les tons doux y sont mis à l’honneur.
                         Parce que nous voulons toujours offrir
                         ce qu’il y a de mieux, nos articles sont confectionnés avec des matières naturelles certifiées BIO ou OEKO-TEX.
                         </span></p>
                 <a href="{{ relative_path('/Mode') }}">
-                    <button type="button" class="profite">J'EN PROFITE</button>
+                    <button type="button" class="profite reveal-2">J'EN PROFITE</button>
                 </a>
             </div>
 
@@ -243,14 +272,14 @@
     <hr class="share-divider">
     <div class="container-fluid text-center share">
         <div class="col-12">
-            <h3 class="separator text-center">#TINYANDPRETTY</h3>
-            <h5 class="text-share">Partagez avec nous leurs styles uniques !</h5>
+            <h3 class="separator text-center reveal-1">#TINYANDPRETTY</h3>
+            <h5 class="text-share reveal-2">Partagez avec nous leurs styles uniques !</h5>
             <div class="reseau justify-between">
-                <a class="logoreseau" href="https://www.facebook.com/TinyandPretty.be" target="_blank"><i
+                <a class="logoreseau reveal-3" href="https://www.facebook.com/TinyandPretty.be" target="_blank"><i
                             class="fab fa-facebook-square"></i></a>
-                <a class="logoreseau" href="https://www.instagram.com/tinyandpretty.be" target="_blank"> <i
+                <a class="logoreseau reveal-3" href="https://www.instagram.com/tinyandpretty.be" target="_blank"> <i
                             class="fab fa-instagram"></i></a>
-                <a class="logoreseau"><i class="fab fa-pinterest-square"></i></a>
+                <a class="logoreseau reveal-3"><i class="fab fa-pinterest-square"></i></a>
             </div>
         </div>
     </div>
