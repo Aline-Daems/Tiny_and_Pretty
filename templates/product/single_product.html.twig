@@ -8,11 +8,7 @@
                     <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn')}}" alt="{{ product.name }}" class="img-fluid">
                 </a>
             {% endfor %}
-
-
     </div>
-    <a href="{{ path('product', {'slug':product.slug}) }}">
-        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
         <div>
             {% if is_granted('ROLE_USER') %}
                 {% set isFavorite = false %}
