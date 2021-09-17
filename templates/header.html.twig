@@ -18,16 +18,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav  ml-auto ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">LA MODE</a>
+                        <a class="nav-link link-headOne mr-3" href="#">LA BOUTIQUE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">À TABLE</a>
+                        <a class="nav-link link-headOne mr-3" href="#">NOTRE MARQUE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">LES JOUETS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CONCEPT</a>
+                        <a class="nav-link link-headOne mr-0" href="#">DEUXIÈME VIE</a>
                     </li>
                 </ul>
 
@@ -62,7 +59,7 @@
                 {% else %}
                     <div class="nav-icones">
                         <li class="nav-item">
-                            <a class="nav-link px-2 pl-5" href="{{ path('app_login') }}">
+                            <a class="nav-link px-4 pl-3" href="{{ path('app_login') }}">
                                 <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
                             </a>
                             <a href="" class="nav-link px-4 ">
@@ -84,7 +81,7 @@
     <!-- partie dropdown navbar fixed top -->
     <div id="home-banner">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="{{ path('home') }}">
                 <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
                      class="logo-img-header img-fluid"/>
@@ -93,12 +90,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
+                <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link inactive dropdown px-3" href="" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            VÊTEMENTS
+                            Bébés de 0 à 36 mois
                         </a>
 
 
@@ -130,7 +127,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link inactive dropdown px-3" href="" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            VÊTEMENTS
+                           Enfants de 2 à 8 ans
                         </a>
 
 
@@ -165,7 +162,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown px-3" href="" id="navbarDropdown"
                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    À LA MAISON
+                                    À la maison
                                 </a>
                                 <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown">
                                     <a href="{{ relative_path('/maison') }}"><h5 class=" mt-5 mb-5 text-center title_drop reveal-1">À
@@ -193,6 +190,9 @@
                                         </div>
                                     </div>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-3" href="{{ path('productsToy') }}">Les Jouets</a>
                             </li>
                 </ul>
                 {% if app.user %}

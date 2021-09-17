@@ -15,7 +15,7 @@ header {
 #home-banner{
   position: relative;
   background-color: white;
-  height: 15vh;
+  height: 12vh;
   width: 100vw;
   z-index: 5;
 }
@@ -43,18 +43,39 @@ header {
 }
 .navbar-brand {
   margin: 0 !important;
-  width: 40vw;
+  width: 45vw;
 }
 
 .logo-img-header {
   padding-top: 1vh;
   padding-bottom: 1.5vh;
   margin: 0 !important;
-  width: 150%;
+  width: 155%;
   height: auto;
 }
 .icones-nav {
   width: 1.5rem;
+}
+.link-headOne{
+  position: relative;
+  font-weight: bold;
+  font-size: larger;
+  color: #6C7A4E!important;
+}
+.link-headOne:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  width: 0%;
+  left: 0px;
+  height: 6px;
+  transition: 0.25s cubic-bezier(0.72,-0.01, 0.19, 0.92);
+  background: $yellow;
+}
+
+.link-headOne:hover:after{
+  width: 100%;
 }
 /*
 .bag-count{
@@ -90,7 +111,8 @@ header {
 .navbar .dropdown-menu {
   font-family: $titleFontRegular;
   font-size: 1rem;
-  color: dimgrey;
+
+
   position: absolute;
 }
 .little-drop {
@@ -120,7 +142,7 @@ header {
     width: 1.5rem;
   }
   .nav-icones{
-    padding-left: 50%;
+    margin-left: 100px!important;
   }
 
 
@@ -150,6 +172,10 @@ header {
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.3s linear;
+  }
+  .nav-right{
+   padding-right: 0;
+    margin-left: 20%!important;
   }
 
 
@@ -220,7 +246,7 @@ header {
 
   }
   .nav-icones{
-    margin-left: 20vw;
+    margin-left: 8vw;
   }
   .logo-img-header{
     width: 50%;

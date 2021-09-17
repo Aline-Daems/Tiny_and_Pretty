@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap");
 main {
@@ -531,7 +532,7 @@ header {
 #home-banner {
   position: relative;
   background-color: white;
-  height: 15vh;
+  height: 12vh;
   width: 100vw;
   z-index: 5; }
 
@@ -554,17 +555,37 @@ header {
 
 .navbar-brand {
   margin: 0 !important;
-  width: 40vw; }
+  width: 45vw; }
 
 .logo-img-header {
   padding-top: 1vh;
   padding-bottom: 1.5vh;
   margin: 0 !important;
-  width: 150%;
+  width: 155%;
   height: auto; }
 
 .icones-nav {
   width: 1.5rem; }
+
+.link-headOne {
+  position: relative;
+  font-weight: bold;
+  font-size: larger;
+  color: #6C7A4E !important; }
+
+.link-headOne:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  width: 0%;
+  left: 0px;
+  height: 6px;
+  transition: 0.25s cubic-bezier(0.72, -0.01, 0.19, 0.92);
+  background: #fbd572; }
+
+.link-headOne:hover:after {
+  width: 100%; }
 
 /*
 .bag-count{
@@ -599,7 +620,6 @@ header {
 .navbar .dropdown-menu {
   font-family: Quicksand, sans-serif;
   font-size: 1rem;
-  color: dimgrey;
   position: absolute; }
 
 .little-drop {
@@ -626,7 +646,7 @@ header {
     width: 1.5rem; }
 
   .nav-icones {
-    padding-left: 50%; } }
+    margin-left: 100px !important; } }
 /* breakpoint and up - mega dropdown styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
@@ -650,6 +670,10 @@ header {
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.3s linear; }
+
+  .nav-right {
+    padding-right: 0;
+    margin-left: 20% !important; }
 
   /* makes the dropdown full width  */
   .little-drop {
@@ -704,7 +728,7 @@ header {
     width: 1.5rem; }
 
   .nav-icones {
-    margin-left: 20vw; }
+    margin-left: 8vw; }
 
   .logo-img-header {
     width: 50%;
