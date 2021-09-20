@@ -22,7 +22,7 @@ header {
   box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px;
 }
 
-
+/*
 .title_drop {
   color: #797474FF;
   z-index: -999;
@@ -34,6 +34,8 @@ header {
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
+
+ */
 
 .navbar .nav-link .inactive {
   cursor: default !important;
@@ -80,7 +82,8 @@ header {
   width: 100%;
 }
 .vignette-dropdown{
-  width: 10rem;
+  width: 10%;
+  height: 10%!important;
 }
 /*
 .bag-count{
@@ -115,7 +118,7 @@ header {
 
 .navbar .dropdown-menu {
   font-family: $titleFontRegular;
-  font-size: 1rem;
+  font-size: 2vh;
   position: absolute;
 }
 .little-drop {
@@ -233,7 +236,7 @@ header {
     right:0;
     /*  height of nav-item  */
     top:10vh;
-    font-size: 1.8vh;
+    font-size: 2vh;
   }
   .navbar-brand{
     margin: 0!important;

@@ -537,17 +537,20 @@ header {
   z-index: 5;
   box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px; }
 
+/*
 .title_drop {
   color: #797474FF;
   z-index: -999;
-  background-color: #f0edda;
-  background: -moz-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
-  background: -webkit-radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
-  background: radial-gradient(circle, rgba(240, 237, 218, 0.2581407563) 4%, rgba(240, 237, 218, 0.1208858543) 96%);
+  background-color:  rgb(240,237,218);
+  background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
+  background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0edda",endColorstr="#f0edda",GradientType=1);
   padding-top: 2vh;
-  padding-bottom: 2vh; }
+  padding-bottom: 2vh;
+}
 
+ */
 .navbar .nav-link .inactive {
   cursor: default !important; }
 
@@ -589,7 +592,8 @@ header {
   width: 100%; }
 
 .vignette-dropdown {
-  width: 10rem; }
+  width: 10%;
+  height: 10% !important; }
 
 /*
 .bag-count{
@@ -623,7 +627,7 @@ header {
 
 .navbar .dropdown-menu {
   font-family: Quicksand, sans-serif;
-  font-size: 1rem;
+  font-size: 2vh;
   position: absolute; }
 
 .little-drop {
@@ -718,7 +722,7 @@ header {
     right: 0;
     /*  height of nav-item  */
     top: 10vh;
-    font-size: 1.8vh; }
+    font-size: 2vh; }
 
   .navbar-brand {
     margin: 0 !important;

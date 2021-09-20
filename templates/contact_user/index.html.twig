@@ -3,9 +3,12 @@
 {% block title %}Contact{% endblock %}
 
 {% block content %}
-    <div class="container-fluid  align-items-center">
+    <div class="container-fluid justify-content-center">
         <div class="row">
-            <div class="col-4 pl-5 ml-5 mt-5 mb-5">
+            <div class="col-md-5 ml-auto mr-auto">
+                <div class="title_sign">
+                    <h1 class="mb-3 mt-5">CONTACTEZ-NOUS</h1>
+                </div>
     {{ form_start(form) }}
     {{ form_label(form.name) }}
     {{ form_widget(form.name) }}
@@ -15,7 +18,9 @@
     {{ form_label(form.mail) }}
     {{ form_widget(form.mail) }}
     {{ form_rest(form) }}
-    <button type="submit">Envoyer</button>
+                <button class="btn text-white connect mt-3 pt-3 mb-5" type="submit">
+                    Envoyer
+                </button>
     {{ form_end(form) }}
             </div>
         </div>

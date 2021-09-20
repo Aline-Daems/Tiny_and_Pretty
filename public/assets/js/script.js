@@ -90,43 +90,8 @@ const observer = new IntersectionObserver(handleIntersect, options2)
 observer.observe(document.querySelector('.reveal'))
 
 */
-/*
-if (document.getElementById)
-{
-    if(document.all)
-        widthe = document.body.clientWidth;
-    else
-        widthe = window.innerWidth;
-    document.getElementById("webaddress").style.left=widthe;
-    document.getElementById("webaddress").style.visibility="visible";
-}
 
-function moveit()
-{
-    if (widthe>15)
-    {
-        document.getElementById("webaddress").style.left=widthe;
-        widthe -= 10;
-    }
-    else{
-        document.getElementById("webaddress").style.fontStyle="normal"
-        document.getElementById("webaddress").style.left= widthe + 10;
-        clearInterval(moving)
-    }
-}
-if (document.getElementById)
-    moving=setInterval("moveit()",1);
 
-*/
-/*
-let callButton = document.getElementById("reveal");
-
-var decallage = 100; // nombre de px de decallage voulue
-callButton.addEventListener("onscroll", function() { // ajout d'un evenement onclick
-    callButton.style.left = callButton.style.left - decallage;
-})
-
- */
 /////////////////////////////////////////////////////////////////////////////////////////////
 const ratio = .1
 const options = {
@@ -137,40 +102,38 @@ const options = {
 
 const handleIntersect = function (entries, observer) {
     entries.forEach(function (entry) {
-       if (entry.intersectionRatio > ratio) {
-         entry.target.classList.add('reveal-visible')
-          observer.unobserve(entry.target)
-       }
+        if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('reveal-visible')
+            observer.unobserve(entry.target)
+        }
     })
 
 }
 
 const observer = new IntersectionObserver(handleIntersect, options);
-document.querySelectorAll('[class*="reveal-"]').forEach(function(r) {
+document.querySelectorAll('[class*="reveal-"]').forEach(function (r) {
     observer.observe(r)
 })
 
 /////////////////////////////////////////////////////////////////
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('#logo-show').css({'display': 'none'});
-    $(window).scroll(function() {
+    $(window).scroll(function () {
 
         let headerH = $('.header-container').outerHeight(true);
-      //  console.log(headerH);
-
+        //  console.log(headerH);
 
 
 //this will calculate header's full height, with borders, margins, paddings
         let scrollVal = $(this).scrollTop();
-        if ( scrollVal >= headerH ) {
-            $('#home-banner').css({'position':'fixed','top' :'0px'});
+        if (scrollVal >= headerH) {
+            $('#home-banner').css({'position': 'fixed', 'top': '0px'});
             $('#logo-show').css({'display': 'block'});
 
 
-
-        } else  {
-            $('#home-banner').css({'position':'static','top':'0px'});
+        } else {
+            $('#home-banner').css({'position': 'static', 'top': '0px'});
             $('#logo-show').css({'display': 'none'});
         }
 
@@ -178,5 +141,23 @@ $(document).ready(function() {
     });
 
 });
+
+////////////////////////////////////////////////////////////////////////
+let icones = document.getElementById('iconesJS');
+if (window.location.href === "http://127.0.0.1:8000/qui/sommes/nous"
+    ||
+    window.location.href === "http://127.0.0.1:8000/faq"
+    ||
+    window.location.href === "http://127.0.0.1:8000/tailles"
+    ||
+window.location.href === "http://127.0.0.1:8000/contact/user"
+    ||
+    window.location.href === "http://127.0.0.1:8000/livraisons/et/retours"
+    ||
+    window.location.href === "http://127.0.0.1:8000/login"
+) {
+    $('.hideHeaderJS').css({'display': 'none'});
+    $('#search-formJS').replaceWith(icones);
+}
 
 
