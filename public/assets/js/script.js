@@ -153,15 +153,17 @@ document.querySelectorAll('[class*="reveal-"]').forEach(function(r) {
 /////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
+    $('#logo-show').css({'display': 'none'});
     $(window).scroll(function() {
 
         let headerH = $('.header-container').outerHeight(true);
       //  console.log(headerH);
 
 
+
 //this will calculate header's full height, with borders, margins, paddings
         let scrollVal = $(this).scrollTop();
-        if ( scrollVal > headerH ) {
+        if ( scrollVal >= headerH ) {
             $('#home-banner').css({'position':'fixed','top' :'0px'});
             $('#logo-show').css({'display': 'block'});
 

@@ -79,6 +79,9 @@ header {
 .link-headOne:hover:after{
   width: 100%;
 }
+.vignette-dropdown{
+  width: 10rem;
+}
 /*
 .bag-count{
   position: relative;
@@ -113,8 +116,6 @@ header {
 .navbar .dropdown-menu {
   font-family: $titleFontRegular;
   font-size: 1rem;
-
-
   position: absolute;
 }
 .little-drop {
@@ -226,7 +227,7 @@ header {
     flex-direction: row!important;
   }
   .navbar .dropdown-menu {
-    width:70vw;
+    width:100vw;
     height: 55vh;
     // left: 40vw;
     right:0;

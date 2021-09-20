@@ -588,6 +588,9 @@ header {
 .link-headOne:hover:after {
   width: 100%; }
 
+.vignette-dropdown {
+  width: 10rem; }
+
 /*
 .bag-count{
   position: relative;
@@ -710,7 +713,7 @@ header {
     flex-direction: row !important; }
 
   .navbar .dropdown-menu {
-    width: 70vw;
+    width: 100vw;
     height: 55vh;
     right: 0;
     /*  height of nav-item  */
