@@ -532,9 +532,10 @@ header {
 #home-banner {
   position: relative;
   background-color: white;
-  height: 12vh;
+  height: 18vh;
   width: 100vw;
-  z-index: 5; }
+  z-index: 5;
+  box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px; }
 
 .title_drop {
   color: #797474FF;
@@ -670,10 +671,6 @@ header {
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.3s linear; }
-
-  .nav-right {
-    padding-right: 0;
-    margin-left: 20% !important; }
 
   /* makes the dropdown full width  */
   .little-drop {

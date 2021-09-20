@@ -10,14 +10,16 @@ header {
   width: 100vw;
   z-index: 2;
   background: white;
+
 }
 
 #home-banner{
   position: relative;
   background-color: white;
-  height: 12vh;
+  height: 18vh;
   width: 100vw;
   z-index: 5;
+  box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px;
 }
 
 
@@ -172,10 +174,6 @@ header {
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.3s linear;
-  }
-  .nav-right{
-   padding-right: 0;
-    margin-left: 20%!important;
   }
 
 

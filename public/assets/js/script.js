@@ -156,15 +156,25 @@ $(document).ready(function() {
     $(window).scroll(function() {
 
         let headerH = $('.header-container').outerHeight(true);
-        console.log(headerH);
+      //  console.log(headerH);
+
+
 //this will calculate header's full height, with borders, margins, paddings
         let scrollVal = $(this).scrollTop();
         if ( scrollVal > headerH ) {
             $('#home-banner').css({'position':'fixed','top' :'0px'});
-        } else {
+            $('#logo-show').css({'display': 'block'});
+
+
+
+        } else  {
             $('#home-banner').css({'position':'static','top':'0px'});
+            $('#logo-show').css({'display': 'none'});
         }
+
+
     });
+
 });
 
 
