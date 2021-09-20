@@ -129,7 +129,8 @@ $(document).ready(function () {
         let scrollVal = $(this).scrollTop();
         if (scrollVal >= headerH) {
             $('#home-banner').css({'position': 'fixed', 'top': '0px'});
-            $('#logo-show').css({'display': 'block'});
+            $('#logo-show').css({'display': 'block', 'transform':'scale(1.3)'});
+            $('.dropdown-menu').css({'top': '90%'});
 
 
         } else {

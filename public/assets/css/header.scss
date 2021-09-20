@@ -51,9 +51,9 @@ header {
 }
 
 .logo-img-header {
-  padding-top: 1vh;
+  padding-top: 1.5vh;
   padding-bottom: 1.5vh;
-  margin: 0 !important;
+  margin-left: 2rem;
   width: 155%;
   height: auto;
 }
@@ -110,6 +110,7 @@ header {
   font-weight: bold;
 }
  */
+
 /* adds some margin below the link sets  */
 .navbar .dropdown-menu div[class*="p-2"] {
   margin-bottom: 1rem;
@@ -177,7 +178,7 @@ header {
     display:block;
     visibility: visible;
     opacity: 1;
-    transition: visibility 0s, opacity 0.3s linear;
+    transition: visibility 0s, opacity 0.5s linear;
   }
 
 
@@ -203,7 +204,7 @@ header {
     left: 0;
     right:0;
     /*  height of nav-item  */
-    //top:5vh;
+    //top:10vh;
     // font-size: 1.8vh;
   }
 
