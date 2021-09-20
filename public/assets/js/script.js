@@ -168,3 +168,10 @@ $(document).ready(function() {
 });
 
 
+// Ajax jquery sur le coeur de la wishlist
+
+
+$('.heart').on("click", function() {
+    $('.heart').css({ fill: "#FA2275" });
+});
+
