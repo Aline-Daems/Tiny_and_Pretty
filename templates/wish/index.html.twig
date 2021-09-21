@@ -11,10 +11,9 @@
     <div class="row">
         <div class="container-fluid">
 
+            {% for wish in product %}
 
-                {% for product in product %}
-                    {% for favoris in product.favoris  %}
-                        {% if favoris.id == app.user.id %}
+                        {% if wish.id == app.user.id %}
                             <div class="container d-flex">
                                 <div class="col-md-3">
 
@@ -32,9 +31,7 @@
                             </div>
 
                         {% endif %}
-                    {% endfor %}
-                    <hr>
-                {% endfor %}
+            {% endfor %}
         </div>
 
 

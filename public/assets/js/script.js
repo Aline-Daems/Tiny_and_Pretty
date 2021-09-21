@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     // executes when HTML-Document is loaded and DOM is ready
 
@@ -20,6 +22,8 @@ $(document).ready(function () {
         }
     });
 });
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*window.onload = function() {
@@ -168,10 +172,28 @@ $(document).ready(function() {
 });
 
 
-// Ajax jquery sur le coeur de la wishlist
+// Ajax jquery avec le bundle axios sur le coeur de la wishlist
+
+function onClickBtnWish(event){
+    event.preventDefault();
+    const url = this.href;
+    const heart = this.querySelector('img');
 
 
-$('.heart').on("click", function() {
-    $('.heart').css({ fill: "#FA2275" });
-});
+    axios.get(url).then(function (){
+
+        if(heart.classList.contains('heart-wish')) {
+            heart.classList.replace('heart-wish', 'heart-bold');
+        }
+        else {
+            heart.classList.replace('heart-bold', 'heart-wish');
+        }
+
+
+    })
+}
+
+document.querySelectorAll('a.js-wish').forEach(function(link){
+    link.addEventListener('click', onClickBtnWish);
+})
 

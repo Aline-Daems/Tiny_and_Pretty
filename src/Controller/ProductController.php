@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 use App\Entity\Products;
+use App\Entity\Wish;
+use App\Repository\WishRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -53,7 +57,10 @@ class ProductController extends AbstractController
       $em->persist($products);
       $em->flush();
 
-        return $this->redirectToRoute('home');
+        return $this->json([
+            'code' => 200,
+            'message' => 'wish bien ajouté',
+        ], 200);
 
     }
 
@@ -68,9 +75,61 @@ class ProductController extends AbstractController
         $em->persist($products);
         $em->flush();
 
-        return $this->redirectToRoute('home');
+        return $this->json([
+            'code' => 200,
+            'message' => 'wish bien supprimé',
+            'status' => $products->getFavoris()
+        ], 200);
 
     }
 
+    /**
+     *
+     * Permet d'ajout ou de retirer un article de la wishlist
+     *
+     * @param Products $product
+     * @param ManagerRegistry $manager
+     * @param WishRepository $wishRepository
+     * @return Response
+     */
+    #[Route('/product/{id}/wish', name :'products-wish')]
+    public function wish(Products $product, ManagerRegistry $manager, WishRepository $wishRepository): Response
+    {
+        $user = $this->getUser();
+
+        if (!$user) {
+            return $this->json([
+                'code' => 403,
+                'message' => 'non autorisé'
+            ], 403);
+        }
+
+        if ($product->isWishByUser($user)) {
+            $wish = $wishRepository->findOneBy([
+                'product' => $product,
+                'user' => $user
+            ]);
+            $em = $manager->getManager();
+            $em->remove($wish);
+            $em->flush();
+
+            return $this->json([
+                'code' => 200,
+                'message' => 'favoris bien supprimer'
+            ], 200);
+        }
+
+        $wish = new Wish();
+        $wish->setProduct($product)
+            ->setUser($user);
+        $em = $manager->getManager();
+        $em->persist($wish);
+        $em->flush();
+
+        return $this->json([
+            'code' => 200,
+            'message' => 'ca marche bien'
+        ],200);
+    }
 
 }

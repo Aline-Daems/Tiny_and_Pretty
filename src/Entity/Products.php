@@ -128,6 +128,11 @@ class Products
      */
     private $topImageFile;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Wish::class, mappedBy="product")
+     */
+    private $wishes;
+
     public function __construct(){
         $this->category = new ArrayCollection();
         $this->mode = new ArrayCollection();
@@ -136,6 +141,7 @@ class Products
         $this->toys = new ArrayCollection();
         $this->pictures = new ArrayCollection();
         $this->favoris = new ArrayCollection();
+        $this->wishes = new ArrayCollection();
 
     }
     public function getId(): ?int
@@ -438,6 +444,51 @@ class Products
     {
         $this->topImage = $topImage;
         return $this;
+    }
+
+    /**
+     * @return Collection|Wish[]
+     */
+    public function getWishes(): Collection
+    {
+        return $this->wishes;
+    }
+
+    public function addWish(Wish $wish): self
+    {
+        if (!$this->wishes->contains($wish)) {
+            $this->wishes[] = $wish;
+            $wish->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWish(Wish $wish): self
+    {
+        if ($this->wishes->removeElement($wish)) {
+            // set the owning side to null (unless already changed)
+            if ($wish->getProduct() === $this) {
+                $wish->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * perlet de savoir si cette article est dans la wishlist de l'utilisateur
+     *
+     * @param User $user
+     * @return bool
+     */
+    public function isWishByUser(User $user) :bool {
+        foreach($this->wishes as $wish) {
+            if ($wish->getUser() === $user) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

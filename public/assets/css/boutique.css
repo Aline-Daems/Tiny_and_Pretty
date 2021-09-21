@@ -551,6 +551,15 @@ h1, h3, h5, p {
   font-family: Quicksand, sans-serif;
 }
 
+.heart-wish {
+  width: 1.8rem;
+}
+
+.heart-bold {
+  width: 1.8rem;
+  background-color: #0B7FC7;
+}
+
 .aside-description {
   font-family: Quicksand, sans-serif;
   text-align: center;
