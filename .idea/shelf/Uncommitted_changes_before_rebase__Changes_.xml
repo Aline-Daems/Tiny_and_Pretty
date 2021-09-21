@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_rebase_[Changes]" date="1631612799600" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="public/assets/css/.sass-cache/8a4672e2753334269b916ffbbf6e5ab419a3e744/header.scssc" />
-    <option name="AFTER_PATH" value="public/assets/css/.sass-cache/8a4672e2753334269b916ffbbf6e5ab419a3e744/header.scssc" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/header.scssc" />
-  </binary>
-</changelist>
