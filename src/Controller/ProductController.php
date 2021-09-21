@@ -2,21 +2,21 @@
 
 namespace App\Controller;
 
-
+use App\Classe\search;
+use App\Data\SearchData;
 use App\Entity\Products;
-
-
+use App\Form\SearchForm;
+use App\Form\SearchType;
+use App\Repository\ProductsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 
 class ProductController extends AbstractController
 {
     private $entityManager;
-
 
     public function __construct(EntityManagerInterface $entityManager)
     {
@@ -45,37 +45,5 @@ class ProductController extends AbstractController
         ]);
 
     }
-
-    #[Route('/favoris/ajout/{id}', name :'ajout_favoris')]
-
-    public function ajoutFavoris(Products $products): Response
-    {
-
-
-      $products->addFavori($this->getUser());
-
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($products);
-      $em->flush();
-
-        return $this->redirectToRoute('home');
-
-    }
-
-    #[Route('/favoris/retrait/{id}', name :'retrait_favoris')]
-
-    public function retraitFavoris(Products $products): Response
-    {
-
-        $products->removeFavori($this->getUser());
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($products);
-        $em->flush();
-
-        return $this->redirectToRoute('home');
-
-    }
-
 
 }

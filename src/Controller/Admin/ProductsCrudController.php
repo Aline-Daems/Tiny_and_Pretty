@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProductsCrudController extends AbstractCrudController
 {
@@ -28,10 +29,17 @@ class ProductsCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             SlugField::new('slug')->setTargetFieldName('name'),
-            Imagefield::new('illustration')
+            TextField::new('imageFile')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex(),
+            ImageField::new('image')
                 ->setBasePath('uploads/')
                 ->setUploadDir('public/uploads/')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)
+                ->onlyOnIndex(),
+            ImageField::new('illustration')
+                ->setBasePath('uploads/')
+                ->setUploadDir('public/uploads/')
                 ->setRequired(false),
             TextField::new('Subtitle'),
             TextareaField::new('description'),
