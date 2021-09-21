@@ -30,10 +30,16 @@
 
 }
 .product-text{
-  margin-bottom: 0.5%!important;
+  margin-top: 4%!important;
+  margin-bottom: 0!important;
+}
+.product-description{
+  margin-top: 0;
+  text-transform: lowercase!important;
+  font-size: 1rem;
 }
 .product-price-text{
-  margin-top: 8%;
+  margin-top: 6%;
 }
 
 .apercu{
@@ -62,4 +68,12 @@
   font-family: $titleFontRegular;
 }
 
+.heart-wish{
+  width:1.8rem;
 
+}
+
+.heart-bold{
+  width:1.8rem;
+  background-color: #0B7FC7;
+}

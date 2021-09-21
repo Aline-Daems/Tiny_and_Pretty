@@ -11,15 +11,7 @@
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema">
-            <name qname="@" />
-            <name qname="information_schema" />
-            <name qname="mysql" />
-            <name qname="performance_schema" />
-            <name qname="sys" />
-            <name qname="TinyA" />
-            <name qname="TinyAndPretty" />
-          </node>
+          <node kind="schema" qname="@" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

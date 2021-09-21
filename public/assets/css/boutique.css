@@ -2,10 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap");
-.wrapper-parallax {
-  margin-top: 100px;
-}
-
 main {
   position: relative;
   z-index: 1;
@@ -16,12 +12,16 @@ main {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+h1, h3 {
+  color: grey;
+}
+
 .video-home {
   position: relative;
   padding-bottom: 56.25%;
   /* 16:9 */
-  padding-top: 25px;
-  height: 0;
+  margin-top: -80px;
+  z-index: -1;
 }
 
 .video-home iframe {
@@ -30,6 +30,15 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.hidden-video {
+  background-color: white;
+  height: 32vh;
+  width: 100vw;
+  z-index: 5;
+  margin-top: -30vh;
 }
 
 .bg-image-banner {
@@ -43,10 +52,20 @@ main {
 .slogan {
   font-family: Quicksand, sans-serif;
   font-size: 8vh;
+  color: white !important;
+  /*
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+   */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15%;
+  resize: both;
+  overflow: auto;
 }
 
 .category {
@@ -54,6 +73,15 @@ main {
   margin-bottom: 10rem;
   width: 100%;
   padding-left: 5vw;
+}
+
+.description {
+  font-family: Quicksand, sans-serif;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
 }
 
 .Pict {
@@ -91,6 +119,10 @@ blockquote {
   margin-bottom: 10%;
 }
 
+.button-flow {
+  margin-left: 30%;
+}
+
 .text-presentation-short {
   position: relative;
   box-sizing: border-box;
@@ -111,7 +143,8 @@ blockquote {
   100% {top: 3rem}
 
 }*/
-h1, p {
+/*
+h1, h3, h5, p {
   opacity: 0;
   position: relative;
   bottom: -40px;
@@ -123,8 +156,29 @@ h1, p {
   bottom: 0;
 }
 
-.text-presentation-short p.show {
+
+.text-presentation-short  p.show {
   transition-delay: 0.5s;
+}
+
+ */
+[class*=reveal-] {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1.3s;
+}
+
+.reveal-2 {
+  transition-delay: 0.3s;
+}
+
+.reveal-3 {
+  transition-delay: 0.9s;
 }
 
 .tiny-emphasis {
@@ -132,45 +186,33 @@ h1, p {
 }
 
 /*
-.description {
-  font-family: $titleFontRegular;
-  font-size: 1.5em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-}
-.description :hover{
-  font-size: 3em;
-}*/
 .waviy {
   position: absolute;
+  //background-color: yellow;
   top: 50%;
   left: 40%;
   transform: translate(-50%, -50%);
-}
 
-.waviy span {
+
+
+}
+.waviy span{
   position: relative;
   display: inline-block;
-  font-family: Quicksand, sans-serif;
+  font-family: $titleFontRegular;
   font-size: 1.8rem;
   animation: bounce 1s 2;
-  animation-delay: calc(.2s * var(--i));
+  animation-delay: calc(.2s * var(--i))
+
+}
+@keyframes bounce {
+  from {top: 106px;}
+  50%  {top: 86px;}
+  to   {top: 106px;}
+
 }
 
-@keyframes bounce {
-  from {
-    top: 106px;
-  }
-  50% {
-    top: 86px;
-  }
-  to {
-    top: 106px;
-  }
-}
+ */
 /*
 @keyframes flip {
   0%,50% {
@@ -207,6 +249,14 @@ h1, p {
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   -ms-transition: all 400ms ease-out;
+}
+.bestproducts .icone-wish {
+  position: absolute;
+  left: 85%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 1.8rem;
+  background: red;
 }
 
 .bestproducts:hover + .profite, .profite:hover {
@@ -329,6 +379,15 @@ h1, p {
   .aside-description {
     background-color: green;
   }
+
+  .icone-wish {
+    position: absolute;
+    left: 85%;
+    top: 8%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: blue !important;
+  }
 }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
@@ -346,6 +405,18 @@ h1, p {
   .aside-description {
     background-color: blue;
   }
+
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: yellow!important;
+
+  }
+
+   */
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
   .box {
@@ -361,6 +432,18 @@ h1, p {
   .aside-description {
     background-color: red;
   }
+
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: mistyrose!important;
+
+  }
+
+   */
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .box {
@@ -384,6 +467,15 @@ h1, p {
 
   .aside-description {
     background-color: yellow;
+  }
+
+  .icone-wish {
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: lawngreen !important;
   }
 }
 .content-layout {
@@ -419,11 +511,18 @@ h1, p {
 }
 
 .product-text {
-  margin-bottom: 0.5% !important;
+  margin-top: 4% !important;
+  margin-bottom: 0 !important;
+}
+
+.product-description {
+  margin-top: 0;
+  text-transform: lowercase !important;
+  font-size: 1rem;
 }
 
 .product-price-text {
-  margin-top: 8%;
+  margin-top: 6%;
 }
 
 .apercu {
@@ -452,6 +551,15 @@ h1, p {
   font-family: Quicksand, sans-serif;
 }
 
+.heart-wish {
+  width: 1.8rem;
+}
+
+.heart-bold {
+  width: 1.8rem;
+  background-color: #0B7FC7;
+}
+
 .aside-description {
   font-family: Quicksand, sans-serif;
   text-align: center;
@@ -459,7 +567,6 @@ h1, p {
 }
 
 .btn {
-  border-radius: 0 !important;
   padding: 2vh !important;
 }
 
@@ -511,8 +618,16 @@ body {
 header {
   top: 0;
   width: 100vw;
-  z-index: 999;
+  z-index: 2;
   background: white;
+}
+
+#home-banner {
+  position: relative;
+  background-color: white;
+  height: 15vh;
+  width: 100vw;
+  z-index: 5;
 }
 
 .title_drop {
@@ -576,7 +691,6 @@ header {
   font-size: 0.8rem;
   font-weight: bold;
 }
-
  */
 /* adds some margin below the link sets  */
 .navbar .dropdown-menu div[class*=p-2] {
@@ -730,15 +844,19 @@ header {
     margin: 0 0.25rem;
   }
 
-  header {
+  /*
+  header{
     position: fixed;
   }
+  */
 }
 @media screen and (min-device-width: 1025px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-  header {
+  /*
+  header{
     position: fixed;
   }
 
+   */
   .navbar-brand {
     margin: 0 !important;
     width: 20vw;
@@ -759,6 +877,7 @@ header {
 .title {
   font-family: Quicksand, sans-serif;
   font-size: 5vh;
+  color: grey;
 }
 
 .presentation {
@@ -766,7 +885,7 @@ header {
   font-size: 2vh;
   padding-left: calc(100vw/5);
   line-height: 3vh;
-  color: #948E8E;
+  color: grey;
 }
 
 .title_atelier {
@@ -977,7 +1096,7 @@ header {
 footer {
   width: 100%;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   bottom: 0;
   background-color: white;
 }
@@ -992,11 +1111,23 @@ footer {
 .list-footer {
   list-style-type: none;
   font-size: 1rem;
+  text-decoration: none;
 }
 
-.link_footer {
-  color: grey;
+a {
+  color: #f0edda;
+}
+
+/* Globally */
+/* Each state */
+a:visited {
   text-decoration: none;
+  color: grey;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+  color: black;
 }
 
 .footer-custom {
@@ -1053,10 +1184,6 @@ footer {
 .answer {
   font-family: Cantarell, sans-serif;
   color: gray !important;
-}
-
-a:link {
-  text-decoration: none;
 }
 
 .banner-debora {

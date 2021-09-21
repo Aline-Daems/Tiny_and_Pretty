@@ -1,6 +1,6 @@
 
 .wrapper-parallax {
-  margin-top: 100px;
+ // margin-top: 100px;  nécessaire si on reste sur la V.1
   //margin-bottom: 10px;
 }
 
@@ -16,12 +16,16 @@ main {
  // box-shadow: 6px 1px 4px 1px black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+h1, h3{
+  color: grey;
+}
+
 
   .video-home {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
+    margin-top: -80px;
+    z-index: -1;
   }
   .video-home iframe {
     position: absolute;
@@ -29,6 +33,14 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
+  }
+  .hidden-video{
+    background-color: white;
+    height: 32vh;
+    width: 100vw;
+    z-index: 5;
+    margin-top: -30vh;
   }
 
 //banner home
@@ -44,10 +56,21 @@ main {
 .slogan {
   font-family: $titleFontRegular;
   font-size: 8vh;
+  color: white!important;
+  /*
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+   */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15%;
+  resize: both;
+  overflow: auto;
 }
 
 //category
@@ -58,6 +81,16 @@ main {
   padding-left: 5vw;
 
 }
+.description {
+  font-family: $titleFontRegular;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+
+}
+
 
 .Pict {
 
@@ -101,14 +134,16 @@ font-family: $textFontRegular;
 
 
 }
+.button-flow{
+  margin-left: 30%;
+}
 .text-presentation-short {
   position: relative;
   box-sizing: border-box;
-  //animation: marquee 2s linear ;
- //animation-delay: 0.5s;
  text-align: justify;
   padding-right: 30%;
   padding-left: 30%;
+
 }
 /*
 @keyframes marquee
@@ -122,8 +157,9 @@ font-family: $textFontRegular;
   100% {top: 3rem}
 
 }*/
-
-h1, p {
+////////////////////////////////////////////////////////////////////////////////////
+/*
+h1, h3, h5, p {
   opacity: 0;
   position: relative;
   bottom: -40px;
@@ -135,28 +171,50 @@ h1, p {
   bottom: 0;
 }
 
+
 .text-presentation-short  p.show {
   transition-delay: 0.5s;
 }
 
+ */
+
+
+//////////////////////////////////////////////////////////////////////////////
+[class*="reveal-"] {
+  opacity: 0;
+  transform: translateY(-30px);
+
+}
+.reveal-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1.3s;
+}
+
+.reveal-2 {
+  transition-delay: .3s;
+}
+.reveal-3 {
+  transition-delay: .9s;
+}
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 .tiny-emphasis{
-  color: $green
+  color: $green;
 }
+
+
+
 /*
-.description {
-  font-family: $titleFontRegular;
-  font-size: 1.5em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-}
-.description :hover{
-  font-size: 3em;
-}*/
-
 .waviy {
   position: absolute;
   //background-color: yellow;
@@ -182,6 +240,8 @@ h1, p {
   to   {top: 106px;}
 
 }
+
+ */
 /*
 @keyframes flip {
   0%,50% {
@@ -232,6 +292,15 @@ h1, p {
    // transform: translate(-50%, 150%);
 
   }
+.icone-wish{
+position: absolute;
+  left: 85%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 1.8rem;
+  background: red;
+
+}
 
 }
 .bestproducts:hover + .profite,  .profite:hover{
@@ -376,6 +445,15 @@ h1, p {
     background-color: green;
   }
   //footer ok
+  .icone-wish{
+    position: absolute;
+    left: 85%;
+    top: 8%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: blue!important;
+
+  }
 
 
 }
@@ -392,6 +470,17 @@ h1, p {
   .aside-description{
     background-color: blue;
   }
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: yellow!important;
+
+  }
+
+   */
 
 }
 
@@ -409,6 +498,17 @@ h1, p {
   .aside-description{
     background-color: red;
   }
+  /*
+  .icone-wish{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: mistyrose!important;
+
+  }
+
+   */
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -430,6 +530,18 @@ h1, p {
   .aside-description{
     background-color: yellow;
   }
+
+  .icone-wish{
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    background: lawngreen!important;
+
+  }
+
+
 
 
 }

@@ -3,22 +3,23 @@
 {% block title %}Mes commandes{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 text-center">
-            <div class="title_order">
-    <h1>MES COMMANDES</h1>
-            </div>
-            <div class="text_order">
-   <p>C'est dans cet espace que vous allez pouvoir gérer vos commandes</p>
-            </div>
-   <button type="submit" class="btn connect mt-3 pt-5"  ><a href="{{ path('account') }}" style="color:#FFFFFF;">Retour</a></button>
-    <hr>
+<div class="container-fluid text-center mt-5 mb-5">
+
+    <h1 class="title pt-5">
+        MES COMMANDES
+    </h1>
+
+    <div class=" text-center  mt-3 mb-3 pl-0">
+        <p>C'est dans cet espace que vous allez pouvoir gérer vos commandes</p>
+    </div>
+
+    <a href="{{ path('account') }}"><button type="submit" class="btn connect mt-3 pt-5 profite text-white">Retour</button></a>
+
     {% if app.user.orders|length == 0 %}
         <p class="text-center">Vous n'avez pas encore d'adresse.</p>
         <a href="">Ajouter une commande</a>
     {% else %}
-        <table class="table mt-4">
+        <table class="table mt-4 presentation">
             <thead>
             <tr>
                 <th scope="col">Référence</th>
@@ -31,13 +32,16 @@
             </thead>
             <tbody>
         {% for order in app.user.orders %}
-            <tr><td> <span class="badge badge-info">{{ order.reference }}</span></td>
+            <tr><td> <span class="badge badge-light">{{ order.reference }}</span></td>
                 <td>{{ order.createdAt|date('d/m/Y') }}</td>
                 <td>
-                    {% if order.State == 1 %}
-                        Paiement accepté
+
+                    {% if order.State == 0 %}
+                        <p class="text-danger">Paiement refusé</p>
+                    {% elseif order.State == 1 %}
+                        <p class="text-success">Paiement accepté</p>
                     {% elseif order.State == 2 %}
-                        Préparation en cours
+                        <p class="text-info">Préparation en cours</p>
                     {% elseif order.State == 3 %}
                         Livraison en cours
                     {% endif %}
@@ -55,8 +59,8 @@
 
 
     {% endif %}
-        </div>
-    </div>
+
+
 </div>
 
 {% endblock %}

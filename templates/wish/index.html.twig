@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma wishlist{% endblock %}
+
+{% block content %}
+
+<div class="title_cart">
+    <h1>Ma wishlist</h1>
+</div>
+
+    <div class="row">
+        <div class="container-fluid">
+
+            {% for product in wish %}
+
+                        {% if product.id == app.user.id %}
+                            <div class="container d-flex">
+                                <div class="col-md-3">
+
+                                    {% include '/product/single_product.html.twig' with {product: product} only %}
+                                </div>
+                                <div class="col-md-5 m-auto">
+                                      <button class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1" type="button">
+                                          <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;"><div>AJOUTER AU PANIER</div></a>
+                                      </button>
+                                    {#  <button class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1" type="button">
+                                           <a href="{{ path('retrait_favoris', {id: product.id}) }}" style="color:#000005;" class="text-uppercase"> Retirer le produit de ma liste</a>
+                                      </button>#}
+                                 </div>
+
+                            </div>
+
+                        {% endif %}
+            {% endfor %}
+        </div>
+
+
+     </div>
+{% endblock %}

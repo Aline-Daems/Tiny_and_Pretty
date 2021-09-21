@@ -5,7 +5,9 @@
 {% block content %}
     <div class="row">
         <div class="container-fluid col-md-4   mb-5 ">
-            <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
+
+            <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('show')}}" alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
+
         </div>
         <div class="col-md-7 my-auto aside-description mt-sm-5 mx-sm-auto">
             <p> {{ product.subtitle }}</p>
@@ -15,6 +17,46 @@
             <p>
                 {{ product.description }}
             </p>
+
+                <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
+                    {% if app.user and product.isWishByUser(app.user) %}
+                        <img src="{{ asset('assets/img/heart.svg') }}" alt="" class="heart-bold">
+                    {% else %}
+                        <img src="{{ asset('assets/img/heart.svg') }}" alt="" class="heart-wish">
+                    {% endif %}
+                </a>
+
+            {#<div>
+                {% if is_granted('ROLE_USER') %}
+                    {% set isFavorite = false %}
+                    {% for favoris in product.favoris  %}
+
+                        {% if favoris.id == app.user.id %}
+                            {% set isFavorite = true %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if isFavorite %}
+                <div class="heartClass">
+                        <a href="{{ path('retrait_favoris', {id: product.id}) }}" class="js-favorite"> <i class="fas fa-heart"></i></a>
+
+                    {% else %}
+
+                        <a href="{{ path('ajout_favoris', {id: product.id}) }}" class="js-favorite"> <i class="far fa-heart"></i></a>
+
+                    {% endif %}
+
+                {% else %}
+                    <i class="far fa-heart"></i>
+                {% endif %}
+
+                </div>
+
+            </div>
+        </div>#}
+        <div class="col-md-7 my-auto aside-description mt-sm-5 mx-sm-auto">
+
+
 
             <hr class="mx-auto col-md-10 col-lg-10 col-xl-10 pl-0 ml-0">
 
@@ -127,6 +169,14 @@
         </div>
     </div>
 
+            <div class="container-fluid">
+                <div class="col-md-4 ml-3 mb-5">
+
+                    {% for picture in product.pictures  %}
+                        <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('thumb')}}" alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
+                    {% endfor %}
+                </div>
+            </div>
     <div class="container-fluid  bestsellers">
         <h3 class="separator text-center">BESTSELLERS</h3>
 

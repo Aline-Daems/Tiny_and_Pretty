@@ -1,7 +1,7 @@
 footer {
   width: 100%;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   bottom: 0;
   background-color: white;
 
@@ -15,12 +15,18 @@ footer {
 .list-footer {
   list-style-type: none;
   font-size: 1rem;
-}
-
-.link_footer {
-color: grey;
   text-decoration: none;
 }
+
+
+a { color:$grey } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color:grey; }
+a:hover, a:active { text-decoration: none; color:black }
+
+
 .footer-custom {
   display: flex;
   flex-direction: column;
