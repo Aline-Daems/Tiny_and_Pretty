@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_22-09-21_11_18_[Changes]" date="1632302325656" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-09-21_11_18_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 22-09-21 11:18 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/218d38c5-7673-4741-8c61-57c7f687ec79/entities/entities.dat" />
+    <option name="AFTER_PATH" value=".idea/dataSources/218d38c5-7673-4741-8c61-57c7f687ec79/entities/entities.dat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-09-21_11_18_[Changes]/entities.dat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/218d38c5-7673-4741-8c61-57c7f687ec79/entities/entities.dat_i" />
+    <option name="AFTER_PATH" value=".idea/dataSources/218d38c5-7673-4741-8c61-57c7f687ec79/entities/entities.dat_i" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-09-21_11_18_[Changes]/entities.dat_i" />
+  </binary>
+</changelist>

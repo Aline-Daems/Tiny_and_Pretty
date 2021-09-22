@@ -12,7 +12,7 @@ header {
   background: white;
 
 }
-
+// V2
 #home-banner{
   position: relative;
   background-color: white;
@@ -60,6 +60,8 @@ header {
 .icones-nav {
   width: 1.5rem;
 }
+//////////////////////////////////////////////////////////
+//V2
 .link-headOne{
   position: relative;
   font-weight: bold;
@@ -85,6 +87,7 @@ header {
   width: 10%;
   height: 10%!important;
 }
+//////////////////////////////////////////
 /*
 .bag-count{
   position: relative;
@@ -118,6 +121,7 @@ header {
 }
 
 .navbar .dropdown-menu {
+  margin-top: 0;
   font-family: $titleFontRegular;
   font-size: 2vh;
   position: absolute;

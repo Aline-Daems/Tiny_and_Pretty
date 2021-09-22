@@ -1,0 +1,59 @@
+Index: .env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># In all environments, the following files are loaded if they exist,\r\n# the latter taking precedence over the former:\r\n#\r\n#  * .env                contains default values for the environment variables needed by the app\r\n#  * .env.local          uncommitted file with local overrides\r\n#  * .env.$APP_ENV       committed environment-specific defaults\r\n#  * .env.$APP_ENV.local uncommitted environment-specific overrides\r\n#\r\n# Real environment variables win over .env files.\r\n#\r\n# DO NOT DEFINE PRODUCTION SECRETS IN THIS FILE NOR IN ANY OTHER COMMITTED FILES.\r\n#\r\n# Run \"composer dump-env prod\" to compile .env files for production use (requires symfony/flex >=1.2).\r\n# https://symfony.com/doc/current/best_practices.html#use-environment-variables-for-infrastructure-configuration\r\n\r\n###> symfony/framework-bundle ###\r\nAPP_ENV=dev\r\nAPP_SECRET=1d868da7ca758c991815138744a29110\r\n\r\n###< symfony/framework-bundle ###\r\n\r\n###> symfony/mailer ###\r\n# MAILER_DSN=smtp://localhost\r\n###< symfony/mailer ###\r\n\r\n###> doctrine/doctrine-bundle ###\r\n# Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url\r\n# IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml\r\n#\r\n # DATABASE_URL=\"sqlite:///%kernel.project_dir%/var/data.db\"\r\n\r\nDATABASE_URL=\"mysql://root:root@127.0.0.1:3306/tiny?serverVersion=5.7\"\r\n# DATABASE_URL=\"postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVersion=13&charset=utf8\"\r\n###< doctrine/doctrine-bundle ###\r\n\r\n###> nelmio/cors-bundle ###\r\nCORS_ALLOW_ORIGIN='^https?://(localhost|127\\.0\\.0\\.1)(:[0-9]+)?$'\r\n###< nelmio/cors-bundle ###\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.env b/.env
+--- a/.env	(revision 7342ba440391a4992d64ddca9aa5f79bcf5bd08c)
++++ b/.env	(date 1632302325456)
+@@ -29,7 +29,7 @@
+ #
+  # DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+ 
+-DATABASE_URL="mysql://root:root@127.0.0.1:3306/tiny?serverVersion=5.7"
++DATABASE_URL="mysql://root:@127.0.0.1:3306/tiny?serverVersion=mariadb-10.4.20"
+ # DATABASE_URL="postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVersion=13&charset=utf8"
+ ###< doctrine/doctrine-bundle ###
+ 
+Index: migrations/Version20210920131148.php
+===================================================================
+diff --git a/migrations/Version20210920131148.php b/migrations/Version20210920131148.php
+deleted file mode 100644
+--- a/migrations/Version20210920131148.php	(revision 7342ba440391a4992d64ddca9aa5f79bcf5bd08c)
++++ /dev/null	(revision 7342ba440391a4992d64ddca9aa5f79bcf5bd08c)
+@@ -1,33 +0,0 @@
+-<?php
+-
+-declare(strict_types=1);
+-
+-namespace DoctrineMigrations;
+-
+-use Doctrine\DBAL\Schema\Schema;
+-use Doctrine\Migrations\AbstractMigration;
+-
+-/**
+- * Auto-generated Migration: Please modify to your needs!
+- */
+-final class Version20210920131148 extends AbstractMigration
+-{
+-    public function getDescription(): string
+-    {
+-        return '';
+-    }
+-
+-    public function up(Schema $schema): void
+-    {
+-        // this up() migration is auto-generated, please modify it to your needs
+-        $this->addSql('CREATE TABLE wish (id INT AUTO_INCREMENT NOT NULL, product_id INT DEFAULT NULL, user_id INT DEFAULT NULL, INDEX IDX_D7D174C94584665A (product_id), INDEX IDX_D7D174C9A76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+-        $this->addSql('ALTER TABLE wish ADD CONSTRAINT FK_D7D174C94584665A FOREIGN KEY (product_id) REFERENCES products (id)');
+-        $this->addSql('ALTER TABLE wish ADD CONSTRAINT FK_D7D174C9A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
+-    }
+-
+-    public function down(Schema $schema): void
+-    {
+-        // this down() migration is auto-generated, please modify it to your needs
+-        $this->addSql('DROP TABLE wish');
+-    }
+-}
