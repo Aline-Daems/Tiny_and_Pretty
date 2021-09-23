@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
     // executes when HTML-Document is loaded and DOM is ready
 
@@ -133,7 +131,7 @@ $(document).ready(function () {
         let scrollVal = $(this).scrollTop();
         if (scrollVal >= headerH) {
             $('#home-banner').css({'position': 'fixed', 'top': '0px'});
-            $('#logo-show').css({'display': 'block', 'transform':'scale(1.3)'});
+            $('#logo-show').css({'display': 'block', 'transform': 'scale(1.3)'});
             $('.dropdown-menu').css({'top': '90%'});
 
 
@@ -149,17 +147,17 @@ $(document).ready(function () {
 
 ////////////////////////////////////////////////////////////////////////
 let icones = document.getElementById('iconesJS');
-if (window.location.href === "http://127.0.0.1:8000/qui/sommes/nous"
+if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     ||
-    window.location.href === "http://127.0.0.1:8000/faq"
+    window.location.href === "https://127.0.0.1:8000/faq"
     ||
-    window.location.href === "http://127.0.0.1:8000/tailles"
+    window.location.href === "https://127.0.0.1:8000/tailles"
     ||
-window.location.href === "http://127.0.0.1:8000/contact/user"
+    window.location.href === "https://127.0.0.1:8000/contact/user"
     ||
-    window.location.href === "http://127.0.0.1:8000/livraisons/et/retours"
+    window.location.href === "https://127.0.0.1:8000/livraisons/et/retours"
     ||
-    window.location.href === "http://127.0.0.1:8000/login"
+    window.location.href === "https://127.0.0.1:8000/login"
 ) {
     $('.hideHeaderJS').css({'display': 'none'});
     $('#search-formJS').replaceWith(icones);
@@ -168,18 +166,17 @@ window.location.href === "http://127.0.0.1:8000/contact/user"
 
 // Ajax jquery avec le bundle axios sur le coeur de la wishlist
 
-function onClickBtnWish(event){
+function onClickBtnWish(event) {
     event.preventDefault();
     const url = this.href;
     const heart = this.querySelector('img');
 
 
-    axios.get(url).then(function (){
+    axios.get(url).then(function () {
 
-        if(heart.classList.contains('heart-wish')) {
+        if (heart.classList.contains('heart-wish')) {
             heart.classList.replace('heart-wish', 'heart-bold');
-        }
-        else {
+        } else {
             heart.classList.replace('heart-bold', 'heart-wish');
         }
 
@@ -187,7 +184,7 @@ function onClickBtnWish(event){
     })
 }
 
-document.querySelectorAll('a.js-wish').forEach(function(link){
+document.querySelectorAll('a.js-wish').forEach(function (link) {
     link.addEventListener('click', onClickBtnWish);
 })
 
