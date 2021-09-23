@@ -4,36 +4,47 @@
 
 {% block content %}
 
-<div class="title_cart">
-    <h1>Ma wishlist</h1>
-</div>
+    <div class="title_cart">
+        <h1>Ma wishlist</h1>
+    </div>
 
     <div class="row">
         <div class="container-fluid">
 
-            {% for wish in product %}
 
-                        {% if wish.id == app.user.id %}
-                            <div class="container d-flex">
-                                <div class="col-md-3">
+            {% for product in products %}
 
-                                    {% include '/product/single_product.html.twig' with {product: product} only %}
-                                </div>
-                                <div class="col-md-5 m-auto">
-                                      <button class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1" type="button">
-                                          <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;"><div>AJOUTER AU PANIER</div></a>
-                                      </button>
-                                    {#  <button class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1" type="button">
+
+                {# Permet d'aller chercher les informations de products dans la wish #}
+                {% if product.id == product.isWishByUser(app.user) %}
+
+
+                    <div class="container d-flex">
+                        <div class="col-md-3">
+                            <h2>{{ product.name }}</h2>
+                            {% include '/product/single_product.html.twig' %}
+                        </div>
+                        <div class="col-md-5 m-auto">
+                            <button class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1"
+                                    type="button">
+                                <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;">
+                                    <div>AJOUTER AU PANIER</div>
+                                </a>
+                            </button>
+                            {# <button class="btn btn-outline-secondary col-md-10 col-lg-10 col-xl-10 col-sm-12 mt-3 ml-1 mr-1" type="button">
                                            <a href="{{ path('retrait_favoris', {id: product.id}) }}" style="color:#000005;" class="text-uppercase"> Retirer le produit de ma liste</a>
-                                      </button>#}
-                                 </div>
+                                      </button> #}
+                        </div>
 
-                            </div>
+                    </div>
 
-                        {% endif %}
+
+
+                {% endif %}
+
             {% endfor %}
         </div>
 
 
-     </div>
+    </div>
 {% endblock %}
