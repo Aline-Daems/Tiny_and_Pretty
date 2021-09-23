@@ -11,9 +11,9 @@
     <div class="row">
         <div class="container-fluid">
 
-            {% for product in wish %}
+            {% for wish in product %}
 
-                        {% if product.id == app.user.id %}
+                        {% if wish.id == app.user.id %}
                             <div class="container d-flex">
                                 <div class="col-md-3">
 
