@@ -55,6 +55,7 @@ class ProductsCrudController extends AbstractCrudController
             BooleanField::new('isBest'),
             BooleanField::new('isNew'),
             BooleanField::new('soldOut'),
+            AssociationField::new('sizes'),
             MoneyField::new('price')->setCurrency('EUR'),
             AssociationField::new('mode'),
             AssociationField::new('maison'),

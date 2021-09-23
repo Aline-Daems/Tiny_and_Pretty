@@ -17,6 +17,9 @@
             <p>
                 {{ product.description }}
             </p>
+            <p>
+                {{ product.sizes }}
+            </p>
 
                 <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
                     {% if app.user and product.isWishByUser(app.user) %}
