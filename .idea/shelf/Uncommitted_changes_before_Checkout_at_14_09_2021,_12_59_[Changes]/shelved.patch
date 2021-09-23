@@ -1,0 +1,1390 @@
+Index: public/assets/css/boutique.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import url(\"https://fonts.googleapis.com/css2?family=Quicksand&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Cantarell&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap\");\n.wrapper-parallax {\n  margin-top: 100px; }\n\nmain {\n  position: relative;\n  z-index: 1;\n  background-color: white !important;\n  overflow-y: auto;\n  overflow-x: hidden;\n  margin-bottom: 40vh;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }\n\n.video-home {\n  position: relative;\n  padding-bottom: 56.25%;\n  /* 16:9 */\n  padding-top: 25px;\n  height: 0; }\n\n.video-home iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.bg-image-banner {\n  position: relative;\n  background: url(\"../img/banner-mere-et-enfant.webp\") no-repeat center fixed;\n  background-size: cover;\n  height: 60vh;\n  width: 120% !important; }\n\n.slogan {\n  font-family: Quicksand, sans-serif;\n  font-size: 8vh;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.category {\n  margin-top: 5rem !important;\n  margin-bottom: 10rem;\n  width: 100%;\n  padding-left: 5vw; }\n\n.Pict {\n  overflow: hidden;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  -webkit-transition: .3s ease-in-out;\n  transition: .3s ease-in-out;\n  transition-duration: 885ms;\n  filter: brightness(80%); }\n\n.Pict:hover {\n  -webkit-transform: scale(1.2);\n  transform: scale(1.2);\n  -webkit-filter: brightness(50%);\n  /* Chrome, Safari, Opera */\n  filter: brightness(50%); }\n\nblockquote {\n  font-family: Cantarell, sans-serif;\n  overflow: hidden;\n  position: relative;\n  box-sizing: border-box;\n  width: 70%;\n  /*\n  background: rgb(240,237,218);\n  background: -moz-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);\n  background: -webkit-radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);\n  background: radial-gradient(circle, rgba(240,237,218,0.258140756302521) 4%, rgba(240,237,218,0.12088585434173671) 96%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\"#f0edda\",endColorstr=\"#f0edda\",GradientType=1);\n  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;\n\n   */\n  padding: 3% 5% 3% 5%;\n  margin-bottom: 10%;\n  margin-left: 13%; }\n\n.text-presentation-short {\n  position: relative;\n  box-sizing: border-box;\n  animation: marquee 12s linear 2;\n  animation-delay: 1s;\n  text-align: justify;\n  padding-right: 20%; }\n\n@keyframes marquee {\n  0% {\n    top: 300px; }\n  40% {\n    top: 20px; }\n  50% {\n    top: 20px; }\n  60% {\n    top: 20px; }\n  100% {\n    top: -300px; } }\n.tiny-emphasis {\n  color: #a9b97a; }\n\n.logo-img-presentation {\n  width: 30%;\n  height: auto;\n  margin-bottom: 5%; }\n\n/*\n.description {\n  font-family: $titleFontRegular;\n  font-size: 1.5em;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n\n}\n.description :hover{\n  font-size: 3em;\n}*/\n.waviy {\n  position: absolute;\n  top: 50%;\n  left: 40%;\n  transform: translate(-50%, -50%); }\n\n.waviy span {\n  position: relative;\n  display: inline-block;\n  font-family: Quicksand, sans-serif;\n  font-size: 1.8rem;\n  animation: bounce 1s 2;\n  animation-delay: calc(.2s * var(--i)); }\n\n@keyframes bounce {\n  from {\n    top: 106px; }\n  50% {\n    top: 86px; }\n  to {\n    top: 106px; } }\n/*\n@keyframes flip {\n  0%,50% {\n    transform: rotateY(360deg)\n  }\n}\n\n */\n.separator {\n  font-family: Quicksand, sans-serif;\n  width: 100%;\n  font-size: 4vh;\n  letter-spacing: 0.3rem;\n  margin-top: 5rem; }\n\n.bestproducts {\n  margin-top: 5rem !important;\n  margin-bottom: 10rem !important;\n  width: 90%;\n  text-transform: uppercase !important; }\n  .bestproducts .profite {\n    background-color: #a9b97a;\n    box-shadow: .050em .050em .050em #aaaaaa;\n    font-size: 1.8vh;\n    color: white;\n    border: none;\n    letter-spacing: 0.3vw;\n    padding: 1vh 2vw 1vh 2vw;\n    position: absolute; }\n\n.bestproducts .profite:hover {\n  z-index: 9;\n  background-color: #fbd572 !important; }\n\n.bg-image-deuxieme {\n  background: url(\"../img/deuxieme-vie-bebe.webp\") no-repeat center fixed;\n  background-size: cover;\n  height: 60vh;\n  width: 100% !important;\n  margin-top: 10rem !important;\n  margin-bottom: 5rem; }\n\n.box {\n  width: 25vw;\n  height: 45vh;\n  background-color: white;\n  position: absolute;\n  transform: translate(10vw, 15.2vh); }\n\n.boxtext {\n  margin: 2vh; }\n  .boxtext p {\n    font-size: 1.8vh;\n    color: grey;\n    font-family: Cantarell, sans-serif; }\n  .boxtext .title-box {\n    font-weight: lighter;\n    color: grey;\n    margin-bottom: 2vh; }\n  .boxtext .profite {\n    background-color: #a9b97a;\n    box-shadow: .050em .050em .050em #aaaaaa;\n    font-size: 1.8vh;\n    color: white;\n    border: none;\n    width: 70%;\n    letter-spacing: 0.5vw;\n    padding: 1vh 2vw 1vh 2vw;\n    position: absolute;\n    left: 50%;\n    top: 85%;\n    transform: translate(-50%, -50%); }\n\n.imgblog {\n  width: 90%;\n  margin-top: 3rem; }\n\n.btn-blog {\n  border: 0.1em solid !important;\n  border-color: rgba(148, 142, 142, 0.5) !important;\n  background-color: #FFFFFF;\n  padding: 0.5rem;\n  font-size: 0.6rem;\n  letter-spacing: 0.2rem;\n  margin: 1rem;\n  color: #948e8e; }\n\n.category-blog {\n  font-size: 1.2vh;\n  color: #6a6868; }\n\n.title-blog {\n  font-size: 1.8vh;\n  color: #6a6868; }\n\n.text-share {\n  font-family: Quicksand, sans-serif;\n  letter-spacing: 0.3rem;\n  padding-top: 0.3rem;\n  padding-bottom: 2rem; }\n\n.reseau {\n  font-size: 5vh; }\n\n.logoreseau {\n  color: dimgrey; }\n\n@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {\n  .box {\n    width: 75vw;\n    height: 60vh;\n    transform: translate(10vw, 10%); }\n    .box .title-box {\n      font-weight: lighter;\n      color: grey;\n      margin-bottom: 2vh; }\n\n  .category {\n    padding-left: 20vw; }\n\n  .waviy span {\n    font-size: 1.4rem; }\n\n  .wrapper-parallax {\n    margin-top: 0;\n    margin-bottom: 120vh; }\n\n  .aside-description {\n    background-color: green; } }\n@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {\n  .slogan {\n    font-size: 10vh !important; }\n\n  .description {\n    font-size: 6vh; }\n\n  .separator {\n    font-size: 8vh; }\n\n  .aside-description {\n    background-color: blue; } }\n@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {\n  .box {\n    width: 60vw;\n    height: 45vh;\n    transform: translate(10vw, 33.5%); }\n\n  .wrapper-parallax {\n    margin-top: 0; }\n\n  .aside-description {\n    background-color: red; } }\n@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n  .box {\n    width: 50vw;\n    height: 45vh;\n    transform: translate(10vw, 33.5%); }\n\n  .category {\n    padding-left: 6vw; }\n\n  .waviy span {\n    font-size: 1.2rem; }\n\n  .wrapper-parallax {\n    margin-bottom: 35vh;\n    margin-top: 0; }\n\n  .aside-description {\n    background-color: yellow; } }\n.content-layout {\n  padding-top: 3vw !important; }\n\n.form {\n  padding-left: 2vw; }\n\n#submit {\n  background-color: #fbd572;\n  border: none; }\n\n.category_description {\n  font-size: 2vh;\n  padding-left: 3vw;\n  margin-bottom: 10rem !important;\n  width: 90%;\n  font-family: Cantarell, sans-serif;\n  color: #948E8E;\n  position: relative; }\n\n.descriptionBest {\n  font-size: 2vh;\n  font-family: Quicksand, sans-serif; }\n\n.product-item {\n  cursor: pointer; }\n\n.product-text {\n  margin-bottom: 0.5% !important; }\n\n.product-price-text {\n  margin-top: 8%; }\n\n.apercu {\n  border: none;\n  position: absolute;\n  background-color: #fbd572 !important;\n  width: 75%;\n  z-index: 2;\n  margin: 0 auto;\n  right: 12.5%;\n  top: 45%;\n  opacity: 1;\n  -webkit-transition: all 400ms ease-out;\n  -moz-transition: all 400ms ease-out;\n  -o-transition: all 400ms ease-out;\n  -ms-transition: all 400ms ease-out; }\n\n.apercu:hover {\n  opacity: 1;\n  transition-delay: 0s;\n  transition-duration: 0.4s; }\n\n.accordion {\n  font-family: Quicksand, sans-serif; }\n\n.aside-description {\n  font-family: Quicksand, sans-serif;\n  text-align: center;\n  text-transform: uppercase; }\n\n.btn {\n  border-radius: 0 !important;\n  padding: 2vh !important; }\n\nhr {\n  margin: 0 !important;\n  padding: 0 !important; }\n\n#headingOne {\n  border: none !important; }\n\n@media only screen and (min-device-width: 960px) and (max-device-width: 2000px) {\n  .aside-description {\n    text-align: left !important; } }\n.soldout {\n  border: 1px solid #b6b6b6;\n  color: #b6b6b6;\n  width: 150px;\n  font-size: 14px;\n  background-color: #f6f6f6;\n  cursor: default; }\n\n.title {\n  font-family: Quicksand, sans-serif; }\n\n.presentation {\n  font-family: Cantarell, sans-serif;\n  padding-left: calc(100vw/5);\n  line-height: 3vh;\n  color: #948E8E; }\n\n.subtitle {\n  font-family: Cantarell, sans-serif; }\n\nbody {\n  padding: 0 !important;\n  margin: 0 !important;\n  overflow-x: hidden;\n  height: 100%; }\n\nheader {\n  top: 0;\n  width: 100vw;\n  z-index: 999;\n  background: white; }\n\n.title_drop {\n  color: #797474FF;\n  z-index: -999;\n  background-color: #DCD3D359;\n  padding-top: 2vh;\n  padding-bottom: 2vh; }\n\n.navbar .nav-link .inactive {\n  cursor: default !important; }\n\n.navbar .nav-item {\n  display: flex; }\n\n.navbar-brand {\n  margin: 0 !important;\n  width: 40vw; }\n\n.logo-img-header {\n  padding-top: 1vh;\n  padding-bottom: 1.5vh;\n  margin: 0 !important;\n  width: 150%;\n  height: auto; }\n\n.icones-nav {\n  width: 1.5rem; }\n\n  /*\n  .bag-count{\n    position: relative;\n  }\n  .cercle-bag{\n    width: 1.3rem;\n    height: 1.3rem;\n    background-color: $yellow;\n    border: 0.2rem solid $yellow;\n    border-radius: 50%;\n    position: absolute;\n    top: 100%;\n   left: 110%;\n    transform: translate(-50%, -50%);\n  }\n  .content-bag{\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    font-family: $textFontRegular;\n    font-size: 0.8rem;\n    font-weight: bold;\n  }\n\n   */\n/* adds some margin below the link sets  */\n.navbar .dropdown-menu div[class*=\"p-2\"] {\n  margin-bottom: 1rem;\n  flex-direction: column !important; }\n\n.navbar .dropdown-menu {\n  font-family: Quicksand, sans-serif;\n  font-size: 1rem;\n  color: dimgrey;\n  position: absolute; }\n\n.little-drop {\n  left: 2vw !important;\n  margin: 0 !important;\n  padding: 0 !important; }\n\n.categories-nav {\n  border-bottom-style: solid;\n  border-bottom-color: lightgrey;\n  border-bottom-width: 0.002rem; }\n\n@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {\n  .navbar-brand {\n    margin: 0 !important;\n    width: 18vw; }\n\n  .logo-img-header {\n    margin: 0 !important;\n    width: 100%;\n    height: auto; }\n\n  .icones-nav {\n    width: 1.5rem; }\n\n  .nav-icones {\n    padding-left: 50%; } }\n/* breakpoint and up - mega dropdown styles */\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n  /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */\n  .navbar .nav-link {\n    padding-left: 0vw !important; }\n\n  .icones-nav {\n    width: 2vw; }\n\n  .navbar-brand {\n    margin: 0 !important;\n    width: 20%; }\n\n  .logo-img-header {\n    width: 100%;\n    height: auto; }\n\n  .navbar .dropdown:hover .dropdown-menu,\n  .navbar .dropdown .dropdown-menu:hover {\n    display: block;\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 0s, opacity 0.3s linear; }\n\n  /* makes the dropdown full width  */\n  .little-drop {\n    width: 30vw !important;\n    height: 8vh !important;\n    left: 70vw !important;\n    top: 12vh !important; }\n\n  .navbar .dropdown {\n    position: static; }\n\n  .navbar .dropdown-menu div[class*=\"p-2\"] {\n    flex-direction: row !important; }\n\n  .navbar .dropdown-menu {\n    width: 100vw;\n    left: 0;\n    right: 0;\n    /*  height of nav-item  */ } }\n@media (min-width: 1024px) and (orientation: landscape) {\n  .little-drop {\n    width: 20vw !important;\n    height: 10vh !important;\n    left: 50vw !important; }\n\n  .navbar .dropdown {\n    position: static; }\n\n  .navbar .dropdown:hover .dropdown-menu,\n  .navbar .dropdown .dropdown-menu:hover {\n    display: block;\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 1s, opacity 0.5s linear; }\n\n  .navbar .dropdown-menu div[class*=\"p-2\"] {\n    flex-direction: row !important; }\n\n  .navbar .dropdown-menu {\n    width: 70vw;\n    height: 55vh;\n    right: 0;\n    /*  height of nav-item  */\n    top: 10vh;\n    font-size: 1.8vh; }\n\n  .navbar-brand {\n    margin: 0 !important;\n    width: 20%; }\n\n  .icones-nav {\n    width: 1.5rem; }\n\n  .nav-icones {\n    margin-left: 20vw; }\n\n  .logo-img-header {\n    width: 50%;\n    height: auto; }\n\n  .navbar .nav-item {\n    padding: 1rem 1rem 1rem 1rem;\n    margin: 0 .25rem; }\n\n  header {\n    position: fixed; } }\n@media screen and (min-device-width: 1025px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {\n  header {\n    position: fixed; }\n\n  .navbar-brand {\n    margin: 0 !important;\n    width: 20vw; }\n\n  .logo-img-header {\n    padding-top: 1vh;\n    padding-bottom: 1.5vh;\n    margin: 0 !important;\n    width: 100%;\n    height: auto; }\n\n  .icones-nav {\n    width: 2rem; } }\n.title {\n  font-family: Quicksand, sans-serif;\n  font-size: 5vh; }\n\n.presentation {\n  font-family: Cantarell, sans-serif;\n  font-size: 2vh;\n  padding-left: calc(100vw/5);\n  line-height: 3vh;\n  color: #948E8E; }\n\n.title_atelier {\n  font-family: Quicksand, sans-serif;\n  font-size: 0.5vh !important;\n  justify-content: center;\n  color: #808080; }\n\n.description_atelier {\n  width: 100%;\n  margin: 0 !important;\n  font-family: Cantarell, sans-serif;\n  font-size: 2vh;\n  color: #808080; }\n\n.img_atelier {\n  width: 100% !important; }\n\n.coming_soon_box {\n  position: relative;\n  padding: 0;\n  width: 100%;\n  display: block;\n  cursor: pointer;\n  overflow: hidden; }\n\n.coming_soon_text {\n  opacity: 1;\n  position: absolute;\n  top: 0;\n  color: gray;\n  background-color: rgba(255, 255, 255, 0.8);\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-size: 1vh !important; }\n\n.coming_soon_box .coming_soon_text .text_soon {\n  font-family: Cantarell, sans-serif;\n  font-size: 1vh !important;\n  top: 50%;\n  left: 50%;\n  width: 100%;\n  height: 100%;\n  opacity: 1; }\n\n@media (min-width: 992px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 1) {\n  .coming_soon_box {\n    position: relative;\n    padding: 0;\n    width: 100%;\n    display: block;\n    cursor: pointer;\n    overflow: hidden; }\n\n  .coming_soon_text {\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 10%;\n    color: gray;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 80%;\n    height: 100%;\n    text-align: center;\n    -webkit-transition: all 400ms ease-out;\n    -moz-transition: all 400ms ease-out;\n    -o-transition: all 400ms ease-out;\n    transition: all 400ms ease-out; }\n\n  .coming_soon_box .coming_soon_text:hover {\n    opacity: 1; }\n\n  .coming_soon_box .coming_soon_text .text_soon {\n    font-family: Cantarell, sans-serif;\n    font-size: 6vh !important;\n    top: 50%;\n    left: 50%;\n    width: 100%;\n    height: 100%;\n    opacity: 1;\n    transition-delay: 0.4ms;\n    transition-duration: 1s; }\n\n  .coming_soon_box .coming_soon_text:hover .text_soon {\n    opacity: 1;\n    transform: translateY(50%); }\n\n  .description_atelier {\n    padding-left: 5vw;\n    padding-right: 5vw; }\n\n  .join {\n    height: 6vh !important;\n    font-size: 2vh;\n    width: 100%; }\n\n  .img_atelier {\n    width: 80% !important; } }\n.empty {\n  font-weight: bold; }\n\n.title_cart {\n  font-family: Quicksand, sans-serif;\n  padding: 2vw; }\n\n.validation {\n  font-family: Quicksand, sans-serif; }\n\n.validate {\n  background-color: #a9b97a !important; }\n\n.article_name {\n  text-transform: uppercase !important; }\n\n.title_sign {\n  font-family: Quicksand, sans-serif;\n  font-size: 1vh; }\n\n.input {\n  font-family: Cantarell, sans-serif; }\n\n.connect {\n  background-color: #a9b97a;\n  padding: 2vh; }\n\n.reset-register {\n  padding: 5vw; }\n\n.inscription {\n  padding-left: 25%; }\n\n.title_order {\n  font-family: Quicksand, sans-serif;\n  padding-top: 5vh;\n  font-size: 1vh !important; }\n\n.text_order {\n  font-family: Cantarell, sans-serif; }\n\n.recap {\n  padding-top: 5vh; }\n\n.btn-success {\n  background-color: #a9b97a !important;\n  border: none; }\n\n@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n  .title_order {\n    font-size: 0.8vh !important;\n    text-align: center; }\n\n  .img-product {\n    padding: 1vw; } }\n@media only screen and (min-device-width: 568px) and (max-device-width: 1024px) {\n  .title_order {\n    font-size: 1.2vh !important;\n    background-color: blue; } }\n.btn-primary {\n  background-color: #a9b97a !important;\n  border: none; }\n\n.btn-info {\n  background-color: #a9b97a !important;\n  border: none; }\n\n.add-address {\n  background-color: #fbd572 !important;\n  border: none; }\n\nfooter {\n  width: 100%;\n  position: fixed;\n  z-index: 0;\n  bottom: 0;\n  background-color: white; }\n\n.logo-img img {\n  padding: 2vw;\n  width: 50vw !important;\n  height: auto;\n  margin-bottom: 2vh; }\n\n.list-footer {\n  list-style-type: none;\n  font-size: 1rem;\n  text-decoration: none; }\n\n.link_footer {\n  color: grey;\n  text-decoration: none; }\n\n.footer-custom {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-content: center;\n  align-items: center;\n  font-family: Quicksand, sans-serif;\n  margin-top: 8vh !important; }\n\n.cards-icon {\n  width: 1.5rem;\n  height: auto;\n  margin: 0.5rem; }\n\n@media screen and (min-width: 768px) {\n  .logo-img img {\n    padding: 0;\n    width: 15vw !important;\n    height: auto;\n    margin-left: 2vw; }\n\n  .cards-icon {\n    width: 3rem;\n    height: 3rem;\n    margin-right: 1rem;\n    margin-top: 2rem; } }\n@media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {\n  .logo-img {\n    width: 40vw !important; } }\n@media (min-width: 1024px) and (orientation: landscape) {\n  .logo-img img {\n    width: 10vw !important; } }\n.question {\n  font-family: Quicksand, sans-serif;\n  background-color: white;\n  color: dimgray; }\n\n.question :hover {\n  color: #a9b97a; }\n\n.answer {\n  font-family: Cantarell, sans-serif;\n  color: gray !important; }\n\na:link {\n  text-decoration: none; }\n\n.banner-debora {\n  position: relative;\n  background: url(\"../img/banner-debora.webp\") no-repeat center fixed;\n  background-size: cover;\n  height: 50vh;\n  width: 120% !important; }\n\n.debora-story {\n  color: dimgrey;\n  font-family: Cantarell, sans-serif; }\n\n.slogan-debora {\n  font-family: Quicksand, sans-serif;\n  font-size: 8vh;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\niframe {\n  width: 80vw;\n  height: auto; }\n\n@media only screen and (min-device-width: 768px) and (max-device-width: 2000px) {\n  iframe {\n    width: 560px;\n    height: 315px; } }\nhtml {\n  height: 100%; }\n\nbody {\n  height: 100%; }\n\n.bckimg {\n  --animate-duration: 5s;\n  width: 100%;\n  height: auto;\n  position: relative; }\n\n.comingtext {\n  font-family: Quicksand, sans-serif;\n  color: black;\n  z-index: 5;\n  margin: auto;\n  position: absolute;\n  top: calc(20%/2);\n  left: calc(25%/2); }\n\n.container-soon {\n  position: absolute;\n  width: 25vw;\n  height: 24vh;\n  background-color: white;\n  margin: auto;\n  z-index: 999;\n  opacity: 0.8;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.container-border {\n  position: relative;\n  width: 23.5vw;\n  height: 21.5vh;\n  border-style: solid;\n  border-width: 0.2rem;\n  border-color: black;\n  margin: auto;\n  top: 5.5%;\n  z-index: 999; }\n\n.background-coming-soon {\n  z-index: -1;\n  width: 100%;\n  height: auto;\n  background-color: black;\n  position: relative; }\n\n.send {\n  background-color: #fbd572;\n  border-color: #fbd572; }\n\n.Tiny {\n  font-family: Quicksand, sans-serif;\n  color: white;\n  z-index: 999;\n  margin: auto;\n  position: absolute;\n  top: 30%;\n  left: 50%;\n  transform: translate(-50%, -50%); }\n\n.intro {\n  padding: 4vh;\n  margin: 20%; }\n\n/*# sourceMappingURL=boutique.css.map */\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/public/assets/css/boutique.css b/public/assets/css/boutique.css
+--- a/public/assets/css/boutique.css	
++++ b/public/assets/css/boutique.css	
+@@ -3,7 +3,8 @@
+ @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap");
+ .wrapper-parallax {
+-  margin-top: 100px; }
++  margin-top: 100px;
++}
+ 
+ main {
+   position: relative;
+@@ -12,28 +13,32 @@
+   overflow-y: auto;
+   overflow-x: hidden;
+   margin-bottom: 40vh;
+-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
++  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
++}
+ 
+ .video-home {
+   position: relative;
+   padding-bottom: 56.25%;
+   /* 16:9 */
+   padding-top: 25px;
+-  height: 0; }
++  height: 0;
++}
+ 
+ .video-home iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ .bg-image-banner {
+   position: relative;
+   background: url("../img/banner-mere-et-enfant.webp") no-repeat center fixed;
+   background-size: cover;
+   height: 60vh;
+-  width: 120% !important; }
++  width: 120% !important;
++}
+ 
+ .slogan {
+   font-family: Quicksand, sans-serif;
+@@ -41,29 +46,33 @@
+   position: absolute;
+   top: 50%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .category {
+   margin-top: 5rem !important;
+   margin-bottom: 10rem;
+   width: 100%;
+-  padding-left: 5vw; }
++  padding-left: 5vw;
++}
+ 
+ .Pict {
+   overflow: hidden;
+   -webkit-transform: scale(1);
+   transform: scale(1);
+-  -webkit-transition: .3s ease-in-out;
+-  transition: .3s ease-in-out;
++  -webkit-transition: 0.3s ease-in-out;
++  transition: 0.3s ease-in-out;
+   transition-duration: 885ms;
+-  filter: brightness(80%); }
++  filter: brightness(80%);
++}
+ 
+ .Pict:hover {
+   -webkit-transform: scale(1.2);
+   transform: scale(1.2);
+   -webkit-filter: brightness(50%);
+   /* Chrome, Safari, Opera */
+-  filter: brightness(50%); }
++  filter: brightness(50%);
++}
+ 
+ blockquote {
+   font-family: Cantarell, sans-serif;
+@@ -82,7 +91,8 @@
+    */
+   padding: 3% 5% 3% 5%;
+   margin-bottom: 10%;
+-  margin-left: 13%; }
++  margin-left: 13%;
++}
+ 
+ .text-presentation-short {
+   position: relative;
+@@ -90,26 +100,35 @@
+   animation: marquee 12s linear 2;
+   animation-delay: 1s;
+   text-align: justify;
+-  padding-right: 20%; }
++  padding-right: 20%;
++}
+ 
+ @keyframes marquee {
+   0% {
+-    top: 300px; }
++    top: 300px;
++  }
+   40% {
+-    top: 20px; }
++    top: 20px;
++  }
+   50% {
+-    top: 20px; }
++    top: 20px;
++  }
+   60% {
+-    top: 20px; }
++    top: 20px;
++  }
+   100% {
+-    top: -300px; } }
++    top: -300px;
++  }
++}
+ .tiny-emphasis {
+-  color: #a9b97a; }
++  color: #a9b97a;
++}
+ 
+ .logo-img-presentation {
+   width: 30%;
+   height: auto;
+-  margin-bottom: 5%; }
++  margin-bottom: 5%;
++}
+ 
+ /*
+ .description {
+@@ -128,7 +147,8 @@
+   position: absolute;
+   top: 50%;
+   left: 40%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .waviy span {
+   position: relative;
+@@ -136,15 +156,20 @@
+   font-family: Quicksand, sans-serif;
+   font-size: 1.8rem;
+   animation: bounce 1s 2;
+-  animation-delay: calc(.2s * var(--i)); }
++  animation-delay: calc(.2s * var(--i));
++}
+ 
+ @keyframes bounce {
+   from {
+-    top: 106px; }
++    top: 106px;
++  }
+   50% {
+-    top: 86px; }
++    top: 86px;
++  }
+   to {
+-    top: 106px; } }
++    top: 106px;
++  }
++}
+ /*
+ @keyframes flip {
+   0%,50% {
+@@ -158,26 +183,30 @@
+   width: 100%;
+   font-size: 4vh;
+   letter-spacing: 0.3rem;
+-  margin-top: 5rem; }
++  margin-top: 5rem;
++}
+ 
+ .bestproducts {
+   margin-top: 5rem !important;
+   margin-bottom: 10rem !important;
+   width: 90%;
+-  text-transform: uppercase !important; }
+-  .bestproducts .profite {
+-    background-color: #a9b97a;
+-    box-shadow: .050em .050em .050em #aaaaaa;
+-    font-size: 1.8vh;
+-    color: white;
+-    border: none;
+-    letter-spacing: 0.3vw;
+-    padding: 1vh 2vw 1vh 2vw;
+-    position: absolute; }
++  text-transform: uppercase !important;
++}
++.bestproducts .profite {
++  background-color: #a9b97a;
++  box-shadow: 0.05em 0.05em 0.05em #aaaaaa;
++  font-size: 1.8vh;
++  color: white;
++  border: none;
++  letter-spacing: 0.3vw;
++  padding: 1vh 2vw 1vh 2vw;
++  position: absolute;
++}
+ 
+ .bestproducts .profite:hover {
+   z-index: 9;
+-  background-color: #fbd572 !important; }
++  background-color: #fbd572 !important;
++}
+ 
+ .bg-image-deuxieme {
+   background: url("../img/deuxieme-vie-bebe.webp") no-repeat center fixed;
+@@ -185,42 +214,49 @@
+   height: 60vh;
+   width: 100% !important;
+   margin-top: 10rem !important;
+-  margin-bottom: 5rem; }
++  margin-bottom: 5rem;
++}
+ 
+ .box {
+   width: 25vw;
+   height: 45vh;
+   background-color: white;
+   position: absolute;
+-  transform: translate(10vw, 15.2vh); }
++  transform: translate(10vw, 15.2vh);
++}
+ 
+ .boxtext {
+-  margin: 2vh; }
+-  .boxtext p {
+-    font-size: 1.8vh;
+-    color: grey;
+-    font-family: Cantarell, sans-serif; }
+-  .boxtext .title-box {
+-    font-weight: lighter;
+-    color: grey;
+-    margin-bottom: 2vh; }
+-  .boxtext .profite {
+-    background-color: #a9b97a;
+-    box-shadow: .050em .050em .050em #aaaaaa;
+-    font-size: 1.8vh;
+-    color: white;
+-    border: none;
+-    width: 70%;
+-    letter-spacing: 0.5vw;
+-    padding: 1vh 2vw 1vh 2vw;
+-    position: absolute;
+-    left: 50%;
+-    top: 85%;
+-    transform: translate(-50%, -50%); }
++  margin: 2vh;
++}
++.boxtext p {
++  font-size: 1.8vh;
++  color: grey;
++  font-family: Cantarell, sans-serif;
++}
++.boxtext .title-box {
++  font-weight: lighter;
++  color: grey;
++  margin-bottom: 2vh;
++}
++.boxtext .profite {
++  background-color: #a9b97a;
++  box-shadow: 0.05em 0.05em 0.05em #aaaaaa;
++  font-size: 1.8vh;
++  color: white;
++  border: none;
++  width: 70%;
++  letter-spacing: 0.5vw;
++  padding: 1vh 2vw 1vh 2vw;
++  position: absolute;
++  left: 50%;
++  top: 85%;
++  transform: translate(-50%, -50%);
++}
+ 
+ .imgblog {
+   width: 90%;
+-  margin-top: 3rem; }
++  margin-top: 3rem;
++}
+ 
+ .btn-blog {
+   border: 0.1em solid !important;
+@@ -230,100 +266,131 @@
+   font-size: 0.6rem;
+   letter-spacing: 0.2rem;
+   margin: 1rem;
+-  color: #948e8e; }
++  color: #948e8e;
++}
+ 
+ .category-blog {
+   font-size: 1.2vh;
+-  color: #6a6868; }
++  color: #6a6868;
++}
+ 
+ .title-blog {
+   font-size: 1.8vh;
+-  color: #6a6868; }
++  color: #6a6868;
++}
+ 
+ .text-share {
+   font-family: Quicksand, sans-serif;
+   letter-spacing: 0.3rem;
+   padding-top: 0.3rem;
+-  padding-bottom: 2rem; }
++  padding-bottom: 2rem;
++}
+ 
+ .reseau {
+-  font-size: 5vh; }
++  font-size: 5vh;
++}
+ 
+ .logoreseau {
+-  color: dimgrey; }
++  color: dimgrey;
++}
+ 
+ @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+   .box {
+     width: 75vw;
+     height: 60vh;
+-    transform: translate(10vw, 10%); }
+-    .box .title-box {
+-      font-weight: lighter;
+-      color: grey;
+-      margin-bottom: 2vh; }
++    transform: translate(10vw, 10%);
++  }
++  .box .title-box {
++    font-weight: lighter;
++    color: grey;
++    margin-bottom: 2vh;
++  }
+ 
+   .category {
+-    padding-left: 20vw; }
++    padding-left: 20vw;
++  }
+ 
+   .waviy span {
+-    font-size: 1.4rem; }
++    font-size: 1.4rem;
++  }
+ 
+   .wrapper-parallax {
+     margin-top: 0;
+-    margin-bottom: 120vh; }
++    margin-bottom: 120vh;
++  }
+ 
+   .aside-description {
+-    background-color: green; } }
++    background-color: green;
++  }
++}
+ @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+   .slogan {
+-    font-size: 10vh !important; }
++    font-size: 10vh !important;
++  }
+ 
+   .description {
+-    font-size: 6vh; }
++    font-size: 6vh;
++  }
+ 
+   .separator {
+-    font-size: 8vh; }
++    font-size: 8vh;
++  }
+ 
+   .aside-description {
+-    background-color: blue; } }
++    background-color: blue;
++  }
++}
+ @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+   .box {
+     width: 60vw;
+     height: 45vh;
+-    transform: translate(10vw, 33.5%); }
++    transform: translate(10vw, 33.5%);
++  }
+ 
+   .wrapper-parallax {
+-    margin-top: 0; }
++    margin-top: 0;
++  }
+ 
+   .aside-description {
+-    background-color: red; } }
++    background-color: red;
++  }
++}
+ @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+   .box {
+     width: 50vw;
+     height: 45vh;
+-    transform: translate(10vw, 33.5%); }
++    transform: translate(10vw, 33.5%);
++  }
+ 
+   .category {
+-    padding-left: 6vw; }
++    padding-left: 6vw;
++  }
+ 
+   .waviy span {
+-    font-size: 1.2rem; }
++    font-size: 1.2rem;
++  }
+ 
+   .wrapper-parallax {
+     margin-bottom: 35vh;
+-    margin-top: 0; }
++    margin-top: 0;
++  }
+ 
+   .aside-description {
+-    background-color: yellow; } }
++    background-color: yellow;
++  }
++}
+ .content-layout {
+-  padding-top: 3vw !important; }
++  padding-top: 3vw !important;
++}
+ 
+ .form {
+-  padding-left: 2vw; }
++  padding-left: 2vw;
++}
+ 
+ #submit {
+   background-color: #fbd572;
+-  border: none; }
++  border: none;
++}
+ 
+ .category_description {
+   font-size: 2vh;
+@@ -332,20 +399,25 @@
+   width: 90%;
+   font-family: Cantarell, sans-serif;
+   color: #948E8E;
+-  position: relative; }
++  position: relative;
++}
+ 
+ .descriptionBest {
+   font-size: 2vh;
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .product-item {
+-  cursor: pointer; }
++  cursor: pointer;
++}
+ 
+ .product-text {
+-  margin-bottom: 0.5% !important; }
++  margin-bottom: 0.5% !important;
++}
+ 
+ .product-price-text {
+-  margin-top: 8%; }
++  margin-top: 8%;
++}
+ 
+ .apercu {
+   border: none;
+@@ -360,216 +432,260 @@
+   -webkit-transition: all 400ms ease-out;
+   -moz-transition: all 400ms ease-out;
+   -o-transition: all 400ms ease-out;
+-  -ms-transition: all 400ms ease-out; }
++  -ms-transition: all 400ms ease-out;
++}
+ 
+ .apercu:hover {
+   opacity: 1;
+   transition-delay: 0s;
+-  transition-duration: 0.4s; }
++  transition-duration: 0.4s;
++}
+ 
+ .accordion {
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .aside-description {
+   font-family: Quicksand, sans-serif;
+   text-align: center;
+-  text-transform: uppercase; }
++  text-transform: uppercase;
++}
+ 
+ .btn {
+   border-radius: 0 !important;
+-  padding: 2vh !important; }
++  padding: 2vh !important;
++}
+ 
+ hr {
+   margin: 0 !important;
+-  padding: 0 !important; }
++  padding: 0 !important;
++}
+ 
+ #headingOne {
+-  border: none !important; }
++  border: none !important;
++}
+ 
+ @media only screen and (min-device-width: 960px) and (max-device-width: 2000px) {
+   .aside-description {
+-    text-align: left !important; } }
++    text-align: left !important;
++  }
++}
+ .soldout {
+   border: 1px solid #b6b6b6;
+   color: #b6b6b6;
+   width: 150px;
+   font-size: 14px;
+   background-color: #f6f6f6;
+-  cursor: default; }
++  cursor: default;
++}
+ 
+ .title {
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .presentation {
+   font-family: Cantarell, sans-serif;
+   padding-left: calc(100vw/5);
+   line-height: 3vh;
+-  color: #948E8E; }
++  color: #948E8E;
++}
+ 
+ .subtitle {
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ body {
+   padding: 0 !important;
+   margin: 0 !important;
+   overflow-x: hidden;
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ header {
+   top: 0;
+   width: 100vw;
+   z-index: 999;
+-  background: white; }
++  background: white;
++}
+ 
+ .title_drop {
+   color: #797474FF;
+   z-index: -999;
+   background-color: #DCD3D359;
+   padding-top: 2vh;
+-  padding-bottom: 2vh; }
++  padding-bottom: 2vh;
++}
+ 
+ .navbar .nav-link .inactive {
+-  cursor: default !important; }
++  cursor: default !important;
++}
+ 
+ .navbar .nav-item {
+-  display: flex; }
++  display: flex;
++}
+ 
+ .navbar-brand {
+   margin: 0 !important;
+-  width: 40vw; }
++  width: 40vw;
++}
+ 
+ .logo-img-header {
+   padding-top: 1vh;
+   padding-bottom: 1.5vh;
+   margin: 0 !important;
+   width: 150%;
+-  height: auto; }
++  height: auto;
++}
+ 
+ .icones-nav {
+-  width: 1.5rem; }
++  width: 1.5rem;
++}
+ 
+-  /*
+-  .bag-count{
+-    position: relative;
+-  }
+-  .cercle-bag{
+-    width: 1.3rem;
+-    height: 1.3rem;
+-    background-color: $yellow;
+-    border: 0.2rem solid $yellow;
+-    border-radius: 50%;
+-    position: absolute;
+-    top: 100%;
+-   left: 110%;
+-    transform: translate(-50%, -50%);
+-  }
+-  .content-bag{
+-    position: absolute;
+-    top: 50%;
+-    left: 50%;
+-    transform: translate(-50%, -50%);
+-    font-family: $textFontRegular;
+-    font-size: 0.8rem;
+-    font-weight: bold;
+-  }
++/*
++.bag-count{
++  position: relative;
++}
++.cercle-bag{
++  width: 1.3rem;
++  height: 1.3rem;
++  background-color: $yellow;
++  border: 0.2rem solid $yellow;
++  border-radius: 50%;
++  position: absolute;
++  top: 100%;
++ left: 110%;
++  transform: translate(-50%, -50%);
++}
++.content-bag{
++  position: absolute;
++  top: 50%;
++  left: 50%;
++  transform: translate(-50%, -50%);
++  font-family: $textFontRegular;
++  font-size: 0.8rem;
++  font-weight: bold;
++}
+ 
+-   */
++ */
+ /* adds some margin below the link sets  */
+-.navbar .dropdown-menu div[class*="p-2"] {
++.navbar .dropdown-menu div[class*=p-2] {
+   margin-bottom: 1rem;
+-  flex-direction: column !important; }
++  flex-direction: column !important;
++}
+ 
+ .navbar .dropdown-menu {
+   font-family: Quicksand, sans-serif;
+   font-size: 1rem;
+   color: dimgrey;
+-  position: absolute; }
++  position: absolute;
++}
+ 
+ .little-drop {
+   left: 2vw !important;
+   margin: 0 !important;
+-  padding: 0 !important; }
++  padding: 0 !important;
++}
+ 
+ .categories-nav {
+   border-bottom-style: solid;
+   border-bottom-color: lightgrey;
+-  border-bottom-width: 0.002rem; }
++  border-bottom-width: 0.002rem;
++}
+ 
+ @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 18vw; }
++    width: 18vw;
++  }
+ 
+   .logo-img-header {
+     margin: 0 !important;
+     width: 100%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .icones-nav {
+-    width: 1.5rem; }
++    width: 1.5rem;
++  }
+ 
+   .nav-icones {
+-    padding-left: 50%; } }
++    padding-left: 50%;
++  }
++}
+ /* breakpoint and up - mega dropdown styles */
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+   .navbar .nav-link {
+-    padding-left: 0vw !important; }
++    padding-left: 0vw !important;
++  }
+ 
+   .icones-nav {
+-    width: 2vw; }
++    width: 2vw;
++  }
+ 
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 20%; }
++    width: 20%;
++  }
+ 
+   .logo-img-header {
+     width: 100%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .navbar .dropdown:hover .dropdown-menu,
+-  .navbar .dropdown .dropdown-menu:hover {
++.navbar .dropdown .dropdown-menu:hover {
+     display: block;
+     visibility: visible;
+     opacity: 1;
+-    transition: visibility 0s, opacity 0.3s linear; }
++    transition: visibility 0s, opacity 0.3s linear;
++  }
+ 
+   /* makes the dropdown full width  */
+   .little-drop {
+     width: 30vw !important;
+     height: 8vh !important;
+     left: 70vw !important;
+-    top: 12vh !important; }
++    top: 12vh !important;
++  }
+ 
+   .navbar .dropdown {
+-    position: static; }
++    position: static;
++  }
+ 
+-  .navbar .dropdown-menu div[class*="p-2"] {
+-    flex-direction: row !important; }
++  .navbar .dropdown-menu div[class*=p-2] {
++    flex-direction: row !important;
++  }
+ 
+   .navbar .dropdown-menu {
+     width: 100vw;
+     left: 0;
+     right: 0;
+-    /*  height of nav-item  */ } }
++    /*  height of nav-item  */
++  }
++}
+ @media (min-width: 1024px) and (orientation: landscape) {
+   .little-drop {
+     width: 20vw !important;
+     height: 10vh !important;
+-    left: 50vw !important; }
++    left: 50vw !important;
++  }
+ 
+   .navbar .dropdown {
+-    position: static; }
++    position: static;
++  }
+ 
+   .navbar .dropdown:hover .dropdown-menu,
+-  .navbar .dropdown .dropdown-menu:hover {
++.navbar .dropdown .dropdown-menu:hover {
+     display: block;
+     visibility: visible;
+     opacity: 1;
+-    transition: visibility 1s, opacity 0.5s linear; }
++    transition: visibility 1s, opacity 0.5s linear;
++  }
+ 
+-  .navbar .dropdown-menu div[class*="p-2"] {
+-    flex-direction: row !important; }
++  .navbar .dropdown-menu div[class*=p-2] {
++    flex-direction: row !important;
++  }
+ 
+   .navbar .dropdown-menu {
+     width: 70vw;
+@@ -577,71 +693,89 @@
+     right: 0;
+     /*  height of nav-item  */
+     top: 10vh;
+-    font-size: 1.8vh; }
++    font-size: 1.8vh;
++  }
+ 
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 20%; }
++    width: 20%;
++  }
+ 
+   .icones-nav {
+-    width: 1.5rem; }
++    width: 1.5rem;
++  }
+ 
+   .nav-icones {
+-    margin-left: 20vw; }
++    margin-left: 20vw;
++  }
+ 
+   .logo-img-header {
+     width: 50%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .navbar .nav-item {
+     padding: 1rem 1rem 1rem 1rem;
+-    margin: 0 .25rem; }
++    margin: 0 0.25rem;
++  }
+ 
+   header {
+-    position: fixed; } }
++    position: fixed;
++  }
++}
+ @media screen and (min-device-width: 1025px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+   header {
+-    position: fixed; }
++    position: fixed;
++  }
+ 
+   .navbar-brand {
+     margin: 0 !important;
+-    width: 20vw; }
++    width: 20vw;
++  }
+ 
+   .logo-img-header {
+     padding-top: 1vh;
+     padding-bottom: 1.5vh;
+     margin: 0 !important;
+     width: 100%;
+-    height: auto; }
++    height: auto;
++  }
+ 
+   .icones-nav {
+-    width: 2rem; } }
++    width: 2rem;
++  }
++}
+ .title {
+   font-family: Quicksand, sans-serif;
+-  font-size: 5vh; }
++  font-size: 5vh;
++}
+ 
+ .presentation {
+   font-family: Cantarell, sans-serif;
+   font-size: 2vh;
+   padding-left: calc(100vw/5);
+   line-height: 3vh;
+-  color: #948E8E; }
++  color: #948E8E;
++}
+ 
+ .title_atelier {
+   font-family: Quicksand, sans-serif;
+   font-size: 0.5vh !important;
+   justify-content: center;
+-  color: #808080; }
++  color: #808080;
++}
+ 
+ .description_atelier {
+   width: 100%;
+   margin: 0 !important;
+   font-family: Cantarell, sans-serif;
+   font-size: 2vh;
+-  color: #808080; }
++  color: #808080;
++}
+ 
+ .img_atelier {
+-  width: 100% !important; }
++  width: 100% !important;
++}
+ 
+ .coming_soon_box {
+   position: relative;
+@@ -649,7 +783,8 @@
+   width: 100%;
+   display: block;
+   cursor: pointer;
+-  overflow: hidden; }
++  overflow: hidden;
++}
+ 
+ .coming_soon_text {
+   opacity: 1;
+@@ -660,7 +795,8 @@
+   width: 100%;
+   height: 100%;
+   text-align: center;
+-  font-size: 1vh !important; }
++  font-size: 1vh !important;
++}
+ 
+ .coming_soon_box .coming_soon_text .text_soon {
+   font-family: Cantarell, sans-serif;
+@@ -669,7 +805,8 @@
+   left: 50%;
+   width: 100%;
+   height: 100%;
+-  opacity: 1; }
++  opacity: 1;
++}
+ 
+ @media (min-width: 992px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 1) {
+   .coming_soon_box {
+@@ -678,7 +815,8 @@
+     width: 100%;
+     display: block;
+     cursor: pointer;
+-    overflow: hidden; }
++    overflow: hidden;
++  }
+ 
+   .coming_soon_text {
+     opacity: 0;
+@@ -693,10 +831,12 @@
+     -webkit-transition: all 400ms ease-out;
+     -moz-transition: all 400ms ease-out;
+     -o-transition: all 400ms ease-out;
+-    transition: all 400ms ease-out; }
++    transition: all 400ms ease-out;
++  }
+ 
+   .coming_soon_box .coming_soon_text:hover {
+-    opacity: 1; }
++    opacity: 1;
++  }
+ 
+   .coming_soon_box .coming_soon_text .text_soon {
+     font-family: Cantarell, sans-serif;
+@@ -707,115 +847,147 @@
+     height: 100%;
+     opacity: 1;
+     transition-delay: 0.4ms;
+-    transition-duration: 1s; }
++    transition-duration: 1s;
++  }
+ 
+   .coming_soon_box .coming_soon_text:hover .text_soon {
+     opacity: 1;
+-    transform: translateY(50%); }
++    transform: translateY(50%);
++  }
+ 
+   .description_atelier {
+     padding-left: 5vw;
+-    padding-right: 5vw; }
++    padding-right: 5vw;
++  }
+ 
+   .join {
+     height: 6vh !important;
+     font-size: 2vh;
+-    width: 100%; }
++    width: 100%;
++  }
+ 
+   .img_atelier {
+-    width: 80% !important; } }
++    width: 80% !important;
++  }
++}
+ .empty {
+-  font-weight: bold; }
++  font-weight: bold;
++}
+ 
+ .title_cart {
+   font-family: Quicksand, sans-serif;
+-  padding: 2vw; }
++  padding: 2vw;
++}
+ 
+ .validation {
+-  font-family: Quicksand, sans-serif; }
++  font-family: Quicksand, sans-serif;
++}
+ 
+ .validate {
+-  background-color: #a9b97a !important; }
++  background-color: #a9b97a !important;
++}
+ 
+ .article_name {
+-  text-transform: uppercase !important; }
++  text-transform: uppercase !important;
++}
+ 
+ .title_sign {
+   font-family: Quicksand, sans-serif;
+-  font-size: 1vh; }
++  font-size: 1vh;
++}
+ 
+ .input {
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ .connect {
+   background-color: #a9b97a;
+-  padding: 2vh; }
++  padding: 2vh;
++}
+ 
+ .reset-register {
+-  padding: 5vw; }
++  padding: 5vw;
++}
+ 
+ .inscription {
+-  padding-left: 25%; }
++  padding-left: 25%;
++}
+ 
+ .title_order {
+   font-family: Quicksand, sans-serif;
+   padding-top: 5vh;
+-  font-size: 1vh !important; }
++  font-size: 1vh !important;
++}
+ 
+ .text_order {
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ .recap {
+-  padding-top: 5vh; }
++  padding-top: 5vh;
++}
+ 
+ .btn-success {
+   background-color: #a9b97a !important;
+-  border: none; }
++  border: none;
++}
+ 
+ @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+   .title_order {
+     font-size: 0.8vh !important;
+-    text-align: center; }
++    text-align: center;
++  }
+ 
+   .img-product {
+-    padding: 1vw; } }
++    padding: 1vw;
++  }
++}
+ @media only screen and (min-device-width: 568px) and (max-device-width: 1024px) {
+   .title_order {
+     font-size: 1.2vh !important;
+-    background-color: blue; } }
++    background-color: blue;
++  }
++}
+ .btn-primary {
+   background-color: #a9b97a !important;
+-  border: none; }
++  border: none;
++}
+ 
+ .btn-info {
+   background-color: #a9b97a !important;
+-  border: none; }
++  border: none;
++}
+ 
+ .add-address {
+   background-color: #fbd572 !important;
+-  border: none; }
++  border: none;
++}
+ 
+ footer {
+   width: 100%;
+   position: fixed;
+   z-index: 0;
+   bottom: 0;
+-  background-color: white; }
++  background-color: white;
++}
+ 
+ .logo-img img {
+   padding: 2vw;
+   width: 50vw !important;
+   height: auto;
+-  margin-bottom: 2vh; }
++  margin-bottom: 2vh;
++}
+ 
+ .list-footer {
+   list-style-type: none;
+   font-size: 1rem;
+-  text-decoration: none; }
++  text-decoration: none;
++}
+ 
+ .link_footer {
+   color: grey;
+-  text-decoration: none; }
++  text-decoration: none;
++}
+ 
+ .footer-custom {
+   display: flex;
+@@ -824,56 +996,71 @@
+   align-content: center;
+   align-items: center;
+   font-family: Quicksand, sans-serif;
+-  margin-top: 8vh !important; }
++  margin-top: 8vh !important;
++}
+ 
+ .cards-icon {
+   width: 1.5rem;
+   height: auto;
+-  margin: 0.5rem; }
++  margin: 0.5rem;
++}
+ 
+ @media screen and (min-width: 768px) {
+   .logo-img img {
+     padding: 0;
+     width: 15vw !important;
+     height: auto;
+-    margin-left: 2vw; }
++    margin-left: 2vw;
++  }
+ 
+   .cards-icon {
+     width: 3rem;
+     height: 3rem;
+     margin-right: 1rem;
+-    margin-top: 2rem; } }
++    margin-top: 2rem;
++  }
++}
+ @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+   .logo-img {
+-    width: 40vw !important; } }
++    width: 40vw !important;
++  }
++}
+ @media (min-width: 1024px) and (orientation: landscape) {
+   .logo-img img {
+-    width: 10vw !important; } }
++    width: 10vw !important;
++  }
++}
+ .question {
+   font-family: Quicksand, sans-serif;
+   background-color: white;
+-  color: dimgray; }
++  color: dimgray;
++}
+ 
+ .question :hover {
+-  color: #a9b97a; }
++  color: #a9b97a;
++}
+ 
+ .answer {
+   font-family: Cantarell, sans-serif;
+-  color: gray !important; }
++  color: gray !important;
++}
+ 
+ a:link {
+-  text-decoration: none; }
++  text-decoration: none;
++}
+ 
+ .banner-debora {
+   position: relative;
+   background: url("../img/banner-debora.webp") no-repeat center fixed;
+   background-size: cover;
+   height: 50vh;
+-  width: 120% !important; }
++  width: 120% !important;
++}
+ 
+ .debora-story {
+   color: dimgrey;
+-  font-family: Cantarell, sans-serif; }
++  font-family: Cantarell, sans-serif;
++}
+ 
+ .slogan-debora {
+   font-family: Quicksand, sans-serif;
+@@ -881,27 +1068,34 @@
+   position: absolute;
+   top: 50%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ iframe {
+   width: 80vw;
+-  height: auto; }
++  height: auto;
++}
+ 
+ @media only screen and (min-device-width: 768px) and (max-device-width: 2000px) {
+   iframe {
+     width: 560px;
+-    height: 315px; } }
++    height: 315px;
++  }
++}
+ html {
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ body {
+-  height: 100%; }
++  height: 100%;
++}
+ 
+ .bckimg {
+   --animate-duration: 5s;
+   width: 100%;
+   height: auto;
+-  position: relative; }
++  position: relative;
++}
+ 
+ .comingtext {
+   font-family: Quicksand, sans-serif;
+@@ -910,7 +1104,8 @@
+   margin: auto;
+   position: absolute;
+   top: calc(20%/2);
+-  left: calc(25%/2); }
++  left: calc(25%/2);
++}
+ 
+ .container-soon {
+   position: absolute;
+@@ -922,7 +1117,8 @@
+   opacity: 0.8;
+   top: 50%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .container-border {
+   position: relative;
+@@ -933,18 +1129,21 @@
+   border-color: black;
+   margin: auto;
+   top: 5.5%;
+-  z-index: 999; }
++  z-index: 999;
++}
+ 
+ .background-coming-soon {
+   z-index: -1;
+   width: 100%;
+   height: auto;
+   background-color: black;
+-  position: relative; }
++  position: relative;
++}
+ 
+ .send {
+   background-color: #fbd572;
+-  border-color: #fbd572; }
++  border-color: #fbd572;
++}
+ 
+ .Tiny {
+   font-family: Quicksand, sans-serif;
+@@ -954,10 +1153,12 @@
+   position: absolute;
+   top: 30%;
+   left: 50%;
+-  transform: translate(-50%, -50%); }
++  transform: translate(-50%, -50%);
++}
+ 
+ .intro {
+   padding: 4vh;
+-  margin: 20%; }
++  margin: 20%;
++}
+ 
+ /*# sourceMappingURL=boutique.css.map */
+Index: public/assets/css/boutique.css.map
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n\"version\": 3,\n\"mappings\": \"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\",\n\"sources\": [\"boutique.scss\",\"home.scss\",\"product.scss\",\"show.scss\",\"deuxiemevie.scss\",\"header.scss\",\"concept.scss\",\"ateliers.scss\",\"cart.scss\",\"login.scss\",\"order.scss\",\"password.scss\",\"adress.scss\",\"footer.scss\",\"faq.scss\",\"atelier_debora.scss\",\"comingsoon.scss\",\"account.scss\"],\n\"names\": [],\n\"file\": \"boutique.css\"\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/public/assets/css/boutique.css.map b/public/assets/css/boutique.css.map
+--- a/public/assets/css/boutique.css.map	
++++ b/public/assets/css/boutique.css.map	
+@@ -1,7 +1,1 @@
+-{
+-"version": 3,
+-"mappings": "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",
+-"sources": ["boutique.scss","home.scss","product.scss","show.scss","deuxiemevie.scss","header.scss","concept.scss","ateliers.scss","cart.scss","login.scss","order.scss","password.scss","adress.scss","footer.scss","faq.scss","atelier_debora.scss","comingsoon.scss","account.scss"],
+-"names": [],
+-"file": "boutique.css"
+-}
++{"version":3,"sourceRoot":"","sources":["boutique.scss","home.scss","product.scss","show.scss","deuxiemevie.scss","header.scss","concept.scss","ateliers.scss","cart.scss","login.scss","order.scss","password.scss","adress.scss","footer.scss","faq.scss","atelier_debora.scss","comingsoon.scss","account.scss"],"names":[],"mappings":"AAAQ;AACA;AACA;AACA;ACFR;EACE;;;AAIF;EACE;EACA;EACA;EACA;EACA;EACA;EAIA;;;AAGA;EACE;EACA;AAAwB;EACxB;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;;;AAIJ;EACE;EACA;EACA;EACA;EACA;;;AAIF;EACE,aDvCiB;ECwCjB;EACA;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;EACA;;;AAIF;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;AAAkC;EAClC;;;AAIF;EACA,aD5EkB;EC8EhB;EACA;EACA;EACA;AACA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;EASA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACD;EACC;;;AAEF;EAEE;IAAK;;EACL;IAAK;;EACL;IAAK;;EACL;IAAK;;EACL;IAAO;;;AAIT;EACE,ODjHM;;;ACmHR;EACE;EACA;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAcA;EACE;EAEA;EACA;EACA;;;AAKF;EACE;EACA;EACA,aDtJiB;ECuJjB;EACA;EACA;;;AAGF;EACE;IAAM;;EACN;IAAM;;EACN;IAAM;;;AAGR;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAWA;EACE,aD9KiB;EC+KjB;EACA;EACA;EACA;;;AAKF;EACE;EACA;EACA;EACA;;AACA;EAGE,kBD5LI;EC6LJ;EACA;EACA;EACA;EAEA;EACA;EACA;;;AAQJ;EAGA;EACI;;;AAQJ;EAEE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;;AAEA;EACE;EACA;EACA,aDlPc;;ACoPhB;EAEE;EACA;EACA;;AAGF;EACE,kBD1PI;EC2PJ;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAKJ;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;;;AAIF;EACE,aDzSiB;EC0SjB;EACA;EACA;;;AAGF;EACE;;;AAIF;EACE;;;AAIF;EACE;IACE;IACA;IACA;;EACA;IACE;IACA;IACA;;;EAGJ;IACA;;;EAGA;IAGE;;;EAGF;IACC;IACC;;;EAGF;IACE;;;AAMJ;EACE;IACE;;;EAEF;IACE;;;EAEF;IACE;;;EAEF;IACE;;;AAKJ;EACE;IACE;IACA;IACA;;;EAGF;IAEE;;;EAEF;IACE;;;AAIJ;EACE;IACE;IACA;IACA;;;EAEF;IACE;;;EAEF;IACE;;;EAEF;IACE;IACA;;;EAEF;IACE;;;AC9YJ;EACE;;;AAGF;EACE;;;AAEF;EACE,kBFHO;EEIP;;;AAEF;EACE;EACA;EACA;EACA;EACA,aFZgB;EEahB;EACA;;;AAGF;EACE;EACA,aFpBiB;;;AEsBnB;EACE;;;AAGF;EACE;;;AAEF;EACE;;;AAGF;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAGF;EACE,aFxDiB;;;AGLnB;EACE,aHIiB;EGHlB;EACC;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;;;AAEF;EACE;;;AAGF;EACE;IACE;;;AAIJ;EACE;EACA;EACA;EACA;EACA;EACA;;;AC/BF;EACE,aJIiB;;;AIDnB;EACE,aJCgB;EIAhB;EACA;EACA;;;AAGF;EACE,aJNgB;;;AKJhB;EACE;EACA;EACA;EACA;;;AAEF;EAEE;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AA0BA;AACA;EACE;EACA;;;AAGF;EACE,aL5Ee;EK6Ef;EACA;EACD;;;AAED;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;IACE;IACA;;;EAGF;IACE;IACA;IACA;;;EAEF;IACE;;;EAEF;IACE;;;AAKN;AACA;AACE;EAEA;IACE;;;EAGF;IACE;;;EAEF;IACE;IACA;;;EAEF;IACE;IACA;;;EAEF;AAAA;IAEE;IACA;IACA;IACA;;;AAMF;EACA;IACE;IACA;IACA;IACA;;;EAEF;IACE;;;EAGF;IACE;;;EAEF;IACE;IAEA;IACA;AACA;;;AAMJ;EACE;IACE;IACA;IACA;;;EAGF;IACE;;;EAEF;AAAA;IAEE;IACA;IACA;IACA;;;EAGF;IACE;;;EAEF;IACE;IACA;IAEA;AACA;IACA;IACA;;;EAEF;IACE;IACA;;;EAGF;IACE;;;EAGF;IACF;;;EAEE;IACE;IACA;;;EAEF;IACA;IACA;;;EAGA;IACE;;;AAGJ;EAME;IACE;;;EAGF;IACE;IACA;;;EAEF;IACE;IACA;IACA;IACA;IACA;;;EAEF;IACE;;;AC1PJ;EACE,aNIiB;EMHjB;;;AAEF;EACE,aNCgB;EMAhB;EACA;EACA;EACA;;;ACTF;EACE,aPIiB;EOHjB;EACA;EACA;;;AAIF;EAEE;EACA;EACA,aPNgB;EOOhB;EACA;;;AAGF;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE,aPnCgB;EOoChB;EACA;EACA;EACA;EACA;EACA;;;AAWF;EAIA;IACE;IACA;IACA;IACA;IACA;IACA;;;EAEF;IACE;IAEA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;;EAEF;IACE;;;EAEF;IACE,aPpFgB;IOqFhB;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;;EAEF;IACE;IACA;;;EAKA;IACE;IACA;;;EAGJ;IACE;IACA;IACA;;;EAEA;IACE;;;ACrHJ;EACE;;;AAEF;EACE;EACA;;;AAEF;EACE,aRJiB;;;AQMnB;EACE;;;AAGF;EACE;;;AChBF;EACA,aTImB;ESHjB;;;AAEF;EACE,aTCgB;;;ASClB;EACE;EACA;;;AAEF;EACE;;;AAEF;EACC;;;ACfD;EACE,aVIiB;EUHjB;EACA;;;AAEF;EACE;;;AAGF;EACE;;;AAEF;EACE;EACA;;;AAGF;EAEE;IACE;IACA;;;EAEF;IACE;;;AAGJ;EAEE;IACE;IACA;;;AC/BJ;EACE;EACA;;;AAEF;EACE;EACA;;;ACNF;EACE;EACA;;;ACFF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAGF;EACA;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA,abzBiB;Ea0BjB;;;AAEF;EAEE;EACA;EAEA;;;AAKF;EAEE;IACE;IACA;IACA;IACA;;;EAEF;IACE;IACA;IACA;IACA;;;AAMJ;EACE;IACE;;;AAGJ;EACE;IACE;;;ACpEJ;EACE,adIiB;EcHjB;EACA;;;AAEF;EACE,OdEM;;;AcCR;EACE,adJgB;EcKhB;;;AAEF;EAEE;;;ACfF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA,afJgB;;;AeMlB;EACE,afRiB;EeSjB;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;;;AAKF;EACE;IACE;IACA;;;AC9BJ;EACA;;;AAEA;EACE;;;AAEF;EAEE;EACA;EACA;EACA;;;AAGF;EACE,ahBViB;EgBWjB;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACF;EACE;;;AAEF;EACE,kBhBlDO;EgBmDP,chBnDO;;;AgBqDT;EACE,ahBxDiB;EgByDjB;EACA;EACA;EACA;EACA;EACA;EACA;;;ACnEF;EACC;EACC","file":"boutique.css"}
+\ No newline at end of file
+Index: public/assets/css/order_validate.css.map
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n\"version\": 3,\n\"mappings\": \"\",\n\"sources\": [],\n\"names\": [],\n\"file\": \"order_validate.css\"\n}\n
+===================================================================
+diff --git a/public/assets/css/order_validate.css.map b/public/assets/css/order_validate.css.map
+--- a/public/assets/css/order_validate.css.map	
++++ b/public/assets/css/order_validate.css.map	
+@@ -1,7 +1,1 @@
+-{
+-"version": 3,
+-"mappings": "",
+-"sources": [],
+-"names": [],
+-"file": "order_validate.css"
+-}
++{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"order_validate.css"}
+\ No newline at end of file

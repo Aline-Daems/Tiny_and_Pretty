@@ -1,8 +1,39 @@
+<div class="product-item text-center">
+    <div class="show-btn-cart">
+
+
 <div class="product-item text-center mb-5">
 
-    <a href="{{ path('product', {'slug':product.slug}) }}">
-        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
-    </a>
+                <a href="{{ path('product', {'slug':product.slug}) }}">
+                    <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn')}}" alt="{{ product.name }}" class="img-fluid">
+                </a>
+
+    </div>
+        <div>
+            {% if is_granted('ROLE_USER') %}
+                {% set isFavorite = false %}
+                {% for favoris in product.favoris  %}
+
+                    {% if favoris.id == app.user.id %}
+                        {% set isFavorite = true %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if isFavorite %}
+
+                    <a href="{{ path('retrait_favoris', {id: product.id}) }}" class="js-favorite"><img src="{{ asset('/assets/img/heart.svg') }}" class="heart" alt=""></a>
+
+                {% else %}
+
+                    <a href="{{ path('ajout_favoris', {id: product.id}) }}" class="js-favorite"><img src="{{ asset('/assets/img/heart.svg') }}" class="heart" alt=""></a>
+
+                {% endif %}
+
+            {% else %}
+                <img src="{{ asset('/assets/img/heart.svg') }}" class="heart" alt="">
+            {% endif %}
+        </div>
+
 
 
     <div class="descriptionBest">
