@@ -126,12 +126,15 @@ header {
   font-size: 2vh;
   position: absolute;
 }
+/* V1 ///////////////////////////
 .little-drop {
   left: 2vw !important;
   margin: 0 !important;
   padding: 0 !important;
 
 }
+
+ */ ///////////////////////////////////
 .categories-nav {
   border-bottom-style: solid;
   border-bottom-color: $grey;
@@ -189,12 +192,15 @@ header {
 
 
   /* makes the dropdown full width  */
+  /* V1 ///////////////////////////////////////////
   .little-drop{
     width: 30vw!important;
     height: 8vh!important;
     left: 70vw!important;
     top: 12vh!important;
   }
+
+   */
   .navbar .dropdown {
     position:static;
   }
@@ -214,12 +220,15 @@ header {
 
 }
 @media (min-width: 1024px) and (orientation: landscape) {
+  /*
   .little-drop{
     width: 20vw!important;
     height: 10vh!important;
     left: 50vw!important;
     //top: 12vh!important;
   }
+
+   */
   .navbar .dropdown {
     position:static;
   }
