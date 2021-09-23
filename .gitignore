@@ -17,5 +17,5 @@
 .DS_Store
 
 ###> liip/imagine-bundle ###
-
+/public/media/cache/
 ###< liip/imagine-bundle ###
