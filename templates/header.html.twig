@@ -1,6 +1,12 @@
 <header class="main-header" role="banner">
 
     <div class="header-container">
+        <div class="defile-banner">
+            <div class="promo-banner text-center">LIVRAISON OFFERTE À PARTIR DE 50 € D'ACHATS<span><img
+                            src="{{ asset('assets/favicon/favicon-32x32.png') }}" alt="Logo Tiny And Pretty" class="favicon-banner"/></span>
+            </div>
+
+        </div>
 
 
         <!-- navigation supérieure -->
@@ -18,17 +24,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav  ml-auto ms-auto mr-auto mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link link-headOne mr-3" href="#">LA BOUTIQUE</a>
+                        <a class="nav-link shop mr-3" href="#">E-SHOP</a>
                     </li>
                     <li class="nav-item">
-                       <a class="nav-link link-headOne mr-3" href="{{ path('qui_sommes_nous') }}">NOTRE MARQUE</a>
+                        <a class="nav-link link-headOne mr-3" href="{{ path('qui_sommes_nous') }}">NOTRE MARQUE</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link-headOne mr-3" href="{{ path('comingsoon') }}">DEUXIÈME VIE</a>
                     </li>
                 </ul>
 
-                <form id ="search-formJS"class="form-inline d-flex justify-content-center md-form form-sm">
+                <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
                            aria-label="Search">
                     <i class="fas fa-search" aria-hidden="true"></i>
@@ -62,7 +68,7 @@
 
 
                         <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown" data-boundary="overflow">
-                         <!--   <a href="{{ relative_path('/Mode') }}"><h5
+                            <!--   <a href="{{ relative_path('/Mode') }}"><h5
                                         class="text-center mt-5 mb-5 title_drop reveal-1">VÊTEMENTS</h5>
                             </a>
                             -->
@@ -97,24 +103,20 @@
                                 </div>
 
 
-
-
-
-
                             </div>
                         </div>
 
 
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link inactive dropdown px-3" href="" id="navbarDropdown" role="button"
+                        <a class="nav-link inactive dropdown px-2" href="" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Enfants de 2 à 8 ans
                         </a>
 
 
                         <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown" data-boundary="overflow">
-                          <!--  <a href="{{ relative_path('/Mode') }}"><h5
+                            <!--  <a href="{{ relative_path('/Mode') }}"><h5
                                         class="text-center mt-5 mb-5 title_drop reveal-1">ACCESSOIRES</h5>
                             </a>
                             -->
@@ -155,7 +157,7 @@
 
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown px-3" href="" id="navbarDropdown"
+                                <a class="nav-link dropdown px-2" href="" id="navbarDropdown"
                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     À la maison
                                 </a>
@@ -202,61 +204,64 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link px-3" href="{{ path('productsToy') }}">Les Jouets</a>
+                                <a class="nav-link px-2" href="{{ path('productsToy') }}">Les Jouets</a>
+                            </li>
+                            <li class="nav-item new-collection">
+                                <a class="nav-link px-2" href="">NOUVELLE COLLECTION</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div id ="iconesJS">
-            {% if app.user %}
-                <div class="nav-icones">
+            <div id="iconesJS">
+                {% if app.user %}
+                    <div class="nav-icones">
 
-                    <li class="nav-item">
-                        <a class="nav-link px-2" href="{{ path('account') }}">
-                            <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
-                            <p class="float-right">{{ app.user.firstname }}</p>
-                        </a>
-                        <a class="nav-link px-2" href="{{ path('cart') }}">
-                            <div class="bag-count">
-                                <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
+                        <li class="nav-item">
+                            <a class="nav-link px-2" href="{{ path('account') }}">
+                                <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
+                                <p class="float-right">{{ app.user.firstname }}</p>
+                            </a>
+                            <a class="nav-link px-2" href="{{ path('cart') }}">
+                                <div class="bag-count">
+                                    <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
 
 
-                                <div class="cercle-bag float-right text-center align-items-center">
-                                    <p class="content-bag"></p>
+                                    <div class="cercle-bag float-right text-center align-items-center">
+                                        <p class="content-bag"></p>
+                                    </div>
+
                                 </div>
-
-                            </div>
-                        </a>
-                        <a class="nav-link px-4" href="">
-                            <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
-                        </a>
+                            </a>
+                            <a class="nav-link px-4" href="">
+                                <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
+                            </a>
 
 
-                        <a class="nav-link px-2" href="{{ path('app_logout') }}">
-                            <img class="icones-nav" src="{{ asset('assets/img/logout.svg') }}">
-                        </a>
-                    </li>
+                            <a class="nav-link px-2" href="{{ path('app_logout') }}">
+                                <img class="icones-nav" src="{{ asset('assets/img/logout.svg') }}">
+                            </a>
+                        </li>
 
-                </div>
-            {% else %}
-                <div class="nav-icones-down pl-0">
-                    <li class="nav-item">
-                        <a class="nav-link px-4 pl-0" href="{{ path('app_login') }}">
-                            <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
-                        </a>
-                        <a href="" class="nav-link px-4 ">
-                            <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
-                        </a>
+                    </div>
+                {% else %}
+                    <div class="nav-icones-down pl-0">
+                        <li class="nav-item">
+                            <a class="nav-link px-4 pl-0" href="{{ path('app_login') }}">
+                                <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
+                            </a>
+                            <a href="" class="nav-link px-4 ">
+                                <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
+                            </a>
 
 
-                        <a href="{{ path('cart') }}" class="nav-link px-4">
-                            <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
-                        </a>
+                            <a href="{{ path('cart') }}" class="nav-link px-4">
+                                <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
+                            </a>
 
-                    </li>
-                </div>
-            {% endif %}
+                        </li>
+                    </div>
+                {% endif %}
             </div>
         </nav>
 

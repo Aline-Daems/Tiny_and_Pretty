@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function () {
     // executes when HTML-Document is loaded and DOM is ready
 
@@ -24,74 +27,6 @@ $(document).ready(function () {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*window.onload = function() {
-    $(".background-coming-soon").addClass('zoom');
-};
-
- */
-/*
-window.addEventListener('DOMContentLoaded', setup);
-
-const threshold = .1
-function setup() {
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold
-    }
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            console.log('fonction OK');
-            if(entry.intersectionRatio > threshold) {
-                entry.target.classList.add('show');
-                console.log(entry.intersectionRatio)
-                observer.unobserve(entry.target);
-            }
-
-        })
-    }, options);
-
-    const h1 = document.querySelector('h1');
-    observer.observe(h1);
-
-   /*const h3 = document.querySelector('h3');
-    observer.observe(h3);*/
-/*
-const h5 = document.querySelector('h5');
-observer.observe(h5);
-
-*/
-/*
-    const paras = document.querySelectorAll('p');
-    paras.forEach(p => observer.observe(p));
-
-}
-
-*/
-/*
-
-
-const ratio =  1
-const options2 = {
-    root: null,
-    rootMargin: '0px',
-    threshold: ratio
-}
-const handleIntersect = function (entries, observer){
-    entries.forEach(function (entry){
-        if (entry.intersectionRatio > ratio){
-            console.log(entry.intersectionRatio)
-     entry.target.classList.add('reveal-visible')
-         //   observer.unobserve(entry.target)
-    }
-    })
-}
-
-const observer = new IntersectionObserver(handleIntersect, options2)
-observer.observe(document.querySelector('.reveal'))
-
-*/
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -166,13 +101,17 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
 
 // Ajax jquery avec le bundle axios sur le coeur de la wishlist
 
+/*
+
 function onClickBtnWish(event) {
     event.preventDefault();
     const url = this.href;
     const heart = this.querySelector('img');
 
 
-    axios.get(url).then(function () {
+    fetch(url).then(function () {
+
+        console.log(url);
 
         if (heart.classList.contains('heart-wish')) {
             heart.classList.replace('heart-wish', 'heart-bold');
@@ -180,6 +119,7 @@ function onClickBtnWish(event) {
             heart.classList.replace('heart-bold', 'heart-wish');
         }
 
+        console.log(url);
 
     })
 }
@@ -187,4 +127,103 @@ function onClickBtnWish(event) {
 document.querySelectorAll('a.js-wish').forEach(function (link) {
     link.addEventListener('click', onClickBtnWish);
 })
+
+
+ */
+
+/*
+function onClickBtnWish(event) {
+    event.preventDefault();
+    const url = this.href;
+    let yesWish = document.getElementById('Yes-wish');
+    let noWish = document.getElementById('No-wish');
+
+
+    axios.get(url).then(function () {
+    if (yesWish){
+        yesWish.replaceWith(noWish)
+    }else{
+        noWish.replaceWith(yesWish)
+    }
+        document.querySelectorAll('a.js-wish').forEach(function (link) {
+            link.addEventListener('click', onClickBtnWish);
+        })
+    })}
+
+ */
+
+/* coeur test 1
+
+$(function() {
+    $(".heart").on("click", function() {
+        $(this).toggleClass("is-active");
+    });
+});
+
+ */
+/*
+let icon = document.querySelector('ion-icon');
+icon.onclick = function(){
+    icon.classList.toggle('active');
+}
+
+ */
+
+// TEST COEUR A GARDER
+
+let heartContainer = document.getElementsByClassName('icon-wrapper');
+
+document.querySelectorAll('a.js-wish').forEach(function (link) {
+
+
+    Object.keys(heartContainer).forEach(singleElement => {
+
+       heartContainer[singleElement].addEventListener('click', function Wish(event) {
+
+           link.addEventListener('click', Wish);
+
+
+            event.preventDefault();
+            const url = this.href;
+        fetch(url).then(function (reponse) {
+
+
+                console.log(reponse);
+
+
+                if (heartContainer[singleElement].classList.contains('liked')) {
+                    heartContainer[singleElement].classList.add('unliked');
+                    heartContainer[singleElement].classList.remove('liked');
+                  setTimeout(unlikeRemover, 250);
+
+
+                } else {
+                    heartContainer[singleElement].classList.add('liked');
+                    heartContainer[singleElement].classList.remove('unliked');
+                }
+            console.log(url);
+
+
+               function unlikeRemover() {
+                    heartContainer[singleElement].classList.remove('unliked');
+                }
+
+
+
+            });
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 

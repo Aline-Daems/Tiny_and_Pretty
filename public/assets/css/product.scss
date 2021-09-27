@@ -67,13 +67,184 @@
 .accordion{
   font-family: $titleFontRegular;
 }
-
+/*
 .heart-wish{
   width:1.8rem;
+  height: 5rem;
+  //background: transparent;
 
 }
 
 .heart-bold{
   width:1.8rem;
+  height: 2rem;
   background-color: #0B7FC7;
+
 }
+
+
+ */
+
+/*
+.heart {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat 0 0;
+ // background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+
+  &.is-active {
+    transition-duration: 1s;
+   background-position: -2800px 0;
+  }
+}
+
+
+
+.placement {
+  position: absolute;
+  top: -25%;
+  left: 30%;
+ transform: translate(-50%, -50%);
+
+}
+
+ */
+/*
+
+ESSAI COEUR 2
+ */
+/*
+[id='toggle-heart'] {
+  position: absolute;
+  left: -100vw;
+}
+[id='toggle-heart']:checked + label {
+  color: #e2264d;
+  -webkit-filter: none;
+  filter: none;
+  will-change: font-size;
+  -webkit-animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+  animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+[id='toggle-heart']:checked + label:before, [id='toggle-heart']:checked + label:after {
+  -webkit-animation: inherit;
+  animation: inherit;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+[id='toggle-heart']:checked + label:before {
+  will-change: transform, border-width, border-color;
+  -webkit-animation-name: bubble;
+  animation-name: bubble;
+}
+[id='toggle-heart']:checked + label:after {
+  will-change: opacity, box-shadow;
+  -webkit-animation-name: sparkles;
+  animation-name: sparkles;
+}
+[id='toggle-heart']:focus + label {
+  text-shadow: 0 0 3px white,  0 1px 1px white, 0 -1px 1px white,  1px 0 1px white, -1px 0 1px white;
+}
+
+[for='toggle-heart'] {
+  align-self: center;
+  position: relative;
+  color: #888;
+  font-size: 2em;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+[for='toggle-heart']:before, [for='toggle-heart']:after {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  content: '';
+}
+[for='toggle-heart']:before {
+  box-sizing: border-box;
+  margin: -2.25rem;
+  border: solid 2.25rem #e2264d;
+  width: 4.5rem;
+  height: 4.5rem;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[for='toggle-heart']:after {
+  margin: -0.1875rem;
+  width: 0.375rem;
+  height: 0.375rem;
+}
+
+ */
+// TEST A GARDER
+
+.icon-wrapper {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  margin: 10px 20px 10px 10px;
+  color: #333;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+//  box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 250ms color;
+  -webkit-transition: 250ms color;
+  -moz-transition: 250ms color;
+  -ms-transition: 250ms color;
+  -o-transition: 250ms color;
+}
+
+
+
+.liked {
+  color: #ff008a;
+  animation-name: heart-like;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.unliked {
+  animation-name: heart-unlike;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes heart-like {
+  0% { transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
+  50% { transform: scale(1.3); -webkit-transform: scale(1.3); -moz-transform: scale(1.3); -ms-transform: scale(1.3); -o-transform: scale(1.3); }
+  100% { transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
+}
+
+@keyframes heart-unlike {
+  0% { transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
+  50% { transform: scale(.7); -webkit-transform: scale(.7); -moz-transform: scale(.7); -ms-transform: scale(.7); -o-transform: scale(.7); }
+  100% { transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
+}
+
+
+
+
+
+
+

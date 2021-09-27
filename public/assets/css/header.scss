@@ -21,7 +21,52 @@ header {
   z-index: 5;
   box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px;
 }
+.defile-banner{
+overflow: hidden;
+  background-color: $blue;
+  font-family: $titleFontRegular;
+ font-weight: bold;
+}
+.defile-banner > div {
+ // background-color: $blue;
+  height: 6vh;
+  display: inline-block; /* important */
+  white-space: nowrap; /* important */
+  animation: defilement-rtl 20s infinite linear; /* défilement */
+  cursor: pointer;
+  padding: 5px 0% 3px 80%;
+}
 
+@keyframes defilement-rtl {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  50% {
+    -webkit-transform: translate(-40%);
+    transform: translate(-40%);
+  }
+  60% {
+    -webkit-transform: translate(-40%);
+    transform: translate(-40%);
+  }
+  100% {
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
+  }
+}
+
+
+
+.favicon-banner{
+  margin-left: 15%;
+}
+.new-collection{
+  background-color: $green;
+  font-weight: bold;
+  border-radius: 0.3em;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
 /*
 .title_drop {
   color: #797474FF;
@@ -65,6 +110,21 @@ header {
   font-weight: bold;
   font-size: larger;
   color: #6C7A4E!important;
+
+}
+.shop{
+  position: relative;
+  font-weight: bold;
+  font-size: larger;
+  background-color: $green;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 0.5em;
+  color: white!important;
+
+  text-shadow: 3px 1px 5px rgba(1, 23, 9, 0.72);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
 }
 .link-headOne:after {
   content: '';
@@ -149,7 +209,7 @@ header {
     width: 1.5rem;
   }
   .nav-icones{
-    margin-left: 100px!important;
+    margin-left: 50px!important;
   }
 
 

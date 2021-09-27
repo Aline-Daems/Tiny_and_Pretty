@@ -6,6 +6,7 @@
     "require": {
         "php": ">=8.0",
         "ext-ctype": "*",
+        "ext-gd": "*",
         "ext-iconv": "*",
         "api-platform/core": "^2.6",
         "composer/ca-bundle": "^1.2",
