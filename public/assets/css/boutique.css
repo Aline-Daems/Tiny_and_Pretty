@@ -767,9 +767,12 @@ header {
 
 .new-collection {
   background-color: #a9b97a;
+  color: white !important;
   font-weight: bold;
   border-radius: 0.3em;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 0;
+  margin: 0; }
 
 /*
 .title_drop {
@@ -816,8 +819,8 @@ header {
   font-weight: bold;
   font-size: larger;
   background-color: #a9b97a;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
   border-radius: 0.5em;
   color: white !important;
   text-shadow: 3px 1px 5px rgba(1, 23, 9, 0.72);
@@ -900,7 +903,7 @@ header {
     width: 1.5rem; }
 
   .nav-icones {
-    margin-left: 50px !important; } }
+    margin-left: 1vw !important; } }
 /* breakpoint and up - mega dropdown styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
@@ -978,7 +981,7 @@ header {
     width: 1.5rem; }
 
   .nav-icones {
-    margin-left: 8vw; }
+    margin-left: 1vw; }
 
   .logo-img-header {
     width: 50%;

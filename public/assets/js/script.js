@@ -66,7 +66,7 @@ $(document).ready(function () {
         let scrollVal = $(this).scrollTop();
         if (scrollVal >= headerH) {
             $('#home-banner').css({'position': 'fixed', 'top': '0px'});
-            $('#logo-show').css({'display': 'block', 'transform': 'scale(1.3)'});
+            $('#logo-show').css({'display': 'block'});
             $('.dropdown-menu').css({'top': '90%'});
 
 
@@ -101,73 +101,6 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
 
 // Ajax jquery avec le bundle axios sur le coeur de la wishlist
 
-/*
-
-function onClickBtnWish(event) {
-    event.preventDefault();
-    const url = this.href;
-    const heart = this.querySelector('img');
-
-
-    fetch(url).then(function () {
-
-        console.log(url);
-
-        if (heart.classList.contains('heart-wish')) {
-            heart.classList.replace('heart-wish', 'heart-bold');
-        } else {
-            heart.classList.replace('heart-bold', 'heart-wish');
-        }
-
-        console.log(url);
-
-    })
-}
-
-document.querySelectorAll('a.js-wish').forEach(function (link) {
-    link.addEventListener('click', onClickBtnWish);
-})
-
-
- */
-
-/*
-function onClickBtnWish(event) {
-    event.preventDefault();
-    const url = this.href;
-    let yesWish = document.getElementById('Yes-wish');
-    let noWish = document.getElementById('No-wish');
-
-
-    axios.get(url).then(function () {
-    if (yesWish){
-        yesWish.replaceWith(noWish)
-    }else{
-        noWish.replaceWith(yesWish)
-    }
-        document.querySelectorAll('a.js-wish').forEach(function (link) {
-            link.addEventListener('click', onClickBtnWish);
-        })
-    })}
-
- */
-
-/* coeur test 1
-
-$(function() {
-    $(".heart").on("click", function() {
-        $(this).toggleClass("is-active");
-    });
-});
-
- */
-/*
-let icon = document.querySelector('ion-icon');
-icon.onclick = function(){
-    icon.classList.toggle('active');
-}
-
- */
 
 // TEST COEUR A GARDER
 

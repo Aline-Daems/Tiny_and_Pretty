@@ -59,7 +59,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-down mr-auto ml-auto">
+                <ul class="navbar-nav nav-down ">
                     <li class="nav-item dropdown">
                         <a class="nav-link inactive dropdown px-3" href="" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -206,8 +206,8 @@
                             <li class="nav-item">
                                 <a class="nav-link px-2" href="{{ path('productsToy') }}">Les Jouets</a>
                             </li>
-                            <li class="nav-item new-collection">
-                                <a class="nav-link px-2" href="">NOUVELLE COLLECTION</a>
+                            <li class="nav-item ">
+                                <a class="nav-link new-collection" href="">NOUVELLE COLLECTION</a>
                             </li>
                         </ul>
                     </li>
@@ -218,7 +218,7 @@
                     <div class="nav-icones">
 
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="{{ path('account') }}">
+                            <a class="nav-link pr-2" href="{{ path('account') }}">
                                 <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
                                 <p class="float-right">{{ app.user.firstname }}</p>
                             </a>
@@ -233,7 +233,7 @@
 
                                 </div>
                             </a>
-                            <a class="nav-link px-4" href="">
+                            <a class="nav-link px-2" href="">
                                 <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
                             </a>
 

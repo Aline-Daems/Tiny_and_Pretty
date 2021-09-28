@@ -63,9 +63,12 @@ overflow: hidden;
 }
 .new-collection{
   background-color: $green;
+  color: white!important;
   font-weight: bold;
   border-radius: 0.3em;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 0;
+  margin: 0;
 }
 /*
 .title_drop {
@@ -117,8 +120,8 @@ overflow: hidden;
   font-weight: bold;
   font-size: larger;
   background-color: $green;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
   border-radius: 0.5em;
   color: white!important;
 
@@ -209,7 +212,7 @@ overflow: hidden;
     width: 1.5rem;
   }
   .nav-icones{
-    margin-left: 50px!important;
+    margin-left: 1vw!important;
   }
 
 
@@ -309,7 +312,7 @@ overflow: hidden;
 
   }
   .nav-icones{
-    margin-left: 8vw;
+    margin-left: 1vw;
   }
   .logo-img-header{
     width: 50%;
