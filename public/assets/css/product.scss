@@ -124,7 +124,7 @@ ESSAI COEUR 2
   left: -100vw;
 }
 [id='toggle-heart']:checked + label {
-  color: #e2264d;
+  color: $green;
   -webkit-filter: none;
   filter: none;
   will-change: font-size;
@@ -188,6 +188,8 @@ ESSAI COEUR 2
 }
 
  */
+
+
 // TEST A GARDER
 
 .icon-wrapper {
@@ -243,6 +245,8 @@ ESSAI COEUR 2
   50% { transform: scale(.7); -webkit-transform: scale(.7); -moz-transform: scale(.7); -ms-transform: scale(.7); -o-transform: scale(.7); }
   100% { transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
 }
+
+
 
 
 

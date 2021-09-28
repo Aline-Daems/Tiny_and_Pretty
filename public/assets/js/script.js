@@ -178,9 +178,8 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 
     Object.keys(heartContainer).forEach(singleElement => {
 
-       heartContainer[singleElement].addEventListener('click', function Wish(event) {
+      link.addEventListener('click', function Wish(event) {
 
-           link.addEventListener('click', Wish);
 
 
             event.preventDefault();
@@ -189,23 +188,24 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 
 
                 console.log(response);
-                console.log(url);
 
 
                 if (heartContainer[singleElement].classList.contains('liked')) {
-                    heartContainer[singleElement].classList.replace('liked', 'unliked');
+                    heartContainer[singleElement].classList.add('unliked');
+                    heartContainer[singleElement].classList.remove('liked');
+                  setTimeout(unlikeRemover, 250);
 
+
+                } else {
+                    heartContainer[singleElement].classList.add('liked');
+                    heartContainer[singleElement].classList.remove('unliked');
                 }
 
-                else if (heartContainer[singleElement].classList.contains('unliked')) {
-                        heartContainer[singleElement].classList.replace('unliked', 'liked');
-
-                    }
 
 
-
-
-
+               function unlikeRemover() {
+                    heartContainer[singleElement].classList.remove('unliked');
+                }
 
 
 
@@ -214,13 +214,9 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
     });
 });
 
-let heartLiked = document.getElementsByClassName('liked');
-let heartUnliked = document.getElementsByClassName('unliked');
-
-document.querySelectorAll('a.js-wish').forEach(function (link) {
 
 
-})
+
 
 
 

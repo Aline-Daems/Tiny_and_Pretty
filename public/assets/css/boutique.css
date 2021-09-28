@@ -537,7 +537,7 @@ ESSAI COEUR 2
   left: -100vw;
 }
 [id='toggle-heart']:checked + label {
-  color: #e2264d;
+  color: $green;
   -webkit-filter: none;
   filter: none;
   will-change: font-size;
