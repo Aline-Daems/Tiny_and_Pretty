@@ -62,7 +62,8 @@ h1, h3 {
   font-family: Cantarell, sans-serif; }
 
 .button-discover {
-  padding-left: 3%; }
+  padding-left: 3%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
 .category {
   margin-top: 5rem !important;
@@ -441,7 +442,8 @@ h1, h3, h5, p {
 
 .descriptionBest {
   font-size: 2vh;
-  font-family: Quicksand, sans-serif; }
+  font-family: Quicksand, sans-serif;
+  background-color: white; }
 
 .product-item {
   cursor: pointer; }
