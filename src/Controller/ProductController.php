@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\ChoiceSize;
 use App\Entity\Products;
+use App\Entity\Size;
 use App\Entity\Wish;
 use App\Repository\WishRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -40,7 +41,6 @@ class ProductController extends AbstractController
             'product' => $product,
             'products' => $products,
             'productN' => $productN,
-
         ]);
 
     }
@@ -130,6 +130,31 @@ class ProductController extends AbstractController
             'code' => 200,
             'message' => 'ca marche bien'
         ],200);
+    }
+
+    /**
+     * @param Products $product
+     * @param ManagerRegistry $manager
+     * @return Response
+     */
+    #[Route('/product/{id}/choiceSize', name :'choice-size')]
+    public function choice(Products $product, ManagerRegistry $manager, $id): Response
+    {
+        $size = $this->entityManager->getRepository(Size::class)->findById($id);
+
+        $user = $this->getUser();
+        $sizes = new ChoiceSize();
+        $sizes->setProduct($product)
+            ->setUser($user)
+            ->setSize($size);
+        $em = $manager->getManager();
+        $em->persist($sizes);
+        $em->flush();
+        return $this->json([
+            'code' => 200,
+            'message'=> 'choice ok'
+        ],200);
+
     }
 
 }

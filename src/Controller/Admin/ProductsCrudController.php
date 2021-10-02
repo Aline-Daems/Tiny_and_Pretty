@@ -3,16 +3,11 @@
 namespace App\Controller\Admin;
 
 
-use App\Entity\Picture;
 use App\Entity\Products;
-use App\Entity\TopImage;
 use App\Form\PictureType;
-use App\Form\TopImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
@@ -52,6 +47,7 @@ class ProductsCrudController extends AbstractCrudController
                 ->setEntryType(PictureType::class),
             TextField::new('Subtitle'),
             TextareaField::new('description'),
+            AssociationField::new('sizes'),
             BooleanField::new('isBest'),
             BooleanField::new('isNew'),
             BooleanField::new('soldOut'),
@@ -59,7 +55,7 @@ class ProductsCrudController extends AbstractCrudController
             AssociationField::new('mode'),
             AssociationField::new('maison'),
             AssociationField::new('toys')
-            ];
+        ];
     }
 
 }

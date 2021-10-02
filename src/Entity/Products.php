@@ -133,6 +133,16 @@ class Products
      */
     private $wishes;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Size::class, inversedBy="product")
+     */
+    private $sizes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="product")
+     */
+    private $choiceSize;
+
     public function __construct(){
         $this->category = new ArrayCollection();
         $this->mode = new ArrayCollection();
@@ -142,6 +152,7 @@ class Products
         $this->pictures = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
+        $this->sizes = new ArrayCollection();
 
     }
     public function getId(): ?int
@@ -489,6 +500,45 @@ class Products
             }
         }
         return false;
+    }
+
+    /**
+     * @return Collection|Size[]
+     */
+    public function getSizes(): Collection
+    {
+        return $this->sizes;
+    }
+
+    public function addSize(Size $size): self
+    {
+        if (!$this->sizes->contains($size)) {
+            $this->sizes[] = $size;
+            $size->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSize(Size $size): self
+    {
+        if ($this->sizes->removeElement($size)) {
+            $size->removeProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function getChoiceSize(): ?ChoiceSize
+    {
+        return $this->choiceSize;
+    }
+
+    public function setChoiceSize(?ChoiceSize $choiceSize): self
+    {
+        $this->choiceSize = $choiceSize;
+
+        return $this;
     }
 
 

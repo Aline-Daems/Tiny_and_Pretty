@@ -67,8 +67,11 @@ class User implements UserInterface
     private $wishes;
 
     /**
-     * @ORM\OneToOne(targetEntity=Wish::class, mappedBy="name", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="user")
      */
+    private $choiceSizes;
+
+
 
 
     public function __construct()
@@ -77,6 +80,7 @@ class User implements UserInterface
         $this->orders = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
+        $this->choiceSizes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -306,6 +310,37 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection|ChoiceSize[]
+     */
+    public function getChoiceSizes(): Collection
+    {
+        return $this->choiceSizes;
+    }
+
+    public function addChoiceSize(ChoiceSize $choiceSize): self
+    {
+        if (!$this->choiceSizes->contains($choiceSize)) {
+            $this->choiceSizes[] = $choiceSize;
+            $choiceSize->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChoiceSize(ChoiceSize $choiceSize): self
+    {
+        if ($this->choiceSizes->removeElement($choiceSize)) {
+            // set the owning side to null (unless already changed)
+            if ($choiceSize->getUser() === $this) {
+                $choiceSize->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+    
 
 
 }
