@@ -1,14 +1,9 @@
-body {
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow-x: hidden;
-  height: 100%;
-}
+
 header {
   // position: fixed; ne pas rétablir pour les smartphones mais rétablir pour grands écrans
   top: 0;
   width: 100vw;
-  z-index: 2;
+  z-index: 5;
   background: white;
 
 }

@@ -1,47 +1,48 @@
-<div class="product-item text-center">
+<div class="product-item">
     <div class="show-btn-cart">
 
+            <a href="{{ path('product', {'slug':product.slug}) }}">
 
-<div class="product-item text-center mb-5">
+                <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                     alt="{{ product.name }}" class="img-fluid">
 
-                <a href="{{ path('product', {'slug':product.slug}) }}">
-                    <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn')}}" alt="{{ product.name }}" class="img-fluid">
+            </a>
+            <div>
+                <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
+                    {% if app.user and product.isWishByUser(app.user) %}
+
+
+
+                        <div class="icon-wrapper liked">
+                            <i class="far fa-heart "></i>
+                        </div>
+
+                    {% else %}
+
+
+                        <div class="icon-wrapper unliked">
+                            <i class="far fa-heart"></i>
+                        </div>
+
+                    {% endif %}
+
                 </a>
+            </div>
 
     </div>
-        <div>
-            {% if is_granted('ROLE_USER') %}
-                {% set isFavorite = false %}
-                {% for favoris in product.favoris  %}
-
-                    {% if favoris.id == app.user.id %}
-                        {% set isFavorite = true %}
-                    {% endif %}
-                {% endfor %}
-
-                {% if isFavorite %}
-
-                    <a href="{{ path('retrait_favoris', {id: product.id}) }}" class="js-favorite"><img src="{{ asset('/assets/img/heart.svg') }}" class="heart" alt=""></a>
-
-                {% else %}
-
-                    <a href="{{ path('ajout_favoris', {id: product.id}) }}" class="js-favorite"><img src="{{ asset('/assets/img/heart.svg') }}" class="heart" alt=""></a>
-
-                {% endif %}
-
-            {% else %}
-                <img src="{{ asset('/assets/img/heart.svg') }}" class="heart" alt="">
-            {% endif %}
-        </div>
 
 
-
-    <div class="descriptionBest">
+    <div class="descriptionBest mt-3 mb-5">
+        <div class="product-line-green">
         <p class="product-text"><span>{{ product.name }}</span></p>
-        <p class="product-description"><span class="product-subtitle"> {{ product.subtitle }} </span></p>
+        <p class="product-description"><span class="product-subtitle mb-5"> {{ product.subtitle }} </span></p>
 
 
-        <p class="product-price-text"><span class="product-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span></p>
+            <p class="product-price-text"><span
+                        class="product-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                <button type="button" class="profite ml-5">JE LE VEUX</button>
+            </p>
+        </div>
 
     </div>
 </div>

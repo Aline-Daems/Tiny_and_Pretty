@@ -3,6 +3,7 @@ footer {
   position: fixed;
   z-index: 0;
   bottom: 0;
+  padding-top: 5rem;
   background-color: white;
 
 }
@@ -19,12 +20,12 @@ footer {
 }
 
 
-a { color:$grey } /* Globally */
+footer a { color: grey!important; } /* Globally */
 
 /* Each state */
 
-a:visited { text-decoration: none; color:grey; }
-a:hover, a:active { text-decoration: none; color:black }
+footer a:visited { text-decoration: none; color:grey!important; }
+footer a:hover, a:active { text-decoration: none; color:black }
 
 
 .footer-custom {
@@ -34,7 +35,8 @@ a:hover, a:active { text-decoration: none; color:black }
   align-content: center;
   align-items: center;
   font-family: $titleFontRegular;
-  margin-top: 8vh !important;
+ // margin-top: 1vh !important;
+  z-index: 0;
 }
 .cards-icon {
 
