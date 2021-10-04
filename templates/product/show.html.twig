@@ -24,7 +24,7 @@
             {% for size in product.sizes %}
 
 
-                <a href="{{ path('choice-size', {'id':size.id }) }}">{{ size.name }}</a>
+                <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}">{{ size.name }}</a>
 
             {% endfor %}
 

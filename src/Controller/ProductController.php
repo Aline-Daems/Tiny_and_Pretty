@@ -8,9 +8,12 @@ use App\Entity\Wish;
 use App\Repository\WishRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
+
 
 
 class ProductController extends AbstractController
@@ -133,31 +136,6 @@ class ProductController extends AbstractController
             'message' => 'ca marche bien'
         ],200);
     }
-    /**
-     * @param $slug
-     * @param ManagerRegistry $manager
-     * @param $id
-     * @return Response
-     */
-    #[Route('product/choiceSize/{id}', name :'choice-size')]
-    public function choice(Products $product, ManagerRegistry $manager, $id): Response
-    {
 
-        $size = $this->entityManager->getRepository(Size::class)->findOneById($id);
-
-        $user = $this->getUser();
-        $sizes = new ChoiceSize();
-        $sizes->setProduct($product)
-            ->setUser($user)
-            ->setSize($size);
-        $em = $manager->getManager();
-        $em->persist($sizes);
-        $em->flush();
-        return $this->json([
-            'code' => 200,
-            'message'=> 'choice ok'
-        ],200);
-
-    }
 
 }
