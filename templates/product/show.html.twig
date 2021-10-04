@@ -22,7 +22,10 @@
                 {{ product.description }}
             </p>
             {% for size in product.sizes %}
-                <a href="{{ path('choice-size', {'id':product.id}) }}">{{ size.name }}</a>
+
+
+                <a href="{{ path('choice-size', {'id':size.id }) }}">{{ size.name }}</a>
+
             {% endfor %}
 
 

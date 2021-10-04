@@ -32,6 +32,7 @@ class ProductController extends AbstractController
         $product = $this->entityManager->getRepository(Products::class)->findOneBySlug($slug);
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
+        $size = $this->entityManager->getRepository(Size::class)->findAll();
 
 
         if (!$product) {
@@ -41,6 +42,7 @@ class ProductController extends AbstractController
             'product' => $product,
             'products' => $products,
             'productN' => $productN,
+            'Size' => $size
         ]);
 
     }
@@ -131,16 +133,17 @@ class ProductController extends AbstractController
             'message' => 'ca marche bien'
         ],200);
     }
-
     /**
-     * @param Products $product
+     * @param $slug
      * @param ManagerRegistry $manager
+     * @param $id
      * @return Response
      */
-    #[Route('/product/{id}/choiceSize', name :'choice-size')]
+    #[Route('product/choiceSize/{id}', name :'choice-size')]
     public function choice(Products $product, ManagerRegistry $manager, $id): Response
     {
-        $size = $this->entityManager->getRepository(Size::class)->findById($id);
+
+        $size = $this->entityManager->getRepository(Size::class)->findOneById($id);
 
         $user = $this->getUser();
         $sizes = new ChoiceSize();
