@@ -139,7 +139,7 @@ class Products
     private $sizes;
 
     /**
-     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="product")
+     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="product", cascade={"remove"})
      */
     private $choiceSize;
 
@@ -539,6 +539,20 @@ class Products
         $this->choiceSize = $choiceSize;
 
         return $this;
+    }
+    /**
+     * perlet de savoir si cette article est dans la taille de l'utilisateur
+     *
+     * @param User $user
+     * @return bool
+     */
+    public function isChoiceSizeByUser(User $user) :bool {
+        foreach($this->choiceSize as $choiceSize) {
+            if ($choiceSize->getUser() === $user) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
