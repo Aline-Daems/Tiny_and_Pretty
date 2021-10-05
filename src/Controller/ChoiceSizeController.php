@@ -67,25 +67,35 @@ class ChoiceSizeController extends AbstractController
                 'message' => 'non autorisé'
             ], 403);
         }
+        if ($product->isChoiceSizeByUser($user)) {
+            $sizes = $choiceSizeRepository->findOneBy([
+                'product' => $product,
+                'user' => $user,
+            ]);
+            $em = $manager->getManager();
+            $em->remove($sizes);
+            $em->flush();
+            $sizes = new ChoiceSize();
 
-        if ($product === $product->isChoiceSizeByUser($user)) {
-                $sizes = $choiceSizeRepository->findOneBy([
-                    'product' => $product,
-                    'user' => $user,
-                    'size' => $size
-                ]);
+            $sizes
+                ->setProduct($product)
+                ->setUser($user)
+                ->setSize($size);
+            $em = $manager->getManager();
+            $em->persist($sizes);
+            $em->flush();
 
-                $em = $manager->getManager();
-                $em->remove($sizes);
-                $em->flush();
 
-                return $this->json([
-                    'code' => 200,
-                    'message' => 'favoris bien supprimer'
-                ], 200);
+            return $this->json([
+                'code' => 200,
+                'message'=> 'choice mis a jour'
+            ],200);
+
         }
 
+
         $sizes = new ChoiceSize();
+
         $sizes
             ->setProduct($product)
             ->setUser($user)
@@ -93,11 +103,13 @@ class ChoiceSizeController extends AbstractController
         $em = $manager->getManager();
         $em->persist($sizes);
         $em->flush();
+
+
         return $this->json([
             'code' => 200,
             'message'=> 'choice ok'
         ],200);
-
     }
+
 
 }
