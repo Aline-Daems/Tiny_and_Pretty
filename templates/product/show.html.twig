@@ -22,43 +22,42 @@
                 {{ product.description }}
             </p>
             {% for size in product.sizes %}
+                <div id="js-size" class="size-border">
 
-
-                <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}">{{ size.name }}</a>
-
+                    <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}" class="js-link-size">{{ size.name }}</a>
+                </div>
             {% endfor %}
-
 
 
             <div class="col mb-5">
 
                 <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
                     {% if app.user and product.isWishByUser(app.user) %}
-<!--ESSAI A GARDER
-                        <div class="love-icon">
-                            <input type="checkbox" id="like-toggle">
-                            <label for="like-toggle" class="heart"> </label>
-                            <div class="lines">
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                            </div>
-                            <div class="ring"></div>
-                        </div>
-                        -->
-
-
-
-                                                <div class="icon-wrapper liked">
-                                                    <i class="far fa-heart "></i>
+                        <!--ESSAI A GARDER
+                                                <div class="love-icon">
+                                                    <input type="checkbox" id="like-toggle">
+                                                    <label for="like-toggle" class="heart"> </label>
+                                                    <div class="lines">
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                    </div>
+                                                    <div class="ring"></div>
                                                 </div>
+                                                -->
 
 
 
-                       <!--  essai coeur 2-->
+                        <div class="icon-wrapper liked">
+                            <i class="far fa-heart "></i>
+                        </div>
+
+
+
+                        <!--  essai coeur 2-->
                         <!--
                         <input id="toggle-heart" type="checkbox"/>
                         <label for="toggle-heart" aria-label="like">❤</label>
@@ -68,7 +67,7 @@
                             <div class="heart"></div>
                         </div>
                         -->
-<!--
+                        <!--
                         <div class="heart-wish">
                             <img src="{{ asset('assets/img/like.svg') }}" alt="" class="">
                         </div>
@@ -97,17 +96,17 @@
                         </div>
 
 
-                     <!--    essai coeur 2 -->
+                        <!--    essai coeur 2 -->
                         <!--
                       <input id="toggle-heart" type="checkbox"/>
                       <label for="toggle-heart" aria-label="like">❤</label>
 -->
-<!-- coeur test 1
-                      <div class="placement">
-                          <div class="heart"></div>
-                      </div>
-                      -->
-                     <!--   <div class="heart-bold">
+                        <!-- coeur test 1
+                                              <div class="placement">
+                                                  <div class="heart"></div>
+                                              </div>
+                                              -->
+                        <!--   <div class="heart-bold">
                             <img src="{{ asset('assets/img/heart.svg') }}" alt="" class="">
 
                         </div>
@@ -118,7 +117,6 @@
 
                 </a>
             </div>
-
 
 
             <hr class="col">

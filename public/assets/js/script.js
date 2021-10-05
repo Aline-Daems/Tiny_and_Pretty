@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function () {
     // executes when HTML-Document is loaded and DOM is ready
 
@@ -26,7 +23,6 @@ $(document).ready(function () {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -111,13 +107,12 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 
     Object.keys(heartContainer).forEach(singleElement => {
 
-      link.addEventListener('click', function Wish(event) {
-
+        link.addEventListener('click', function Wish(event) {
 
 
             event.preventDefault();
             const url = this.href;
-        fetch(url).then(function (response) {
+            fetch(url).then(function (response) {
 
 
                 console.log(response);
@@ -126,7 +121,7 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
                 if (heartContainer[singleElement].classList.contains('liked')) {
                     heartContainer[singleElement].classList.add('unliked');
                     heartContainer[singleElement].classList.remove('liked');
-                  setTimeout(unlikeRemover, 250);
+                    setTimeout(unlikeRemover, 250);
 
 
                 } else {
@@ -135,11 +130,9 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
                 }
 
 
-
-               function unlikeRemover() {
+                function unlikeRemover() {
                     heartContainer[singleElement].classList.remove('unliked');
                 }
-
 
 
             });
@@ -148,8 +141,31 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 });
 
 
+// Changement de la couleur au click pour la taille
 
 
+
+let size = document.getElementsByClassName('size-border');
+
+document.querySelectorAll('a.js-link-size').forEach(function (link) {
+
+
+    Object.keys(size).forEach(singleElement => {
+
+        link.addEventListener('click', function Size(event) {
+
+
+            event.preventDefault();
+            const url = this.href;
+            fetch(url).then(function (response) {
+
+
+                console.log(response);
+
+            });
+        });
+    });
+});
 
 
 
