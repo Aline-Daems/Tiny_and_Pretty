@@ -541,7 +541,7 @@ class Products
         return $this;
     }
     /**
-     * perlet de savoir si cette article est dans la taille de l'utilisateur
+     * permet de savoir si cette article est dans le choix de taille de l'utilisateur
      *
      * @param User $user
      * @return bool
