@@ -547,8 +547,8 @@ class Products
      * @return bool
      */
     public function isChoiceSizeByUser(User $user) :bool {
-        foreach($this->choiceSize as $choiceSize) {
-            if ($choiceSize->getUser() === $user) {
+        foreach($this->choiceSize as $Size) {
+            if ($Size->getUser() === $user) {
                 return true;
             }
         }
