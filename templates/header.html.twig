@@ -16,7 +16,7 @@
                 <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
                      class="logo-img-header img-fluid"/>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -151,9 +151,10 @@
 
                             </div>
 
-
+                        </div>
                     </li>
-                    <li>
+                </ul>
+
 
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown">
@@ -210,59 +211,59 @@
                                 <a class="nav-link new-collection pt-2" href="">NOUVELLE COLLECTION</a>
                             </li>
                         </ul>
-                    </li>
+                <div id="iconesJS">
+                    {% if app.user %}
+                        <div class="nav-icones">
+
+                            <li class="nav-item">
+                                <a class="nav-link pr-2" href="{{ path('account') }}">
+                                    <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
+                                    <p class="float-right">{{ app.user.firstname }}</p>
+                                </a>
+                                <a class="nav-link px-2" href="{{ path('cart') }}">
+                                    <div class="bag-count">
+                                        <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
+
+
+                                        <div class="cercle-bag float-right text-center align-items-center">
+                                            <p class="content-bag"></p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <a class="nav-link px-2" href="">
+                                    <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
+                                </a>
+
+
+                                <a class="nav-link px-2" href="{{ path('app_logout') }}">
+                                    <img class="icones-nav" src="{{ asset('assets/img/logout.svg') }}">
+                                </a>
+                            </li>
+
+                        </div>
+                    {% else %}
+                        <div class="nav-icones-down pl-0">
+                            <li class="nav-item">
+                                <a class="nav-link px-4 pl-0" href="{{ path('app_login') }}">
+                                    <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
+                                </a>
+                                <a href="" class="nav-link px-4 ">
+                                    <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
+                                </a>
+
+
+                                <a href="{{ path('cart') }}" class="nav-link px-4">
+                                    <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
+                                </a>
+
+                            </li>
+                        </div>
+                    {% endif %}
+                </div>
                 </ul>
             </div>
-            <div id="iconesJS">
-                {% if app.user %}
-                    <div class="nav-icones">
 
-                        <li class="nav-item">
-                            <a class="nav-link pr-2" href="{{ path('account') }}">
-                                <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
-                                <p class="float-right">{{ app.user.firstname }}</p>
-                            </a>
-                            <a class="nav-link px-2" href="{{ path('cart') }}">
-                                <div class="bag-count">
-                                    <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
-
-
-                                    <div class="cercle-bag float-right text-center align-items-center">
-                                        <p class="content-bag"></p>
-                                    </div>
-
-                                </div>
-                            </a>
-                            <a class="nav-link px-2" href="">
-                                <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
-                            </a>
-
-
-                            <a class="nav-link px-2" href="{{ path('app_logout') }}">
-                                <img class="icones-nav" src="{{ asset('assets/img/logout.svg') }}">
-                            </a>
-                        </li>
-
-                    </div>
-                {% else %}
-                    <div class="nav-icones-down pl-0">
-                        <li class="nav-item">
-                            <a class="nav-link px-4 pl-0" href="{{ path('app_login') }}">
-                                <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
-                            </a>
-                            <a href="" class="nav-link px-4 ">
-                                <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
-                            </a>
-
-
-                            <a href="{{ path('cart') }}" class="nav-link px-4">
-                                <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
-                            </a>
-
-                        </li>
-                    </div>
-                {% endif %}
-            </div>
         </nav>
 
 

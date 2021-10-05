@@ -79,6 +79,9 @@ $(document).ready(function () {
     });
 
 });
+if ($(window).width() <= 1024){
+    console.log('768')
+};
 
 ////////////////////////////////////////////////////////////////////////
 let icones = document.getElementById('iconesJS');
@@ -97,6 +100,11 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     $('.hideHeaderJS').css({'display': 'none'});
     $('#search-formJS').replaceWith(icones);
 }
+
+//////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////
 
 
 // Ajax jquery avec le bundle axios sur le coeur de la wishlist
@@ -149,76 +157,71 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 
 //////////////////////////////////////////CAROUSEL
 
-/*
-    Carousel
-*/
-/*
-$('#multi-item-example').carousel({
-    interval: 10000
+    $('#nouveautes').owlCarousel({
+     items: 4,
+        loop: true,
+        autoplay: true,
+        responsiveClass:true,
+        responsive: {
+         0: {
+             items: 1
+         },
+          768: {
+             items: 3,
+              margin: 30
+          },
+          992: {
+             items: 5,
+              margin: 30
+          }
+        }
+    });
+$('#indispensables').owlCarousel({
+    items: 4,
+    loop: true,
+    autoplay: true,
+    responsiveClass:true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        768: {
+            items: 3,
+            margin: 30
+        },
+        992: {
+            items: 5,
+            margin: 30
+        }
+    }
+});
+$('#automne').owlCarousel({
+    items: 4,
+    autoplay: true,
+    responsiveClass:true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        768: {
+            items: 3,
+            margin: 30
+        },
+        992: {
+            items: 5,
+            margin: 30
+        }
+    }
+});
+
+$('#collection').owlCarousel({
+    items: 1,
+    loop: true,
+    nav: true,
+    dots: true,
+    dotsEach: true,
+    autoplay: true
 })
-
-$('.carousel .carousel-item').each(function(){
-    let minPerSlide = 3;
-    let next = $(this).next();
-    if (!next.length) {
-        next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-
-    for (let i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-            next = $(this).siblings(':first');
-        }
-
-        next.children(':first-child').clone().appendTo($(this));
-    }
-});
-
- */
-/*
-$('#multi-item-example').on('slide.bs.carousel', function (e) {
-
-    let $e = $(e.relatedTarget);
-    let idx = $e.index();
-    let itemsPerSlide = 4;
-    let totalItems = $('.carousel-item').length;
-
-    if (idx >= totalItems-(itemsPerSlide-1)) {
-        let it = itemsPerSlide - (totalItems - idx);
-        for (let i=0; i<it; i++) {
-            // append slides to end
-            if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-            }
-            else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-            }
-        }
-    }
-});
-
- */
-// Instantiate the Bootstrap carousel
-$('.multi-item-carousel').carousel({
-    interval: false
-});
-
-// for every slide in carousel, copy the next slide's item in the slide.
-// Do the same for the next, next item.
-$('.multi-item-carousel .item').each(function(){
-    let next = $(this).next();
-    if (!next.length) {
-        next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-
-    if (next.next().length>0) {
-        next.next().children(':first-child').clone().appendTo($(this));
-    } else {
-        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-    }
-});
 
 
 

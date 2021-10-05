@@ -50,6 +50,9 @@
   margin-left: 0!important;
  // border-bottom: $green 2px solid;
 }
+.description-show{
+  text-transform: lowercase!important;
+}
 .product-line-green{
   border-bottom: $green 2px solid;
   width: 80%;
@@ -211,9 +214,14 @@ ESSAI COEUR 2
 // TEST A GARDER
 
 .icon-wrapper {
+//float: right;
+//  display: flex;
+font-size: 1.5em;
 
-  display: flex;
-  align-items: center;
+  float: left!important;
+  margin-bottom: 2rem;
+
+ /* align-items: center;
   justify-content: center;
   height: 50px;
   width: 50px;
@@ -232,13 +240,17 @@ ESSAI COEUR 2
   -webkit-transition: 250ms color;
   -moz-transition: 250ms color;
   -ms-transition: 250ms color;
-  -o-transition: 250ms color;
+  -o-transition: 250ms color;*/
+}
+.wish-heart{
+  a{
+    color: dimgrey;
+  }
 }
 
 
-
 .liked {
-  color: #ff008a;
+  color: #FA1965;
   animation-name: heart-like;
   animation-duration: 250ms;
   animation-iteration-count: 1;
@@ -247,6 +259,7 @@ ESSAI COEUR 2
 }
 
 .unliked {
+  color: dimgrey!important;
   animation-name: heart-unlike;
   animation-duration: 250ms;
   animation-iteration-count: 1;

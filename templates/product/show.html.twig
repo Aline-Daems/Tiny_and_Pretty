@@ -6,53 +6,52 @@
 
 <div class="container-fluid ">
     <div class="row">
-        <div class="col my-auto mt-5 ml-5">
+        <div class="col-4 my-auto mt-5 ml-5">
             <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('show') }}"
                  alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
 
         </div>
 
-        <div class="col my-auto aside-description mt-5 ml-auto mr-auto">
+        <div class="col-6 my-auto aside-description ml-auto mr-auto">
 
             <p> {{ product.subtitle }}</p>
             <h3>{{ product.name }}</h3>
             <span class="product-page-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
             <p class="taxes">Taxes incluses</p>
-            <p>
+            <p class="description-show overflow-auto">
                 {{ product.description }}
             </p>
 
 
-
-            <div class="col mb-5">
+            <div class="wish-heart col mb-5">
 
                 <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
                     {% if app.user and product.isWishByUser(app.user) %}
-<!--ESSAI A GARDER
-                        <div class="love-icon">
-                            <input type="checkbox" id="like-toggle">
-                            <label for="like-toggle" class="heart"> </label>
-                            <div class="lines">
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                            </div>
-                            <div class="ring"></div>
-                        </div>
-                        -->
-
-
-
-                                                <div class="icon-wrapper liked">
-                                                    <i class="far fa-heart "></i>
+                        <!--ESSAI A GARDER
+                                                <div class="love-icon">
+                                                    <input type="checkbox" id="like-toggle">
+                                                    <label for="like-toggle" class="heart"> </label>
+                                                    <div class="lines">
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                        <div class="line"></div>
+                                                    </div>
+                                                    <div class="ring"></div>
                                                 </div>
+                                                -->
 
 
 
-                       <!--  essai coeur 2-->
+                        <div class="icon-wrapper liked">
+                            <i class="fas fa-heart "></i>
+                        </div>
+
+
+
+                        <!--  essai coeur 2-->
                         <!--
                         <input id="toggle-heart" type="checkbox"/>
                         <label for="toggle-heart" aria-label="like">❤</label>
@@ -62,7 +61,7 @@
                             <div class="heart"></div>
                         </div>
                         -->
-<!--
+                        <!--
                         <div class="heart-wish">
                             <img src="{{ asset('assets/img/like.svg') }}" alt="" class="">
                         </div>
@@ -91,17 +90,17 @@
                         </div>
 
 
-                     <!--    essai coeur 2 -->
+                        <!--    essai coeur 2 -->
                         <!--
                       <input id="toggle-heart" type="checkbox"/>
                       <label for="toggle-heart" aria-label="like">❤</label>
 -->
-<!-- coeur test 1
-                      <div class="placement">
-                          <div class="heart"></div>
-                      </div>
-                      -->
-                     <!--   <div class="heart-bold">
+                        <!-- coeur test 1
+                                              <div class="placement">
+                                                  <div class="heart"></div>
+                                              </div>
+                                              -->
+                        <!--   <div class="heart-bold">
                             <img src="{{ asset('assets/img/heart.svg') }}" alt="" class="">
 
                         </div>
@@ -112,7 +111,6 @@
 
                 </a>
             </div>
-
 
 
             <hr class="col">
@@ -230,29 +228,70 @@
     </div>
 
 
-    <div class="container-fluid">
-        <div class="col-md-4 ml-3 mb-5">
-
-            {% for picture in product.pictures %}
-                <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('thumb') }}"
-                     alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
-            {% endfor %}
-        </div>
+    <div class="container">
+        <h3 class="separator text-center mb-5">NOUVEAUTÉS</h3>
     </div>
-    <div class="container-fluid  bestsellers">
-        <h3 class="separator text-center">BESTSELLERS</h3>
+    <div class="box-carousel">
+        <div class="owl-carousel" id="nouveautes">
 
-    </div>
-
-    <div class="container-fluid  bestproducts">
-        <div class="row">
             {% for product in productN %}
-                {% if product.isBest == true %}
-                    <div class="col col-sm-6 col-md-6 col-lg col-xl col-xxl">
-                        {% include 'product/single_product.html.twig' %}
+                {% if product.isNew == true %}
+                    <div class="item ">
+                        <div class="card mb-2">
+                            <a href="{{ path('product', {'slug':product.slug}) }}">
+
+                                <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                                     alt="{{ product.name }}" class="card-img-top img-fluid">
+
+                            </a>
+
+                            <div class="card-body">
+                                {# CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
+                                    <a href="{{ path('products-wish', {'id': product.id}) }}"
+                                       class="js-wish">
+                                        {% if app.user and product.isWishByUser(app.user) %}
+
+
+
+                                            <div class="icon-wrapper liked">
+                                                <i class="far fa-heart "></i>
+                                            </div>
+
+                                        {% else %}
+
+
+                                            <div class="icon-wrapper unliked">
+                                                <i class="far fa-heart"></i>
+                                            </div>
+
+                                        {% endif %}
+
+                                    </a>
+                                </div> #}
+                                <div class="descriptionBest">
+                                    <div class="product-line-green">
+                                        <p class="product-text card-title">
+                                            <span>{{ product.name }}</span></p>
+                                        <p class="product-description card-text"><span
+                                                    class="product-subtitle"> {{ product.subtitle }} </span>
+                                        </p>
+
+
+                                        <p class="product-price-text card-text"><span
+                                                    class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                            <button type="button" class="container-fluid profite">JE LE
+                                                VEUX
+                                            </button>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
     </div>
+</div>
     {% endblock %}

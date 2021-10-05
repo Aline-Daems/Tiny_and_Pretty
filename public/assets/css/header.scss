@@ -191,8 +191,12 @@ overflow: hidden;
   border-bottom-color: $grey;
   border-bottom-width: 0.002rem;
 }
-
-@media (min-width: 568px) and (max-width: 768px) and(orientation: landscape) {
+@media screen and (max-width: 480px){
+  .header-container{
+    display: none;
+  }
+}
+@media (min-width: 568px) and (max-width: 812px) and(orientation: landscape) {
   .navbar-brand {
     margin: 0 !important;
     width: 18vw;
@@ -208,6 +212,9 @@ overflow: hidden;
   }
   .nav-icones{
     margin-left: 1vw!important;
+  }
+  .header-container{
+    display: none;
   }
 
 
@@ -258,12 +265,21 @@ overflow: hidden;
   }
   .navbar .dropdown-menu {
     width:100vw;
-    //height: 55vh;
+    height: 55vh;
     left: 0;
     right:0;
     /*  height of nav-item  */
     //top:10vh;
     // font-size: 1.8vh;
+  }
+  .header-container{
+    display: none;
+  }
+ #navbarSupportedContent{
+   background-color: white;
+   height: 30vh;
+   z-index: 100!important;
+   padding-left: 5vw;
   }
 
 }
