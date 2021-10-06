@@ -16,6 +16,7 @@ header {
   z-index: 5;
   box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px;
 }
+
 .defile-banner{
 overflow: hidden;
   background-color: $blue;
@@ -79,6 +80,10 @@ overflow: hidden;
 }
 
  */
+#collapsibleNavbar{
+  z-index: 999!important;
+  background-color: white;
+}
 
 .navbar .nav-link .inactive {
   cursor: default !important;
@@ -195,6 +200,7 @@ overflow: hidden;
   .header-container{
     display: none;
   }
+
 }
 @media (min-width: 568px) and (max-width: 812px) and(orientation: landscape) {
   .navbar-brand {
@@ -212,9 +218,6 @@ overflow: hidden;
   }
   .nav-icones{
     margin-left: 1vw!important;
-  }
-  .header-container{
-    display: none;
   }
 
 
@@ -272,9 +275,7 @@ overflow: hidden;
     //top:10vh;
     // font-size: 1.8vh;
   }
-  .header-container{
-    display: none;
-  }
+
  #navbarSupportedContent{
    background-color: white;
    height: 30vh;

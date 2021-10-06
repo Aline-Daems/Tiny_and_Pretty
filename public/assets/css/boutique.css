@@ -924,6 +924,10 @@ header {
 }
 
  */
+#collapsibleNavbar {
+  z-index: 999 !important;
+  background-color: white; }
+
 .navbar .nav-link .inactive {
   cursor: default !important; }
 
@@ -1042,10 +1046,7 @@ header {
     width: 1.5rem; }
 
   .nav-icones {
-    margin-left: 1vw !important; }
-
-  .header-container {
-    display: none; } }
+    margin-left: 1vw !important; } }
 /* breakpoint and up - mega dropdown styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
@@ -1089,9 +1090,6 @@ header {
     left: 0;
     right: 0;
     /*  height of nav-item  */ }
-
-  .header-container {
-    display: none; }
 
   #navbarSupportedContent {
     background-color: white;

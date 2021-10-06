@@ -55,22 +55,25 @@ document.querySelectorAll('[class*="reveal-"]').forEach(function (r) {
 /////////////////////////////////////////////////////////////////
 
 $(document).ready(function () {
+
+    if ($(window).width() > 999){
+        console.log('>999');
     $('#logo-show').css({'display': 'none'});
     $(window).scroll(function () {
 
         let headerH = $('.header-container').outerHeight(true);
         //  console.log(headerH);
-
-
 //this will calculate header's full height, with borders, margins, paddings
         let scrollVal = $(this).scrollTop();
         if (scrollVal >= headerH) {
+            console.log('scroll');
             $('#home-banner').css({'position': 'fixed', 'top': '0px'});
             $('#logo-show').css({'display': 'block'});
             $('.dropdown-menu').css({'top': '90%'});
+        }
 
-
-        } else {
+        else {
+            console.log('else');
             $('#home-banner').css({'position': 'static', 'top': '0px'});
             $('#logo-show').css({'display': 'none'});
         }
@@ -78,13 +81,21 @@ $(document).ready(function () {
 
     });
 
+} else if ($(window).width() <= 998){
+        console.log('<=998');
+        $('.header-container').css({'display': 'none'});
+        $('#home-banner').css({'position': 'fixed', 'top': '0px'});
+        $('#logo-show').css({'display': 'block'});
+        $('.dropdown-menu').css({'top': '90%'});
+    }
+
 });
-if ($(window).width() <= 1024){
-    console.log('768')
-};
+//////////NAVBAR MIX ENTRE AFFICHAGE MOBILE ET DESKTOP SUIVANT LES PAGES
 
 ////////////////////////////////////////////////////////////////////////
+$('.simple-nav-mobile').css({'display': 'none'});
 let icones = document.getElementById('iconesJS');
+let nav2SpecialMobile = document.getElementsByClassName('simple-nav-mobile');
 if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     ||
     window.location.href === "https://127.0.0.1:8000/faq"
@@ -96,9 +107,33 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     window.location.href === "https://127.0.0.1:8000/livraisons/et/retours"
     ||
     window.location.href === "https://127.0.0.1:8000/login"
+    ||
+    window.location.href === "https://127.0.0.1:8000/conditions/generales"
+    && $(window).width() > 992
 ) {
     $('.hideHeaderJS').css({'display': 'none'});
     $('#search-formJS').replaceWith(icones);
+    $('.simple-nav-mobile').css({'display': 'none'});
+
+}
+if ($(window).width() < 768
+&&
+    window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
+    ||
+    window.location.href === "https://127.0.0.1:8000/faq"
+    ||
+    window.location.href === "https://127.0.0.1:8000/tailles"
+    ||
+    window.location.href === "https://127.0.0.1:8000/contact/user"
+    ||
+    window.location.href === "https://127.0.0.1:8000/livraisons/et/retours"
+    ||
+    window.location.href === "https://127.0.0.1:8000/login"
+    ||
+    window.location.href === "https://127.0.0.1:8000/conditions/generales"
+
+){
+    $('.simple-nav-mobile').css({'display': 'block'});
 }
 
 //////////////////////////////////////////////////////////////////
