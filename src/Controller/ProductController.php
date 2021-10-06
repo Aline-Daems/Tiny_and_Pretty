@@ -36,6 +36,7 @@ class ProductController extends AbstractController
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $size = $this->entityManager->getRepository(Size::class)->findAll();
+        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
 
 
         if (!$product) {
@@ -45,7 +46,8 @@ class ProductController extends AbstractController
             'product' => $product,
             'products' => $products,
             'productN' => $productN,
-            'Size' => $size
+            'Size' => $size,
+            'ChoiceSize' => $choiceSize
         ]);
 
     }

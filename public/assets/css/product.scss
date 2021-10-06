@@ -238,7 +238,12 @@ ESSAI COEUR 2
   border: 1px solid black;
 }
 .size-blue {
-  background-color:red;
+  background-color:$blue;
+}
+
+.select-size {
+
+  background-color: green;
 }
 
 @keyframes heart-like {

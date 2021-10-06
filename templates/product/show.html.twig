@@ -21,12 +21,27 @@
             <p>
                 {{ product.description }}
             </p>
-            {% for size in product.sizes %}
-                <div id="js-size" class="size-border">
 
-                    <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}" class="js-link-size">{{ size.name }}</a>
+
+
+                <div id="js-size" class="dropdown">
+
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sélectionnez une taille
+                    </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            {% for size in product.sizes %}
+                          <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}"
+                             class="  dropdown-item js-link-size size-border"
+                             id="size-link"> {{ size.name }} </a>
+                            {% endfor %}
+                        </div>
+
                 </div>
-            {% endfor %}
+
+
+
 
 
             <div class="col mb-5">
@@ -232,6 +247,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
     <div class="container-fluid">
@@ -259,4 +275,6 @@
             {% endfor %}
         </div>
     </div>
+
+
     {% endblock %}

@@ -716,7 +716,11 @@ ESSAI COEUR 2
 }
 
 .size-blue {
-  background-color: red;
+  background-color: #d1eee9;
+}
+
+.select-size {
+  background-color: green;
 }
 
 @keyframes heart-like {
@@ -804,7 +808,7 @@ hr {
 
 .presentation {
   font-family: Cantarell, sans-serif;
-  padding-left: 20vw;
+  padding-left: calc(100vw/5);
   line-height: 3vh;
   color: #948E8E;
 }
@@ -1182,7 +1186,7 @@ header {
 .presentation {
   font-family: Cantarell, sans-serif;
   font-size: 2vh;
-  padding-left: 20vw;
+  padding-left: calc(100vw/5);
   line-height: 3vh;
   color: grey;
 }
@@ -1539,8 +1543,8 @@ body {
   z-index: 5;
   margin: auto;
   position: absolute;
-  top: 10%;
-  left: 12.5%;
+  top: calc(20%/2);
+  left: calc(25%/2);
 }
 
 .container-soon {
