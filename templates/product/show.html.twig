@@ -30,13 +30,13 @@
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {% for choiceAll in ChoiceSize %}
 
-                        {% if choiceAll.user == app.user and choiceAll.product == product %}
+                            {% if choiceAll.user == app.user and choiceAll.product == product %}
 
-                            {{ choiceAll.size }}
+                                {{ choiceAll.size }}
 
-                        {% endif %}
+                            {% endif %}
                         {% endfor %}
-                        </a>
+                    </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {% for size in product.sizes %}
@@ -46,6 +46,26 @@
                         {% endfor %}
                     </div>
 
+                </div>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        {% for ChoiceColor in ChoiceColor  %}
+                            {% if ChoiceColor.user == app.user and ChoiceColor.product == product %}
+
+                                {{ ChoiceColor.color }}
+
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        {% for color in product.colors %}
+                            <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}" class="size-border">{{ color.name }}</a>
+                        {% endfor %}
+                    </div>
                 </div>
 
 

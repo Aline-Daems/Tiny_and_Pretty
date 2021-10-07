@@ -71,6 +71,12 @@ class User implements UserInterface
      */
     private $choiceSizes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ChoiceColor::class, mappedBy="User")
+     */
+    private $choiceColors;
+
+
 
 
 
@@ -81,6 +87,8 @@ class User implements UserInterface
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
         $this->choiceSizes = new ArrayCollection();
+        $this->colors = new ArrayCollection();
+        $this->choiceColors = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -340,7 +348,39 @@ class User implements UserInterface
 
         return $this;
     }
-    
+
+    /**
+     * @return Collection|ChoiceColor[]
+     */
+    public function getChoiceColors(): Collection
+    {
+        return $this->choiceColors;
+    }
+
+    public function addChoiceColor(ChoiceColor $choiceColor): self
+    {
+        if (!$this->choiceColors->contains($choiceColor)) {
+            $this->choiceColors[] = $choiceColor;
+            $choiceColor->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChoiceColor(ChoiceColor $choiceColor): self
+    {
+        if ($this->choiceColors->removeElement($choiceColor)) {
+            // set the owning side to null (unless already changed)
+            if ($choiceColor->getUser() === $this) {
+                $choiceColor->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+
 
 
 }
