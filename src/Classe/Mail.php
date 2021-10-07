@@ -18,7 +18,7 @@ class Mail
             'Messages' => [
                 [
                     'From' => [
-                        'Email' => "happy@tinyandpretty.be",
+                        'Email' => "service-it@infinity-agency.be",
                         'Name' => "L'équipe Tiny and Pretty"
                     ],
                     'To' => [
@@ -48,7 +48,7 @@ class Mail
             'Messages' => [
                 [
                     'From' => [
-                        'Email' => "happy@tinyandpretty.be",
+                        'Email' => "service-it@infinity-agency.be",
                         'Name' => "L'équipe Tiny and Pretty"
                     ],
                     'To' => [
@@ -58,6 +58,36 @@ class Mail
                         ]
                     ],
                     'TemplateID' => 3093513,
+                    'TemplateLanguage' => true,
+                    'Subject' => $subject,
+                    'Variables' => [
+                        'content' => $content,
+
+                    ]
+                ]
+            ]
+        ];
+        $response = $mj->post(Resources::$Email, ['body' => $body]);
+        $response->success();
+    }
+
+    public function sendSuccessOrder($to_email, $to_name, $subject, $content)
+    {
+        $mj = new Client($this->api_key, $this->api_key_secret, true, ['version' => 'v3.1']);
+        $body = [
+            'Messages' => [
+                [
+                    'From' => [
+                        'Email' => "service-it@infinity-agency.be",
+                        'Name' => "L'équipe Tiny and Pretty"
+                    ],
+                    'To' => [
+                        [
+                            'Email' => $to_email,
+                            'Name' =>  $to_name
+                        ]
+                    ],
+                    'TemplateID' => 3093543,
                     'TemplateLanguage' => true,
                     'Subject' => $subject,
                     'Variables' => [
