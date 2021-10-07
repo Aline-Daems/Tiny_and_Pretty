@@ -11,14 +11,14 @@ class Mail
     private $api_key ='60192848917e25a8cfa9a2818f4e5502';
     private $api_key_secret = '36d8ae3ab308adf8820f16c6334d0370';
 
-    public function send($to_email, $to_name, $subject, $content)
+    public function sendForgetPassword($to_email, $to_name, $subject, $content)
     {
         $mj = new Client($this->api_key, $this->api_key_secret, true, ['version' => 'v3.1']);
         $body = [
             'Messages' => [
                 [
                     'From' => [
-                        'Email' => "service-it@infinity-agency.be",
+                        'Email' => "happy@tinyandpretty.be",
                         'Name' => "L'équipe Tiny and Pretty"
                     ],
                     'To' => [
@@ -33,6 +33,36 @@ class Mail
                     'Variables' => [
                         'content' => $content,
                         
+                    ]
+                ]
+            ]
+        ];
+        $response = $mj->post(Resources::$Email, ['body' => $body]);
+        $response->success();
+    }
+
+    public function sendnewAccount($to_email, $to_name, $subject, $content)
+    {
+        $mj = new Client($this->api_key, $this->api_key_secret, true, ['version' => 'v3.1']);
+        $body = [
+            'Messages' => [
+                [
+                    'From' => [
+                        'Email' => "happy@tinyandpretty.be",
+                        'Name' => "L'équipe Tiny and Pretty"
+                    ],
+                    'To' => [
+                        [
+                            'Email' => $to_email,
+                            'Name' =>  $to_name
+                        ]
+                    ],
+                    'TemplateID' => 3093513,
+                    'TemplateLanguage' => true,
+                    'Subject' => $subject,
+                    'Variables' => [
+                        'content' => $content,
+
                     ]
                 ]
             ]
