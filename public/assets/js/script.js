@@ -145,8 +145,24 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 // Changement de la couleur au click pour la taille
 
 
+let sizeContainer = document.getElementsByClassName('size-wrapper');
+
+document.querySelectorAll('a.js-link-size').forEach(function (link) {
+    Object.keys(sizeContainer).forEach(singleElement => {
+
+        link.addEventListener('click', function refreshSize(event) {
 
 
+                event.preventDefault();
+                const url = this.href;
+                fetch(url).then(function (response){
+                    console.log(response)
+                location.reload();
+                });
+
+        });
+    });
+});
 // function selectElement(){
 //
 //

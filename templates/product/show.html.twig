@@ -23,25 +23,27 @@
                 </p>
 
 
-                <div id="js-size" class="dropdown">
+                <div id="js-size" class="dropdown size-wrapper">
 
 
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    <a class="btn btn-secondary dropdown-toggle" href="{{ path('product', {'slug':product.slug}) }}" role="button" id="dropdownMenuLink"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="size-empty-js">
+                            Taille
+                        </div>
                         {% for choiceAll in ChoiceSize %}
-
+                        <div class="sizeRefresh-js">
                         {% if choiceAll.user == app.user and choiceAll.product == product %}
-
                             {{ choiceAll.size }}
-
                         {% endif %}
+                        </div>
                         {% endfor %}
                         </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {% for size in product.sizes %}
                             <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}"
-                               class="dropdown-item js-link-size size-border"
+                               class="dropdown-item js-link-size size-border "
                                id="size-link"> {{ size.name }} </a>
                         {% endfor %}
                     </div>
