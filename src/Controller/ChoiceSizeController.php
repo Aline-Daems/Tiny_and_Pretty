@@ -34,6 +34,7 @@ class ChoiceSizeController extends AbstractController
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $size = $this->entityManager->getRepository(Size::class)->findAll();
+        $choiceAll = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
 
 
         if (!$product) {
@@ -43,7 +44,8 @@ class ChoiceSizeController extends AbstractController
             'product' => $product,
             'products' => $products,
             'productN' => $productN,
-            'Size' => $size
+            'Size' => $size,
+            'choiceAll'=> $choiceAll
         ]);
 
     }
@@ -71,16 +73,21 @@ class ChoiceSizeController extends AbstractController
             $sizes = $choiceSizeRepository->findOneBy([
                 'product' => $product,
                 'user' => $user,
+
             ]);
             $em = $manager->getManager();
             $em->remove($sizes);
             $em->flush();
+
+
             $sizes = new ChoiceSize();
 
             $sizes
                 ->setProduct($product)
                 ->setUser($user)
                 ->setSize($size);
+
+
             $em = $manager->getManager();
             $em->persist($sizes);
             $em->flush();
@@ -99,7 +106,10 @@ class ChoiceSizeController extends AbstractController
         $sizes
             ->setProduct($product)
             ->setUser($user)
+
             ->setSize($size);
+
+
         $em = $manager->getManager();
         $em->persist($sizes);
         $em->flush();

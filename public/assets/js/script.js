@@ -201,37 +201,37 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 
 
 
- // function onClickBtnSize(event) {
- //     event.preventDefault();
- //
- // }
-//     const url = this.href
+//  function onClickBtnSize(event) {
+//      event.preventDefault();
 //
-//     let size = this.getElementsByClassName('size-border')
-//     console.log(size)
-//     fetch(url).then(function (response) {
-//
-//         console.log(response)
-//         if (size.classList.contains("size-border")) {
-//             size.classList.add("size-blue")
-//             size.classList.remove("size-border")
-//         } else if (size.classList.contains("size-blue")) {
-//
-//             size.classList.remove("size-blue")
-//             size.classList.add("size-border")
-//         }
-//     })
-//
-//
-// }
-//
-//
+//  }
+// //     const url = this.href
+// //
+// //     let size = this.getElementsByClassName('size-border')
+// //     console.log(size)
+// //     fetch(url).then(function (response) {
+// //
+// //         console.log(response)
+// //         if (size.classList.contains("size-border")) {
+// //             size.classList.add("size-blue")
+// //             size.classList.remove("size-border")
+// //         } else if (size.classList.contains("size-blue")) {
+// //
+// //             size.classList.remove("size-blue")
+// //             size.classList.add("size-border")
+// //         }
+// //     })
+// //
+// //
+// // }
+// //
+// //
 // document.querySelectorAll("#size-link").forEach(function (sizelink) {
 //
 //     sizelink.addEventListener('click', onClickBtnSize);
 //
 //
 // })
-
+//
 
 
