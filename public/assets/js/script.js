@@ -282,6 +282,26 @@ document.querySelectorAll('a.js-link-size').forEach(function (link) {
         });
     });
 });
+
+
+// Refresh de la page au click du selecteur de couleur
+
+let colorContainer = document.getElementsByClassName('color-wrapper');
+
+document.querySelectorAll('a.js-link-color').forEach(function (link) {
+    Object.keys(colorContainer).forEach(singleElement => {
+
+        link.addEventListener('click', function refreshColor(event) {
+            event.preventDefault();
+            const url = this.href;
+            fetch(url).then(function (response){
+                location.reload();
+            });
+        });
+    });
+});
+
+
 // function selectElement(){
 //
 //

@@ -143,7 +143,25 @@ class Products
      */
     private $choiceSize;
 
-    public function __construct(){
+    /**
+     * @ORM\ManyToMany(targetEntity=Color::class, inversedBy="products")
+     */
+    private $Colors;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ChoiceColor::class, mappedBy="product")
+     */
+    private $choiceColors;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isCollection;
+
+
+
+    public function __construct()
+    {
         $this->category = new ArrayCollection();
         $this->mode = new ArrayCollection();
         $this->maison = new ArrayCollection();
@@ -153,8 +171,12 @@ class Products
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
         $this->sizes = new ArrayCollection();
+        $this->Colors = new ArrayCollection();
+        $this->choiceColors = new ArrayCollection();
+
 
     }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -210,8 +232,6 @@ class Products
     }
 
 
-
-
     public function getDescription(): ?string
     {
         return $this->description;
@@ -237,8 +257,8 @@ class Products
     }
 
     /**
-    * @return Collection|Category[]
-    */
+     * @return Collection|Category[]
+     */
     public function getCategory(): Collection
     {
         return $this->category;
@@ -325,7 +345,6 @@ class Products
 
         return $this;
     }
-
 
 
     public function getIsBest(): ?bool
@@ -420,7 +439,6 @@ class Products
     }
 
 
-
     /**
      * @return mixed
      */
@@ -493,8 +511,9 @@ class Products
      * @param User $user
      * @return bool
      */
-    public function isWishByUser(User $user) :bool {
-        foreach($this->wishes as $wish) {
+    public function isWishByUser(User $user): bool
+    {
+        foreach ($this->wishes as $wish) {
             if ($wish->getUser() === $user) {
                 return true;
             }
@@ -540,14 +559,16 @@ class Products
 
         return $this;
     }
+
     /**
      * permet de savoir si cette article est dans le choix de taille de l'utilisateur
      *
      * @param User $user
      * @return bool
      */
-    public function isChoiceSizeByUser(User $user) :bool {
-        foreach($this->choiceSize as $Size) {
+    public function isChoiceSizeByUser(User $user): bool
+    {
+        foreach ($this->choiceSize as $Size) {
             if ($Size->getUser() === $user) {
                 return true;
             }
@@ -555,5 +576,85 @@ class Products
         return false;
     }
 
+    /**
+     * @return Collection|Color[]
+     */
+    public function getColors(): Collection
+    {
+        return $this->Colors;
+    }
 
+    public function addColor(Color $color): self
+    {
+        if (!$this->Colors->contains($color)) {
+            $this->Colors[] = $color;
+        }
+
+        return $this;
+    }
+
+    public function removeColor(Color $color): self
+    {
+        $this->Colors->removeElement($color);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ChoiceColor[]
+     */
+    public function getChoiceColors(): Collection
+    {
+        return $this->choiceColors;
+    }
+
+    public function addChoiceColor(ChoiceColor $choiceColor): self
+    {
+        if (!$this->choiceColors->contains($choiceColor)) {
+            $this->choiceColors[] = $choiceColor;
+            $choiceColor->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChoiceColor(ChoiceColor $choiceColor): self
+    {
+        if ($this->choiceColors->removeElement($choiceColor)) {
+            // set the owning side to null (unless already changed)
+            if ($choiceColor->getProduct() === $this) {
+                $choiceColor->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * permet de savoir si cette article est dans le choix de couleur de l'utilisateur
+     *
+     * @param User $user
+     * @return bool
+     */
+    public function isChoiceColorByUser(User $user): bool
+    {
+        foreach ($this->choiceColors as $color) {
+            if ($color->getUser() === $user) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function getIsCollection(): ?bool
+    {
+        return $this->isCollection;
+    }
+
+    public function setIsCollection(?bool $isCollection): self
+    {
+        $this->isCollection = $isCollection;
+
+        return $this;
+    }
 }

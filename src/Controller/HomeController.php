@@ -30,9 +30,12 @@ class HomeController extends AbstractController
     {
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
+        $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
+
         return $this->render('home/index.html.twig', [
             'products' => $products,
-            'productN' => $productN
+            'productN' => $productN,
+            'productC' => $productC
 
 
         ]);

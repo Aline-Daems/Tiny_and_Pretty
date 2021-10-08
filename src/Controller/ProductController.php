@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\ChoiceColor;
 use App\Entity\ChoiceSize;
+use App\Entity\Color;
 use App\Entity\Products;
 use App\Entity\Size;
 use App\Entity\Wish;
@@ -35,8 +37,11 @@ class ProductController extends AbstractController
         $product = $this->entityManager->getRepository(Products::class)->findOneBySlug($slug);
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
+        $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
         $size = $this->entityManager->getRepository(Size::class)->findAll();
         $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
+        $color = $this->entityManager->getRepository(Color::class)->findAll();
+        $choiceAll = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
 
 
         if (!$product) {
@@ -46,8 +51,11 @@ class ProductController extends AbstractController
             'product' => $product,
             'products' => $products,
             'productN' => $productN,
+            'productC' => $productC,
             'Size' => $size,
-            'ChoiceSize' => $choiceSize
+            'ChoiceSize' => $choiceSize,
+            'color'=> $color,
+            'ChoiceColor'=>$choiceAll
         ]);
 
     }
