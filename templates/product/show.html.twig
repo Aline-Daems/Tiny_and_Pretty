@@ -6,13 +6,13 @@
 
 <div class="container-fluid ">
     <div class="row">
-        <div class="col-4 my-auto mt-5 ml-5">
+        <div class="col-md-4 col-sm-12 mt-5">
             <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('show') }}"
                  alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
 
-            </div>
+        </div>
 
-        <div class="col-6 my-auto aside-description ml-auto mr-auto">
+        <div class="col-md-6 col-sm-12 my-auto aside-description ml-auto mr-auto">
 
             <p> {{ product.subtitle }}</p>
             <h3>{{ product.name }}</h3>
