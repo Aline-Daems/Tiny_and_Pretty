@@ -111,7 +111,7 @@ overflow: hidden;
 .logo-img-header {
   padding-top: 1.5vh;
   padding-bottom: 1.5vh;
-  margin-left: 2rem;
+
   width: 155%;
   height: auto;
 }
@@ -238,66 +238,70 @@ overflow: hidden;
 
 }
 /* breakpoint and up - mega dropdown styles */
-@media screen and (min-width: 768px) and (max-width: 1024px){
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
 
-  .navbar .nav-link{
-    padding-left: 0vw!important;
+  .navbar .nav-link {
+    padding-left: 0vw !important;
   }
 
-  .icones-nav{
+  .icones-nav {
     width: 2vw;
   }
-  .navbar-brand{
-    margin: 0!important;
+  .navbar-brand {
+    margin: 0 !important;
     width: 20%;
   }
-  .logo-img-header{
+  .logo-img-header {
     width: 100%;
     height: auto;
   }
   .navbar .dropdown:hover .dropdown-menu,
   .navbar .dropdown .dropdown-menu:hover {
-    display:block;
+    display: block;
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.5s linear;
   }
 
 
-
-
   /* makes the dropdown full width  */
-  .little-drop{
-    width: 30vw!important;
-    height: 8vh!important;
-    left: 70vw!important;
-    top: 12vh!important;
+  .little-drop {
+    width: 30vw !important;
+    height: 8vh !important;
+    left: 70vw !important;
+    top: 12vh !important;
   }
   .navbar .dropdown {
-    position:static;
+    position: static;
   }
 
   .navbar .dropdown-menu div[class*="p-2"] {
-    flex-direction: row!important;
+    flex-direction: row !important;
   }
   .navbar .dropdown-menu {
-    width:100vw;
+    width: 100vw;
     height: 55vh;
     left: 0;
-    right:0;
+    right: 0;
     /*  height of nav-item  */
     //top:10vh;
     // font-size: 1.8vh;
   }
 
- #navbarSupportedContent{
-   background-color: white;
-   height: 30vh;
-   z-index: 100!important;
-   padding-left: 5vw;
+  #navbarSupportedContent {
+    background-color: white;
+    height: 30vh;
+    z-index: 100 !important;
+    padding-left: 5vw;
   }
 
+}
+@media all and (min-width: 992px){
+  .new-collection
+  {
+    margin-top: 0!important;
+  }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
   .little-drop{
