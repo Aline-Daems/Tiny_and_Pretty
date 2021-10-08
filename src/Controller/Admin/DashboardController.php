@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Color;
 use App\Entity\Mode;
 use App\Entity\Boy;
 use App\Entity\Carrier;
@@ -47,7 +48,9 @@ class DashboardController extends AbstractDashboardController
 //        yield MenuItem::linkToCrud('Boy', 'fas fa-male', Boy::class);
         yield MenuItem::linkToCrud('Jouets', 'fas fa-gamepad', Toys::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-tag', Products::class);
-        yield MenuItem::linkToCrud('Transport', 'fas fa-truck', Carrier::class);
         yield MenuItem::linkToCrud('Taille', 'fas fa-ruler', Size::class);
+        yield MenuItem::linkToCrud('Couleurs', 'fas fa-palette', Color::class);
+        yield MenuItem::linkToCrud('Transport', 'fas fa-truck', Carrier::class);
+
     }
 }
