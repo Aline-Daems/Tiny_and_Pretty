@@ -459,16 +459,12 @@ h1, h3, h5, p {
    margin-top: 0;
     margin-bottom: 120vh;
   }*/
-  .aside-description {
-    background-color: green; }
-
   .icone-wish {
     position: absolute;
     left: 85%;
     top: 8%;
     transform: translate(-50%, -50%);
-    width: 1rem;
-    background: blue !important; } }
+    width: 1rem; } }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
     font-size: 10vh !important; }
@@ -478,9 +474,6 @@ h1, h3, h5, p {
 
   .separator {
     font-size: 8vh; }
-
-  .aside-description {
-    background-color: blue; }
 
   /*
   .icone-wish{
@@ -499,9 +492,6 @@ h1, h3, h5, p {
     height: 45vh;
     transform: translate(10vw, 33.5%);
   }*/
-  .aside-description {
-    background-color: red; }
-
   /*
   .icone-wish{
     left: 85%;
@@ -514,25 +504,26 @@ h1, h3, h5, p {
 
    */ }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .box {
-    background-color: yellow !important; }
-
   .category {
     padding-left: 6vw; }
 
   .waviy span {
     font-size: 1.2rem; }
 
-  .aside-description {
-    background-color: yellow; }
-
   .icone-wish {
     position: absolute;
     left: 85%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 1rem;
-    background: lawngreen !important; } }
+    width: 1rem; } }
+.color-icone {
+  width: 1rem; }
+
+#js-size .btn-outline-secondary {
+  padding: 0 !important;
+  margin-top: 3vh;
+  margin-bottom: 3vh; }
+
 .content-layout {
   padding-top: 3vw !important; }
 
@@ -774,6 +765,15 @@ ESSAI COEUR 2
   animation-iteration-count: 1;
   animation-timing-function: linear;
   float: right; }
+
+.size-border {
+  border: 1px solid black; }
+
+.size-blue {
+  background-color: rgba(209, 238, 233, 0.81); }
+
+.size-display {
+  display: none; }
 
 @keyframes heart-like {
   0% {
