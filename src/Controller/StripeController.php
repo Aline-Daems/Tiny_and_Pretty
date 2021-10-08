@@ -48,7 +48,6 @@ class StripeController extends AbstractController
 
                         'name' => $product->getProduct(),
 
-                        'images' => [$YOUR_DOMAIN."/uploads/".$product_object->getIllustration()],
 
                     ],
 

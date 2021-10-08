@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
+use App\Entity\ChoiceColor;
+use App\Entity\ChoiceSize;
+use App\Entity\Color;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
+use App\Entity\Size;
 use App\Form\OrderType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -47,6 +51,11 @@ class OrderController extends AbstractController
 
     public function add(Cart $cart, Request $request): Response
     {
+        $size = $this->entityManager->getRepository(Size::class)->findAll();
+        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
+        $color = $this->entityManager->getRepository(Color::class)->findAll();
+        $choiceAll = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
+
 
         $form = $this->createForm(OrderType::class, null, [
             'user' => $this->getUser()
@@ -91,6 +100,7 @@ class OrderController extends AbstractController
                 $orderDetails->setMyOrder($order);
                 $orderDetails->setProduct($product['product']->getName());
                 $orderDetails->setQuantity($product['quantity']);
+                $orderDetails->setColors($product['quantity']);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
                 $this->entityManager->persist($orderDetails);
