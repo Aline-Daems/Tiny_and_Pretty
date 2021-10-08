@@ -42,9 +42,9 @@ class OrderSuccessController extends AbstractController
             // Envoyer un email à notre client pour lui confirmer sa commande
 
             $mail = new Mail();
-            $content = 'Bonjour'.$order->getUser()->getFirstname()."<br/> Merci pour votre commande";
-            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est bien validée', $content);
-            $notification='Votre inscription a été validée';
+            $content = 'Bonjour'.$order->getUser()->getFirstname()."<br/> Merci pour votre commande, vous trouverez les détails de votre commande dans votre profil.";
+            $mail->sendSuccessOrder($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est bien validée', $content);
+
 
     }
         return $this->render('order_validate/index.html.twig', [

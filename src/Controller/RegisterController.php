@@ -43,8 +43,8 @@ class RegisterController extends AbstractController
                 $this->entityManager->flush();
 
                 $mail = new Mail();
-                $content = "Bonjour".$user->getFirstname()."<br/>Bienvenue sur Tiny And Pretty. Votre inescription a bien été validée";
-                $mail->send($user->getEmail(), $user->getFirstname(), 'Bienvenue sur Tiny and Pretty', $content);
+                $content = "Votre Inscription a bien été enregistrée !<br/> <br/>"."Nous vous tiendrions informé des nouveautés, <br/> des offres exclusives et des promotions en avant première." ;
+                $mail->sendnewAccount($user->getEmail(), $user->getFirstname(), 'Bienvenue sur Tiny and Pretty', $content);
                 $notification = "Votre inscription s'est bien déroulée";
             }else{
                 $notification = "Cette adresse email est déjà utilisée";

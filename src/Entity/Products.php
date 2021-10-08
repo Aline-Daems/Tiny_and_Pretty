@@ -153,6 +153,11 @@ class Products
      */
     private $choiceColors;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isCollection;
+
 
 
     public function __construct()
@@ -639,5 +644,17 @@ class Products
             }
         }
         return false;
+    }
+
+    public function getIsCollection(): ?bool
+    {
+        return $this->isCollection;
+    }
+
+    public function setIsCollection(?bool $isCollection): self
+    {
+        $this->isCollection = $isCollection;
+
+        return $this;
     }
 }
