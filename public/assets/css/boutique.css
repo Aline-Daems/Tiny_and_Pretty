@@ -16,9 +16,6 @@ body {
   overflow-y: auto;
   height: 888vh; }
 
-.wrapper-parallax {
-  margin-bottom: 100px; }
-
 main {
   padding: 0 !important;
   margin: 0 !important;
@@ -35,6 +32,7 @@ h1, h3 {
 .box-carousel {
   width: 85%;
   height: auto;
+  padding-left: 12.5%;
   margin: 0 auto; }
   .box-carousel .item {
     width: 80%;
@@ -502,9 +500,6 @@ h1, h3, h5, p {
     height: 45vh;
     transform: translate(10vw, 33.5%);
   }*/
-  .wrapper-parallax {
-    margin-top: 0; }
-
   .aside-description {
     background-color: red; }
 
@@ -528,10 +523,6 @@ h1, h3, h5, p {
 
   .waviy span {
     font-size: 1.2rem; }
-
-  .wrapper-parallax {
-    margin-bottom: 35vh;
-    margin-top: 0; }
 
   .aside-description {
     background-color: yellow; }
@@ -870,7 +861,6 @@ header {
 #home-banner {
   position: relative;
   background-color: white;
-  height: 18vh;
   width: 100vw;
   z-index: 5;
   box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px; }
@@ -914,8 +904,7 @@ header {
   font-weight: bold;
   border-radius: 0.3em;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  padding-top: 5vh;
-  margin: 0; }
+  margin-top: 5vh !important; }
 
 /*
 .title_drop {
@@ -939,6 +928,10 @@ header {
   background-color: white !important;
   z-index: 100;
   padding-left: 5vw; }
+
+.nav-icones-down {
+  margin-top: 5vh;
+  margin-left: 12.5%; }
 
 .navbar .nav-link .inactive {
   cursor: default !important; }
@@ -1028,8 +1021,9 @@ header {
 
 .navbar .dropdown-menu {
   font-family: Quicksand, sans-serif;
-  font-size: 2vh;
-  position: absolute; }
+  font-size: 1rem;
+  position: absolute;
+  width: 80vw; }
 
 .little-drop {
   left: 2vw !important;
@@ -1371,12 +1365,16 @@ header {
 
 footer {
   width: 100%;
-  height: 40vh;
   position: fixed;
   z-index: 0;
   bottom: 0;
   background-color: white;
-  border-top: 1px solid grey; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: Quicksand, sans-serif; }
 
 .logo-img img {
   padding: 2vw;
@@ -1401,15 +1399,6 @@ footer a:visited {
 footer a:hover, a:active {
   text-decoration: none;
   color: black; }
-
-.footer-custom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  font-family: Quicksand, sans-serif;
-  z-index: 0; }
 
 .cards-icon {
   width: 1.5rem;

@@ -11,7 +11,7 @@ header {
 #home-banner{
   position: relative;
   background-color: white;
-  height: 18vh;
+ // height: 18vh;
   width: 100vw;
   z-index: 5;
   box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px;
@@ -63,8 +63,8 @@ overflow: hidden;
   font-weight: bold;
   border-radius: 0.3em;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  padding-top: 5vh;
-  margin: 0;
+  margin-top: 5vh!important;
+
 }
 /*
 .title_drop {
@@ -89,6 +89,10 @@ overflow: hidden;
   z-index: 100;
 
   padding-left: 5vw;
+}
+.nav-icones-down{
+  margin-top: 5vh;
+  margin-left: 12.5%;
 }
 
 .navbar .nav-link .inactive {
@@ -188,8 +192,9 @@ overflow: hidden;
 
 .navbar .dropdown-menu {
   font-family: $titleFontRegular;
-  font-size: 2vh;
+  font-size: 1rem;
   position: absolute;
+  width: 80vw;
 }
 .little-drop {
   left: 2vw !important;

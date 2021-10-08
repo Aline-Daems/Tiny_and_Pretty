@@ -1,14 +1,21 @@
+
 footer {
 
   width: 100%;
-  height: 40vh;
+ // height: 10vh;
   position: fixed;
   z-index: 0;
   bottom: 0;
 
-  //padding-top: 20rem;
   background-color: white;
-  border-top: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: $titleFontRegular;
+  // margin-top: 1vh !important;
+
 
 //  height: 150px;
 
@@ -34,16 +41,6 @@ footer a:visited { text-decoration: none; color:grey!important; }
 footer a:hover, a:active { text-decoration: none; color:black }
 
 
-.footer-custom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  font-family: $titleFontRegular;
- // margin-top: 1vh !important;
-  z-index: 0;
-}
 .cards-icon {
 
   width: 1.5rem;

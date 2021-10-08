@@ -202,13 +202,17 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
              items: 1
          },
           768: {
+             items: 2,
+              margin: 30
+          },
+          980: {
              items: 3,
               margin: 30
           },
-          992: {
-             items: 5,
-              margin: 30
-          }
+            1240: {
+                items: 4,
+                margin: 5
+            }
         }
     });
 $('#indispensables').owlCarousel({
@@ -221,12 +225,16 @@ $('#indispensables').owlCarousel({
             items: 1
         },
         768: {
+            items: 2,
+            margin: 30
+        },
+        980: {
             items: 3,
             margin: 30
         },
-        992: {
-            items: 5,
-            margin: 30
+        1240: {
+            items: 4,
+            margin: 5
         }
     }
 });
@@ -239,12 +247,16 @@ $('#automne').owlCarousel({
             items: 1
         },
         768: {
+            items: 2,
+            margin: 30
+        },
+        980: {
             items: 3,
             margin: 30
         },
-        992: {
-            items: 5,
-            margin: 30
+        1240: {
+            items: 4,
+            margin: 5
         }
     }
 });

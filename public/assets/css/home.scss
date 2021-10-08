@@ -10,11 +10,11 @@ body {
   overflow-y: auto;
  height: 888vh;
 }
-
-.wrapper-parallax {
-//  margin-top: 100px; /* nécessaire si on reste sur la V.1*/
-margin-bottom: 100px;
-}
+//
+////.wrapper-parallax {
+//////  margin-top: 100px; /* nécessaire si on reste sur la V.1*/
+////margin-bottom: 100px;
+//}
 
 main {
   padding: 0 !important;
@@ -35,7 +35,7 @@ h1, h3{
 .box-carousel{
   width: 85%;
   height: auto;
- // margin-left: 25%;
+  padding-left: 12.5%;
 
   margin: 0 auto;
   .item{
@@ -642,10 +642,10 @@ position: absolute;
     transform: translate(10vw, 33.5%);
   }*/
 
-  .wrapper-parallax {
-    //margin-bottom: 5vh;
-    margin-top: 0;
-  }
+  //.wrapper-parallax {
+  //  //margin-bottom: 5vh;
+  //  margin-top: 0;
+  //}
   .aside-description{
     background-color: red;
   }
@@ -675,10 +675,10 @@ position: absolute;
   .waviy span{
     font-size: 1.2rem;
   }
-  .wrapper-parallax {
-    margin-bottom: 35vh;
-    margin-top: 0;
-  }
+  //.wrapper-parallax {
+  //  margin-bottom: 35vh;
+  //  margin-top: 0;
+  //}
   .aside-description{
     background-color: yellow;
   }
