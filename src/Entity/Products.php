@@ -133,6 +133,16 @@ class Products
      */
     private $wishes;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Size::class, inversedBy="product")
+     */
+    private $sizes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="product", cascade={"remove"})
+     */
+    private $choiceSize;
+
     public function __construct(){
         $this->category = new ArrayCollection();
         $this->mode = new ArrayCollection();
@@ -142,6 +152,7 @@ class Products
         $this->pictures = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
+        $this->sizes = new ArrayCollection();
 
     }
     public function getId(): ?int
@@ -485,6 +496,59 @@ class Products
     public function isWishByUser(User $user) :bool {
         foreach($this->wishes as $wish) {
             if ($wish->getUser() === $user) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @return Collection|Size[]
+     */
+    public function getSizes(): Collection
+    {
+        return $this->sizes;
+    }
+
+    public function addSize(Size $size): self
+    {
+        if (!$this->sizes->contains($size)) {
+            $this->sizes[] = $size;
+            $size->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSize(Size $size): self
+    {
+        if ($this->sizes->removeElement($size)) {
+            $size->removeProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function getChoiceSize(): ?ChoiceSize
+    {
+        return $this->choiceSize;
+    }
+
+    public function setChoiceSize(?ChoiceSize $choiceSize): self
+    {
+        $this->choiceSize = $choiceSize;
+
+        return $this;
+    }
+    /**
+     * permet de savoir si cette article est dans le choix de taille de l'utilisateur
+     *
+     * @param User $user
+     * @return bool
+     */
+    public function isChoiceSizeByUser(User $user) :bool {
+        foreach($this->choiceSize as $Size) {
+            if ($Size->getUser() === $user) {
                 return true;
             }
         }

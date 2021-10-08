@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Controller;
+
 use App\Entity\ChoiceSize;
 use App\Entity\Products;
 use App\Entity\Size;
-use App\Entity\Wish;
-use App\Repository\WishRepository;
+use App\Repository\ChoiceSizeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -15,8 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 
-
-class ProductController extends AbstractController
+class ChoiceSizeController extends AbstractController
 {
     private $entityManager;
 
@@ -25,7 +24,6 @@ class ProductController extends AbstractController
     {
         $this->entityManager = $entityManager;
     }
-
 
     #[Route('/produit/{slug}', name :'product')]
 
@@ -36,7 +34,7 @@ class ProductController extends AbstractController
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $size = $this->entityManager->getRepository(Size::class)->findAll();
-        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
+        $choiceAll = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
 
 
         if (!$product) {
@@ -47,61 +45,22 @@ class ProductController extends AbstractController
             'products' => $products,
             'productN' => $productN,
             'Size' => $size,
-            'ChoiceSize' => $choiceSize
+            'choiceAll'=> $choiceAll
         ]);
 
     }
 
-    #[Route('/favoris/ajout/{id}', name :'ajout_favoris')]
-
-    public function ajoutFavoris(Products $products): Response
-    {
-
-
-      $products->addFavori($this->getUser());
-
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($products);
-      $em->flush();
-
-        return $this->json([
-            'code' => 200,
-            'message' => 'wish bien ajouté',
-        ], 200);
-
-    }
-
-    #[Route('/favoris/retrait/{id}', name :'retrait_favoris')]
-
-    public function retraitFavoris(Products $products): Response
-    {
-
-        $products->removeFavori($this->getUser());
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($products);
-        $em->flush();
-
-        return $this->json([
-            'code' => 200,
-            'message' => 'wish bien supprimé',
-            'status' => $products->getFavoris()
-        ], 200);
-
-    }
-
     /**
-     *
-     * Permet d'ajout ou de retirer un article de la wishlist
-     *
-     * @param Products $product
      * @param ManagerRegistry $manager
-     * @param WishRepository $wishRepository
+     * @param $id
      * @return Response
      */
-    #[Route('/product/{id}/wish', name :'products-wish')]
-    public function wish(Products $product, ManagerRegistry $manager, WishRepository $wishRepository): Response
+    #[Route('product/{product}/choiceSize/{id}', name :'choice-size')]
+    #[ParamConverter('product', Products::class, options: ['id'=>'product'])]
+    public function choice(Products $product, ManagerRegistry $manager, $id,ChoiceSizeRepository $choiceSizeRepository): Response
     {
+
+        $size = $this->entityManager->getRepository(Size::class)->findOneById($id);
         $user = $this->getUser();
 
         if (!$user) {
@@ -110,32 +69,55 @@ class ProductController extends AbstractController
                 'message' => 'non autorisé'
             ], 403);
         }
-
-        if ($product->isWishByUser($user)) {
-            $wish = $wishRepository->findOneBy([
+        if ($product->isChoiceSizeByUser($user)) {
+            $sizes = $choiceSizeRepository->findOneBy([
                 'product' => $product,
-                'user' => $user
+                'user' => $user,
+
             ]);
             $em = $manager->getManager();
-            $em->remove($wish);
+            $em->remove($sizes);
             $em->flush();
+
+
+            $sizes = new ChoiceSize();
+
+            $sizes
+                ->setProduct($product)
+                ->setUser($user)
+                ->setSize($size);
+
+
+            $em = $manager->getManager();
+            $em->persist($sizes);
+            $em->flush();
+
 
             return $this->json([
                 'code' => 200,
-                'message' => 'favoris bien supprimer'
-            ], 200);
+                'message'=> 'choice mis a jour'
+            ],200);
+
         }
 
-        $wish = new Wish();
-        $wish->setProduct($product)
-            ->setUser($user);
+
+        $sizes = new ChoiceSize();
+
+        $sizes
+            ->setProduct($product)
+            ->setUser($user)
+
+            ->setSize($size);
+
+
         $em = $manager->getManager();
-        $em->persist($wish);
+        $em->persist($sizes);
         $em->flush();
+
 
         return $this->json([
             'code' => 200,
-            'message' => 'ca marche bien'
+            'message'=> 'choice ok'
         ],200);
     }
 

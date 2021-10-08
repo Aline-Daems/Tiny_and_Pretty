@@ -1,6 +1,4 @@
 
-
-
 $(document).ready(function () {
     // executes when HTML-Document is loaded and DOM is ready
 
@@ -26,7 +24,6 @@ $(document).ready(function () {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -154,13 +151,12 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 
     Object.keys(heartContainer).forEach(singleElement => {
 
-      link.addEventListener('click', function Wish(event) {
-
+        link.addEventListener('click', function Wish(event) {
 
 
             event.preventDefault();
             const url = this.href;
-        fetch(url).then(function (response) {
+            fetch(url).then(function (response) {
 
 
                 console.log(response);
@@ -169,7 +165,7 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
                 if (heartContainer[singleElement].classList.contains('liked')) {
                     heartContainer[singleElement].classList.add('unliked');
                     heartContainer[singleElement].classList.remove('liked');
-                  setTimeout(unlikeRemover, 250);
+                    setTimeout(unlikeRemover, 250);
 
 
                 } else {
@@ -178,11 +174,9 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
                 }
 
 
-
-               function unlikeRemover() {
+                function unlikeRemover() {
                     heartContainer[singleElement].classList.remove('unliked');
                 }
-
 
 
             });
@@ -271,14 +265,108 @@ $('#collection').owlCarousel({
 })
 
 
+// Refresh de la page au click du selecteur de taille
+
+
+let sizeContainer = document.getElementsByClassName('size-wrapper');
+
+document.querySelectorAll('a.js-link-size').forEach(function (link) {
+    Object.keys(sizeContainer).forEach(singleElement => {
+
+        link.addEventListener('click', function refreshSize(event) {
+                event.preventDefault();
+                const url = this.href;
+                fetch(url).then(function (response){
+                location.reload();
+                });
+        });
+    });
+});
+// function selectElement(){
+//
+//
+//     let size = document.querySelectorAll('#js-size');
+//
+//     size.addEventListener("click", function(){
+//         size.className = 'select-size';
+//         size.classList.add('select-size');
+//
+//
+//    })
+// }
+//
+//
+// let size = document.getElementsByClassName('size-border');
+//
+// document.querySelectorAll('a.js-link-size').forEach(function (linkSize) {
+//
+//
+//     Object.keys(size).sort(linkElement => {
+//
+//         linkSize.addEventListener('click', function Size(event) {
+//
+//
+//             event.preventDefault();
+//             const url = this.href;
+//             fetch(url).then(function (response) {
+//
+//
+//                 console.log(response);
+//
+//                 if (size[linkElement].classList.contains('size-blue')) {
+//                     size[linkElement].classList.add('border-size');
+//                     size[linkElement].classList.remove('size-blue');
+//                     setTimeout(unlikeRemover, 250);
+//
+//
+//                 } else {
+//                     size[linkElement].classList.add('size-blue');
+//                     size[linkElement].classList.remove('border-size');
+//                 }
+//
+//
+//                 function unlikeRemover() {
+//                     size[linkElement].classList.remove('border-size');
+//                 }
+//
+//             });
+//         });
+//     });
+// });
 
 
 
-
-
-
-
-
-
+//  function onClickBtnSize(event) {
+//      event.preventDefault();
+//
+//  }
+// //     const url = this.href
+// //
+// //     let size = this.getElementsByClassName('size-border')
+// //     console.log(size)
+// //     fetch(url).then(function (response) {
+// //
+// //         console.log(response)
+// //         if (size.classList.contains("size-border")) {
+// //             size.classList.add("size-blue")
+// //             size.classList.remove("size-border")
+// //         } else if (size.classList.contains("size-blue")) {
+// //
+// //             size.classList.remove("size-blue")
+// //             size.classList.add("size-border")
+// //         }
+// //     })
+// //
+// //
+// // }
+// //
+// //
+// document.querySelectorAll("#size-link").forEach(function (sizelink) {
+//
+//     sizelink.addEventListener('click', onClickBtnSize);
+//
+//
+// })
+//
 
 

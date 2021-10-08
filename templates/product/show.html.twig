@@ -10,7 +10,7 @@
             <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('show') }}"
                  alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
 
-        </div>
+            </div>
 
         <div class="col-6 my-auto aside-description ml-auto mr-auto">
 
@@ -23,25 +23,54 @@
             </p>
 
 
-            <div class="wish-heart col mb-5">
+                <div id="js-size" class="dropdown size-wrapper">
+
+
+                    <a class="btn btn-secondary dropdown-toggle" href="{{ path('product', {'slug':product.slug}) }}" role="button" id="dropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="size-empty-js">
+                            Taille
+                        </div>
+                        {% for choiceAll in ChoiceSize %}
+                        <div class="sizeRefresh-js">
+                        {% if choiceAll.user == app.user and choiceAll.product == product %}
+                            {{ choiceAll.size }}
+                        {% endif %}
+                        </div>
+                        {% endfor %}
+                        </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        {% for size in product.sizes %}
+                            <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}"
+                               class="dropdown-item js-link-size size-border "
+                               id="size-link"> {{ size.name }} </a>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+
+                <div class="col mb-5">
+          <!--  <div class="wish-heart col mb-5">-->
 
                 <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
                     {% if app.user and product.isWishByUser(app.user) %}
-                        <!--ESSAI A GARDER
-                                                <div class="love-icon">
-                                                    <input type="checkbox" id="like-toggle">
-                                                    <label for="like-toggle" class="heart"> </label>
-                                                    <div class="lines">
-                                                        <div class="line"></div>
-                                                        <div class="line"></div>
-                                                        <div class="line"></div>
-                                                        <div class="line"></div>
-                                                        <div class="line"></div>
-                                                        <div class="line"></div>
-                                                    </div>
-                                                    <div class="ring"></div>
-                                                </div>
-                                                -->
+<!--ESSAI A GARDER
+                        <div class="love-icon">
+                            <input type="checkbox" id="like-toggle">
+                            <label for="like-toggle" class="heart"> </label>
+                            <div class="lines">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="ring"></div>
+                        </div>
+                        -->
 
 
 
@@ -51,7 +80,7 @@
 
 
 
-                        <!--  essai coeur 2-->
+                       <!--  essai coeur 2-->
                         <!--
                         <input id="toggle-heart" type="checkbox"/>
                         <label for="toggle-heart" aria-label="like">❤</label>
@@ -61,7 +90,7 @@
                             <div class="heart"></div>
                         </div>
                         -->
-                        <!--
+<!--
                         <div class="heart-wish">
                             <img src="{{ asset('assets/img/like.svg') }}" alt="" class="">
                         </div>
@@ -85,9 +114,9 @@
                         -->
 
 
-                        <div class="icon-wrapper unliked">
-                            <i class="far fa-heart"></i>
-                        </div>
+                            <div class="icon-wrapper unliked">
+                                <i class="far fa-heart"></i>
+                            </div>
 
 
                         <!--    essai coeur 2 -->
@@ -107,120 +136,121 @@
                         -->
 
 
-                    {% endif %}
+                        {% endif %}
 
-                </a>
-            </div>
+                    </a>
+                </div>
+
 
 
             <hr class="col">
 
 
-            {% if product.soldout == false %}
-                <button
-                        class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
-                        type="button">
-                    <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;">
-                        <div>AJOUTER AU PANIER</div>
-                    </a>
-                </button>
-            {% else %}
-                <button class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
-                        style="background-color:#f0cabd;">VICTIME DE SON SUCCÈS
-                </button>
-            {% endif %}
-            <div id="accordion">
-                <button
-                        class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
-                        type="button" data-toggle="collapse"
-                        data-target="#collapseOne"
-                        aria-expanded="false"
-                        aria-controls="collapseOne"
-                        style="color:#000005;">
-                    GUIDE DES TAILLES
-                </button>
-                <div id="collapseOne" class="collapse">
-                    <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
-                        <thead>
-                        <tr>
-                            <th scope="col">BÉBÉ</th>
-                            <th scope="col">Taille</th>
-                            <th scope="col">Poids</th>
-                        </tr>
-                        </thead>
-                        <tr>
-                            <th scope="row">3 MOIS</th>
-                            <td>56-60 cm</td>
-                            <td>4-5 kg</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6 MOIS</th>
-                            <td>60-68 cm</td>
-                            <td>5-6 kg</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9 MOIS</th>
-                            <td>68-74 cm</td>
-                            <td>7-8 kg</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">12 MOIS</th>
-                            <td>74 cm</td>
-                            <td>9-10 kg</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">18 MOIS</th>
-                            <td>80 cm</td>
-                            <td>10-11 kg</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">24 MOIS</th>
-                            <td>86 cm</td>
-                            <td>11-12 kg</td>
-                        </tr>
-                    </table>
-                    <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
-                        <thead>
-                        <tr>
-                            <th scope="col">ENFANT</th>
-                            <th scope="col">Taille</th>
-                            <th scope="col">Tour de poitrine</th>
-                            <th scope="col">Tour de taille</th>
-                            <th scope="col">Tour de hanche</th>
+                {% if product.soldout == false %}
+                    <button
+                            class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
+                            type="button">
+                        <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;">
+                            <div>AJOUTER AU PANIER</div>
+                        </a>
+                    </button>
+                {% else %}
+                    <button class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
+                            style="background-color:#f0cabd;">VICTIME DE SON SUCCÈS
+                    </button>
+                {% endif %}
+                <div id="accordion">
+                    <button
+                            class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
+                            type="button" data-toggle="collapse"
+                            data-target="#collapseOne"
+                            aria-expanded="false"
+                            aria-controls="collapseOne"
+                            style="color:#000005;">
+                        GUIDE DES TAILLES
+                    </button>
+                    <div id="collapseOne" class="collapse">
+                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
+                            <thead>
+                            <tr>
+                                <th scope="col">BÉBÉ</th>
+                                <th scope="col">Taille</th>
+                                <th scope="col">Poids</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <th scope="row">3 MOIS</th>
+                                <td>56-60 cm</td>
+                                <td>4-5 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6 MOIS</th>
+                                <td>60-68 cm</td>
+                                <td>5-6 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9 MOIS</th>
+                                <td>68-74 cm</td>
+                                <td>7-8 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12 MOIS</th>
+                                <td>74 cm</td>
+                                <td>9-10 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18 MOIS</th>
+                                <td>80 cm</td>
+                                <td>10-11 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">24 MOIS</th>
+                                <td>86 cm</td>
+                                <td>11-12 kg</td>
+                            </tr>
+                        </table>
+                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
+                            <thead>
+                            <tr>
+                                <th scope="col">ENFANT</th>
+                                <th scope="col">Taille</th>
+                                <th scope="col">Tour de poitrine</th>
+                                <th scope="col">Tour de taille</th>
+                                <th scope="col">Tour de hanche</th>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">3 ANS</th>
-                            <td>98 cm</td>
-                            <td>57 cm</td>
-                            <td>53 cm</td>
-                            <td>59 cm</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4 ANS</th>
-                            <td>104 cm</td>
-                            <td>58 cm</td>
-                            <td>54 cm</td>
-                            <td>61 cm</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5 ANS</th>
-                            <td>110 cm</td>
-                            <td>59 cm</td>
-                            <td>54,5 cm</td>
-                            <td>62,5 cm</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6 ANS</th>
-                            <td>116 cm</td>
-                            <td>60 cm</td>
-                            <td>55 cm</td>
-                            <td>64 cm</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">3 ANS</th>
+                                <td>98 cm</td>
+                                <td>57 cm</td>
+                                <td>53 cm</td>
+                                <td>59 cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4 ANS</th>
+                                <td>104 cm</td>
+                                <td>58 cm</td>
+                                <td>54 cm</td>
+                                <td>61 cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5 ANS</th>
+                                <td>110 cm</td>
+                                <td>59 cm</td>
+                                <td>54,5 cm</td>
+                                <td>62,5 cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6 ANS</th>
+                                <td>116 cm</td>
+                                <td>60 cm</td>
+                                <td>55 cm</td>
+                                <td>64 cm</td>
+                            </tr>
+                            </tbody>
+                        </table>
 
                 </div>
             </div>
@@ -293,5 +323,4 @@
             {% endfor %}
         </div>
     </div>
-</div>
     {% endblock %}
