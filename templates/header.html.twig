@@ -3,7 +3,8 @@
     <div class="header-container">
         <div class="defile-banner">
             <div class="promo-banner text-center">LIVRAISON OFFERTE À PARTIR DE 50 € D'ACHATS<span><img
-                            src="{{ asset('assets/favicon/favicon-32x32.png') }}" alt="Logo Tiny And Pretty" class="favicon-banner"/></span>
+                            src="{{ asset('assets/favicon/favicon-32x32.png') }}" alt="Logo Tiny And Pretty"
+                            class="favicon-banner"/></span>
             </div>
 
         </div>
@@ -16,7 +17,7 @@
                 <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
                      class="logo-img-header img-fluid"/>
             </a>
-           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -156,61 +157,61 @@
                 </ul>
 
 
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown px-2" href="" id="navbarDropdown"
-                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    À la maison
-                                </a>
-                                <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown">
-                                    <!--
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown px-2" href="" id="navbarDropdown"
+                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            À la maison
+                        </a>
+                        <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown">
+                            <!--
                                     <a href="{{ relative_path('/maison') }}"><h5
                                                 class=" mt-5 mb-5 text-center title_drop reveal-1">À
                                             LA MAISON</h5></a>
                                             -->
-                                    <div class="d-flex  flex-row p-2">
-                                        <img src="{{ asset('assets/img/JOUETS.webp') }}" alt=""
-                                             class="vignette-dropdown img-fluid"/>
-                                        <div class="p-2 bd-highlight col">
+                            <div class="d-flex  flex-row p-2">
+                                <img src="{{ asset('assets/img/JOUETS.webp') }}" alt=""
+                                     class="vignette-dropdown img-fluid"/>
+                                <div class="p-2 bd-highlight col">
 
-                                            <h5 class="categories-nav text-center">À TABLE !</h5>
+                                    <h5 class="categories-nav text-center">À TABLE !</h5>
 
-                                            <a class="dropdown-item"
-                                               href="{{ relative_path('/maison?maison=bavoirs') }}">Bavoirs</a>
-                                            <a class="dropdown-item"
-                                               href="{{ relative_path('/maison?fille=vaisselle') }}">Vaisselle</a>
+                                    <a class="dropdown-item"
+                                       href="{{ relative_path('/maison?maison=bavoirs') }}">Bavoirs</a>
+                                    <a class="dropdown-item"
+                                       href="{{ relative_path('/maison?fille=vaisselle') }}">Vaisselle</a>
 
-                                        </div>
-                                        <img src="{{ asset('assets/img/CHAUSSURES.webp') }}" alt=""
-                                             class="vignette-dropdown img-fluid"/>
-                                        <div class="p-2 bd-highlight col">
-
-                                            <h5 class="categories-nav text-center">LA CHAMBRE</h5>
-                                            <a class="dropdown-item"
-                                               href="{{ relative_path('/maison?maison=veilleuse') }}">Veilleuse</a>
-                                            <a class="dropdown-item"
-                                               href="{{ relative_path('/maison?maison=mobile') }}">Mobile
-                                                musical</a>
-                                        </div>
-                                        <img src="{{ asset('assets/img/BAIN.webp') }}" alt=""
-                                             class="vignette-dropdown img-fluid"/>
-                                        <div class="p-2 bd-highlight col">
-
-                                            <h5 class="categories-nav text-center">LE BAIN</h5>
-                                            <a class="dropdown-item" href="{{ relative_path('/maison?maison=cape') }}">Cape
-                                                de bain</a>
-
-                                        </div>
-                                    </div>
                                 </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link px-2" href="{{ path('productsToy') }}">Les Jouets</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link new-collection pt-2" href="">NOUVELLE COLLECTION</a>
-                            </li>
-                        </ul>
+                                <img src="{{ asset('assets/img/CHAUSSURES.webp') }}" alt=""
+                                     class="vignette-dropdown img-fluid"/>
+                                <div class="p-2 bd-highlight col">
+
+                                    <h5 class="categories-nav text-center">LA CHAMBRE</h5>
+                                    <a class="dropdown-item"
+                                       href="{{ relative_path('/maison?maison=veilleuse') }}">Veilleuse</a>
+                                    <a class="dropdown-item"
+                                       href="{{ relative_path('/maison?maison=mobile') }}">Mobile
+                                        musical</a>
+                                </div>
+                                <img src="{{ asset('assets/img/BAIN.webp') }}" alt=""
+                                     class="vignette-dropdown img-fluid"/>
+                                <div class="p-2 bd-highlight col">
+
+                                    <h5 class="categories-nav text-center">LE BAIN</h5>
+                                    <a class="dropdown-item" href="{{ relative_path('/maison?maison=cape') }}">Cape
+                                        de bain</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="{{ path('productsToy') }}">Les Jouets</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link new-collection pt-2" href="">NOUVELLE COLLECTION</a>
+                    </li>
+                </ul>
                 <div id="iconesJS">
                     {% if app.user %}
                         <div class="nav-icones">
@@ -269,17 +270,17 @@
 
     </div>
 
-   <!-- NAVBAR pour les PAGES qui sommes nous, FAQ etc sur mobile only-->
+    <!-- NAVBAR pour les PAGES qui sommes nous, FAQ etc sur mobile only-->
     <div class="simple-nav-mobile">
-    <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand" href="{{ path('home') }}">
-            <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
-                 class="logo-img-header img-fluid"/>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" href="{{ path('home') }}">
+                <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
+                     class="logo-img-header img-fluid"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
                 <ul class="navbar-nav  ml-auto ms-auto mr-auto mx-auto">
                     <li class="nav-item m-5">
@@ -301,7 +302,7 @@
 
             </div>
 
-    </nav>
+        </nav>
     </div>
 
 
