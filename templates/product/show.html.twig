@@ -113,7 +113,7 @@
 
 
 
-            <div id="js-size" class="col-12 col-md-12 col-lg-12 dropdown size-wrapper justify-content-center">
+            <div id="js-size" class="col-12 col-md-12 col-lg-12  size-wrapper justify-content-center">
 
 
                     <a class="btn btn-outline-secondary col-4 dropdown-toggle" href="{{ path('product', {'slug':product.slug}) }}" role="button" id="dropdownMenuLink"
@@ -128,7 +128,7 @@
                         {% endif %}
                         </div>
                         {% endfor %}
-                        </a>
+                    </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {% for size in product.sizes %}
@@ -165,8 +165,8 @@
                             <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}" class="size-border js-link-color">{{ color.name }}</a>
                         {% endfor %}
                     </div>
-                </div>
             </div>
+
 
 
 
@@ -351,4 +351,5 @@
             {% endfor %}
         </div>
     </div>
+</div>
     {% endblock %}
