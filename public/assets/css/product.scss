@@ -1,5 +1,14 @@
-
-
+.color-icone{
+  width: 1rem;
+}
+#js-size{
+  .btn-outline-secondary{
+    padding: 0!important;
+//    height: 5rem;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+}
 .content-layout{
   padding-top: 3vw!important;
 }
@@ -274,10 +283,6 @@ font-size: 1.5em;
   background-color:$blue;
 }
 
-.select-size {
-
-  background-color: green;
-}
 .size-display{
   display: none;
 }

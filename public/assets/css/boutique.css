@@ -47,7 +47,7 @@ h1, h3 {
     margin-top: 1rem; }
 
 .slide-collection {
-  margin-top: 20vh !important; }
+  margin-top: 5vh !important; }
 
 .card-title {
   text-transform: uppercase; }
@@ -101,7 +101,7 @@ h1, h3 {
   position: relative;
   background: url("../img/banner.webp") no-repeat center;
   background-size: cover;
-  margin-bottom: 20vh; }
+  margin-bottom: 5rem; }
 
 .slogan {
   font-family: Quicksand, sans-serif;
@@ -277,7 +277,7 @@ h1, h3, h5, p {
   width: 100%;
   font-size: 4vh;
   letter-spacing: 0.3rem;
-  margin-top: 5rem; }
+  margin-top: 2rem; }
 
 /*!*.bg-coquelicots{
   position: relative;
@@ -332,7 +332,7 @@ h1, h3, h5, p {
 
 }*/
 .bestsellers {
-  margin-top: 15rem; }
+  margin-top: 5rem; }
 
 .icone-wish {
   position: absolute;
@@ -459,16 +459,12 @@ h1, h3, h5, p {
    margin-top: 0;
     margin-bottom: 120vh;
   }*/
-  .aside-description {
-    background-color: green; }
-
   .icone-wish {
     position: absolute;
     left: 85%;
     top: 8%;
     transform: translate(-50%, -50%);
-    width: 1rem;
-    background: blue !important; } }
+    width: 1rem; } }
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
   .slogan {
     font-size: 10vh !important; }
@@ -478,9 +474,6 @@ h1, h3, h5, p {
 
   .separator {
     font-size: 8vh; }
-
-  .aside-description {
-    background-color: blue; }
 
   /*
   .icone-wish{
@@ -499,9 +492,6 @@ h1, h3, h5, p {
     height: 45vh;
     transform: translate(10vw, 33.5%);
   }*/
-  .aside-description {
-    background-color: red; }
-
   /*
   .icone-wish{
     left: 85%;
@@ -514,25 +504,26 @@ h1, h3, h5, p {
 
    */ }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .box {
-    background-color: yellow !important; }
-
   .category {
     padding-left: 6vw; }
 
   .waviy span {
     font-size: 1.2rem; }
 
-  .aside-description {
-    background-color: yellow; }
-
   .icone-wish {
     position: absolute;
     left: 85%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 1rem;
-    background: lawngreen !important; } }
+    width: 1rem; } }
+.color-icone {
+  width: 1rem; }
+
+#js-size .btn-outline-secondary {
+  padding: 0 !important;
+  margin-top: 3vh;
+  margin-bottom: 3vh; }
+
 .content-layout {
   padding-top: 3vw !important; }
 
@@ -774,6 +765,15 @@ ESSAI COEUR 2
   animation-iteration-count: 1;
   animation-timing-function: linear;
   float: right; }
+
+.size-border {
+  border: 1px solid black; }
+
+.size-blue {
+  background-color: rgba(209, 238, 233, 0.81); }
+
+.size-display {
+  display: none; }
 
 @keyframes heart-like {
   0% {
@@ -1103,9 +1103,15 @@ header {
     background-color: white;
     height: 30vh;
     z-index: 100 !important;
-    padding-left: 5vw; } }
+    padding-left: 5vw; }
+
+  .nav-icones-down {
+    margin-top: 0 !important; } }
 @media all and (min-width: 992px) {
   .new-collection {
+    margin-top: 0 !important; }
+
+  .nav-icones-down {
     margin-top: 0 !important; } }
 @media (min-width: 1024px) and (orientation: landscape) {
   .little-drop {

@@ -51,6 +51,7 @@
                 {% if product.isNew == true %}
                     <div class="item ">
                         <div class="card mb-2">
+
                             <a href="{{ path('product', {'slug':product.slug}) }}">
 
                                 <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
