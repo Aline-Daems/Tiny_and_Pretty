@@ -938,7 +938,6 @@ header {
 #navbarSupportedContent {
   background-color: white !important;
   z-index: 100;
-  height: 80vh;
   padding-left: 5vw; }
 
 .navbar .nav-link .inactive {
