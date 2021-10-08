@@ -30,9 +30,8 @@ h1, h3 {
   color: grey; }
 
 .box-carousel {
-  width: 85%;
+  width: 82%;
   height: auto;
-  padding-left: 12.5%;
   margin: 0 auto; }
   .box-carousel .item {
     width: 80%;

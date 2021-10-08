@@ -211,10 +211,12 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
           },
             1240: {
                 items: 4,
-                margin: 5
+                margin: 30
             }
         }
     });
+
+
 $('#indispensables').owlCarousel({
     items: 4,
     loop: true,
@@ -263,8 +265,9 @@ $('#automne').owlCarousel({
 
 $('#collection').owlCarousel({
     items: 1,
+    margin: 5,
     loop: true,
-    autoplay: true
+    autoplay: true,
 })
 
 
