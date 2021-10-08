@@ -116,9 +116,6 @@ class ChoiceSize
         return $this;
     }
 
-    /**
-     * @param $size
-     */
     public function setSize($size): void
     {
         $this->size = $size;
