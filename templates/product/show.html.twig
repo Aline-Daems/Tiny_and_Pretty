@@ -49,23 +49,28 @@
                     </div>
 
                 </div>
-                <div class="dropdown">
+
+
+                <div class="dropdown color-wrapper">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
+                        <div class="color-empty-js">
+                            Couleur
+                        </div>
                         {% for ChoiceColor in ChoiceColor  %}
+                        <div class="colorRefresh-js">
                             {% if ChoiceColor.user == app.user and ChoiceColor.product == product %}
 
                                 {{ ChoiceColor.color }}
 
                             {% endif %}
-
+                        </div>
                         {% endfor %}
 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {% for color in product.colors %}
-                            <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}" class="size-border">{{ color.name }}</a>
+                            <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}" class="size-border js-link-color">{{ color.name }}</a>
                         {% endfor %}
                     </div>
                 </div>
