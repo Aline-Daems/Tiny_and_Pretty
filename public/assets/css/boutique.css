@@ -5,16 +5,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap");
 html {
-  height: 100vh;
+  height: 100%;
   padding: 0 !important;
   margin: 0 !important; }
 
 body {
-  padding: 0 !important;
+  padding-bottom: 150px;
   margin: 0 !important;
   overflow-x: hidden;
   overflow-y: auto;
-  height: 888cvh; }
+  min-height: 100%;
+  position: relative; }
 
 main {
   padding: 0 !important;
@@ -879,7 +880,8 @@ header {
   animation: defilement-rtl 20s infinite linear;
   /* défilement */
   cursor: pointer;
-  padding: 5px 0% 3px 80%; }
+  padding: 5px 0% 3px 80%;
+  line-height: 8vh; }
 
 @keyframes defilement-rtl {
   0% {
@@ -896,6 +898,9 @@ header {
     transform: translate(-100%); } }
 .favicon-banner {
   margin-left: 15%; }
+
+.navSup {
+  height: 5rem; }
 
 .new-collection {
   background-color: #a9b97a;
@@ -1372,7 +1377,7 @@ header {
 
 footer {
   width: 100%;
-  position: fixed;
+  position: absolute;
   z-index: 0;
   bottom: 0;
   background-color: white;
@@ -1381,7 +1386,8 @@ footer {
   justify-content: center;
   align-content: center;
   align-items: center;
-  font-family: Quicksand, sans-serif; }
+  font-family: Quicksand, sans-serif;
+  height: 150px; }
 
 .logo-img img {
   padding: 2vw;

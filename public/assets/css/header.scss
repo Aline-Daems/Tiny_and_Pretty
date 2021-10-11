@@ -11,7 +11,8 @@ header {
 #home-banner{
   position: relative;
   background-color: white;
- // height: 18vh;
+ //height: 5rem;
+
   width: 100vw;
   z-index: 5;
   box-shadow: rgba(108, 122, 78, 0.05) 5px 5px 5px 5px;
@@ -24,13 +25,14 @@ overflow: hidden;
  font-weight: bold;
 }
 .defile-banner > div {
- // background-color: $blue;
   height: 8vh;
   display: inline-block; /* important */
   white-space: nowrap; /* important */
   animation: defilement-rtl 20s infinite linear; /* défilement */
   cursor: pointer;
   padding: 5px 0% 3px 80%;
+  line-height: 8vh;
+
 }
 
 @keyframes defilement-rtl {
@@ -56,6 +58,9 @@ overflow: hidden;
 
 .favicon-banner{
   margin-left: 15%;
+}
+.navSup{
+  height: 5rem;
 }
 .new-collection{
   background-color: $green;
