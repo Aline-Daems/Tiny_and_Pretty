@@ -105,6 +105,7 @@ h1, h3 {
 
 .slogan {
   font-family: Quicksand, sans-serif;
+  font-weight: bold;
   font-size: 2.625em;
   color: white !important;
   display: flex;
@@ -300,60 +301,54 @@ h1, h3, h5, p {
   font-family: "Open Sans", sans-serif;
   font-weight: bolder; }
 
-/*!*.bg-coquelicots{
+.bg-champ {
   position: relative;
-  img{
-    width: 80%;
-    height: auto;
-    //filter: grayscale(14%) sepia(31%) brightness(107%) saturate(76%) contrast(107%);
-    //-webkit-filter: grayscale(14%) sepia(31%) brightness(107%) saturate(76%) contrast(107%);
-    //-moz-filter: grayscale(14%) sepia(31%) brightness(107%) saturate(76%) contrast(107%);
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    opacity: 0.5;
-  }
-  .filter{
-  position: absolute;
-    width: 79%;
-    background: rgb(251,213,114);
-    background: radial-gradient(circle, rgba(251,213,114,0.7371323529411764) 0%, rgba(255,255,255,1) 100%);
-    height: 101%;
-    z-index: 3;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.7;
-
-
-  }*!
-  .filter_text{
- justify-content: center;
-    font-family: $titleFontRegular;
+  width: 100vw; }
+  .bg-champ img {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; }
+  .bg-champ .filter {
+    width: 90%;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
-    width: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
-    color: dimgrey;
-  }
-  .profite{
-    background-color: $green;
-  padding: 0.7em;
+    z-index: 3; }
+  .bg-champ .filter_text {
+    color: white;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4; }
+  .bg-champ .title-bg-champ {
+    font-family: Quicksand, sans-serif;
+    font-size: 2.625em;
+    font-weight: bolder;
+    color: white; }
+  .bg-champ .text-bg-champ {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.125em; }
+  .bg-champ .profite {
+    background-color: #a9b97a;
+    padding: 0.7em;
     font-size: 1rem;
     color: white;
     border: none;
-    position: absolute;
-    width: 50%;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  }
+    /* position: absolute;
+     width: 50%;
+     top: 80%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 4;*/
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; }
 
-}*/
 .bestsellers {
-  margin-top: 5rem; }
+  margin-top: 35rem; }
 
 .icone-wish {
   position: absolute;
@@ -446,13 +441,17 @@ h1, h3, h5, p {
 .newsletter {
   width: 100vw;
   background-color: #a9b97a;
-  /* margin-bottom: 15rem;
-   padding-top: 10%;
-   padding-bottom: 5%;*/ }
-  .newsletter .news_text {
+  margin-bottom: 15rem;
+  padding-top: 5%;
+  padding-bottom: 5%; }
+  .newsletter .news-title {
+    font-size: 2.625em;
     font-family: Quicksand, sans-serif;
+    letter-spacing: 0.3em; }
+  .newsletter .news_text {
+    font-family: "Open Sans", sans-serif;
     color: white;
-    width: 60%;
+    width: 80%;
     margin: 0 auto; }
   .newsletter .profite {
     background-color: white;

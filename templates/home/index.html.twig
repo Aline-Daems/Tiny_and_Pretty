@@ -6,11 +6,11 @@
     <!-- banner -->
     <div class="container-fluid col-md-12 col-sm-12 col-lg-12">
         <div class="row align-items-center">
-            <div class="bg-image-banner col-lg-12 col-md-12 col-sm-10">
+            <div class="bg-image-banner col-lg-12 col-md-12 col-sm-10 reveal-1">
                 <div class="box-text-banner align-items-center  text-left mb-5">
                     <div class="text-white">
                         <div>
-                            <h3 class=" slogan reveal-2 col-sm-8 col-md-12 col-lg-12">FRAIS,<br>
+                            <h3 class=" slogan reveal-1 col-sm-8 col-md-12 col-lg-12">FRAIS,<br>
                                 CONFORTABLE<br>
                                 & DURABLE
                             </h3>
@@ -138,8 +138,30 @@
     </div>
     <div class="background-grey"></div>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col mt-5 mb-5 bg-champ">
 
-    <div class="slide-collection mt-5 mt-sm-5 mt-md-5">
+
+                <img src="{{ asset('assets/img/champ-banniere.webp') }}" alt=""/>
+                <div class="filter">
+                </div>
+                    <div class="filter_text">
+                        <h3 class="title-bg-champ">TINY & PRETTY</h3>
+                        <p class="text-bg-champ">I love cheese, especially airedale pepper jack. When the cheese comes
+                            out
+                            everybody's happy cottage cheese rubber cheese boursin cheese slices halloumi the big cheese
+                            croque monsieur. Ricotta paneer melted cheese feta edam monterey jack cheese on toast
+                            ricotta.
+                            Squirty cheese red leicester.</p>
+                        <button type="button" class="btn profite reveal-3">JE DÉCOUVRE</button>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    {# <div class="slide-collection mt-5 mt-sm-5 mt-md-5">
         <div class="owl-carousel" id="collection">
             <div class="item ">
                 <img src="{{ asset('assets/img/SLIDE/bebe-avec-nounours.webp') }}">
@@ -157,32 +179,33 @@
                 <img src="{{ asset('assets/img/SLIDE/Pull Octave + Legging Aris Gris - Maya 2.webp') }}">
             </div>
         </div>
-    </div>
+    </div> #}
     <!-- BESTSELLERS -->
     <div class="container-fluid  bestsellers">
-        <h2 class="separator text-center mb-5">COLLECTION AUTOMNE</h2>
-        <p class="text-separator">Julien réussissait peu dans ses essais d’hypocrisie de gestes ; il tomba dans des
-            moments de dégoût et même de découragement complet. Il n’avait pas de succès, et encore dans une vilaine
-            carrière. </p>
-    </div>
-    <div class="background-grey"></div>
+        <div class="row">
+            <h2 class="separator text-center mb-5">COLLECTION AUTOMNE</h2>
+            <p class="text-separator">Julien réussissait peu dans ses essais d’hypocrisie de gestes ; il tomba dans des
+                moments de dégoût et même de découragement complet. Il n’avait pas de succès, et encore dans une vilaine
+                carrière. </p>
 
-    <div class="box-carousel justify-content-center mb-5">
-        <div class="owl-carousel" id="automne">
+            <div class="background-grey"></div>
 
-            {% for product in productN %}
-                {% if product.isNew == true %}
-                    <div class="item ">
-                        <div class="card mb-2">
-                            <a href="{{ path('product', {'slug':product.slug}) }}">
+            <div class="box-carousel justify-content-center mb-5">
+                <div class="owl-carousel" id="automne">
 
-                                <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
-                                     alt="{{ product.name }}" class="card-img-top img-fluid">
+                    {% for product in productN %}
+                        {% if product.isNew == true %}
+                            <div class="item ">
+                                <div class="card mb-2">
+                                    <a href="{{ path('product', {'slug':product.slug}) }}">
 
-                            </a>
+                                        <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                                             alt="{{ product.name }}" class="card-img-top img-fluid">
 
-                            <div class="card-body">
-                                {# CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
+                                    </a>
+
+                                    <div class="card-body">
+                                        {# CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
                                     <a href="{{ path('products-wish', {'id': product.id}) }}"
                                        class="js-wish">
                                         {% if app.user and product.isWishByUser(app.user) %}
@@ -204,29 +227,31 @@
 
                                     </a>
                                 </div> #}
-                                <div class="descriptionBest">
-                                    <div class="product-line-green">
-                                        <p class="product-text card-title">
-                                            <span>{{ product.name }}</span></p>
-                                        <p class="product-description card-text"><span
-                                                    class="product-subtitle"> {{ product.subtitle }} </span>
-                                        </p>
+                                        <div class="descriptionBest">
+                                            <div class="product-line-green">
+                                                <p class="product-text card-title">
+                                                    <span>{{ product.name }}</span></p>
+                                                <p class="product-description card-text"><span
+                                                            class="product-subtitle"> {{ product.subtitle }} </span>
+                                                </p>
 
 
-                                        <p class="product-price-text card-text"><span
-                                                    class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
-                                            <button type="button" class="container-fluid profite">JE LE
-                                                VEUX
-                                            </button>
-                                        </p>
+                                                <p class="product-price-text card-text"><span
+                                                            class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                                    <button type="button" class="container-fluid profite">JE LE
+                                                        VEUX
+                                                    </button>
+                                                </p>
+                                            </div>
+
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
     <div class="background-grey"></div>
@@ -234,7 +259,7 @@
 
         <div class="newsletter  col-12 text-lg-center text-md-center text-sm-left mt-3">
             <div class="news_text mx-sm-auto">
-                <h2 class="reveal-2">
+                <h2 class="reveal-2 news-title">
                     S'INSCRIRE À LA NEWSLETTER
                 </h2>
                 <p class="reveal-3">One morning, when Gregor Samsa woke from troubled dreams, he found himself
