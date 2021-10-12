@@ -12,8 +12,9 @@
 
             </div>
 
-            <div class="col-md-6 col-sm-12 my-auto aside-description ml-auto mr-auto">
 
+            <div class="col-md-6 col-sm-12 my-auto aside-description ml-auto mr-auto">
+                <div class="col">
                 <p> {{ product.subtitle }}</p>
                 <h3>{{ product.name }}</h3>
                 <span class="product-page-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
@@ -21,6 +22,7 @@
                 <p class="description-show overflow-auto">
                     {{ product.description }}
                 </p>
+                </div>
                 <div class="col mb-5">
                     <!--  <div class="wish-heart col mb-5">-->
 
@@ -112,115 +114,71 @@
                 </div>
 
 
-                <div id="js-size" class="col-12 col-md-12 col-lg-12  size-wrapper justify-content-center dropdown">
+<div class="row">
+    <div class="d-flex justify-content-center">
 
-
-                    <a class="btn btn-outline-secondary col-4 dropdown-toggle"
-                       href="#" role="button" id="dropdownMenuLink"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="size-empty-js">
-                            Taille
-                        </div>
-                        {% for choiceAll in ChoiceSize %}
-
-                            <div class="sizeRefresh-js">
-
-                                {% if choiceAll.user == app.user and choiceAll.product == product %}
-                                    {{ choiceAll.size }}
-                                {% endif %}
+                    <div class="dropdown size-wrapper col ">
+                        <a class="btn btn-outline-secondary  dropdown-toggle"
+                           href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="size-empty-js">
+                                Taille
                             </div>
-                        {% endfor %}
-                    </a>
+                            {% for choiceAll in ChoiceSize %}
+
+                                <div class="sizeRefresh-js">
+
+                                    {% if choiceAll.user == app.user and choiceAll.product == product %}
+                                        {{ choiceAll.size }}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </a>
 
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        {% for size in product.sizes %}
-                            <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}"
-                               class="dropdown-item js-link-size size-border"
-                               id="size-link"> {{ size.name }} </a>
-                        {% endfor %}
-                    </div>
-
-                </div>
-
-                <div class="dropdown color-wrapper">
-
-                    <a class="btn btn-outline-secondary col-4 dropdown-toggle" href="#" role="button"
-                       id="dropdownMenuLink"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="color-empty-js">
-
-                            <img class="color-icone" src="https://img.icons8.com/color/48/000000/color-switch.png"/>
-
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            {% for size in product.sizes %}
+                                <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}"
+                                   class="dropdown-item js-link-size size-border"
+                                   id="size-link"> {{ size.name }} </a>
+                            {% endfor %}
                         </div>
-                        {% for ChoiceColor in ChoiceColor %}
-                            <div class="colorRefresh-js">
-                                {% if ChoiceColor.user == app.user and ChoiceColor.product == product %}
+                    </div>
 
-                                    {{ ChoiceColor.color }}
 
-                                {% endif %}
+                    <div class="dropdown color-wrapper col">
+
+                        <a class="btn btn-outline-secondary  dropdown-toggle" href="#" role="button"
+                           id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="color-empty-js">
+
+                                <img class="color-icone" src="https://img.icons8.com/color/48/000000/color-switch.png"/>
+
                             </div>
-                        {% endfor %}
+                            {% for ChoiceColor in ChoiceColor %}
+                                <div class="colorRefresh-js">
+                                    {% if ChoiceColor.user == app.user and ChoiceColor.product == product %}
 
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        {% for color in product.colors %}
-                            <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}"
-                               class="size-border js-link-color">{{ color.name }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
+                                        {{ ChoiceColor.color }}
 
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
 
-
-            {#    <div id="js-size" class="dropdown">
-
-
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {% for choiceAll in ChoiceSize %}
-
-                            {% if choiceAll.user == app.user and choiceAll.product == product %}
-
-                                {{ choiceAll.size }}
-
-                            {% endif %}
-                        {% endfor %}
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        {% for size in product.sizes %}
-                            <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}"
-                               class="dropdown-item js-link-size size-border"
-                               id="size-link"> {{ size.name }} </a>
-                        {% endfor %}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            {% for color in product.colors %}
+                                <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}"
+                                   class="size-border js-link-color">{{ color.name }}</a>
+                            {% endfor %}
+                        </div>
                     </div>
 
-                </div>
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-                        {% for ChoiceColor in ChoiceColor  %}
-                            {% if ChoiceColor.user == app.user and ChoiceColor.product == product %}
-
-                                {{ ChoiceColor.color }}
-
-                            {% endif %}
-
-                        {% endfor %}
-
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        {% for color in product.colors %}
-                            <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}" class="size-border">{{ color.name }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-#}
+    </div>
 
 
+</div>
                 <hr class="col">
 
 
@@ -334,27 +292,28 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="container">
-            <h3 class="separator text-center mb-5">NOUVEAUTÉS</h3>
-        </div>
-        <div class="box-carousel">
-            <div class="owl-carousel" id="nouveautes">
+    <div class="container">
+        <h3 class="separator text-center mb-5">NOUVEAUTÉS</h3>
+    </div>
+    <div class="box-carousel">
+        <div class="owl-carousel" id="nouveautes">
 
-                {% for product in productN %}
-                    {% if product.isNew == true %}
-                        <div class="item ">
-                            <div class="card mb-2">
-                                <a href="{{ path('product', {'slug':product.slug}) }}">
+            {% for product in productN %}
+                {% if product.isNew == true %}
+                    <div class="item ">
+                        <div class="card mb-2">
+                            <a href="{{ path('product', {'slug':product.slug}) }}">
 
-                                    <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
-                                         alt="{{ product.name }}" class="card-img-top img-fluid">
+                                <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                                     alt="{{ product.name }}" class="card-img-top img-fluid">
 
-                                </a>
+                            </a>
 
-                                <div class="card-body">
-                                    {# CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
+                            <div class="card-body">
+                                {# CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
                                     <a href="{{ path('products-wish', {'id': product.id}) }}"
                                        class="js-wish">
                                         {% if app.user and product.isWishByUser(app.user) %}
@@ -376,30 +335,30 @@
 
                                     </a>
                                 </div> #}
-                                    <div class="descriptionBest">
-                                        <div class="product-line-green">
-                                            <p class="product-text card-title">
-                                                <span>{{ product.name }}</span></p>
-                                            <p class="product-description card-text"><span
-                                                        class="product-subtitle"> {{ product.subtitle }} </span>
-                                            </p>
+                                <div class="descriptionBest">
+                                    <div class="product-line-green">
+                                        <p class="product-text card-title">
+                                            <span>{{ product.name }}</span></p>
+                                        <p class="product-description card-text"><span
+                                                    class="product-subtitle"> {{ product.subtitle }} </span>
+                                        </p>
 
 
-                                            <p class="product-price-text card-text"><span
-                                                        class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
-                                                <button type="button" class="container-fluid profite">JE LE
-                                                    VEUX
-                                                </button>
-                                            </p>
-                                        </div>
-
+                                        <p class="product-price-text card-text"><span
+                                                    class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                            <button type="button" class="container-fluid profite">JE LE
+                                                VEUX
+                                            </button>
+                                        </p>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
+    </div>
     </div>
 {% endblock %}
