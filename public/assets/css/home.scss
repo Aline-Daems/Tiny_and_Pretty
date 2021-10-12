@@ -477,27 +477,38 @@ position: absolute;
 }
 
 .box{
-  width: 70%;
+  width: 80%;
+  .ourFirstImg{
+    width: 100%;
+  }
 }
 
 .boxtext {
 
 
   p {
-    font-size: 1em;
+    font-size: 1.375em;
     color: grey;
     font-family: $textFontRegular;
     padding-bottom: 1rem;
   }
   .title-box{
-    font-size: 1.5em;
-    font-weight: lighter;
+    font-family: $titleFontRegular;
+    font-size: 2.625em;
+    font-weight: bolder;
     color: grey;
     margin-bottom: 2vh;
     padding-bottom: 1rem;
   }
+  .subtitle-box{
+    font-family: $titleFontRegular;
+    font-size: 1.3125em;
+
+  }
 
   .profite {
+    font-family: $textFontRegular;
+    font-weight: bolder;
     background-color: $green;
     box-shadow: .050em .050em .050em #aaaaaa;
     font-size: 1em;

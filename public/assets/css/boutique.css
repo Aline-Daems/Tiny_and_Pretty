@@ -377,20 +377,28 @@ h1, h3, h5, p {
 
  */
 .box {
-  width: 70%; }
+  width: 80%; }
+  .box .ourFirstImg {
+    width: 100%; }
 
 .boxtext p {
-  font-size: 1em;
+  font-size: 1.375em;
   color: grey;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 1rem; }
 .boxtext .title-box {
-  font-size: 1.5em;
-  font-weight: lighter;
+  font-family: Quicksand, sans-serif;
+  font-size: 2.625em;
+  font-weight: bolder;
   color: grey;
   margin-bottom: 2vh;
   padding-bottom: 1rem; }
+.boxtext .subtitle-box {
+  font-family: Quicksand, sans-serif;
+  font-size: 1.3125em; }
 .boxtext .profite {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
   background-color: #a9b97a;
   box-shadow: .050em .050em .050em #aaaaaa;
   font-size: 1em;
