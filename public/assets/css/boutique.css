@@ -308,7 +308,7 @@ h1, h3, h5, p {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; }
   .bg-champ .filter {
     width: 90%;
-    height: 30vh;
+    height: 40%;
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 50%;
@@ -348,7 +348,7 @@ h1, h3, h5, p {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; }
 
 .bestsellers {
-  margin-top: 35rem; }
+  margin-top: 5rem; }
 
 .icone-wish {
   position: absolute;
@@ -483,6 +483,10 @@ h1, h3, h5, p {
   .waviy span {
     font-size: 1.4rem; }
 
+  .bg-champ .filter {
+    width: 100%;
+    height: 80vh; }
+
   /*.wrapper-parallax {
    margin-top: 0;
     margin-bottom: 120vh;
@@ -503,6 +507,10 @@ h1, h3, h5, p {
   .separator {
     font-size: 8vh; }
 
+  .bg-champ .filter {
+    width: 100%;
+    height: 80vh; }
+
   /*
   .icone-wish{
     left: 85%;
@@ -515,6 +523,10 @@ h1, h3, h5, p {
 
    */ }
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .bg-champ .filter {
+    width: 100%;
+    height: 80vh; }
+
   /*.box {
     width: 60vw;
     height: 45vh;
@@ -532,6 +544,10 @@ h1, h3, h5, p {
 
    */ }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .bg-champ .filter {
+    width: 100%;
+    height: 80vh; }
+
   .category {
     padding-left: 6vw; }
 
