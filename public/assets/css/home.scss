@@ -357,11 +357,23 @@ z-index: -6;
 }
 .text-separator{
   width: 50%;
-  background-color: #9eebcf;
-  margin: 0 auto;
   font-family: $textFontRegular;
   font-size: 1em;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
+  justify-content: center;
+  text-align: center;
+}
+.product-price{
+  font-family: $titleFontRegular;
+  font-weight: bold;
+  font-size: 1.375em;
+}
+.product-price-text{
+  .profite{
+    font-size: 0.8125em;
+    font-family: $textFontRegular;
+    font-weight: bolder;
+  }
 }
 /*!*.bg-coquelicots{
   position: relative;
