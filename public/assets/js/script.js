@@ -106,11 +106,12 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     window.location.href === "https://127.0.0.1:8000/login"
     ||
     window.location.href === "https://127.0.0.1:8000/conditions/generales"
-    && $(window).width() > 992
+    && $(window).width() > 999
 ) {
+    console.log('display none le mobile nav');
     $('.hideHeaderJS').css({'display': 'none'});
     $('#search-formJS').replaceWith(icones);
-    $('.simple-nav-mobile').css({'display': 'none'});
+  //  $('.simple-nav-mobile').css({'display': 'none'});
 
 }
 if ($(window).width() < 768
@@ -388,5 +389,22 @@ document.querySelectorAll('a.js-link-color').forEach(function (link) {
 //
 // })
 //
+
+//background vert sur NOTRE MARQUE
+
+
+
+
+if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"){
+
+
+    const el = document.querySelector('#js-brandPage');
+    if (el.classList.contains("linkHeadOne")) {
+        el.classList.remove("LinkHeadOne")
+        el.classList.add('shop')
+
+    }
+}
+
 
 

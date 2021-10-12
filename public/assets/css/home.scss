@@ -137,7 +137,7 @@ text-transform: uppercase;
 
 .slogan {
   font-family: $titleFontRegular;
-  font-size: 8vh;
+  font-size: 2.625em;
   color: white!important;
   display: flex;
   justify-content: left;
@@ -149,10 +149,13 @@ text-transform: uppercase;
 .texte-banner{
   padding-left: 3%;
   font-family: $textFontRegular;
+  font-size: 1.125em;
 }
 .button-discover{
   padding-left:3%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1.1875em;
+  font-weight: bolder;
 }
 
 //category
@@ -347,10 +350,18 @@ z-index: -6;
 .separator {
   font-family: $titleFontRegular;
   width: 100%;
-  font-size: 4vh;
   letter-spacing: 0.3rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  font-size: 2.625em;
 
+}
+.text-separator{
+  width: 50%;
+  background-color: #9eebcf;
+  margin: 0 auto;
+  font-family: $textFontRegular;
+  font-size: 1em;
+  margin-bottom: 1rem;
 }
 /*!*.bg-coquelicots{
   position: relative;
@@ -580,7 +591,7 @@ position: absolute;
   .box-text-banner{
     padding: 2rem;
     .slogan{
-      font-size: 2rem!important;
+      font-size: 2.625em;
       padding-top: 7rem;
     }
   }

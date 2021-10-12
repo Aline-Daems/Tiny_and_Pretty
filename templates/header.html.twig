@@ -2,9 +2,13 @@
 
     <div class="header-container">
         <div class="defile-banner">
-            <div class="promo-banner text-center">LIVRAISON OFFERTE À PARTIR DE 50 € D'ACHATS<span><img
+            <div class="promo-banner text-center">LIVRAISON OFFERTE DURANT TOUT LE MOIS D'OCTOBRE
+                <span><img
+                            src="{{ asset('assets/img/feuilles-darbres-dautomne.png') }}" alt="Logo Tiny And Pretty"
+                            class="favicon-banner"/></span><span><img
                             src="{{ asset('assets/favicon/favicon-32x32.png') }}" alt="Logo Tiny And Pretty"
                             class="favicon-banner"/></span>
+
             </div>
 
         </div>
@@ -15,7 +19,7 @@
         <nav class="navbar navbar-expand-md  navbar-light  justify-content-between navSup">
             <a class="navbar-brand" href="{{ path('home') }}">
                 <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
-                     class="logo-img-header img-fluid"/>
+                     class="logo-img-header-One img-fluid"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,10 +32,7 @@
                         <a class="nav-link shop mr-3" href="#">E-SHOP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-headOne mr-3" href="{{ path('qui_sommes_nous') }}">NOTRE MARQUE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-headOne mr-3" href="{{ path('comingsoon') }}">DEUXIÈME VIE</a>
+                        <a id="js-brandPage" class="nav-link  linkHeadOne mr-3" href="{{ path('qui_sommes_nous') }}">LA MARQUE</a>
                     </li>
                 </ul>
 
@@ -62,7 +63,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-down ">
                     <li class="nav-item dropdown">
-                        <a class="nav-link inactive dropdown" href="" id="navbarDropdown" role="button"
+                        <a class="nav-link inactive dropdown nav-down-text" href="" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Bébés de 0 à 36 mois
                         </a>
@@ -110,7 +111,7 @@
 
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link inactive dropdown px-2" href="" id="navbarDropdown" role="button"
+                        <a class="nav-link inactive dropdown px-2 nav-down-text" href="" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Enfants de 2 à 8 ans
                         </a>
@@ -159,7 +160,7 @@
 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown px-2" href="" id="navbarDropdown"
+                        <a class="nav-link dropdown px-2 nav-down-text" href="" id="navbarDropdown"
                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             À la maison
                         </a>
@@ -206,12 +207,17 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-2" href="{{ path('productsToy') }}">Les Jouets</a>
+                        <a class="nav-link px-2 nav-down-text" href="{{ path('productsToy') }}">Les Jouets</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link new-collection pt-2" href="">NOUVELLE COLLECTION</a>
                     </li>
                 </ul>
+                <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
+                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
+                           aria-label="Search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </form>
                 <div id="iconesJS">
                     {% if app.user %}
                         <div class="nav-icones pt-sm-5 pt-md-5">

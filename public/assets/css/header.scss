@@ -25,13 +25,13 @@ overflow: hidden;
  font-weight: bold;
 }
 .defile-banner > div {
-  height: 8vh;
+  height: 2%;
   display: inline-block; /* important */
   white-space: nowrap; /* important */
   animation: defilement-rtl 20s infinite linear; /* défilement */
   cursor: pointer;
-  padding: 5px 0% 3px 80%;
-  line-height: 8vh;
+  padding: 5px 0 3px 80%;
+  line-height: 2%;
 
 }
 
@@ -93,15 +93,21 @@ overflow: hidden;
   background-color: white!important;
   z-index: 100;
 
-  padding-left: 5vw;
+  //padding-left: 5vw;
 }
 .nav-icones-down{
   margin-top: 5vh;
   margin-left: 12.5%;
 }
+.nav-down-text{
+  font-family: $textFontRegular;
+  font-size: 1em;
+  color: black!important;
+}
 
 .navbar .nav-link .inactive {
   cursor: default !important;
+
 }
 
 .navbar .nav-item {
@@ -110,40 +116,54 @@ overflow: hidden;
 }
 .navbar-brand {
   margin: 0 !important;
-  width: 40vw;
+  padding:0 !important;
+  width: 40%;
+}
+.logo-img-header-One {
+//  padding-top: 1vh;
+  padding-bottom: 2vh;
+ width: 68%;
+  height: auto;
 }
 
 .logo-img-header {
-  padding-top: 1.5vh;
-  padding-bottom: 1.5vh;
-
-  width: 155%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  width: 100%;
   height: auto;
 }
 .icones-nav {
   width: 1.5rem;
 }
-.link-headOne{
+.linkHeadOne{
   position: relative;
-  font-weight: bold;
-  font-size: larger;
+font-size: 1.3125em;
+  font-family: $titleFontRegular;
   color: #6C7A4E!important;
 
 }
+
 .shop{
   position: relative;
-  font-weight: bold;
-  font-size: larger;
+  color: white!important;
+  font-family: $titleFontRegular;
+  font-size: 1.3125em;
   background-color: $green;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
   border-radius: 0.5em;
-  color: white!important;
 
-  text-shadow: 3px 1px 5px rgba(1, 23, 9, 0.72);
+ // text-shadow: 3px 1px 5px rgba(1, 23, 9, 0.72);*/
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
+.shop-bg-hidden{
+  position: relative;
+
+  color: #6C7A4E!important;
+}
+
+/*
 .link-headOne:after {
   content: '';
   display: block;
@@ -158,7 +178,7 @@ overflow: hidden;
 
 .link-headOne:hover:after{
   width: 100%;
-}
+}*/
 .vignette-dropdown{
   width: 10%;
   height: 10%!important;
@@ -247,7 +267,7 @@ overflow: hidden;
   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
 
   .navbar .nav-link {
-    padding-left: 0vw !important;
+    padding-left: 0 !important;
   }
 
   .icones-nav {

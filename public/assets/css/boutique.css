@@ -2,8 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
 html {
   height: 100%;
   padding: 0 !important;
@@ -106,7 +105,7 @@ h1, h3 {
 
 .slogan {
   font-family: Quicksand, sans-serif;
-  font-size: 8vh;
+  font-size: 2.625em;
   color: white !important;
   display: flex;
   justify-content: left;
@@ -117,11 +116,14 @@ h1, h3 {
 
 .texte-banner {
   padding-left: 3%;
-  font-family: Cantarell, sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125em; }
 
 .button-discover {
   padding-left: 3%;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1.1875em;
+  font-weight: bolder; }
 
 .category {
   margin-top: 5rem !important;
@@ -154,7 +156,7 @@ h1, h3 {
   filter: brightness(50%); }
 
 blockquote {
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
@@ -276,9 +278,17 @@ h1, h3, h5, p {
 .separator {
   font-family: Quicksand, sans-serif;
   width: 100%;
-  font-size: 4vh;
   letter-spacing: 0.3rem;
-  margin-top: 2rem; }
+  margin-top: 1rem;
+  font-size: 2.625em; }
+
+.text-separator {
+  width: 50%;
+  background-color: #9eebcf;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  margin-bottom: 1rem; }
 
 /*!*.bg-coquelicots{
   position: relative;
@@ -362,7 +372,7 @@ h1, h3, h5, p {
 .boxtext p {
   font-size: 1em;
   color: grey;
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding-bottom: 1rem; }
 .boxtext .title-box {
   font-size: 1.5em;
@@ -450,7 +460,7 @@ h1, h3, h5, p {
   .box-text-banner {
     padding: 2rem; }
     .box-text-banner .slogan {
-      font-size: 2rem !important;
+      font-size: 2.625em;
       padding-top: 7rem; }
 
   .waviy span {
@@ -540,7 +550,7 @@ h1, h3, h5, p {
   padding-left: 3vw;
   margin-bottom: 10rem !important;
   width: 90%;
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #948E8E;
   position: relative; }
 
@@ -844,13 +854,13 @@ hr {
   font-family: Quicksand, sans-serif; }
 
 .presentation {
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding-left: calc(100vw/5);
   line-height: 3vh;
   color: #948E8E; }
 
 .subtitle {
-  font-family: Cantarell, sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 header {
   top: 0;
@@ -872,7 +882,7 @@ header {
   font-weight: bold; }
 
 .defile-banner > div {
-  height: 8vh;
+  height: 2%;
   display: inline-block;
   /* important */
   white-space: nowrap;
@@ -880,8 +890,8 @@ header {
   animation: defilement-rtl 20s infinite linear;
   /* défilement */
   cursor: pointer;
-  padding: 5px 0% 3px 80%;
-  line-height: 8vh; }
+  padding: 5px 0 3px 80%;
+  line-height: 2%; }
 
 @keyframes defilement-rtl {
   0% {
@@ -930,12 +940,16 @@ header {
 
 #navbarSupportedContent {
   background-color: white !important;
-  z-index: 100;
-  padding-left: 5vw; }
+  z-index: 100; }
 
 .nav-icones-down {
   margin-top: 5vh;
   margin-left: 12.5%; }
+
+.nav-down-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  color: black !important; }
 
 .navbar .nav-link .inactive {
   cursor: default !important; }
@@ -945,35 +959,45 @@ header {
 
 .navbar-brand {
   margin: 0 !important;
-  width: 40vw; }
+  padding: 0 !important;
+  width: 40%; }
+
+.logo-img-header-One {
+  padding-bottom: 2vh;
+  width: 68%;
+  height: auto; }
 
 .logo-img-header {
-  padding-top: 1.5vh;
-  padding-bottom: 1.5vh;
-  width: 155%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  width: 100%;
   height: auto; }
 
 .icones-nav {
   width: 1.5rem; }
 
-.link-headOne {
+.linkHeadOne {
   position: relative;
-  font-weight: bold;
-  font-size: larger;
+  font-size: 1.3125em;
+  font-family: Quicksand, sans-serif;
   color: #6C7A4E !important; }
 
 .shop {
   position: relative;
-  font-weight: bold;
-  font-size: larger;
+  color: white !important;
+  font-family: Quicksand, sans-serif;
+  font-size: 1.3125em;
   background-color: #a9b97a;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
   border-radius: 0.5em;
-  color: white !important;
-  text-shadow: 3px 1px 5px rgba(1, 23, 9, 0.72);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
+.shop-bg-hidden {
+  position: relative;
+  color: #6C7A4E !important; }
+
+/*
 .link-headOne:after {
   content: '';
   display: block;
@@ -982,12 +1006,13 @@ header {
   width: 0%;
   left: 0px;
   height: 6px;
-  transition: 0.25s cubic-bezier(0.72, -0.01, 0.19, 0.92);
-  background: #fbd572; }
+  transition: 0.25s cubic-bezier(0.72,-0.01, 0.19, 0.92);
+  background: $yellow;
+}
 
-.link-headOne:hover:after {
-  width: 100%; }
-
+.link-headOne:hover:after{
+  width: 100%;
+}*/
 .vignette-dropdown {
   width: 10%;
   height: 10% !important; }
@@ -1064,7 +1089,7 @@ header {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
   .navbar .nav-link {
-    padding-left: 0vw !important; }
+    padding-left: 0 !important; }
 
   .icones-nav {
     width: 2vw; }
@@ -1201,7 +1226,7 @@ header {
   color: grey; }
 
 .presentation {
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 2vh;
   padding-left: calc(100vw/5);
   line-height: 3vh;
@@ -1216,7 +1241,7 @@ header {
 .description_atelier {
   width: 100%;
   margin: 0 !important;
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 2vh;
   color: #808080; }
 
@@ -1243,7 +1268,7 @@ header {
   font-size: 1vh !important; }
 
 .coming_soon_box .coming_soon_text .text_soon {
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1vh !important;
   top: 50%;
   left: 50%;
@@ -1279,7 +1304,7 @@ header {
     opacity: 1; }
 
   .coming_soon_box .coming_soon_text .text_soon {
-    font-family: Cantarell, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 6vh !important;
     top: 50%;
     left: 50%;
@@ -1325,7 +1350,7 @@ header {
   font-size: 1vh; }
 
 .input {
-  font-family: Cantarell, sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .connect {
   background-color: #a9b97a;
@@ -1343,7 +1368,7 @@ header {
   font-size: 1vh !important; }
 
 .text_order {
-  font-family: Cantarell, sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .recap {
   padding-top: 5vh; }
@@ -1445,7 +1470,7 @@ footer a:hover, a:active {
   color: #a9b97a; }
 
 .answer {
-  font-family: Cantarell, sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: gray !important; }
 
 .banner-debora {
@@ -1457,7 +1482,7 @@ footer a:hover, a:active {
 
 .debora-story {
   color: dimgrey;
-  font-family: Cantarell, sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .slogan-debora {
   font-family: Quicksand, sans-serif;
