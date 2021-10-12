@@ -55,7 +55,13 @@
                             {{ product.product.name }} <br/>
                             <small>
                                 {{ product.product.subtitle }} <br/>
-                                x {{ product.quantity }}</small>
+                                x {{ product.quantity }}
+                                {% for choiceAllSize in choiceAllSize %}
+                    {% if choiceAllSize.user == app.user and choiceAllSize.product == product.product %}
+                        {{ choiceAllSize.size }}
+                    {% endif %}
+                {% endfor %}
+                                </small>
                         </div>
                         <div class="col-2 my-auto">
                              {{ ((product.product.price * product.quantity / 100)|number_format(2,',', '.')) }} €

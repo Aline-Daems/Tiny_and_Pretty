@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\OrderDetailsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\Response;
+
 /**
  * @ORM\Entity(repositoryClass=OrderDetailsRepository::class)
  */
@@ -44,10 +47,17 @@ class OrderDetails
     private $total;
 
 
-    public function __toString()
+    public function __construct()
     {
-        return $this->getSize();
+        $this->choiceSize = new ArrayCollection();
     }
+
+
+    public function __toString(): string
+    {
+        return $this->getProduct();
+    }
+
 
     public function getId(): ?int
     {
@@ -112,33 +122,6 @@ class OrderDetails
         $this->total = $total;
 
         return $this;
-    }
-
-    public function getSize(): ?string
-    {
-        return $this->size;
-    }
-
-    public function setSize(?string $size): self
-    {
-        $this->size = $size;
-
-        return $this;
-    }
-    /**
-     * @return mixed
-     */
-    public function getColors()
-    {
-        return $this->colors;
-    }
-
-    /**
-     * @param mixed $colors
-     */
-    public function setColors($colors): void
-    {
-        $this->colors = $colors;
     }
 
 

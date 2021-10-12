@@ -34,7 +34,7 @@ class ChoiceSizeController extends AbstractController
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $size = $this->entityManager->getRepository(Size::class)->findAll();
-        $choiceAll = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
+        $choiceAllSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
 
 
         if (!$product) {
@@ -45,7 +45,7 @@ class ChoiceSizeController extends AbstractController
             'products' => $products,
             'productN' => $productN,
             'Size' => $size,
-            'choiceAll'=> $choiceAll
+            'choiceAllSize'=> $choiceAllSize
         ]);
 
     }

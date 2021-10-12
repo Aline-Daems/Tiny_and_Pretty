@@ -28,17 +28,21 @@ class OrderController extends AbstractController
 
     public function index(Cart $cart, Request $request): Response
     {
+        $size = $this->entityManager->getRepository(Size::class)->findAll();
+        $choiceAllSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
         if(!$this->getUser()->getAddresses()->getValues()){
             return $this->redirectToRoute('account_address_add');
         }
         $form = $this->createForm(OrderType::class, null, [
-            'user' => $this->getUser()
+            'user' => $this->getUser(),
         ]);
         $form->handleRequest($request);
 
         return $this->render('order/index.html.twig', [
             'form' => $form->createView(),
-            'cart'=> $cart->getFull()
+            'cart'=> $cart->getFull(),
+            'size' => $size,
+            'choiceAllSize'=> $choiceAllSize
         ]);
     }
 
@@ -52,9 +56,8 @@ class OrderController extends AbstractController
     public function add(Cart $cart, Request $request): Response
     {
         $size = $this->entityManager->getRepository(Size::class)->findAll();
-        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
-        $color = $this->entityManager->getRepository(Color::class)->findAll();
-        $choiceAll = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
+        $choiceAllSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
+
 
 
         $form = $this->createForm(OrderType::class, null, [
@@ -100,7 +103,6 @@ class OrderController extends AbstractController
                 $orderDetails->setMyOrder($order);
                 $orderDetails->setProduct($product['product']->getName());
                 $orderDetails->setQuantity($product['quantity']);
-                $orderDetails->setColors($product['quantity']);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
                 $this->entityManager->persist($orderDetails);
@@ -116,7 +118,9 @@ class OrderController extends AbstractController
                 'cart'=> $cart->getFull(),
                 'carrier' => $carriers,
                 'delivery' => $delivery_content,
-                'reference'=> $order->getReference()
+                'reference'=> $order->getReference(),
+                'size' => $size,
+                'choiceAllSize'=> $choiceAllSize
 
 
             ]);

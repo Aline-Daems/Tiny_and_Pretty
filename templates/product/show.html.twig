@@ -121,10 +121,10 @@
                         <div class="size-empty-js">
                             Taille
                         </div>
-                        {% for choiceAll in ChoiceSize %}
+                        {% for choiceAllSize in ChoiceAllSize %}
                         <div class="sizeRefresh-js">
-                        {% if choiceAll.user == app.user and choiceAll.product == product %}
-                            {{ choiceAll.size }}
+                        {% if choiceAllSize.user == app.user and choiceAllSize.product == product %}
+                            {{ choiceAllSize.size }}
                         {% endif %}
                         </div>
                         {% endfor %}

@@ -68,9 +68,15 @@ class Order
      */
     private $state;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=UserChoice::class, mappedBy="MyOrder")
+     */
+    private $userChoices;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
+        $this->userChoices = new ArrayCollection();
     }
 
     public function getTotal()
@@ -210,6 +216,33 @@ class Order
     public function setState(int $state): self
     {
         $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UserChoice[]
+     */
+    public function getUserChoices(): Collection
+    {
+        return $this->userChoices;
+    }
+
+    public function addUserChoice(UserChoice $userChoice): self
+    {
+        if (!$this->userChoices->contains($userChoice)) {
+            $this->userChoices[] = $userChoice;
+            $userChoice->addMyOrder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserChoice(UserChoice $userChoice): self
+    {
+        if ($this->userChoices->removeElement($userChoice)) {
+            $userChoice->removeMyOrder($this);
+        }
 
         return $this;
     }

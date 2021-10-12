@@ -35,13 +35,15 @@ class ChoiceSize
     private $size;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Size::class, inversedBy="name")
+     * @ORM\ManyToMany(targetEntity=UserChoice::class, mappedBy="ChoiceSize")
      */
-    private  $sizeName;
+    private $userChoices;
+
 
     public function __construct()
     {
         $this->product = new ArrayCollection();
+        $this->userChoices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -148,19 +150,31 @@ class ChoiceSize
         return $this;
     }
 
-
-    public function setSizeName (Size $sizeName):self
-
+    /**
+     * @return Collection|UserChoice[]
+     */
+    public function getUserChoices(): Collection
     {
-        $this->sizeName=$sizeName;
+        return $this->userChoices;
+    }
+
+    public function addUserChoice(UserChoice $userChoice): self
+    {
+        if (!$this->userChoices->contains($userChoice)) {
+            $this->userChoices[] = $userChoice;
+            $userChoice->addChoiceSize($this);
+        }
+
         return $this;
     }
 
-    public function getSizeName(): ?string
+    public function removeUserChoice(UserChoice $userChoice): self
     {
-        return $this->sizeName;
+        if ($this->userChoices->removeElement($userChoice)) {
+            $userChoice->removeChoiceSize($this);
+        }
+
+        return $this;
     }
-
-
 
 }

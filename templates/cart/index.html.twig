@@ -18,6 +18,7 @@
             <th scope="col">Produit</th>
             <th scope="col"></th>
             <th scope="col">Quantité</th>
+            <th scope="col">Taille</th>
             <th scope="col">Prix</th>
             <th scope="col">Total</th>
             <th scope="col"></th>
@@ -42,6 +43,13 @@
                 <a href="{{ path('add_to_cart', {id : product.product.id}) }}">
                 <img class="ml-3" src="{{ asset('assets/img/plus.webp') }}" height="12px" alt="Ajouter mon produit">
                 </a>
+            </td>
+            <td>
+                {% for choiceAllSize in choiceAllSize %}
+                    {% if choiceAllSize.user == app.user and choiceAllSize.product == product.product %}
+                        {{ choiceAllSize.size }}
+                    {% endif %}
+                {% endfor %}
             </td>
             <td>{{ (product.product.price / 100)|number_format(2,',', '.') }} €</td>
             <td>{{ ((product.product.price * product.quantity / 100)|number_format(2,',', '.')) }} €</td>

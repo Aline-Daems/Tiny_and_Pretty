@@ -39,6 +39,13 @@
                         <div class="col-8 my-auto description-product ">
                             {{ product.product.name }} <br/>
                             <small> {{ product.product.subtitle }}</small>
+                            <small>
+                                {% for choiceAllSize in choiceAllSize %}
+                                    {% if choiceAllSize.user == app.user and choiceAllSize.product == product.product %}
+                                        {{ choiceAllSize.size }}
+                                    {% endif %}
+                                {% endfor %}
+                            </small>
                         </div>
                         <div class="col-2 my-auto ">
                             x {{ product.quantity }}

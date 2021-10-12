@@ -39,9 +39,9 @@ class ProductController extends AbstractController
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
         $size = $this->entityManager->getRepository(Size::class)->findAll();
-        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
+        $choiceAllSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
         $color = $this->entityManager->getRepository(Color::class)->findAll();
-        $choiceAll = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
+        $choiceAllColor = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
 
 
         if (!$product) {
@@ -53,9 +53,9 @@ class ProductController extends AbstractController
             'productN' => $productN,
             'productC' => $productC,
             'Size' => $size,
-            'ChoiceSize' => $choiceSize,
+            'ChoiceAllSize' => $choiceAllSize,
             'color'=> $color,
-            'ChoiceColor'=>$choiceAll
+            'ChoiceColor'=>$choiceAllColor
         ]);
 
     }

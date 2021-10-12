@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
+use App\Entity\ChoiceSize;
+use App\Entity\Size;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,8 +22,12 @@ class CartController extends AbstractController
 
     public function index(Cart $cart): Response
     {
+        $size = $this->entityManager->getRepository(Size::class)->findAll();
+        $choiceAllSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
         return $this->render('cart/index.html.twig', [
-            'cart' => $cart->getFull()
+            'cart' => $cart->getFull(),
+            'size' => $size,
+            'choiceAllSize'=> $choiceAllSize
         ]);
     }
 
