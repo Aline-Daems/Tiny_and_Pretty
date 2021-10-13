@@ -188,9 +188,17 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 //////////////////////////////////////////CAROUSEL
 
     $('#nouveautes').owlCarousel({
+        //validé par NicoBoss
      items: 4,
+        nav: true,
+        navSpeed: 3000,
+        smartSpeed: 1000,
+       // autoplayTimeout: 1000,
+        autoplaySpeed: 9000,
+       // navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
         loop: true,
         autoplay: true,
+        lazyLoad: true,
         responsiveClass:true,
         responsive: {
          0: {
@@ -198,15 +206,15 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
          },
           768: {
              items: 2,
-              margin: 30
+              margin: 10
           },
           980: {
              items: 3,
-              margin: 30
+              margin: 10
           },
             1240: {
                 items: 4,
-                margin: 30
+                margin: 10
             }
         }
     });
@@ -214,8 +222,15 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 
 $('#indispensables').owlCarousel({
     items: 4,
+    nav: true,
+    navSpeed: 3000,
+    smartSpeed: 1000,
+    // autoplayTimeout: 1000,
+    autoplaySpeed: 9000,
+    // navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
     loop: true,
     autoplay: true,
+    lazyLoad: true,
     responsiveClass:true,
     responsive: {
         0: {
@@ -237,7 +252,15 @@ $('#indispensables').owlCarousel({
 });
 $('#automne').owlCarousel({
     items: 4,
+    nav: true,
+    navSpeed: 3000,
+    smartSpeed: 1000,
+    // autoplayTimeout: 1000,
+    autoplaySpeed: 9000,
+    // navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+    loop: true,
     autoplay: true,
+    lazyLoad: true,
     responsiveClass:true,
     responsive: {
         0: {

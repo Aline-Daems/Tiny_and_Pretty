@@ -4,7 +4,7 @@ html{
   margin: 0 !important;
 }
 body {
-  padding-bottom: 150px;
+//  padding-bottom: 150px;
   margin: 0 !important;
   overflow-x: hidden;
   overflow-y: auto;
@@ -18,21 +18,19 @@ body {
 //}
 
 main {
-  padding: 0 !important;
-  margin: 0 !important;
+ // padding: 0 !important;
+ // margin: 0 !important;
   position: relative;
   z-index: 1;
   background-color: white;
   overflow-y: auto;
   overflow-x: hidden;
-  //margin-top: 100px;
-  //padding-bottom: 10vh;
+  margin-bottom: 500px;
+  padding-bottom: 10vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
-h1, h3{
-  color: grey;
-}
+
 .box-carousel{
   width: 82%;
   height: auto;
@@ -65,6 +63,15 @@ margin-top: 5vh!important;
 }
 .card-title{
 text-transform: uppercase;
+  font-family: $titleFontRegular;
+  font-size: 1em!important;
+  font-weight: bold;
+}
+.card-text{
+  font-size: 0.8em!important;
+  .profite{
+    font-size: 1.3em!important;
+  }
 }
 .customNavigation {
   a {
@@ -453,7 +460,7 @@ position: absolute;
   top: 65%;
   transform: translate(-50%, -50%);
   width: 1.8rem;
-  background: red;
+
 
 }
 
@@ -490,7 +497,7 @@ position: absolute;
 .box{
   width: 80%;
   .ourFirstImg{
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -498,7 +505,7 @@ position: absolute;
 
 
   p {
-    font-size: 1.375em;
+    font-size: 1.188em;
     color: grey;
     font-family: $textFontRegular;
     padding-bottom: 1rem;
@@ -528,7 +535,7 @@ position: absolute;
     width: 100%;
     letter-spacing: 0.5vw;
     padding: 1vh 2vw 1vh 2vw;
-    margin: 0 auto;
+    margin: 25% 0 0 auto;
   }
 }
 
@@ -609,15 +616,46 @@ position: absolute;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
-  .box {
-    width: 75vw;
-  //  height: 60vh;
-   // transform: translate(10vw, 10%);
+  .button-discover{
+    font-size: 1em;
+  }
+  .bg-champ{
+    padding: 0;
+  //  background-color: #00bb00;
+    img{
+      width: 100vw;
+    }
+    .filter{
+      width: 80%!important;
+      height:75%!important;
+    }}
+
+  main{
+    margin-bottom: 100vh;
+
+  }
+
+  .boxtext {
+
+
+    p {
+      font-size: 1.1em!important;
+    }
     .title-box{
-      font-weight: lighter;
-      color: grey;
-      margin-bottom: 2vh;
-      margin-top: 1vh;
+      font-size: 1.5em!important;
+    }
+    .subtitle-box{
+      font-size: 1.3em!important;
+    }
+    .profite{
+      margin-top: 0;
+    }
+
+  }
+  .box{
+    width: 100%;
+ img{
+      width: 100%!important;
     }
   }
   .category{
@@ -634,11 +672,6 @@ position: absolute;
   .waviy span{
     font-size: 1.4rem;
   }
-  .bg-champ{
-  .filter{
-    width: 100%;
-    height: 80vh;
-  }}
 
   /*.wrapper-parallax {
    margin-top: 0;
@@ -658,8 +691,15 @@ position: absolute;
   }
 
 
-}
+  }
+
+
+
 @media (min-width: 568px) and (max-width: 768px) and (orientation: landscape) {
+  main{
+    margin-bottom: 800px;
+
+  }
   .slogan {
     font-size:10vh!important;
   }
@@ -690,6 +730,10 @@ position: absolute;
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  main{
+    margin-bottom: 800px;
+
+  }
   .bg-champ{
   .filter{
     width: 100%;
@@ -718,8 +762,54 @@ position: absolute;
 
    */
 }
+@media (min-width: 320px) and (max-width: 768px){
+  .bg-image-banner{
+    padding-top: 70px;
+  }
+  .slogan{
+    font-size: 1.8em;
+  }
+  .button-discover{
+    font-size: 1em;
+  }
+  .bg-champ{
+    //  background-color: #00bb00;
+padding: 0;
+    .filter{
+      width: 100%!important;
+      height:100%!important;
+    }}
+  main{
+    margin-bottom: 600px;
+
+  }
+  .boxtext {
+
+
+    p {
+      font-size: 1em!important;
+    }
+    .title-box{
+      font-size: 1.3em!important;
+    }
+    .subtitle-box{
+      font-size: 1.1em!important;
+    }}
+  .separator {
+
+    font-size: 1.6em;
+
+  }
+  .news-title{
+    font-size: 1.6em!important;
+  }
+}
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  main{
+    margin-bottom: 380px;
+
+  }
   .bg-champ{
   .filter{
     width: 100%;
