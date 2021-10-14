@@ -103,32 +103,57 @@ main {
  */
 .bg-image-banner {
   position: relative;
-  background: url("../img/banner.webp") no-repeat center;
+  background: url("../img/bg-img-banner.webp") no-repeat center;
   background-size: cover;
-  margin-bottom: 5rem; }
+  margin-bottom: 3rem;
+  padding-top: 8rem; }
+  .bg-image-banner .filter-banner {
+    width: 100%;
+    Height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; }
 
 .slogan {
   font-family: Quicksand, sans-serif;
-  font-weight: bold;
   font-size: 2.625em;
   color: white !important;
   display: flex;
   justify-content: left;
   align-items: flex-start;
-  padding: 3%;
-  resize: both;
-  overflow: auto; }
+  padding-left: 3%;
+  padding-bottom: 5%;
+  letter-spacing: 0.1em;
+  z-index: 3; }
+
+.title-index {
+  z-index: 999 !important; }
+
+.subtitle-banner {
+  font-family: Quicksand, sans-serif;
+  font-weight: lighter;
+  font-size: 1.425em;
+  letter-spacing: 0.4em;
+  padding-left: 3%; }
 
 .texte-banner {
   padding-left: 3%;
+  padding-bottom: 3%;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  z-index: 3; }
 
 .button-discover {
-  padding-left: 3%;
+  font-family: "Open Sans", sans-serif;
+  padding: 0.5rem;
+  margin: 0 !important;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  font-size: 1.1875em;
-  font-weight: bolder; }
+  font-size: 1em;
+  z-index: 3;
+  width: 100%; }
 
 .category {
   margin-top: 5rem !important;
@@ -465,7 +490,16 @@ h1, h3, h5, p {
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+.champ-mobile {
+  display: none; }
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+  .champ-desktop {
+    display: none; }
+
+  .champ-mobile {
+    display: flex; }
+
   .button-discover {
     font-size: 1em; }
 
@@ -474,11 +508,12 @@ h1, h3, h5, p {
     .bg-champ img {
       width: 100vw; }
     .bg-champ .filter {
-      width: 80% !important;
-      height: 75% !important; }
+      width: 20vw;
+      height: 10vh; }
 
   main {
-    margin-bottom: 100vh; }
+    margin-bottom: 100vh;
+    background-color: #770088; }
 
   .boxtext p {
     font-size: 1.1em !important; }
@@ -530,8 +565,8 @@ h1, h3, h5, p {
     font-size: 8vh; }
 
   .bg-champ .filter {
-    width: 100%;
-    height: 80vh; }
+    width: 50%;
+    height: 20vh; }
 
   /*
   .icone-wish{
@@ -921,9 +956,14 @@ ESSAI COEUR 2
   text-align: center;
   text-transform: uppercase; }
 
-.btn {
+.outline-show {
   padding: 2vh !important; }
 
+/*.btn{
+  //border-radius: 0 !important;
+  padding: 2vh!important;
+
+}*/
 hr {
   margin: 0 !important;
   padding: 0 !important; }

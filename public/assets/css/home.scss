@@ -4,22 +4,16 @@ html{
   margin: 0 !important;
 }
 body {
-//  padding-bottom: 150px;
   margin: 0 !important;
   overflow-x: hidden;
   overflow-y: auto;
  min-height: 100%;
   position: relative;
 }
-//
-////.wrapper-parallax {
-//////  margin-top: 100px; /* nécessaire si on reste sur la V.1*/
-////margin-bottom: 100px;
-//}
+
 
 main {
- // padding: 0 !important;
- // margin: 0 !important;
+
   position: relative;
   z-index: 1;
   background-color: white;
@@ -133,37 +127,69 @@ text-transform: uppercase;
 //banner home
 .bg-image-banner {
   position: relative;
-  background: url('../img/banner.webp') no-repeat center;
+  background: url('../img/bg-img-banner.webp') no-repeat center;
   background-size: cover;
+
  // height: 60vh;
  // width: 120% !important;
  // margin-top: 3%;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
+  padding-top: 8rem;
+  .filter-banner{
+    width: 100%;
+    Height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
 
 }
 
 .slogan {
   font-family: $titleFontRegular;
-  font-weight: bold;
-  font-size: 2.625em;
+font-size: 2.625em;
   color: white!important;
   display: flex;
   justify-content: left;
   align-items: flex-start;
-  padding: 3%;
-  resize: both;
-  overflow: auto;
+  padding-left: 3%;
+  padding-bottom: 5%;
+  letter-spacing: 0.1em;
+  z-index: 3;
+ // resize: both;
+ // overflow: auto;
 }
+.title-index{
+z-index: 999!important;
+}
+.subtitle-banner{
+  font-family: $titleFontRegular;
+  font-weight: lighter;
+  font-size: 1.425em;
+  letter-spacing: 0.4em;
+  padding-left: 3%;
+ // z-index: 9!important;
+}
+
 .texte-banner{
   padding-left: 3%;
+  padding-bottom: 3%;
   font-family: $textFontRegular;
   font-size: 1.125em;
+  z-index: 3;
 }
 .button-discover{
-  padding-left:3%;
+  font-family: $textFontRegular;
+  padding: 0.5rem;
+  margin: 0!important;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  font-size: 1.1875em;
-  font-weight: bolder;
+  font-size: 1em;
+  z-index: 3;
+  width: 100%;
+
 }
 
 //category
@@ -483,16 +509,6 @@ position: absolute;
 
 
 
-// deuxième vie
-.bg-image-deuxieme {
-
- // background: url('../img/deuxieme-vie-bebe.webp') no-repeat center fixed;
- // background-size: cover;
- // height: 60vh;
- // width: 100% !important;
- // margin-top: 10rem !important;
- // margin-bottom: 5rem;
-}
 
 .box{
   width: 80%;
@@ -614,24 +630,36 @@ position: absolute;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
 }
+.champ-mobile{
+  display: none;
+}
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+@media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+  .champ-desktop{
+    display: none;
+  }
+  .champ-mobile{
+    display: flex;
+  }
   .button-discover{
     font-size: 1em;
   }
-  .bg-champ{
+  .bg-champ {
     padding: 0;
-  //  background-color: #00bb00;
-    img{
+    //  background-color: #00bb00;
+    img {
       width: 100vw;
     }
+
     .filter{
-      width: 80%!important;
-      height:75%!important;
-    }}
+      width: 20vw;
+      height:10vh;
+    }
+  }
 
   main{
     margin-bottom: 100vh;
+    background-color: #770088;
 
   }
 
@@ -711,8 +739,8 @@ position: absolute;
   }
   .bg-champ{
   .filter{
-    width:100%;
-    height: 80vh;
+    width:50%;
+    height: 20vh;
   }}
 
   /*

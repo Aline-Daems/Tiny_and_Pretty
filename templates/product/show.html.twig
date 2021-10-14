@@ -118,7 +118,7 @@
     <div class="d-flex justify-content-center">
 
                     <div class="dropdown size-wrapper col ">
-                        <a class="btn btn-outline-secondary  dropdown-toggle"
+                        <a class="btn btn-outline-secondary outline-show dropdown-toggle"
                            href="#" role="button" id="dropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="size-empty-js">
@@ -148,7 +148,7 @@
 
                     <div class="dropdown color-wrapper col">
 
-                        <a class="btn btn-outline-secondary  dropdown-toggle" href="#" role="button"
+                        <a class="btn btn-outline-secondary outline-show dropdown-toggle" href="#" role="button"
                            id="dropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="color-empty-js">
@@ -184,20 +184,20 @@
 
                 {% if product.soldout == false %}
                     <button
-                            class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
+                            class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
                             type="button">
                         <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;">
                             <div>AJOUTER AU PANIER</div>
                         </a>
                     </button>
                 {% else %}
-                    <button class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
+                    <button class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
                             style="background-color:#f0cabd;">VICTIME DE SON SUCCÈS
                     </button>
                 {% endif %}
                 <div id="accordion">
                     <button
-                            class="btn btn-outline-secondary col mt-3 ml-1 mr-1"
+                            class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
                             type="button" data-toggle="collapse"
                             data-target="#collapseOne"
                             aria-expanded="false"
@@ -296,7 +296,7 @@
 
 
     <div class="container">
-        <h3 class="separator text-center mb-5">NOUVEAUTÉS</h3>
+        <h3 class="separator text-center mb-5 mt-5">MIX & MATCH</h3>
     </div>
     <div class="box-carousel">
         <div class="owl-carousel" id="nouveautes">
