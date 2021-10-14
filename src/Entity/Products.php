@@ -139,6 +139,12 @@ class Products
      */
     private $isCollection;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Sizes::class, inversedBy="products")
+     */
+    private $sizes;
+
+
 
 
     public function __construct()
@@ -151,7 +157,7 @@ class Products
         $this->pictures = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
-
+        $this->sizes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -497,5 +503,43 @@ class Products
         }
         return false;
     }
+
+
+    public function getIsCollection(): ?bool
+    {
+        return $this->isCollection;
+    }
+
+    public function setIsCollection(?bool $isCollection): self
+    {
+        $this->isCollection = $isCollection;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Sizes[]
+     */
+    public function getSizes(): Collection
+    {
+        return $this->sizes;
+    }
+
+    public function addSize(Sizes $size): self
+    {
+        if (!$this->sizes->contains($size)) {
+            $this->sizes[] = $size;
+        }
+
+        return $this;
+    }
+
+    public function removeSize(Sizes $size): self
+    {
+        $this->sizes->removeElement($size);
+
+        return $this;
+    }
+
 
 }
