@@ -2,14 +2,14 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Mode;
+use App\Entity\baby;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class BabyCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Mode::class;
+        return baby::class;
     }
 
     /*

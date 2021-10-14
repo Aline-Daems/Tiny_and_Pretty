@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Mode;
+use App\Entity\baby;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Mode|null find($id, $lockMode = null, $lockVersion = null)
- * @method Mode|null findOneBy(array $criteria, array $orderBy = null)
- * @method Mode[]    findAll()
- * @method Mode[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method baby|null find($id, $lockMode = null, $lockVersion = null)
+ * @method baby|null findOneBy(array $criteria, array $orderBy = null)
+ * @method baby[]    findAll()
+ * @method baby[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class BabyRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Mode::class);
+        parent::__construct($registry, baby::class);
     }
 
     // /**
-    //  * @return Mode[] Returns an array of Mode objects
+    //  * @return baby[] Returns an array of baby objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class BabyRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Mode
+    public function findOneBySomeField($value): ?baby
     {
         return $this->createQueryBuilder('b')
             ->andWhere('b.exampleField = :val')

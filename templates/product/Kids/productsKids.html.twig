@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 
 
-{# Affichage pour MODE anciennement baby #}
+{# Affichage pour Kids #}
 
-
-{% block title %}La mode{% endblock %}
+{% block title %}Tiny and Pretty - Enfants{% endblock %}
 {% block content %}
     <div class="container-fluid">
         <div class="row">
@@ -24,11 +23,12 @@
                             </h5>
                         </a>
                     </div>
-                    <div id="collapseOne1" class="collapse hide" role="tabpanel" aria-labelledby="headingOne1"
+                    <!-- Card body -->
+                    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                          data-parent="#accordionEx">
                         <div class="card-body">
-                            <aside>
-                                {% include '/product/Mode/_filterBaby.html.twig' with {form3: form3} only %}
+                            <aside class="">
+                                {% include '/product/Kids/_filterKids.html.twig' with {form: form} only %}
                             </aside>
                         </div>
                     </div>
@@ -38,12 +38,11 @@
             </div>
 
 
-            <div class="col-md-9 d-flex flex-wrap mt-5">
+            <div class="col-md-9 d-flex flex-wrap">
 
-                {% for product in productsBabies %}
+                {% for product in productsKids %}
                     <div class="col-md-3 ">
                         {% include '/product/single_product.html.twig' with {product: product} only %}
-
                     </div>
                 {% endfor %}
             </div>
@@ -51,9 +50,10 @@
     </div>
 
 
+
 {% endblock %}
 
-    {# {% block content %}
+{# {% block content %}
     <div class="content-layout container-fluid pt-sm-4">
     <div class="row">
         <div class="col-md-3">

@@ -2,14 +2,14 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Maison;
+use App\Entity\House;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class GirlCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Maison::class;
+        return House::class;
     }
 
     /*

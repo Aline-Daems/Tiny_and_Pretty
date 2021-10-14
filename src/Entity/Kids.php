@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\GirlRepository;
+use App\Repository\BoyRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=GirlRepository::class)
+ * @ORM\Entity(repositoryClass=BoyRepository::class)
  */
-class Maison
+class Kids
 {
     /**
      * @ORM\Id

@@ -3,10 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Color;
-use App\Entity\Mode;
-use App\Entity\Boy;
+use App\Entity\baby;
+use App\Entity\Kids;
 use App\Entity\Carrier;
-use App\Entity\Maison;
+use App\Entity\House;
 use App\Entity\Newsletter;
 use App\Entity\Order;
 use App\Entity\Products;
@@ -44,9 +44,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Commandes', 'fas fa-shopping-cart', Order::class);
-        yield MenuItem::linkToCrud('A la mode', 'fas fa-tshirt', Mode::class);
-        yield MenuItem::linkToCrud('A la maison', 'fas fa-home', Maison::class);
-//        yield MenuItem::linkToCrud('Boy', 'fas fa-male', Boy::class);
+        yield MenuItem::linkToCrud('Bébés', 'fas fa-tshirt', baby::class);
+        yield MenuItem::linkToCrud('Enfants', 'fas fa-tshirt', Kids::class);
+        yield MenuItem::linkToCrud('A la maison', 'fas fa-home', House::class);
         yield MenuItem::linkToCrud('Jouets', 'fas fa-gamepad', Toys::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-tag', Products::class);
         yield MenuItem::linkToCrud('Taille', 'fas fa-ruler', Size::class);

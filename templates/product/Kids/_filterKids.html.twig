@@ -1,18 +1,18 @@
-{{ form_start(form3) }}
-{{ form_row(form3.mode) }}
-<h4>Mode</h4>
-{{ form_row(form3.fashions) }}
+{{ form_start(form) }}
+{{ form_row(form.enfant) }}
+<h4>Enfants</h4>
+{{ form_row(form.Kids) }}
 
 
 <h4>Prix</h4>
 <div class="row">
     <div class="col-md-6">
-        {{ form_row(form3.min) }}
+        {{ form_row(form.min) }}
     </div>
     <div class="col-md-6">
-        {{ form_row(form3.max) }}
+        {{ form_row(form.max) }}
     </div>
 </div>
 
 <button type="submit" class="btn btn-primary w-100">Filtrer</button>
-{{ form_end(form3) }}
+{{ form_end(form) }}

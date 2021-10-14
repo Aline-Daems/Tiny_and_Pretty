@@ -43,19 +43,20 @@ class ProductsCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/')
                 ->setRequired(false)
                 ->onlyOnDetail(),
-            CollectionField::new('pictures')
+            CollectionField::new('pictures')->hideOnIndex()
                 ->setEntryType(PictureType::class),
             TextField::new('Subtitle'),
             TextareaField::new('description'),
-            AssociationField::new('sizes'),
-            AssociationField::new('Colors'),
+            AssociationField::new('sizes')->hideOnIndex(),
+            AssociationField::new('Colors')->hideOnIndex(),
             BooleanField::new('isBest'),
             BooleanField::new('isNew'),
             BooleanField::new('isCollection'),
             BooleanField::new('soldOut'),
             MoneyField::new('price')->setCurrency('EUR'),
-            AssociationField::new('mode'),
-            AssociationField::new('maison'),
+            AssociationField::new('baby'),
+            AssociationField::new('kids'),
+            AssociationField::new('house'),
             AssociationField::new('toys')
         ];
     }

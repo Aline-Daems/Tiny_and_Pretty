@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Maison;
+use App\Entity\House;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Maison|null find($id, $lockMode = null, $lockVersion = null)
- * @method Maison|null findOneBy(array $criteria, array $orderBy = null)
- * @method Maison[]    findAll()
- * @method Maison[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method House|null find($id, $lockMode = null, $lockVersion = null)
+ * @method House|null findOneBy(array $criteria, array $orderBy = null)
+ * @method House[]    findAll()
+ * @method House[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class GirlRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Maison::class);
+        parent::__construct($registry, House::class);
     }
 
     // /**
-    //  * @return Maison[] Returns an array of Maison objects
+    //  * @return House[] Returns an array of House objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class GirlRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Maison
+    public function findOneBySomeField($value): ?House
     {
         return $this->createQueryBuilder('g')
             ->andWhere('g.exampleField = :val')

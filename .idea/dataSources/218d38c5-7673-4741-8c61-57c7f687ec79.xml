@@ -879,7 +879,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <table id="238" parent="8" name="address">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="239" parent="8" name="boy">
+    <table id="239" parent="8" name="baby">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
     <table id="240" parent="8" name="carrier">
@@ -912,10 +912,10 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <table id="249" parent="8" name="filter">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="250" parent="8" name="maison">
+    <table id="250" parent="8" name="house">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="251" parent="8" name="mode">
+    <table id="251" parent="8" name="kids">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
     <table id="252" parent="8" name="newsletter">
@@ -936,7 +936,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <table id="257" parent="8" name="products_accessory">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="258" parent="8" name="products_boy">
+    <table id="258" parent="8" name="products_baby">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
     <table id="259" parent="8" name="products_category">
@@ -945,10 +945,10 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <table id="260" parent="8" name="products_color">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="261" parent="8" name="products_maison">
+    <table id="261" parent="8" name="products_house">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="262" parent="8" name="products_mode">
+    <table id="262" parent="8" name="products_kids">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
     <table id="263" parent="8" name="products_size">
@@ -1670,34 +1670,34 @@ accessory_id</ColNames>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="411" parent="258" name="boy_id">
+    <column id="411" parent="258" name="baby_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="412" parent="258" name="IDX_BB1C81F26C8A81A9">
+    <index id="412" parent="258" name="IDX_B7B4F346C8A81A9">
       <ColNames>products_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="413" parent="258" name="IDX_BB1C81F260AB1C5A">
-      <ColNames>boy_id</ColNames>
+    <index id="413" parent="258" name="IDX_B7B4F342E288954">
+      <ColNames>baby_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="414" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>products_id
-boy_id</ColNames>
+baby_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="415" parent="258" name="FK_BB1C81F26C8A81A9">
+    <foreign-key id="415" parent="258" name="FK_B7B4F346C8A81A9">
       <ColNames>products_id</ColNames>
       <RefTableName>products</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="416" parent="258" name="FK_BB1C81F260AB1C5A">
-      <ColNames>boy_id</ColNames>
-      <RefTableName>boy</RefTableName>
+    <foreign-key id="416" parent="258" name="FK_B7B4F342E288954">
+      <ColNames>baby_id</ColNames>
+      <RefTableName>baby</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
@@ -1778,34 +1778,34 @@ color_id</ColNames>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="432" parent="261" name="maison_id">
+    <column id="432" parent="261" name="house_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="433" parent="261" name="IDX_7F3F3D476C8A81A9">
+    <index id="433" parent="261" name="IDX_878CC74D6C8A81A9">
       <ColNames>products_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="434" parent="261" name="IDX_7F3F3D479D67D8AF">
-      <ColNames>maison_id</ColNames>
+    <index id="434" parent="261" name="IDX_878CC74D6BB74515">
+      <ColNames>house_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="435" parent="261" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>products_id
-maison_id</ColNames>
+house_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="436" parent="261" name="FK_7F3F3D476C8A81A9">
+    <foreign-key id="436" parent="261" name="FK_878CC74D6C8A81A9">
       <ColNames>products_id</ColNames>
       <RefTableName>products</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="437" parent="261" name="FK_7F3F3D479D67D8AF">
-      <ColNames>maison_id</ColNames>
-      <RefTableName>maison</RefTableName>
+    <foreign-key id="437" parent="261" name="FK_878CC74D6BB74515">
+      <ColNames>house_id</ColNames>
+      <RefTableName>house</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
@@ -1814,34 +1814,34 @@ maison_id</ColNames>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="439" parent="262" name="mode_id">
+    <column id="439" parent="262" name="kids_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="440" parent="262" name="IDX_1BDD89A16C8A81A9">
+    <index id="440" parent="262" name="IDX_CEEF1F9E6C8A81A9">
       <ColNames>products_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="441" parent="262" name="IDX_1BDD89A177E5854A">
-      <ColNames>mode_id</ColNames>
+    <index id="441" parent="262" name="IDX_CEEF1F9EB71E5B2E">
+      <ColNames>kids_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="442" parent="262" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>products_id
-mode_id</ColNames>
+kids_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="443" parent="262" name="FK_1BDD89A16C8A81A9">
+    <foreign-key id="443" parent="262" name="FK_CEEF1F9E6C8A81A9">
       <ColNames>products_id</ColNames>
       <RefTableName>products</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="444" parent="262" name="FK_1BDD89A177E5854A">
-      <ColNames>mode_id</ColNames>
-      <RefTableName>mode</RefTableName>
+    <foreign-key id="444" parent="262" name="FK_CEEF1F9EB71E5B2E">
+      <ColNames>kids_id</ColNames>
+      <RefTableName>kids</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
