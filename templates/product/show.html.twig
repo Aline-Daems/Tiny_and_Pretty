@@ -113,6 +113,14 @@
                     </a>
                 </div>
 
+                <div>
+                    {{ form_start(product) }}
+                    {% for size in product.sizes %}
+                        {{ form(size.name) }}
+                    {% endfor %}
+                    {{ form_end(SelectForm) }}
+                </div>
+
                 <hr class="col">
 
 

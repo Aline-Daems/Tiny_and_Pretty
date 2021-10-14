@@ -6,7 +6,6 @@ use App\Entity\Mode;
 use App\Entity\Boy;
 use App\Entity\Category;
 use App\Entity\Maison;
-use App\Entity\Size;
 use App\Entity\Toys;
 
 class SearchData
@@ -70,10 +69,6 @@ class SearchData
      * @var string
      */
 
-    public $taille ='';
-    /**
-     * @var Size[]
-     */
-    public $size = [];
+
 
 }
