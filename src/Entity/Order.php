@@ -68,9 +68,13 @@ class Order
      */
     private $state;
 
+
+
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
+        $this->choiceSize = new ArrayCollection();
     }
 
     public function getTotal()
@@ -213,5 +217,8 @@ class Order
 
         return $this;
     }
+
+
+
 
 }

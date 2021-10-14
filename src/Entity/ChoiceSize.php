@@ -34,10 +34,8 @@ class ChoiceSize
      */
     private $size;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Size::class, inversedBy="name")
-     */
-    private  $sizeName;
+
+
 
     public function __construct()
     {
@@ -50,7 +48,7 @@ class ChoiceSize
     }
 
 
-    public function getProduct(): ?Products
+    public function getProduct(): ArrayCollection
     {
         return $this->product;
     }
@@ -149,17 +147,7 @@ class ChoiceSize
     }
 
 
-    public function setSizeName (Size $sizeName):self
 
-    {
-        $this->sizeName=$sizeName;
-        return $this;
-    }
-
-    public function getSizeName(): ?string
-    {
-        return $this->sizeName;
-    }
 
 
 

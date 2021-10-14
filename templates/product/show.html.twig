@@ -31,10 +31,10 @@
                         <div class="size-empty-js">
                             Taille
                         </div>
-                        {% for choiceAll in ChoiceSize %}
+                        {% for ChoiceSize in ChoiceSize %}
                         <div class="sizeRefresh-js">
-                        {% if choiceAll.user == app.user and choiceAll.product == product %}
-                            {{ choiceAll.size }}
+                        {% if ChoiceSize.user == app.user and ChoiceSize.product == product %}
+                            {{ ChoiceSize.size }}
                         {% endif %}
                         </div>
                         {% endfor %}

@@ -76,4 +76,8 @@ class SearchData
      */
     public $size = [];
 
+
+
+
+
 }

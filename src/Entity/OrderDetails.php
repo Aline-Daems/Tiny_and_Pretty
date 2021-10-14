@@ -44,9 +44,11 @@ class OrderDetails
     private $total;
 
 
+
+
     public function __toString()
     {
-        return $this->getSize();
+        return $this->getProduct();
     }
 
     public function getId(): ?int
@@ -114,32 +116,9 @@ class OrderDetails
         return $this;
     }
 
-    public function getSize(): ?string
-    {
-        return $this->size;
-    }
 
-    public function setSize(?string $size): self
-    {
-        $this->size = $size;
 
-        return $this;
-    }
-    /**
-     * @return mixed
-     */
-    public function getColors()
-    {
-        return $this->colors;
-    }
 
-    /**
-     * @param mixed $colors
-     */
-    public function setColors($colors): void
-    {
-        $this->colors = $colors;
-    }
 
 
 }

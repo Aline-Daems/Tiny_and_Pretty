@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Data\SearchData;
+use App\Entity\Newsletter;
 use App\Entity\Products;
+use App\Entity\User;
+use App\Form\NewsletterType;
 use App\Form\SearchBaby;
+use App\Form\SearchBarType;
 use App\Form\SearchForm;
 use App\Form\SearchToy;
 use App\Repository\ProductsRepository;
@@ -25,31 +29,46 @@ class HomeController extends AbstractController
     }
 
     #[Route('/', name: 'home')]
-
-    public function index()
+    public function index(request $request)
     {
+
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
+        $notification = null;
+        $Newsletter = new Newsletter();
+        $formNews = $this->createForm(NewsletterType::class, $Newsletter);
+        $formNews->handleRequest($request);
+        if ($formNews->isSubmitted() && $formNews->isValid()) {
+            $formNews->getData();
+            $search_email = $this->entityManager->getRepository(Newsletter::class)->findOneByEmail($Newsletter->getEmail());
+            if (!$search_email) {
+                $this->entityManager->persist($Newsletter);
+                $this->entityManager->flush();
+            }
+        }
 
         return $this->render('home/index.html.twig', [
             'products' => $products,
             'productN' => $productN,
-            'productC' => $productC
+            'productC' => $productC,
+            'formNews' => $formNews->createView(),
+            'notification' => $notification
 
 
         ]);
 
-            }
-        #[Route('/Mode', name: 'productsBabies')]
-        public function mode(ProductsRepository $repository, request $request): Response
+    }
+
+    #[Route('/Mode', name: 'productsBabies')]
+    public function mode(ProductsRepository $repository, request $request): Response
     {
         $data = new searchData();
         $form3 = $this->createForm(SearchBaby::class, $data);
         $form3->handleRequest($request);
         $productsBaby = $repository->findSearchBaby($data);
 
-        return $this->render('product/Mode/productsBabies.html.twig',[
+        return $this->render('product/Mode/productsBabies.html.twig', [
             'productsBabies' => $productsBaby,
             'form3' => $form3->createView()
         ]);
@@ -64,7 +83,7 @@ class HomeController extends AbstractController
         $productsGirl = $repository->findSearch($data);
         return $this->render('product/maison/productsGirl.html.twig', [
             'productsGirl' => $productsGirl,
-            'form2'=> $form2->createView()
+            'form2' => $form2->createView()
         ]);
     }
 
@@ -77,7 +96,30 @@ class HomeController extends AbstractController
         $productsToy = $repository->findSearchToy($data);
         return $this->render('product/toy/productsToys.html.twig', [
             'productsToy' => $productsToy,
-            'form4'=> $form4->createView()
+            'form4' => $form4->createView()
+        ]);
+    }
+
+    #[Route('/newsletter', name: 'newsletter')]
+    public function newsletter(request $request): Response
+    {
+
+
+        $Newsletter = new Newsletter();
+        $formNews = $this->createForm(NewsletterType::class, $Newsletter);
+        $formNews->handleRequest($request);
+        if ($formNews->isSubmitted() && $formNews->isValid()) {
+            $formNews->getData();
+            $search_email = $this->entityManager->getRepository(Newsletter::class)->findOneByEmail($Newsletter->getEmail());
+            if (!$search_email) {
+                $this->entityManager->persist($Newsletter);
+                $this->entityManager->flush();
+            }
+        }
+
+        return $this->render('home/index.html.twig', [
+
+            'formNews' => $formNews->createView(),
         ]);
     }
 
