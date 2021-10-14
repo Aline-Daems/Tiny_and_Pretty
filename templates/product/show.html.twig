@@ -31,14 +31,14 @@
                         <div class="size-empty-js">
                             Taille
                         </div>
-                        {% for ChoiceSize in ChoiceSize %}
-                        <div class="sizeRefresh-js">
-                        {% if ChoiceSize.user == app.user and ChoiceSize.product == product %}
-                            {{ ChoiceSize.size }}
-                        {% endif %}
-                        </div>
-                        {% endfor %}
-                        </a>
+{#                        {% for ChoiceSize in ChoiceSize %}#}
+{#                        <div class="sizeRefresh-js">#}
+{#                        {% if ChoiceSize.user == app.user and ChoiceSize.product == product %}#}
+{#                            {{ ChoiceSize.size }}#}
+{#                        {% endif %}#}
+{#                        </div>#}
+{#                        {% endfor %}#}
+{#                        </a>#}
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {% for size in product.sizes %}

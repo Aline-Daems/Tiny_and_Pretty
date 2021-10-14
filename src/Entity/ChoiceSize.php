@@ -19,10 +19,7 @@ class ChoiceSize
      */
     private $id;
 
-    /**
-     * @ORM\ManyToOne (targetEntity=Products::class, inversedBy="choiceSize")
-     */
-    private $product;
+
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="choiceSizes")
@@ -48,7 +45,7 @@ class ChoiceSize
     }
 
 
-    public function getProduct(): ArrayCollection
+    public function getProduct(): Collection
     {
         return $this->product;
     }

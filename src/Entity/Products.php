@@ -138,10 +138,7 @@ class Products
      */
     private $sizes;
 
-    /**
-     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="product", cascade={"remove"})
-     */
-    private $choiceSize;
+
 
     /**
      * @ORM\ManyToMany(targetEntity=Color::class, inversedBy="products")
@@ -170,6 +167,7 @@ class Products
         $this->pictures = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
+
         $this->sizes = new ArrayCollection();
         $this->Colors = new ArrayCollection();
         $this->choiceColors = new ArrayCollection();
@@ -548,17 +546,6 @@ class Products
         return $this;
     }
 
-    public function getChoiceSize(): ?ChoiceSize
-    {
-        return $this->choiceSize;
-    }
-
-    public function setChoiceSize(?ChoiceSize $choiceSize): self
-    {
-        $this->choiceSize = $choiceSize;
-
-        return $this;
-    }
 
     /**
      * permet de savoir si cette article est dans le choix de taille de l'utilisateur
