@@ -93,19 +93,19 @@ $(document).ready(function () {
 $('.simple-nav-mobile').css({'display': 'none'});
 let icones = document.getElementById('iconesJS');
 let nav2SpecialMobile = document.getElementsByClassName('simple-nav-mobile');
-if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
+if (window.location.href === "https://test.tinyandpretty.be/qui/sommes/nous"
     ||
-    window.location.href === "https://127.0.0.1:8000/faq"
+    window.location.href === "https://test.tinyandpretty.be/faq"
     ||
-    window.location.href === "https://127.0.0.1:8000/tailles"
+    window.location.href === "https://test.tinyandpretty.be/tailles"
     ||
-    window.location.href === "https://127.0.0.1:8000/contact/user"
+    window.location.href === "https://test.tinyandpretty.be/contact/user"
     ||
-    window.location.href === "https://127.0.0.1:8000/livraisons/et/retours"
+    window.location.href === "https://test.tinyandpretty.be/livraisons/et/retours"
     ||
-    window.location.href === "https://127.0.0.1:8000/login"
+    window.location.href === "https://test.tinyandpretty.be/login"
     ||
-    window.location.href === "https://127.0.0.1:8000/conditions/generales"
+    window.location.href === "https://test.tinyandpretty.be/conditions/generales"
     && $(window).width() > 999
 ) {
     console.log('display none le mobile nav');
@@ -116,19 +116,19 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
 }
 if ($(window).width() < 768
 &&
-    window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
+    window.location.href === "https://test.tinyandpretty.be/qui/sommes/nous"
     ||
-    window.location.href === "https://127.0.0.1:8000/faq"
+    window.location.href === "https://test.tinyandpretty.be/faq"
     ||
-    window.location.href === "https://127.0.0.1:8000/tailles"
+    window.location.href === "https://test.tinyandpretty.be/tailles"
     ||
-    window.location.href === "https://127.0.0.1:8000/contact/user"
+    window.location.href === "https://test.tinyandpretty.be/contact/user"
     ||
-    window.location.href === "https://127.0.0.1:8000/livraisons/et/retours"
+    window.location.href === "https://test.tinyandpretty.be/livraisons/et/retours"
     ||
-    window.location.href === "https://127.0.0.1:8000/login"
+    window.location.href === "https://test.tinyandpretty.be/login"
     ||
-    window.location.href === "https://127.0.0.1:8000/conditions/generales"
+    window.location.href === "https://test.tinyandpretty.be/conditions/generales"
 
 ){
     $('.simple-nav-mobile').css({'display': 'block'});
