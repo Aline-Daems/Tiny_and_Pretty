@@ -3,9 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Products;
+use App\Entity\Sizes;
+use App\Repository\ProductsRepository;
+use Doctrine\ORM\EntityRepository;
+use Proxies\__CG__\App\Entity\Size;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,13 +17,20 @@ class SelectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('sizes', CollectionType::class,[
-                'entry_type'=> SizeType::class,
-                'entry_options'=> [
-                    'label' => false
-                ],
-                'allow_add' => true,
-                'allow_delete' => true,
+            ->add('s', EntityType::class, [
+                'class' => Sizes::class,
+                'multiple' => false,
+                'expanded' => false,
+                'query_builder'=> function(ProductsRepository $er) {
+                    return $er->createQueryBuilder('s')
+                        ->select('s.name')
+                        ->from('product.sizes', 's')
+                        ->join('sizes', 's')
+                        ->
+                        ;
+
+                }
+
             ])
         ;
     }
