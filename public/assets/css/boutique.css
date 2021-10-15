@@ -1106,7 +1106,7 @@ header {
 
 .nav-down-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 1em;
+  font-size: 0.9em;
   color: black !important; }
 
 .navbar .nav-link .inactive {
@@ -1117,18 +1117,16 @@ header {
 
 .navbar-brand {
   margin: 0 !important;
-  padding: 0 !important;
-  width: 15%; }
+  padding: 0 !important; }
 
 .logo-img-header-One {
-  padding-bottom: 2vh;
-  width: 40%;
+  width: 45%;
   height: auto; }
 
 .logo-img-header {
   padding-top: 1vh;
   padding-bottom: 1vh;
-  width: 80%;
+  width: 25%;
   height: auto; }
 
 .icones-nav {
@@ -1226,8 +1224,7 @@ header {
     display: none; } }
 @media (min-width: 568px) and (max-width: 812px) and (orientation: landscape) {
   .navbar-brand {
-    margin: 0 !important;
-    width: 18vw; }
+    margin: 0 !important; }
 
   .logo-img-header {
     margin: 0 !important;
@@ -1253,11 +1250,10 @@ header {
     width: 2vw; }
 
   .navbar-brand {
-    margin: 0 !important;
-    width: 15%; }
+    margin: 0 !important; }
 
   .logo-img-header {
-    width: 70%;
+    width: 45%;
     height: auto; }
 
   .navbar .dropdown:hover .dropdown-menu,
@@ -1337,8 +1333,7 @@ header {
     font-size: 2vh; }
 
   .navbar-brand {
-    margin: 0 !important;
-    width: 15%; }
+    margin: 0 !important; }
 
   .icones-nav {
     width: 1.5rem; }
@@ -1371,14 +1366,13 @@ header {
 
    */
   .navbar-brand {
-    margin: 0 !important;
-    width: 15%; }
+    margin: 0 !important; }
 
   .logo-img-header {
     padding-top: 1vh;
     padding-bottom: 1.5vh;
     margin: 0 !important;
-    width: 80%;
+    width: 20%;
     height: auto; }
 
   .icones-nav {

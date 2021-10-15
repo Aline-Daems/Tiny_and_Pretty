@@ -105,7 +105,7 @@ overflow: hidden;
 }
 .nav-down-text{
   font-family: $textFontRegular;
-  font-size: 1em;
+  font-size: 0.9em;
   color: black!important;
 }
 
@@ -121,19 +121,19 @@ overflow: hidden;
 .navbar-brand {
   margin: 0 !important;
   padding:0 !important;
-  width: 15%;
+ // width: 15%;
 }
 .logo-img-header-One {
 //  padding-top: 1vh;
-  padding-bottom: 2vh;
- width: 40%;
+  //padding-bottom: 2vh;
+ width: 45%;
   height: auto;
 }
 
 .logo-img-header {
   padding-top: 1vh;
   padding-bottom: 1vh;
-  width: 80%;
+  width: 25%;
   height: auto;
 }
 .icones-nav {
@@ -245,7 +245,7 @@ font-size: 1.3125em;
 @media (min-width: 568px) and (max-width: 812px) and(orientation: landscape) {
   .navbar-brand {
     margin: 0 !important;
-    width: 18vw;
+   // width: 18vw;
   }
 
   .logo-img-header {
@@ -279,10 +279,10 @@ font-size: 1.3125em;
   }
   .navbar-brand {
     margin: 0 !important;
-    width: 15%;
+  //  width: 15%;
   }
   .logo-img-header {
-    width: 70%;
+    width: 45%;
     height: auto;
   }
   .navbar .dropdown:hover .dropdown-menu,
@@ -378,7 +378,7 @@ font-size: 1.3125em;
   }
   .navbar-brand{
     margin: 0!important;
-    width: 15%;
+ //   width: 15%;
   }
 
   .icones-nav{
@@ -423,13 +423,13 @@ and (min-resolution: 192dpi)
 
   .navbar-brand{
     margin: 0!important;
-    width: 15%;
+  //  width: 15%;
   }
   .logo-img-header{
     padding-top: 1vh;
     padding-bottom: 1.5vh;
     margin: 0!important;
-    width: 80%;
+    width: 20%;
     height: auto;
   }
   .icones-nav{
