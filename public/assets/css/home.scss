@@ -633,6 +633,28 @@ position: absolute;
 .champ-mobile{
   display: none;
 }
+.paiement{
+  width: 10vh;
+  color: dimgrey!important;
+}
+.livraison{
+  width: 10vh;
+  color: dimgrey!important;
+}
+.retour{
+  width: 10vh;
+  color: dimgrey!important;
+}
+.title-conditions{
+  font-family: $titleFontRegular;
+}
+.text-conditions{
+  font-family: $textFontRegular;
+}
+.insta{
+  background-color: $blue;
+  height: 35vh;
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
   .champ-desktop{

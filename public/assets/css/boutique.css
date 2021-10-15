@@ -493,6 +493,28 @@ h1, h3, h5, p {
 .champ-mobile {
   display: none; }
 
+.paiement {
+  width: 10vh;
+  color: dimgrey !important; }
+
+.livraison {
+  width: 10vh;
+  color: dimgrey !important; }
+
+.retour {
+  width: 10vh;
+  color: dimgrey !important; }
+
+.title-conditions {
+  font-family: Quicksand, sans-serif; }
+
+.text-conditions {
+  font-family: "Open Sans", sans-serif; }
+
+.insta {
+  background-color: rgba(209, 238, 233, 0.81);
+  height: 35vh; }
+
 @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
   .champ-desktop {
     display: none; }
@@ -1000,6 +1022,10 @@ header {
   z-index: 5;
   background: white; }
 
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0 !important;
+  padding-left: 0 !important; }
+
 #home-banner {
   position: relative;
   background-color: white;
@@ -1092,17 +1118,17 @@ header {
 .navbar-brand {
   margin: 0 !important;
   padding: 0 !important;
-  width: 40%; }
+  width: 15%; }
 
 .logo-img-header-One {
   padding-bottom: 2vh;
-  width: 68%;
+  width: 40%;
   height: auto; }
 
 .logo-img-header {
   padding-top: 1vh;
   padding-bottom: 1vh;
-  width: 100%;
+  width: 80%;
   height: auto; }
 
 .icones-nav {
@@ -1228,10 +1254,10 @@ header {
 
   .navbar-brand {
     margin: 0 !important;
-    width: 20%; }
+    width: 15%; }
 
   .logo-img-header {
-    width: 100%;
+    width: 70%;
     height: auto; }
 
   .navbar .dropdown:hover .dropdown-menu,
@@ -1270,12 +1296,20 @@ header {
   .nav-icones-down {
     margin-top: 0 !important; } }
 @media all and (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0 !important;
+    padding-left: 0 !important; }
+
   .new-collection {
     margin-top: 0 !important; }
 
   .nav-icones-down {
     margin-top: 0 !important; } }
 @media (min-width: 1024px) and (orientation: landscape) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0 !important;
+    padding-left: 0 !important; }
+
   .little-drop {
     width: 20vw !important;
     height: 10vh !important;
@@ -1304,7 +1338,7 @@ header {
 
   .navbar-brand {
     margin: 0 !important;
-    width: 20%; }
+    width: 15%; }
 
   .icones-nav {
     width: 1.5rem; }
@@ -1317,8 +1351,8 @@ header {
     height: auto; }
 
   .navbar .nav-item {
-    padding: 1rem 1rem 1rem 1rem;
-    margin: 0 .25rem; }
+    padding: 0;
+    margin: 0 1.2rem; }
 
   #navbarSupportedContent {
     background-color: white !important;
@@ -1338,13 +1372,13 @@ header {
    */
   .navbar-brand {
     margin: 0 !important;
-    width: 20vw; }
+    width: 15%; }
 
   .logo-img-header {
     padding-top: 1vh;
     padding-bottom: 1.5vh;
     margin: 0 !important;
-    width: 100%;
+    width: 80%;
     height: auto; }
 
   .icones-nav {
