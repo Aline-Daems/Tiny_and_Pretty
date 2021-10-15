@@ -191,6 +191,8 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
         //validé par NicoBoss
      items: 4,
         nav: true,
+        navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+        rewindNav : true,
         navSpeed: 3000,
         smartSpeed: 1000,
        // autoplayTimeout: 1000,
@@ -202,19 +204,23 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
         responsiveClass:true,
         responsive: {
          0: {
-             items: 1
+             items: 1,
+             nav: false
          },
           768: {
              items: 2,
-              margin: 10
+              margin: 10,
+              nav: false
           },
           980: {
              items: 3,
-              margin: 10
+              margin: 10,
+              nav: false
           },
             1240: {
                 items: 4,
-                margin: 10
+                margin: 10,
+                nav: true
             }
         }
     });
@@ -223,6 +229,8 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 $('#indispensables').owlCarousel({
     items: 4,
     nav: true,
+    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+    rewindNav : true,
     navSpeed: 3000,
     smartSpeed: 1000,
     // autoplayTimeout: 1000,
@@ -234,25 +242,31 @@ $('#indispensables').owlCarousel({
     responsiveClass:true,
     responsive: {
         0: {
-            items: 1
+            items: 1,
+            nav: false
         },
         768: {
             items: 2,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         980: {
             items: 3,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         1240: {
             items: 4,
-            margin: 5
+            margin: 10,
+            nav: true
         }
     }
 });
 $('#automne').owlCarousel({
     items: 4,
     nav: true,
+    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+    rewindNav : true,
     navSpeed: 3000,
     smartSpeed: 1000,
     // autoplayTimeout: 1000,
@@ -264,19 +278,23 @@ $('#automne').owlCarousel({
     responsiveClass:true,
     responsive: {
         0: {
-            items: 1
+            items: 1,
+            nav: false
         },
         768: {
             items: 2,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         980: {
             items: 3,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         1240: {
             items: 4,
-            margin: 5
+            margin: 10,
+            nav: true
         }
     }
 });

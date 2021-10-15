@@ -36,6 +36,7 @@ main {
     height: auto;
   }
 
+
   .profite{
 
     background-color: $green;
@@ -67,36 +68,36 @@ text-transform: uppercase;
     font-size: 1.3em!important;
   }
 }
-.customNavigation {
-  a {
-    position: absolute;
-  }
-  .prev {
-    left: -5px;
-    top: 50%;
-    /* bottom: 0; */
-    padding: 10px 12px;
-    background: #fff;
-    border-radius: 50%;
-    opacity: 1;
-  //  display: inline-block;
-   // margin-top: auto;
-  //  margin-bottom: auto;
-    box-shadow: -2px 1px 10px #bdbdbd;
-  }
-  .next {
-    right: -5px;
-    top: 50%;
-    /* bottom: 0; */
-    padding: 10px 12px;
-    background: #fff;
-    border-radius: 50%;
-    opacity: 1;
- //   display: inline-block;
-  //  margin-top: auto;
-   // margin-bottom: auto;
-    box-shadow: 2px 1px 10px #bdbdbd;
-  }
+
+
+////////////////////FLECHES OWL CAROUSEL
+.owl-carousel .owl-nav{
+  overflow: hidden;
+  height: 0px;
+}
+.owl-carousel .nav-btn{
+  height: 60px;
+  position: absolute;
+  width: 60px!important;
+  cursor: pointer;
+  top: 50%!important;
+}
+
+.owl-carousel .owl-prev.disabled,
+.owl-carousel .owl-next.disabled{
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.owl-carousel .prev-slide{
+  background: url("../img/left-arrow.png") no-repeat scroll 0 0;
+  left: -5%;
+  width: 45px!important;
+}
+.owl-carousel .next-slide{
+  background: url("../img/right-arrow.png") no-repeat scroll 0 0;
+  right: -8%;
+  width: 45px!important;
 }
 
 /*
@@ -443,7 +444,7 @@ width: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
-    //color: dimgrey;*/
+
   }
   .title-bg-champ{
     font-family: $titleFontRegular;
@@ -461,12 +462,6 @@ width: 90%;
     font-size: 1rem;
     color: white;
     border: none;
-   /* position: absolute;
-    width: 50%;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 4;*/
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
 
@@ -489,25 +484,6 @@ position: absolute;
 
 
 }
-
-
-/*
-.bestproducts:hover + .profite,  .profite:hover{
-
-//display: inline-block;
-   // visibility: visible!important;
-
-  opacity: 1;
-  transition-delay: 0s;
-  transition-duration: 0.4s;
-
-}
-
- */
-
-
-
-
 
 
 .box{
@@ -658,6 +634,7 @@ position: absolute;
 
 
 @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+
   .champ-desktop{
     display: none;
   }
@@ -681,9 +658,12 @@ position: absolute;
   }
 
   main{
-    margin-bottom: 100vh;
-    background-color: #770088;
+    margin-bottom: 110vh;
 
+
+  }
+  footer{
+    padding-bottom: 50%!important;
   }
 
   .boxtext {
@@ -714,7 +694,8 @@ position: absolute;
 
   }
   .box-text-banner{
-    padding: 2rem;
+    padding: 1rem;
+    margin-top: 3rem;
     .slogan{
       font-size: 2.625em;
       padding-top: 7rem;
