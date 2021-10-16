@@ -106,15 +106,19 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     window.location.href === "https://127.0.0.1:8000/login"
     ||
     window.location.href === "https://127.0.0.1:8000/conditions/generales"
-    && $(window).width() > 999
+
+    && $(window).width() > 768
 ) {
-    console.log('display none le mobile nav');
+    $('.simple-nav-mobile').css({'display': 'none'});
+    console.log('grand ecran');
+    console.log($(window).width());
     $('.hideHeaderJS').css({'display': 'none'});
     $('#search-formJS').replaceWith(icones);
-  //  $('.simple-nav-mobile').css({'display': 'none'});
+
 
 }
-if ($(window).width() < 768
+if ($(window).width() <= 768
+
 &&
     window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     ||
@@ -132,6 +136,8 @@ if ($(window).width() < 768
 
 ){
     $('.simple-nav-mobile').css({'display': 'block'});
+    console.log($(window).width());
+    console.log('petit ecran');
 }
 
 //////////////////////////////////////////////////////////////////
