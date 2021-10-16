@@ -37,8 +37,7 @@ class ProductController extends AbstractController
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
         $selectForm = $this->getDoctrine()->getRepository(Products::class)->findSizeByProduct();
-        $selectForm->createForm(SelectType::class);
-        $selectForm->handleRequest($request);
+
 
         if (!$product) {
             return $this->redirectToRoute('home');
@@ -48,10 +47,11 @@ class ProductController extends AbstractController
             'products' => $products,
             'productN' => $productN,
             'productC' => $productC,
-            'SelectForm' => $selectForm->createView()
+            'SelectForm' => $selectForm
         ]);
 
     }
+
 
     #[Route('/favoris/ajout/{id}', name :'ajout_favoris')]
 

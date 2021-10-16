@@ -147,6 +147,7 @@ class Products
 
 
 
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
