@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\SizeRepository;
+use App\Repository\SizesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=SizeRepository::class)
+ * @ORM\Entity(repositoryClass=SizesRepository::class)
  */
-class Size
+class Sizes
 {
     /**
      * @ORM\Id
@@ -25,27 +25,26 @@ class Size
     private $name;
 
     /**
-     * @ORM\OneToMany (targetEntity=ChoiceSize::class, mappedBy="size")
+     * @ORM\ManyToMany(targetEntity=Products::class, mappedBy="sizes")
      */
-    private $choiceSizes;
+    private $products;
 
-
-    public function __toString()
+    public function __toString(): string
     {
         return $this->name;
     }
 
     public function __construct()
     {
-        $this->product = new ArrayCollection();
-
-
+        $this->products = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
+
 
     public function getName(): ?string
     {
@@ -62,15 +61,16 @@ class Size
     /**
      * @return Collection|Products[]
      */
-    public function getProduct(): Collection
+    public function getProducts(): Collection
     {
-        return $this->product;
+        return $this->products;
     }
 
     public function addProduct(Products $product): self
     {
-        if (!$this->product->contains($product)) {
-            $this->product[] = $product;
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+            $product->addSize($this);
         }
 
         return $this;
@@ -78,20 +78,11 @@ class Size
 
     public function removeProduct(Products $product): self
     {
-        $this->product->removeElement($product);
+        if ($this->products->removeElement($product)) {
+            $product->removeSize($this);
+        }
 
         return $this;
     }
 
-    public function getChoiceSize(): ?ChoiceSize
-    {
-        return $this->choiceSizes;
-    }
-
-    public function setChoiceSize(?ChoiceSize $choiceSize): self
-    {
-        $this->choiceSizes = $choiceSize;
-
-        return $this;
-    }
 }

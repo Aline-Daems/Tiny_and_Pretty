@@ -133,30 +133,17 @@ class Products
      */
     private $wishes;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Size::class, inversedBy="product")
-     */
-    private $sizes;
-
-    /**
-     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="product", cascade={"remove"})
-     */
-    private $choiceSize;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=Color::class, inversedBy="products")
-     */
-    private $Colors;
-
-    /**
-     * @ORM\OneToMany(targetEntity=ChoiceColor::class, mappedBy="product")
-     */
-    private $choiceColors;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $isCollection;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Sizes::class, inversedBy="products")
+     */
+    private $sizes;
+
 
 
 
@@ -171,10 +158,6 @@ class Products
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
         $this->sizes = new ArrayCollection();
-        $this->Colors = new ArrayCollection();
-        $this->choiceColors = new ArrayCollection();
-
-
     }
 
     public function getId(): ?int
@@ -521,130 +504,6 @@ class Products
         return false;
     }
 
-    /**
-     * @return Collection|Size[]
-     */
-    public function getSizes(): Collection
-    {
-        return $this->sizes;
-    }
-
-    public function addSize(Size $size): self
-    {
-        if (!$this->sizes->contains($size)) {
-            $this->sizes[] = $size;
-            $size->addProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSize(Size $size): self
-    {
-        if ($this->sizes->removeElement($size)) {
-            $size->removeProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function getChoiceSize(): ?ChoiceSize
-    {
-        return $this->choiceSize;
-    }
-
-    public function setChoiceSize(?ChoiceSize $choiceSize): self
-    {
-        $this->choiceSize = $choiceSize;
-
-        return $this;
-    }
-
-    /**
-     * permet de savoir si cette article est dans le choix de taille de l'utilisateur
-     *
-     * @param User $user
-     * @return bool
-     */
-    public function isChoiceSizeByUser(User $user): bool
-    {
-        foreach ($this->choiceSize as $Size) {
-            if ($Size->getUser() === $user) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * @return Collection|Color[]
-     */
-    public function getColors(): Collection
-    {
-        return $this->Colors;
-    }
-
-    public function addColor(Color $color): self
-    {
-        if (!$this->Colors->contains($color)) {
-            $this->Colors[] = $color;
-        }
-
-        return $this;
-    }
-
-    public function removeColor(Color $color): self
-    {
-        $this->Colors->removeElement($color);
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|ChoiceColor[]
-     */
-    public function getChoiceColors(): Collection
-    {
-        return $this->choiceColors;
-    }
-
-    public function addChoiceColor(ChoiceColor $choiceColor): self
-    {
-        if (!$this->choiceColors->contains($choiceColor)) {
-            $this->choiceColors[] = $choiceColor;
-            $choiceColor->setProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChoiceColor(ChoiceColor $choiceColor): self
-    {
-        if ($this->choiceColors->removeElement($choiceColor)) {
-            // set the owning side to null (unless already changed)
-            if ($choiceColor->getProduct() === $this) {
-                $choiceColor->setProduct(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * permet de savoir si cette article est dans le choix de couleur de l'utilisateur
-     *
-     * @param User $user
-     * @return bool
-     */
-    public function isChoiceColorByUser(User $user): bool
-    {
-        foreach ($this->choiceColors as $color) {
-            if ($color->getUser() === $user) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public function getIsCollection(): ?bool
     {
@@ -657,4 +516,30 @@ class Products
 
         return $this;
     }
+
+    /**
+     * @return Collection|Sizes[]
+     */
+    public function getSizes(): Collection
+    {
+        return $this->sizes;
+    }
+
+    public function addSize(Sizes $size): self
+    {
+        if (!$this->sizes->contains($size)) {
+            $this->sizes[] = $size;
+        }
+
+        return $this;
+    }
+
+    public function removeSize(Sizes $size): self
+    {
+        $this->sizes->removeElement($size);
+
+        return $this;
+    }
+
+
 }

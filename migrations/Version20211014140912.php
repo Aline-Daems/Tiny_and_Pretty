@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20211008124229 extends AbstractMigration
+final class Version20211014140912 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,12 +20,16 @@ final class Version20211008124229 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE order_details DROP size, DROP colors');
+        $this->addSql('ALTER TABLE sizes DROP FOREIGN KEY FK_B69E87696C8A81A9');
+        $this->addSql('DROP INDEX IDX_B69E87696C8A81A9 ON sizes');
+        $this->addSql('ALTER TABLE sizes DROP products_id');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE order_details ADD size VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, ADD colors VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`');
+        $this->addSql('ALTER TABLE sizes ADD products_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE sizes ADD CONSTRAINT FK_B69E87696C8A81A9 FOREIGN KEY (products_id) REFERENCES products (id)');
+        $this->addSql('CREATE INDEX IDX_B69E87696C8A81A9 ON sizes (products_id)');
     }
 }

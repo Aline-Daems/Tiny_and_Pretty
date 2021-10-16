@@ -1,17 +1,15 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\ChoiceColor;
-use App\Entity\ChoiceSize;
-use App\Entity\Color;
 use App\Entity\Products;
-use App\Entity\Size;
 use App\Entity\Wish;
+use App\Form\SelectType;
 use App\Repository\WishRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -31,18 +29,15 @@ class ProductController extends AbstractController
 
     #[Route('/produit/{slug}', name :'product')]
 
-    public function show($slug): Response
+    public function show($slug, Request $request): Response
     {
 
         $product = $this->entityManager->getRepository(Products::class)->findOneBySlug($slug);
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
-        $size = $this->entityManager->getRepository(Size::class)->findAll();
-        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
-        $color = $this->entityManager->getRepository(Color::class)->findAll();
-        $choiceAll = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
-
+        $selectForm = $this->createForm(SelectType::class);
+        $selectForm->handleRequest($request);
 
         if (!$product) {
             return $this->redirectToRoute('home');
@@ -52,10 +47,7 @@ class ProductController extends AbstractController
             'products' => $products,
             'productN' => $productN,
             'productC' => $productC,
-            'Size' => $size,
-            'ChoiceSize' => $choiceSize,
-            'color'=> $color,
-            'ChoiceColor'=>$choiceAll
+            'SelectForm' => $selectForm->createView()
         ]);
 
     }

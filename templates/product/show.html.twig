@@ -15,13 +15,13 @@
 
             <div class="col-md-6 col-sm-12 my-auto aside-description ml-auto mr-auto">
                 <div class="col">
-                <p> {{ product.subtitle }}</p>
-                <h3>{{ product.name }}</h3>
-                <span class="product-page-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
-                <p class="taxes">Taxes incluses</p>
-                <p class="description-show overflow-auto">
-                    {{ product.description }}
-                </p>
+                    <p> {{ product.subtitle }}</p>
+                    <h3>{{ product.name }}</h3>
+                    <span class="product-page-price"> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                    <p class="taxes">Taxes incluses</p>
+                    <p class="description-show overflow-auto">
+                        {{ product.description }}
+                    </p>
                 </div>
                 <div class="col mb-5">
                     <!--  <div class="wish-heart col mb-5">-->
@@ -113,72 +113,11 @@
                     </a>
                 </div>
 
+                <div>
+                    {{ dump(SelectForm) }}
 
-<div class="row">
-    <div class="d-flex justify-content-center">
+                </div>
 
-                    <div class="dropdown size-wrapper col ">
-                        <a class="btn btn-outline-secondary outline-show dropdown-toggle"
-                           href="#" role="button" id="dropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="size-empty-js">
-                                Taille
-                            </div>
-                            {% for choiceAll in ChoiceSize %}
-
-                                <div class="sizeRefresh-js">
-
-                                    {% if choiceAll.user == app.user and choiceAll.product == product %}
-                                        {{ choiceAll.size }}
-                                    {% endif %}
-                                </div>
-                            {% endfor %}
-                        </a>
-
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            {% for size in product.sizes %}
-                                <a href="{{ path('choice-size', {'id':size.id, 'product':product.id }) }}"
-                                   class="dropdown-item js-link-size size-border"
-                                   id="size-link"> {{ size.name }} </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-
-
-                    <div class="dropdown color-wrapper col">
-
-                        <a class="btn btn-outline-secondary outline-show dropdown-toggle" href="#" role="button"
-                           id="dropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="color-empty-js">
-
-                                <img class="color-icone" src="https://img.icons8.com/color/48/000000/color-switch.png"/>
-
-                            </div>
-                            {% for ChoiceColor in ChoiceColor %}
-                                <div class="colorRefresh-js">
-                                    {% if ChoiceColor.user == app.user and ChoiceColor.product == product %}
-
-                                        {{ ChoiceColor.color }}
-
-                                    {% endif %}
-                                </div>
-                            {% endfor %}
-
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            {% for color in product.colors %}
-                                <a href="{{ path('choice-color', {'id':color.id, 'product':product.id }) }}"
-                                   class="size-border js-link-color">{{ color.name }}</a>
-                            {% endfor %}
-                        </div>
-                    </div>
-
-    </div>
-
-
-</div>
                 <hr class="col">
 
 

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Size;
+use App\Entity\Sizes;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Size|null find($id, $lockMode = null, $lockVersion = null)
- * @method Size|null findOneBy(array $criteria, array $orderBy = null)
- * @method Size[]    findAll()
- * @method Size[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Sizes|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Sizes|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Sizes[]    findAll()
+ * @method Sizes[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SizeRepository extends ServiceEntityRepository
+class SizesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Size::class);
+        parent::__construct($registry, Sizes::class);
     }
 
     // /**
-    //  * @return Size[] Returns an array of Size objects
+    //  * @return Sizes[] Returns an array of Sizes objects
     //  */
     /*
     public function findByExampleField($value)
@@ -36,8 +36,9 @@ class SizeRepository extends ServiceEntityRepository
     }
     */
 
+
     /*
-    public function findOneBySomeField($value): ?Size
+    public function findOneBySomeField($value): ?Sizes
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')
