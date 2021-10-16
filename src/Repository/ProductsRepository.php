@@ -6,6 +6,7 @@ use App\Classe\Search;
 use App\Data\SearchData;
 use App\Entity\Products;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use Stripe\Product;
 
@@ -27,10 +28,19 @@ class ProductsRepository extends ServiceEntityRepository
      * @return Product[]
      */
 
-   /**
+    /**
      * @return Products[] Returns an array of Products objects
-    */
+     * @throws \Doctrine\DBAL\Driver\Exception
+     */
+    public function findSizeByProduct(): array {
+        $sql = "SELECT sizes.name FROM products_sizes JOIN sizes on products_sizes.sizes_id = sizes.id";
 
+
+        $stmt = $this->getEntityManager()->getConnection()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
+    }
 
     public function findByExampleField($value): array
     {

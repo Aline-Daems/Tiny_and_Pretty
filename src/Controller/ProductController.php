@@ -36,7 +36,8 @@ class ProductController extends AbstractController
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
-        $selectForm = $this->createForm(SelectType::class);
+        $selectForm = $this->getDoctrine()->getRepository(Products::class)->findSizeByProduct();
+        $selectForm->createForm(SelectType::class);
         $selectForm->handleRequest($request);
 
         if (!$product) {
