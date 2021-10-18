@@ -1064,7 +1064,9 @@ header {
   font-weight: bold;
   border-radius: 0.3em;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  margin-top: 5vh !important; }
+  margin-top: 5vh !important;
+  margin-bottom: 3vh !important;
+  padding-left: 2vw !important; }
 
 /*
 .title_drop {
@@ -1285,6 +1287,7 @@ header {
     padding-left: 0 !important; }
 
   .new-collection {
+    margin-bottom: 0 !important;
     margin-top: 0 !important; }
 
   .nav-icones-down {
