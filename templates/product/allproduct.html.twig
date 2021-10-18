@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tiny and Pretty - Tous nos produits{% endblock %}
+
+{% block content %}
+    <div class="container-fluid mt-10">
+        <div class="col-10 d-flex">
+            {% for  product in products %}
+                <div class="item col-md-2">
+                    <div class="card mb-2">
+                        <a href="{{ path('product', {'slug':product.slug}) }}">
+
+                            <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                                 alt="{{ product.name }}" class="card-img-top img-fluid">
+
+                        </a>
+
+                        <div class="card-body">
+
+                            <div class="descriptionBest">
+                                <div class="product-line-green">
+                                    <p class="product-text card-title">
+                                        <span>{{ product.name }}</span></p>
+                                    <p class="product-description card-text"><span
+                                                class="product-subtitle"> {{ product.subtitle }} </span>
+                                    </p>
+
+
+                                    <p class="product-price-text card-text"><span
+                                                class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                        <button type="button" class="container-fluid profite-btn">JE LE
+                                            VEUX
+                                        </button>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

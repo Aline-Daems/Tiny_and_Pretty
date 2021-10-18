@@ -212,4 +212,12 @@ class ProductsRepository extends ServiceEntityRepository
         }
         return $query->getQuery()->getResult();
     }
+
+
+    #### Recherche global sur tous les produits via nom, sous titre et description ###
+
+    public function findSearchBar(string $query)
+    {
+
+    }
 }
