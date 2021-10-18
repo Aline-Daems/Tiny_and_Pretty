@@ -139,6 +139,23 @@ if ($(window).width() <= 768
     console.log($(window).width());
     console.log('petit ecran');
 }
+if (  window.location.href === "https://127.0.0.1:8000/login"
+    ||
+    window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
+    ||
+    window.location.href === "https://127.0.0.1:8000/faq"
+    ||
+    window.location.href === "https://127.0.0.1:8000/tailles"
+    ||
+    window.location.href === "https://127.0.0.1:8000/contact/user"
+    ||
+    window.location.href === "https://127.0.0.1:8000/livraisons/et/retours"
+    ||
+    window.location.href === "https://127.0.0.1:8000/conditions/generales"
+    && $(window).width() > 768){
+    $('.simple-nav-mobile').css({'display': 'none'});
+    console.log('LOGIN');
+}
 
 //////////////////////////////////////////////////////////////////
 
