@@ -3,19 +3,32 @@
 {% block title %}Nos ateliers{% endblock %}
 
 {% block content %}
-    <div class="col-12 text-center pt-5">
-        <h1 class="title">
-            NOS ATELIERS
-        </h1>
-        <div class="col-10 text-left pt-5 pb-5">
-            <div class="presentation">
-                Tiny & Pretty c’est avant tout une grande famille, qui place l’humain au centre de ses choix. Chaque
-                jour, nous nous remuons les méninges pour vous proposer de jolies pièces fabriquées artisanalement et
-                signées Tiny & Pretty. Il nous tient donc à cœur de partager avec vous les histoires de celles et ceux
-                qui, avec leurs doigts de fées, confectionnent nos produits.
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col mt-5 mb-5 bg-champ">
+
+
+                <img class="champ-desktop" src="{{ asset('assets/img/champ-banniere.webp') }}" alt=""/>
+                <img class="champ-mobile" src="{{ asset('assets/img/champMobile.webp') }}" alt=""/>
+
+                <div class="filter">
+                </div>
+                <div class="filter_text">
+                    <h3 class="title-bg-champ"> NOS ATELIERS</h3>
+                    <p class="text-bg-champ"> Tiny & Pretty c’est avant tout une grande famille, qui place l’humain au
+                        centre de ses choix. Chaque
+                        jour, nous nous remuons les méninges pour vous proposer de jolies pièces fabriquées
+                        artisanalement et
+                        signées Tiny & Pretty. Il nous tient donc à cœur de partager avec vous les histoires de celles
+                        et ceux
+                        qui, avec leurs doigts de fées, confectionnent nos produits.
+                    </p>
+                </div>
+
             </div>
         </div>
     </div>
+
     <div class="container-fluid text-center pb-5 ml-5">
         <div class="row">
             <div class="col-6"><a href="{{ path('atelier_debora') }}">
@@ -49,14 +62,45 @@
 
 
                 <div class="title_atelier text-center mt-5">
-                    <h3>VOTRE ATELIER</h3>
+                    <h3>VOUS AVEZ DU TALENT</h3>
                 </div>
                 <div class="description_atelier text-left mt-5 ml-5 mr-5">
-                    <p>Envie de collaborer avec nous et de faire partie de l'aventure Tiny & Pretty.<br>
-                        Vous avez un atelier ? Vous aimeriez devenir partenaire ?
+                    <p>Nous sommes constamment à la recherche d'artisans passionnés et d'amoureux du textile. Si vous
+                        aussi, vous souhaitez contribuer à l'aventure Tiny & Pretty, contactez-nous ! Nous nous ferons
+                        un plaisir de vous rencontrer.
                     </p>
-                    <button class="btn-blog join mx-auto"><span>Rejoignez-nous !</span></button>
+                    <button class="btn-blog join mx-auto"><span>REJOIGNEZ L'AVENTURE</span></button>
 
+                </div>
+            </div>
+            <div class="container-fluid text-center share">
+                <div class="col-12">
+                    <h2 class="separator text-center reveal-1">#TINYANDPRETTY ♡</h2>
+                    <h5 class="text-share reveal-2">Partagez avec nous leurs styles uniques !</h5>
+                    <div class="reseau justify-between">
+                        <a class="logoreseau reveal-3" href="https://www.facebook.com/TinyandPretty.be" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a>
+                        <a class="logoreseau reveal-3" href="https://www.instagram.com/tinyandpretty.be"
+                           target="_blank"> <i
+                                    class="fab fa-instagram"></i></a>
+                        <a class="logoreseau reveal-3"><i class="fab fa-pinterest-square"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="insta col-12">
+                        <div
+                                loading="lazy"
+                                data-mc-src="a8f2c962-ea44-4efb-b02e-f48c1e018f0d#instagram"></div>
+
+                        <script
+                                src="https://cdn2.woxo.tech/a.js#616943ba77be7d0016763c85"
+                                async data-usrc>
+                        </script>
+
+                    </div>
+                    {# <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script> #}
+                    {# <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" /> #}
+                    {# <ul class="juicer-feed" data-feed-id="tinyandpretty-be"></ul> #}
                 </div>
             </div>
             <!--
