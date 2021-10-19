@@ -18,15 +18,15 @@ class NewsletterType extends AbstractType
 
                 'label'=>false,
                 'attr' => [
-                    'placeholder' => 'Saisssez votre email']
+                    'placeholder' => 'Email',
+                 'class' => 'col-6']
             ])
 
             ->add('submit', SubmitType::class, [
 
                 'label' => "C'EST PAR ICI",
                  'attr' => [
-                        'CLASS' => 'btn profite reveal-3 mt-4 mb-3']
-            ])
+                       'class' => 'btn profite reveal-3 mt-4 mb-3']])
 
 
         ;

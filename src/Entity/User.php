@@ -66,15 +66,7 @@ class User implements UserInterface
      */
     private $wishes;
 
-    /**
-     * @ORM\OneToMany(targetEntity=ChoiceSize::class, mappedBy="user")
-     */
-    private $choiceSizes;
 
-    /**
-     * @ORM\OneToMany(targetEntity=ChoiceColor::class, mappedBy="User")
-     */
-    private $choiceColors;
 
 
 
@@ -86,9 +78,7 @@ class User implements UserInterface
         $this->orders = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
-        $this->choiceSizes = new ArrayCollection();
-        $this->colors = new ArrayCollection();
-        $this->choiceColors = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -313,66 +303,6 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($wish->getUser() === $this) {
                 $wish->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|ChoiceSize[]
-     */
-    public function getChoiceSizes(): Collection
-    {
-        return $this->choiceSizes;
-    }
-
-    public function addChoiceSize(ChoiceSize $choiceSize): self
-    {
-        if (!$this->choiceSizes->contains($choiceSize)) {
-            $this->choiceSizes[] = $choiceSize;
-            $choiceSize->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChoiceSize(ChoiceSize $choiceSize): self
-    {
-        if ($this->choiceSizes->removeElement($choiceSize)) {
-            // set the owning side to null (unless already changed)
-            if ($choiceSize->getUser() === $this) {
-                $choiceSize->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|ChoiceColor[]
-     */
-    public function getChoiceColors(): Collection
-    {
-        return $this->choiceColors;
-    }
-
-    public function addChoiceColor(ChoiceColor $choiceColor): self
-    {
-        if (!$this->choiceColors->contains($choiceColor)) {
-            $this->choiceColors[] = $choiceColor;
-            $choiceColor->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChoiceColor(ChoiceColor $choiceColor): self
-    {
-        if ($this->choiceColors->removeElement($choiceColor)) {
-            // set the owning side to null (unless already changed)
-            if ($choiceColor->getUser() === $this) {
-                $choiceColor->setUser(null);
             }
         }
 

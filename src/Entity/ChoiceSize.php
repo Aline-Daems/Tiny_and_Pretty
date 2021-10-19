@@ -29,10 +29,7 @@ class ChoiceSize
      */
     private $user;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Size::class, inversedBy="choiceSizes")
-     */
-    private $size;
+
 
 
 

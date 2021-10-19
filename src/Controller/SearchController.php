@@ -22,14 +22,14 @@ public function SearchBar(){
             'label' => false,
             'attr'=> [
                 'class'=> 'form-control',
-                'placeholder'=>'Entrez votre recherche'
+//                'placeholder'=>'Recherche',
             ]
         ])
-        ->add('recherche', SubmitType::class, [
+    /*    ->add('Recherche', SubmitType::class, [
             'attr'=> [
                 'class' => 'btn btn-primary'
             ]
-        ])
+        ])*/
         ->getForm();
     return$this->render('search/searchbar.html.twig', [
         'formSearch' => $formSearch->createView()

@@ -476,6 +476,9 @@ h1, h3, h5, p {
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
+.form-search {
+  margin-left: 33%; }
+
 .champ-desktop {
   width: 100%; }
 
@@ -922,6 +925,16 @@ ESSAI COEUR 2
 
 .size-display {
   display: none; }
+
+.profite-btn {
+  background-color: #a9b97a;
+  box-shadow: .050em .050em .050em #aaaaaa;
+  font-size: 0.8rem;
+  color: white;
+  border: none;
+  float: right;
+  border-radius: 5%;
+  margin-top: 1rem; }
 
 @keyframes heart-like {
   0% {

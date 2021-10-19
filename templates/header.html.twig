@@ -34,13 +34,25 @@
                     <li class="nav-item">
                         <a id="js-brandPage" class="nav-link  linkHeadOne mr-3" href="{{ path('qui_sommes_nous') }}">LA MARQUE</a>
                     </li>
+                    <li class="nav-item">
+                    <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
+
+                        {{ render(controller(
+                            'App\\Controller\\SearchController::SearchBar'
+                        )) }}
+                        <button type="submit" ><i class="fas fa-search" aria-hidden="true"></i></button>
+
+                    </form>
+                    </li>
+{#                    <button type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>#}
                 </ul>
 
-                <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
-                    {{ render(controller(
-                        'App\\Controller\\SearchController::SearchBar'
-                    )) }}
-                </form>
+
+               {# <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
+                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
+                           aria-label="Search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </form>#}
 
 
             </div>
@@ -213,12 +225,19 @@
                     <li class="nav-item ">
                         <a class="nav-link new-collection p-2" href="">NOUVELLE COLLECTION</a>
                     </li>
+                    <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
+                        {{ render(controller(
+                            'App\\Controller\\SearchController::SearchBar'
+                        )) }}
+{#                        <button type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>#}
+                    </form>
                 </ul>
-                <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
+
+             {#   <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
                            aria-label="Search">
                     <i class="fas fa-search" aria-hidden="true"></i>
-                </form>
+                </form>#}
                 <div id="iconesJS">
                     {% if app.user %}
                         <div class="nav-icones pl-5 pt-sm-5 pt-md-5 text-sm-center text-md-center">
@@ -301,12 +320,19 @@
                     </li>
                 </ul>
 
-                <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm mt-5 mb-3">
+              {#  <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm mt-5 mb-3">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
                            aria-label="Search">
                     <i class="fas fa-search" aria-hidden="true"></i>
                 </form>
+#}
+                <form id="search-formJS" class=" form-inline d-flex justify-content-center text-center md-form form-sm">
+                    {{ render(controller(
+                        'App\\Controller\\SearchController::SearchBar'
+                    )) }}
 
+{#                 <button type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>#}
+                </form>
             </div>
 
         </nav>
