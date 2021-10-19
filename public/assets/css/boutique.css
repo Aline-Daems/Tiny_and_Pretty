@@ -1398,6 +1398,10 @@ header {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem; }
 
+.text-valeur {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem; }
+
 .btn-shop {
   border-radius: 0 !important;
   border-color: white !important;
