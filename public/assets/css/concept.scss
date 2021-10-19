@@ -1,12 +1,10 @@
-.title{
-  font-family: $titleFontRegular;
-  font-size: 5vh;
+.title-concept{
+  font-family: $TinyFont;
+  font-size: 1.2rem;
   color:grey;
 }
-.presentation{
+.presentation-concept{
   font-family: $textFontRegular;
-  font-size: 2vh;
-  padding-left: calc(100vw/5);
-  line-height: 3vh;
-  color:grey;
+  font-size: 1rem;
+
 }
