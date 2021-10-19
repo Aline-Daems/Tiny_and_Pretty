@@ -586,7 +586,7 @@ position: absolute;
   .news-title{
     font-size: 2.625em;
     font-family: $titleFontRegular;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.5em!important;
   }
   .news_text{
     font-family: $textFontRegular;
@@ -606,8 +606,11 @@ position: absolute;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
 }
-.form-search{
-  margin-left: 33%;
+//.form-search{
+//  margin-left: 33%;
+//}
+#newsletter_email{
+  margin: 0 auto;
 }
 .champ-desktop{
  width: 100%;

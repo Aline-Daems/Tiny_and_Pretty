@@ -461,7 +461,7 @@ h1, h3, h5, p {
   .newsletter .news-title {
     font-size: 2.625em;
     font-family: Quicksand, sans-serif;
-    letter-spacing: 0.3em; }
+    letter-spacing: 0.5em !important; }
   .newsletter .news_text {
     font-family: "Open Sans", sans-serif;
     color: white;
@@ -476,8 +476,8 @@ h1, h3, h5, p {
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
-.form-search {
-  margin-left: 33%; }
+#newsletter_email {
+  margin: 0 auto; }
 
 .champ-desktop {
   width: 100%; }

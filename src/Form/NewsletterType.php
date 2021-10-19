@@ -19,7 +19,7 @@ class NewsletterType extends AbstractType
                 'label'=>false,
                 'attr' => [
                     'placeholder' => 'Email',
-                 'class' => 'col-6']
+                 'class' => 'col-5 ']
             ])
 
             ->add('submit', SubmitType::class, [

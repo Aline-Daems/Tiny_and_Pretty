@@ -25,11 +25,11 @@ public function SearchBar(){
 //                'placeholder'=>'Recherche',
             ]
         ])
-    /*    ->add('Recherche', SubmitType::class, [
+       ->add('Recherche', SubmitType::class, [
             'attr'=> [
                 'class' => 'btn btn-primary'
             ]
-        ])*/
+        ])
         ->getForm();
     return$this->render('search/searchbar.html.twig', [
         'formSearch' => $formSearch->createView()
