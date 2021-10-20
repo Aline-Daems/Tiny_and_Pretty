@@ -3,13 +3,11 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
-use App\Entity\ChoiceColor;
-use App\Entity\ChoiceSize;
-use App\Entity\Color;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
-use App\Entity\Size;
+use App\Entity\SelectSize;
 use App\Form\OrderType;
+use App\Form\SelectType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,14 +19,15 @@ class OrderController extends AbstractController
 
     private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager){
+    public function __construct(EntityManagerInterface $entityManager)
+    {
         $this->entityManager = $entityManager;
     }
-    #[Route('/commandes', name: 'order')]
 
+    #[Route('/commandes', name: 'order')]
     public function index(Cart $cart, Request $request): Response
     {
-        if(!$this->getUser()->getAddresses()->getValues()){
+        if (!$this->getUser()->getAddresses()->getValues()) {
             return $this->redirectToRoute('account_address_add');
         }
         $form = $this->createForm(OrderType::class, null, [
@@ -38,10 +37,9 @@ class OrderController extends AbstractController
 
         return $this->render('order/index.html.twig', [
             'form' => $form->createView(),
-            'cart'=> $cart->getFull()
+            'cart' => $cart->getFull()
         ]);
     }
-
 
 
     /**
@@ -51,10 +49,6 @@ class OrderController extends AbstractController
 
     public function add(Cart $cart, Request $request): Response
     {
-        $size = $this->entityManager->getRepository(Size::class)->findAll();
-        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
-        $color = $this->entityManager->getRepository(Color::class)->findAll();
-        $choiceAll = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
 
 
         $form = $this->createForm(OrderType::class, null, [
@@ -63,25 +57,27 @@ class OrderController extends AbstractController
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $date = new \DateTime();
             $carriers = $form->get('carriers')->getData();
             $delivery = $form->get('addresses')->getData();
-            $delivery_content = $delivery->getFirstname().''.$delivery->getLastname();
-            $delivery_content .= '<br/>' .$delivery->getPhone();
+            $delivery_content = $delivery->getFirstname() . '' . $delivery->getLastname();
+            $delivery_content .= '<br/>' . $delivery->getPhone();
 
 
-            if($delivery->getCompany()) {
-                $delivery_content .= '<br/>' .$delivery->getCompany();
+            if ($delivery->getCompany()) {
+                $delivery_content .= '<br/>' . $delivery->getCompany();
             }
-            $delivery_content .= '<br/>' .$delivery->getAddress();
-            $delivery_content .= '<br/>' .$delivery->getPostal().' '.$delivery->getCity();
-            $delivery_content .= '<br/>' .$delivery->getCountry();
+            $delivery_content .= '<br/>' . $delivery->getAddress();
+            $delivery_content .= '<br/>' . $delivery->getPostal() . ' ' . $delivery->getCity();
+            $delivery_content .= '<br/>' . $delivery->getCountry();
 
 
             $order = new Order();
-            $reference = $date->format('dmY').''.uniqid();
+            $reference = $date->format('dmY') . '' . uniqid();
             $order->setReference($reference);
             $order->setUser($this->getUser());
             $order->setCreatedAt($date);
@@ -94,34 +90,36 @@ class OrderController extends AbstractController
             $this->entityManager->persist($order);
 
 
-
-            foreach ($cart->getFull() as $product){
+            foreach ($cart->getFull() as $product) {
                 $orderDetails = new OrderDetails();
                 $orderDetails->setMyOrder($order);
                 $orderDetails->setProduct($product['product']->getName());
                 $orderDetails->setQuantity($product['quantity']);
-                $orderDetails->setColors($product['quantity']);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
                 $this->entityManager->persist($orderDetails);
 
 
-
             }
+
+            $selectSize = new SelectSize();
+            $selectSize->setMyOrder($order);
+
+            $this->entityManager->persist($selectSize);
             $this->entityManager->flush();
 
 
             return $this->render('order/add.html.twig', [
 
-                'cart'=> $cart->getFull(),
+                'cart' => $cart->getFull(),
                 'carrier' => $carriers,
                 'delivery' => $delivery_content,
-                'reference'=> $order->getReference()
+                'reference' => $order->getReference()
 
 
             ]);
         }
-       return $this->redirectToRoute('cart');
+        return $this->redirectToRoute('cart');
     }
 
 

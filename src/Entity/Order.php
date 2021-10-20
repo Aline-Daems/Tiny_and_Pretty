@@ -68,9 +68,15 @@ class Order
      */
     private $state;
 
+    /**
+     * @ORM\OneToMany(targetEntity=SelectSize::class, mappedBy="MyOrder", orphanRemoval=true)
+     */
+    private $selectSizes;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
+        $this->selectSizes = new ArrayCollection();
     }
 
     public function getTotal()
@@ -210,6 +216,36 @@ class Order
     public function setState(int $state): self
     {
         $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SelectSize[]
+     */
+    public function getSelectSizes(): Collection
+    {
+        return $this->selectSizes;
+    }
+
+    public function addSelectSize(SelectSize $selectSize): self
+    {
+        if (!$this->selectSizes->contains($selectSize)) {
+            $this->selectSizes[] = $selectSize;
+            $selectSize->setMyOrder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSelectSize(SelectSize $selectSize): self
+    {
+        if ($this->selectSizes->removeElement($selectSize)) {
+            // set the owning side to null (unless already changed)
+            if ($selectSize->getMyOrder() === $this) {
+                $selectSize->setMyOrder(null);
+            }
+        }
 
         return $this;
     }

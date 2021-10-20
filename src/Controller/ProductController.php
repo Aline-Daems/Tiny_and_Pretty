@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Controller;
+
+use App\Data\SelectData;
 use App\Entity\Products;
+use App\Entity\SelectSize;
 use App\Entity\Wish;
 use App\Form\SelectType;
 use App\Repository\WishRepository;
@@ -12,8 +15,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-
 
 
 class ProductController extends AbstractController
@@ -27,8 +28,7 @@ class ProductController extends AbstractController
     }
 
 
-    #[Route('/produit/{slug}', name :'product')]
-
+    #[Route('/produit/{slug}', name: 'product')]
     public function show($slug, Request $request): Response
     {
 
@@ -36,8 +36,18 @@ class ProductController extends AbstractController
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
+
         $selectForm = $this->createForm(SelectType::class);
         $selectForm->handleRequest($request);
+        if ($selectForm->isSubmitted() && $selectForm->isValid()) {
+            $selectSize = new SelectSize();
+            $data = $selectForm->getData();
+            $selectSize->setSize($data);
+            $this->entityManager->persist($selectSize);
+        }
+        var_dump($selectSize);
+
+
 
         if (!$product) {
             return $this->redirectToRoute('home');
@@ -52,17 +62,16 @@ class ProductController extends AbstractController
 
     }
 
-    #[Route('/favoris/ajout/{id}', name :'ajout_favoris')]
-
+    #[Route('/favoris/ajout/{id}', name: 'ajout_favoris')]
     public function ajoutFavoris(Products $products): Response
     {
 
 
-      $products->addFavori($this->getUser());
+        $products->addFavori($this->getUser());
 
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($products);
-      $em->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($products);
+        $em->flush();
 
         return $this->json([
             'code' => 200,
@@ -71,8 +80,7 @@ class ProductController extends AbstractController
 
     }
 
-    #[Route('/favoris/retrait/{id}', name :'retrait_favoris')]
-
+    #[Route('/favoris/retrait/{id}', name: 'retrait_favoris')]
     public function retraitFavoris(Products $products): Response
     {
 
@@ -99,7 +107,7 @@ class ProductController extends AbstractController
      * @param WishRepository $wishRepository
      * @return Response
      */
-    #[Route('/product/{id}/wish', name :'products-wish')]
+    #[Route('/product/{id}/wish', name: 'products-wish')]
     public function wish(Products $product, ManagerRegistry $manager, WishRepository $wishRepository): Response
     {
         $user = $this->getUser();
@@ -136,7 +144,7 @@ class ProductController extends AbstractController
         return $this->json([
             'code' => 200,
             'message' => 'ca marche bien'
-        ],200);
+        ], 200);
     }
 
 

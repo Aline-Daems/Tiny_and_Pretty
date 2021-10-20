@@ -4,6 +4,7 @@ namespace App\Classe;
 
 use App\Entity\Products;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Cart
@@ -19,6 +20,7 @@ class Cart
 
     public function add($id)
     {
+
         $cart = $this->session->get('cart', []);
         if (!empty($cart[$id])) {
             $cart[$id]++;
@@ -82,4 +84,5 @@ class Cart
         }
         return $cartComplete;
     }
+
 }

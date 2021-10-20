@@ -144,6 +144,11 @@ class Products
      */
     private $sizes;
 
+    public function __toString()
+    {
+        return $this->getSizes();
+    }
+
 
 
 
