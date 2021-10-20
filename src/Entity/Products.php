@@ -145,7 +145,7 @@ class Products
     private $sizes;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Colors::class, mappedBy="product")
+     * @ORM\ManyToMany(targetEntity=Colors::class, inversedBy="products")
      */
     private $colors;
 

@@ -25,7 +25,7 @@ class Colors
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Products::class, inversedBy="colors")
+     * @ORM\ManyToMany(targetEntity=Products::class, mappedBy="colors")
      */
     private $product;
 
