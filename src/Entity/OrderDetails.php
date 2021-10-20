@@ -50,6 +50,11 @@ class OrderDetails
 
     private $sizes;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+
+    private $color;
 
    public function __toString()
    {
@@ -136,6 +141,23 @@ class OrderDetails
     {
         $this->sizes = $sizes;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color): void
+    {
+        $this->color = $color;
+    }
+
 
 
 }

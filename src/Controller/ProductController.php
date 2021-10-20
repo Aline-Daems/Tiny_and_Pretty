@@ -6,6 +6,10 @@ namespace App\Controller;
 use App\Entity\OrderDetails;
 use App\Entity\Products;
 use App\Entity\Wish;
+use App\Form\ColorsPType;
+use App\Form\ColorsType;
+use App\Form\ColorType;
+use App\Form\KolorType;
 use App\Form\SizeType;
 use App\Repository\WishRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -40,12 +44,20 @@ class ProductController extends AbstractController
 
         $session = $requestStack->getSession();
 
+        $formC = $this->createForm(KolorType::class);
+        $formC->handleRequest($request);
+
         $form = $this->createForm(SizeType::class);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
            $size = $form->get('sizes')->getData();
 
            $session->set('sizes', $size);
+        }
+        if($formC->isSubmitted() && $formC->isValid()){
+            $color = $formC->get('colors')->getData();
+
+            $session->set('colors', $color);
         }
 
         if (!$product) {
@@ -56,7 +68,8 @@ class ProductController extends AbstractController
             'products' => $products,
             'productN' => $productN,
             'productC' => $productC,
-            'myform' => $form->createView()
+            'myform' => $form->createView(),
+            'formC' => $formC->createView(),
         ]);
 
     }

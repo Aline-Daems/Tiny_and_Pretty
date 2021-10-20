@@ -144,6 +144,11 @@ class Products
      */
     private $sizes;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Colors::class, mappedBy="product")
+     */
+    private $colors;
+
 
 
     public function __construct()
@@ -158,6 +163,7 @@ class Products
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
         $this->sizes = new ArrayCollection();
+        $this->colors = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -537,6 +543,33 @@ class Products
     public function removeSize(Sizes $size): self
     {
         $this->sizes->removeElement($size);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Colors[]
+     */
+    public function getColors(): Collection
+    {
+        return $this->colors;
+    }
+
+    public function addColor(Colors $color): self
+    {
+        if (!$this->colors->contains($color)) {
+            $this->colors[] = $color;
+            $color->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeColor(Colors $color): self
+    {
+        if ($this->colors->removeElement($color)) {
+            $color->removeProduct($this);
+        }
 
         return $this;
     }
