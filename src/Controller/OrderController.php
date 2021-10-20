@@ -57,7 +57,6 @@ class OrderController extends AbstractController
         $form->handleRequest($request);
 
 
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             $date = new \DateTime();
@@ -88,7 +87,8 @@ class OrderController extends AbstractController
 
             $this->entityManager->persist($order);
             $session = $requestStack->getSession();
-           $size =  $session->get('sizes');
+            $size = $session->get('sizes');
+            $color = $session->get('colors');
 
 
             foreach ($cart->getFull() as $product) {
@@ -97,6 +97,7 @@ class OrderController extends AbstractController
                 $orderDetails->setProduct($product['product']->getName());
                 $orderDetails->setQuantity($product['quantity']);
                 $orderDetails->setSizes($size);
+                $orderDetails->setColor($color);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
                 $this->entityManager->persist($orderDetails);
