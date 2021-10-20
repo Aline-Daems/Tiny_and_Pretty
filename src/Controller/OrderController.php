@@ -5,12 +5,11 @@ namespace App\Controller;
 use App\Classe\Cart;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
-use App\Entity\SelectSize;
 use App\Form\OrderType;
-use App\Form\SelectType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -47,7 +46,7 @@ class OrderController extends AbstractController
      */
 
 
-    public function add(Cart $cart, Request $request): Response
+    public function add(Cart $cart, Request $request, RequestStack $requestStack): Response
     {
 
 
@@ -88,6 +87,8 @@ class OrderController extends AbstractController
 
 
             $this->entityManager->persist($order);
+            $session = $requestStack->getSession();
+           $size =  $session->get('sizes');
 
 
             foreach ($cart->getFull() as $product) {
@@ -95,6 +96,7 @@ class OrderController extends AbstractController
                 $orderDetails->setMyOrder($order);
                 $orderDetails->setProduct($product['product']->getName());
                 $orderDetails->setQuantity($product['quantity']);
+                $orderDetails->setSizes($size);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
                 $this->entityManager->persist($orderDetails);
@@ -102,10 +104,6 @@ class OrderController extends AbstractController
 
             }
 
-            $selectSize = new SelectSize();
-            $selectSize->setMyOrder($order);
-
-            $this->entityManager->persist($selectSize);
             $this->entityManager->flush();
 
 

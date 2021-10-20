@@ -144,16 +144,11 @@ class Products
      */
     private $sizes;
 
-    public function __toString()
-    {
-        return $this->getSizes();
-    }
-
-
 
 
     public function __construct()
     {
+
         $this->category = new ArrayCollection();
         $this->mode = new ArrayCollection();
         $this->maison = new ArrayCollection();

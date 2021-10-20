@@ -2,17 +2,17 @@
 
 namespace App\Controller;
 
-use App\Data\SelectData;
+
+use App\Entity\OrderDetails;
 use App\Entity\Products;
-use App\Entity\SelectSize;
 use App\Entity\Wish;
-use App\Form\SelectType;
+use App\Form\SizeType;
 use App\Repository\WishRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,25 +29,24 @@ class ProductController extends AbstractController
 
 
     #[Route('/produit/{slug}', name: 'product')]
-    public function show($slug, Request $request): Response
+    public function show($slug, Request $request, RequestStack $requestStack): Response
     {
+
 
         $product = $this->entityManager->getRepository(Products::class)->findOneBySlug($slug);
         $products = $this->entityManager->getRepository(Products::class)->findByIsBest(1);
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
 
-        $selectForm = $this->createForm(SelectType::class);
-        $selectForm->handleRequest($request);
-        if ($selectForm->isSubmitted() && $selectForm->isValid()) {
-            $selectSize = new SelectSize();
-            $data = $selectForm->getData();
-            $selectSize->setSize($data);
-            $this->entityManager->persist($selectSize);
+        $session = $requestStack->getSession();
+
+        $form = $this->createForm(SizeType::class);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+           $size = $form->get('sizes')->getData();
+
+           $session->set('sizes', $size);
         }
-        var_dump($selectSize);
-
-
 
         if (!$product) {
             return $this->redirectToRoute('home');
@@ -57,7 +56,7 @@ class ProductController extends AbstractController
             'products' => $products,
             'productN' => $productN,
             'productC' => $productC,
-            'SelectForm' => $selectForm->createView()
+            'myform' => $form->createView()
         ]);
 
     }
@@ -149,3 +148,4 @@ class ProductController extends AbstractController
 
 
 }
+

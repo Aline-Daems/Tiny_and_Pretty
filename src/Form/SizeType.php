@@ -4,11 +4,10 @@ namespace App\Form;
 
 use App\Entity\Products;
 use App\Entity\Sizes;
-use Doctrine\DBAL\Types\TextType;
-use Proxies\__CG__\App\Entity\Size;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,17 +16,29 @@ class SizeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, [
+            ->add('sizes', EntityType::class, [
+                'mapped'=> false,
+                'class' => Sizes::class,
                 'multiple' => false,
-                'expanded' => false,
+                'expanded' => true,
+                'query_builder'=> function(EntityRepository $er) {
+                    return $er->createQueryBuilder('s')
+                        ->select('s')
+                        ->from(Products::class ,'p')
+                        ->join('p.sizes', 'ps')
+                        ->where('ps.id = s.id')
+                        ;
+
+                }
+
             ])
-        ;
+            ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Sizes::class,
+            'data_class' => Products::class,
         ]);
     }
 }

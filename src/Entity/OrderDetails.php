@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\OrderDetailsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,6 +44,17 @@ class OrderDetails
      */
     private $total;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+
+    private $sizes;
+
+
+   public function __toString()
+   {
+       return $this->product.' '.$this->sizes;
+   }
 
     public function getId(): ?int
     {
@@ -108,5 +120,22 @@ class OrderDetails
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSizes()
+    {
+        return $this->sizes;
+    }
+
+    /**
+     * @param mixed $sizes
+     */
+    public function setSizes($sizes): void
+    {
+        $this->sizes = $sizes;
+    }
+
 
 }
