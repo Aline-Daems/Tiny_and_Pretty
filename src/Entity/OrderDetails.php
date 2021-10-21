@@ -58,7 +58,7 @@ class OrderDetails
 
    public function __toString()
    {
-       return $this->product.' '.$this->sizes;
+       return $this->product.' '.$this->sizes.' '.$this->color;
    }
 
     public function getId(): ?int
