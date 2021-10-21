@@ -73,6 +73,12 @@ class SearchData
 
 
 
+    /**
+     * @var string
+     */
+
+    public  $name ='';
+
 
 
 

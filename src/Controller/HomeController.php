@@ -36,6 +36,8 @@ class HomeController extends AbstractController
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
         $notification = null;
+
+
         $Newsletter = new Newsletter();
         $formNews = $this->createForm(NewsletterType::class, $Newsletter);
         $formNews->handleRequest($request);
@@ -120,6 +122,24 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
 
             'formNews' => $formNews->createView(),
+        ]);
+    }
+
+    #[Route('/handlesearch', name: 'handlesearch')]
+    public function handlesearch(request $request, ProductsRepository $repository): Response
+    {
+
+        $product = $this->entityManager->getRepository(Products::class)->findAll();
+
+        $data = new SearchData();
+        $formSearch = $this->createForm(SearchBarType::class, $data);
+        $formSearch->handleRequest($request);
+        $productsSearch = $repository->findSearchBar($data);
+        return $this->render('header.html.twig', [
+            'formSearch'=> $formSearch->createView(),
+            'productSearch' => $productsSearch,
+            'product' => $product
+
         ]);
     }
 

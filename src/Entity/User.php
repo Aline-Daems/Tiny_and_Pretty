@@ -79,6 +79,7 @@ class User implements UserInterface
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
 
+
     }
 
     public function getId(): ?int

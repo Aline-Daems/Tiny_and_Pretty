@@ -104,7 +104,7 @@ class OrderCrudController extends AbstractCrudController
             ]),
             ArrayField::new('orderDetails', 'Produits achetés')->hideOnIndex(),
 
-
+            DateTimeField::new('time', ' A livrer de préférence le'),
         ];
     }
 

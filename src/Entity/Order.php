@@ -68,6 +68,13 @@ class Order
      */
     private $state;
 
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $time;
+
+
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
@@ -213,5 +220,21 @@ class Order
 
         return $this;
     }
+
+    public function getTime(): ?\DateTimeInterface
+    {
+        return $this->time;
+    }
+
+    public function setTime(?\DateTimeInterface $time): self
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+
+
+
 
 }

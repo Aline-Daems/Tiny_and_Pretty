@@ -204,8 +204,18 @@ class ProductsRepository extends ServiceEntityRepository
 
     #### Recherche global sur tous les produits via nom, sous titre et description ###
 
-    public function findSearchBar(string $query)
+    public function findSearchBar(SearchData $search)
     {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('n', 'p')
+            ->join('p.name', 'n');
+        if(!empty($search->name)) {
+            $query = $query
+                ->andWhere('p.name LIKE :name')
+                ->setParameter('name', "%{$search->name}%");
+        }
 
+        return $query->getQuery()->getResult();
     }
 }

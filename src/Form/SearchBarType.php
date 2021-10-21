@@ -16,21 +16,15 @@ class SearchBarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-         ->add('searchBar', TextType::class, [
+         ->add('name', TextType::class, [
 
              'label' => false,
+             'required'=> false,
              'attr' => [
-                 'class' => 'form-control form-control-sm mr-3 w-75',
-                 'type' =>'text',
-                 'aria-label'=>'Search',
                  'placeholder'=> 'Commencez votre recherche'
              ]
          ])
-            ->add('recherche', SubmitType::class, [
-                'attr'=>[
-                    'class'=> 'btn btn-primary'
-                ]
-            ])
+
         ;
     }
 
@@ -41,5 +35,10 @@ class SearchBarType extends AbstractType
             'method' => 'GET',
             'csrf_protection' => false
         ]);
+    }
+
+    public function getBlockPrefix()
+    {
+        return '';
     }
 }
