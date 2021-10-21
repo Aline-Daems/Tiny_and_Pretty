@@ -61,33 +61,12 @@
                             <a href="{{ path('product', {'slug':product.slug}) }}">
 
                                 <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
-                                     alt="{{ product.name }}" class="card-img-top img-fluid">
+                                     width="300" height="300"   alt="{{ product.name }}" class="card-img-top img-fluid">
 
                             </a>
 
                             <div class="card-body">
-                              {#  CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
-                                    <a href="{{ path('products-wish', {'id': product.id}) }}"
-                                       class="js-wish">
-                                        {% if app.user and product.isWishByUser(app.user) %}
 
-
-
-                                            <div class="icon-wrapper liked">
-                                                <i class="far fa-heart "></i>
-                                            </div>
-
-                                        {% else %}
-
-
-                                            <div class="icon-wrapper unliked">
-                                                <i class="far fa-heart"></i>
-                                            </div>
-
-                                        {% endif %}
-
-                                    </a>
-                                </div>#}
                                 <div class="descriptionBest">
                                     <div class="product-line-green">
                                         <p class="product-text card-title">
@@ -122,7 +101,7 @@
     <div class="container-fluid box  pt-5 m-auto mx-sm-auto justify-content-around">
         <div class="row">
             <div class="col-md-6  col-sm-12 col-lg-6 justify-content-center">
-                <img src="{{ asset('assets/img/OURFIRST.webp') }}" class="ourFirstImg " alt=""/>
+                <img src="{{ asset('assets/img/OURFIRST.webp') }}" class="ourFirstImg "  width="280" height="350"  alt="our first collection shooting automne"/>
             </div>
             <div class="boxtext col-md-6 col-sm-12 col-lg-6 ">
                 <h6 class="subtitle-box reveal-2">LOOKBOOK</h6>
@@ -146,8 +125,8 @@
             <div class="col mt-5 mb-5 bg-champ">
 
 
-                <img class="champ-desktop" src="{{ asset('assets/img/champ-banniere.webp') }}" alt=""/>
-                <img class="champ-mobile" src="{{ asset('assets/img/champMobile.webp') }}" alt=""/>
+                <img class="champ-desktop" src="{{ asset('assets/img/champ-banniere.webp') }}"  width="1393" height="auto"  alt=""/>
+                <img class="champ-mobile" src="{{ asset('assets/img/champMobile.webp') }}"  width="448" height="auto" alt=""/>
 
                 <div class="filter">
                 </div>
@@ -167,25 +146,6 @@
         </div>
     </div>
 
-    {# <div class="slide-collection mt-5 mt-sm-5 mt-md-5">
-        <div class="owl-carousel" id="collection">
-            <div class="item ">
-                <img src="{{ asset('assets/img/SLIDE/bebe-avec-nounours.webp') }}">
-            </div>
-            <div class="item ">
-                <img src="{{ asset('assets/img/SLIDE/bebe-devant-cheminee.webp') }}">
-            </div>
-            <div class="item ">
-                <img src="{{ asset('assets/img/SLIDE/Body Sethi Kaki - Issa 5.webp') }}">
-            </div>
-            <div class="item ">
-                <img src="{{ asset('assets/img/SLIDE/JULES.webp') }}">
-            </div>
-            <div class="item ">
-                <img src="{{ asset('assets/img/SLIDE/Pull Octave + Legging Aris Gris - Maya 2.webp') }}">
-            </div>
-        </div>
-    </div>#}
     <!-- BESTSELLERS -->
     <div class="container-fluid  bestsellers">
         <div class="row">
@@ -206,7 +166,7 @@
                                     <a href="{{ path('product', {'slug':product.slug}) }}">
 
                                         <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
-                                             alt="{{ product.name }}" class="card-img-top img-fluid">
+                                             width="300" height="300"  alt="{{ product.name }}" class="card-img-top img-fluid">
 
                                     </a>
 
@@ -305,7 +265,7 @@
                             <a href="{{ path('product', {'slug':product.slug}) }}">
 
                                 <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
-                                     alt="{{ product.name }}" class="card-img-top img-fluid">
+                                     width="300" height="300"  alt="{{ product.name }}" class="card-img-top img-fluid">
 
                             </a>
 
@@ -363,12 +323,10 @@
         <div class="col-12">
             <h2 class="separator text-center reveal-1">#TINYANDPRETTY ♡</h2>
             <h5 class="text-share reveal-2">Partagez avec nous leurs styles uniques !</h5>
-            <div class="reseau justify-between">
-                <a class="logoreseau reveal-3" href="https://www.facebook.com/TinyandPretty.be" target="_blank"><i
-                            class="fab fa-facebook-square"></i></a>
-                <a class="logoreseau reveal-3" href="https://www.instagram.com/tinyandpretty.be" target="_blank"> <i
-                            class="fab fa-instagram"></i></a>
-                <a class="logoreseau reveal-3"><i class="fab fa-pinterest-square"></i></a>
+            <div class=" justify-content-between">
+                <a class="logoreseau reveal-3" href="https://www.facebook.com/TinyandPretty.be" target="_blank"> <img  class="reseau" src="{{ asset('assets/img/facebook.svg') }}"  alt=""/></a>
+                <a class="logoreseau reveal-3" href="https://www.instagram.com/tinyandpretty.be" target="_blank">  <img  class="reseau"src="{{ asset('assets/img/instagram.svg') }}"  alt=""/></a>
+                <a class="logoreseau reveal-3"> <img  class="reseau" src="{{ asset('assets/img/pinterest.svg') }}" alt=""/></a>
             </div>
         </div>
         <div class="row">
@@ -391,17 +349,17 @@
     <div class="container-fluid text-center conditions mt-5 pt-5">
         <div class="row">
             <div class="col">
-                <img class="paiement" src="{{ asset('assets/img/PAIEMENT_SECURISE-08_180x.png') }}" alt=""/>
+                <img class="paiement" src="{{ asset('assets/img/PAIEMENT_SECURISE-08_180x.png') }}"  width="180" height="180" alt="carte bancaire paiement sécurisé"/>
                 <h3 class="title-conditions">PAIEMENT SÉCURISÉ</h3>
                 <p class="text-conditions">Nous vous proposons une diversité de méthodes de paiements sécurisés.</p>
             </div>
             <div class="col">
-                <img class="livraison" src="{{ asset('assets/img/LIVRAISON_RAPIDE-07_180x.png') }}" alt=""/>
+                <img class="livraison" src="{{ asset('assets/img/LIVRAISON_RAPIDE-07_180x.png') }}" width="180" height="180" alt="colis livraison rapide envoi "/>
                 <h3 class="title-conditions">LIVRAISON RAPIDE</h3>
                 <p class="text-conditions">Votre commande est validée ? Tenez-vous prêt, votre colis vous sera livré très prochainement</p>
             </div>
             <div class="col">
-                <img class="retour" src="{{ asset('assets/img/RETOUR_GRATUIT-09_180x.png') }}" alt=""/>
+                <img class="retour" src="{{ asset('assets/img/RETOUR_GRATUIT-09_180x.png') }}" width="180" height="180" alt="conditions 30 jours retour gratuit"/>
                 <h3 class="title-conditions">RETOUR GRATUIT</h3>
                 <p class="text-conditions">Vous avez 30 jours pour changer d'avis et retourner votre commande gratuitement</p>
             </div>

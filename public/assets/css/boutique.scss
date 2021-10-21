@@ -2,15 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
-@import url('https://db.onlinewebfonts.com/c/66ae19bb5728f9b5c1f5a892355b9eff?family=Stars+From+Our+Eyes');
 
-@font-face {
-  font-family: "Stars From Our Eyes";
-  src: url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.eot");
-  src: url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.woff") format("woff"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.svg#Stars From Our Eyes") format("svg");
-}
 
-$TinyFont: "Stars From Our Eyes";
+$TinyFont: Quicksand, sans-serif;
 $titleFontRegular: Quicksand, sans-serif;
 $textFontRegular: 'Open Sans', sans-serif;
 $backgroundGreyLight: #fcf7f2;

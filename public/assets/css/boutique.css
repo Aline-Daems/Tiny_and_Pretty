@@ -3,11 +3,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
-@import url("https://db.onlinewebfonts.com/c/66ae19bb5728f9b5c1f5a892355b9eff?family=Stars+From+Our+Eyes");
-@font-face {
-  font-family: "Stars From Our Eyes";
-  src: url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.eot");
-  src: url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.woff") format("woff"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/66ae19bb5728f9b5c1f5a892355b9eff.svg#Stars From Our Eyes") format("svg"); }
 html {
   height: 100%;
   padding: 0 !important;
@@ -194,6 +189,9 @@ main {
   -webkit-filter: brightness(50%);
   /* Chrome, Safari, Opera */
   filter: brightness(50%); }
+
+.insta {
+  padding-top: 5rem; }
 
 blockquote {
   font-family: "Open Sans", sans-serif;
@@ -393,7 +391,8 @@ h1, h3, h5, p {
 .box {
   width: 80%; }
   .box .ourFirstImg {
-    width: 80%; }
+    width: 80%;
+    height: auto; }
 
 .boxtext p {
   font-size: 1.188em;
@@ -452,10 +451,10 @@ h1, h3, h5, p {
   padding-bottom: 2rem; }
 
 .reseau {
-  font-size: 5vh; }
+  width: 2.7em; }
 
 .logoreseau {
-  color: dimgrey; }
+  padding: 3.5em; }
 
 .newsletter {
   width: 100vw;
@@ -485,21 +484,25 @@ h1, h3, h5, p {
   margin: 0 auto; }
 
 .champ-desktop {
-  width: 100%; }
+  width: 100%;
+  height: auto; }
 
 .champ-mobile {
   display: none; }
 
 .paiement {
-  width: 10vh;
+  width: 12vh;
+  height: auto;
   color: dimgrey !important; }
 
 .livraison {
-  width: 10vh;
+  width: 12vh;
+  height: auto;
   color: dimgrey !important; }
 
 .retour {
-  width: 10vh;
+  width: 12vh;
+  height: auto;
   color: dimgrey !important; }
 
 .title-conditions {
@@ -1392,7 +1395,7 @@ header {
   #navbarSupportedContent {
     background-color: white !important; } }
 .title-concept {
-  font-family: "Stars From Our Eyes";
+  font-family: Quicksand, sans-serif;
   font-size: 1.2rem;
   color: grey; }
 
