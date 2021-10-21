@@ -90,7 +90,7 @@
             <a class="btn btn-success btn-block mt-3" id="checkout-button">Payer | {{ ((total / 100) + carrier.price)|number_format(2,',', '.') }} € </a>
         </div>
     </div>
-
+      </div>
 {% endblock %}
 
 {% block script %}
@@ -145,6 +145,11 @@
                 });
 
         });
-
+        $(document).ready(function() {
+            // you may need to change this code if you are not using Bootstrap Datepicker
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
     </script>
 {% endblock %}

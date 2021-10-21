@@ -6,6 +6,7 @@ use App\Entity\Address;
 use App\Entity\Carrier;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -32,6 +33,11 @@ class OrderType extends AbstractType
                 'multiple' => false,
                 'expanded' => true
             ])
+            ->add('time', DateType::class, [
+
+                'widget'=>'single_text',
+            ])
+
             ->add('submit', SubmitType::class, [
                 'label'=>'valider ma commande',
                 'attr' => [
@@ -40,6 +46,8 @@ class OrderType extends AbstractType
     ])
         ;
     }
+
+
 
     public function configureOptions(OptionsResolver $resolver)
     {

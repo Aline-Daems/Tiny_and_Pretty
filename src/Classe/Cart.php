@@ -74,6 +74,10 @@ class Cart
 
                 $product_object = $this->entityManager->getRepository(Products::class)->findOneById($id);
 
+                if(!$product_object){
+                    $this->delete($id);
+                    continue;
+                }
                 $cartComplete[] = [
 
                     'product' => $product_object,
