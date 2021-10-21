@@ -14,8 +14,10 @@
         <thead>
         <tr>
 
-            <th scope="col">Produit</th>
             <th scope="col"></th>
+            <th scope="col">Produit</th>
+            <th scope="col">Taille</th>
+            <th scope="col">Couleur</th>
             <th scope="col">Quantité</th>
             <th scope="col">Prix</th>
             <th scope="col">Total</th>
@@ -33,6 +35,12 @@
             <td>
                 <span class="article_name"><p>{{ product.product.name }}</p></span>
                <span class="article_name"><small> {{ product.product.subtitle }}</small></span>
+            </td>
+            <td>
+                {{ app.session.get('sizes') }}
+            </td>
+            <td>
+                {{ app.session.get('colors') }}
             </td>
             <td><a href="{{ path('decrease_to_cart', {id: product.product.id}) }}">
                 <img class="mr-3" src="{{ asset('assets/img/remove.webp') }}" height="12px" alt="Retirer mon produit">
@@ -56,7 +64,7 @@
     </table>
         <hr>
     <div class=" validation text-center d-flex flex-column mb-5 pb-5">
-      <div class="p-2" ><p><span><b>Nombre de produit(s): </b> {{ cart|length }}</span></p> </div>
+{#      <div class="p-2" ><p><span><b>Nombre de produit(s): </b> {{ cart|length }}</span></p> </div>#}
         <div class="p-2" > <b>Total de mon panier</b> {{ ((total / 100)|number_format(2,',', '.')) }} €</div>
         <div class="p-2" > <a href="{{ path('order') }}" type="btn" class="btn text-white validate mt-3 pt-5">Valider mon panier</a></div>
         <div class="p-2" > <a href="{{ path('home') }}" type="btn" class="btn text-white validate mt-3 pt-5">Continuer mes achats</a></div>
