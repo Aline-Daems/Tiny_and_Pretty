@@ -5,58 +5,63 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="title pt-5">
-                    LES PARTENAIRES
-                </h1>
-                <div class="col-10 text-left pt-5">
-                    <div class="presentation mb-5">
-                        <p>Pour vous offrir toujours plus de choix tout en respectant notre vision, nous sommes allés à
-                            la rencontre d’artisans et de personnalités inspirantes qui œuvrent pour un monde plus
-                            durable et respectueux. Ils ont été sélectionnés avec soin pour la qualité de leurs
-                            produits, leur engagement social ou leur dimension écologique. Nous souhaitons ici mettre en
-                            avant leurs univers ainsi que leur savoir-faire. </p>
+            <div class="col mt-5 mb-5 bg-champ">
 
-                    </div>
+
+                <img class="champ-desktop" src="{{ asset('assets/img/champ-banniere.webp') }}" alt=""/>
+                <img class="champ-mobile" src="{{ asset('assets/img/champMobile.webp') }}" alt=""/>
+
+                <div class="filter">
+                </div>
+                <div class="filter_text">
+                    <h3 class="title-bg-champ">NOS PARTENAIRES</h3>
+                    <p class="text-bg-champ">Pour vous offrir toujours plus de choix, nous sommes allés à
+                        la rencontre d’artisans et de personnalités inspirantes qui œuvrent pour un monde plus
+                        durable et respectueux. Ils ont été sélectionnés avec soin pour la qualité de leurs
+                        produits, leur engagement social ou leur dimension écologique. Nous souhaitons ici mettre en
+                        avant leurs univers ainsi que leur savoir-faire.
+                    </p>
                 </div>
 
             </div>
         </div>
     </div>
-<div class="container-fluid text-center pb-5 ml-5">
-    <div class="row">
-        <div class="col-6">
-                <img src="{{ asset('assets/img/olifant-partenaire.webp') }}" class="img_atelier"
+
+    <div class="container text-center pb-5">
+        <div class="row">
+            <div class="col-sm-12  col-md-6 col-lg-6">
+                <div class="img_partner img-fluid">
+                <img src="{{ asset('assets/img/olifant-partenaire.webp') }}" class="olifant"
                      alt="partenaire-olifant partenaire tiny_and_pretty"/>
-                <div class="title_atelier text-center mt-5">
-                    <h3>L’OLIFANT</h3>
                 </div>
-        </div>
-        <div class="col-6">
-            <div class="coming_soon_box">
-                <img src="{{ asset('assets/img/calcetines.webp') }}" class="img_atelier"
-                     alt="atelier couture enfant  partenaire "/>
-                <div class="coming_soon_text">
-                    <div class="text_soon">
-                        <h4>WE NEED YOU</h4>
-                        <h6>COMING SOON</h6>
+                <div class="title_atelier text-center mt-5 pt-5">
+                    <h3>LOLIFANT</h3>
+                </div>
+                <div class="description_atelier text-left mt-5 ml-5 mr-5">
+                        <p>La boutique Lolifant à Liège propose des jouets éducatifs, ludiques et de qualité. On y
+                            retrouve notamment de jolies marques belges de jouets en bois ou en tissu.
+                        </p>
+
 
                     </div>
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="img-fluid img_partner_balloon">
+                    <img src="{{ asset('assets/img/PARTENAIRES_-_NEW_540x.webp') }}" class=""
+                         alt="atelier couture enfant  partenaire "/>
                 </div>
-            </div>
+                <div class="title_atelier text-center mt-5">
+                    <h3>WHO'S NEXT?</h3>
+                </div>
+                <div class="description_atelier text-left mt-5 ml-5 mr-5">
+                    <p>Psst... ! Pleins de jolies choses sont à venir. Très bientôt, vous découvrirez d'autres
+                        partenaires qui ont choisi de faire partie de l'aventure Tiny & Pretty.
+                    </p>
+                    <button class="btn-blog join mx-auto mx-sm-auto mx-md-auto"><span>Rejoignez-nous !</span></button>
 
-
-            <div class="title_atelier text-center mt-5">
-                <h3>DEVENIR PARTENAIRE</h3>
-            </div>
-            <div class="description_atelier text-left mt-5 ml-5 mr-5">
-                <p>Envie de collaborer avec nous et de faire partie de l'aventure Tiny & Pretty ?<br>
-                    Vous aimeriez devenir partenaire ?
-                </p>
-                <button class="btn-blog join mx-auto"><span>Rejoignez-nous !</span></button>
-
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

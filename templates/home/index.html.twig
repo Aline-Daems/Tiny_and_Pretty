@@ -193,7 +193,8 @@
     <div class="container-fluid  bestsellers">
         <div class="row">
             <h2 class="separator text-center mb-5">COLLECTION AUTOMNE</h2>
-            <p class="text-separator">Tiny & Pretty vous propose ses nouveautés, celles qui vous feront craquer. Un dressing
+            <p class="text-separator">Tiny & Pretty vous propose ses nouveautés, celles qui vous feront craquer. Un
+                dressing
                 plein d’amour, entre pulls tout doux, robes colorées et accessoires essentiels ! </p>
 
             <div class="background-grey"></div>
@@ -265,19 +266,22 @@
     <div class="background-grey"></div>
     <div class="container-fluid ">
 
-        <div class="newsletter  col-12 text-lg-center text-md-center text-sm-left mt-3">
-            <div class="news_text mx-sm-auto">
-                <h2 class="reveal-2 news-title">
-                    S'INSCRIRE À LA NEWSLETTER
-                </h2>
-                <p class="reveal-3">One morning, when Gregor Samsa woke from troubled dreams, he found himself
-                    transformed in his bed
-                    into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he
-                    could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
-                <a href="{{ relative_path('/Mode') }}">
-                    <button type="button" class="btn profite reveal-3 mt-4 mb-3 ">C'EST PAR ICI</button>
-                </a>
-            </div>
+            <div class="newsletter  col-12  mt-3">
+                <div class="news_text mx-sm-auto text-center">
+                    <h2 class="reveal-2">
+                        S'INSCRIRE À LA NEWSLETTER
+                    </h2>
+                    <p class="reveal-3">Offres exclusives, informations sur les nouveautés, bonnes affaires, et plus encore,
+                        directement dans votre boîte mail !
+                    </p>
+
+
+
+                            <div class="reveal-3 form-search">{{ form(formNews) }}</div>
+{#   <button type= "submit" class="btn profite reveal-3 mt-4 mb-3 ">C'EST PAR ICI</button>#}
+
+
+                </div>
 
         </div>
 
@@ -360,7 +364,7 @@
     <hr class="share-divider">
     <div class="container-fluid text-center share">
         <div class="col-12">
-            <h2 class="separator text-center reveal-1">#TINYANDPRETTY</h2>
+            <h2 class="separator text-center reveal-1">#TINYANDPRETTY ♡</h2>
             <h5 class="text-share reveal-2">Partagez avec nous leurs styles uniques !</h5>
             <div class="reseau justify-between">
                 <a class="logoreseau reveal-3" href="https://www.facebook.com/TinyandPretty.be" target="_blank"><i
@@ -370,5 +374,41 @@
                 <a class="logoreseau reveal-3"><i class="fab fa-pinterest-square"></i></a>
             </div>
         </div>
+        <div class="row">
+            <div class="insta col-12">
+                <div
+                        loading="lazy"
+                        data-mc-src="a8f2c962-ea44-4efb-b02e-f48c1e018f0d#instagram"></div>
+
+                <script
+                        src="https://cdn2.woxo.tech/a.js#616943ba77be7d0016763c85"
+                        async data-usrc>
+                </script>
+
+            </div>
+{#                <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>#}
+{#                <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />#}
+{#                <ul class="juicer-feed" data-feed-id="tinyandpretty-be"></ul>#}
+        </div>
     </div>
+    <div class="container-fluid text-center conditions mt-5 pt-5">
+        <div class="row">
+            <div class="col">
+                <img class="paiement" src="{{ asset('assets/img/PAIEMENT_SECURISE-08_180x.png') }}" alt=""/>
+                <h3 class="title-conditions">PAIEMENT SÉCURISÉ</h3>
+                <p class="text-conditions">Nous vous proposons une diversité de méthodes de paiements sécurisés.</p>
+            </div>
+            <div class="col">
+                <img class="livraison" src="{{ asset('assets/img/LIVRAISON_RAPIDE-07_180x.png') }}" alt=""/>
+                <h3 class="title-conditions">LIVRAISON RAPIDE</h3>
+                <p class="text-conditions">Votre commande est validée ? Tenez-vous prêt, votre colis vous sera livré très prochainement</p>
+            </div>
+            <div class="col">
+                <img class="retour" src="{{ asset('assets/img/RETOUR_GRATUIT-09_180x.png') }}" alt=""/>
+                <h3 class="title-conditions">RETOUR GRATUIT</h3>
+                <p class="text-conditions">Vous avez 30 jours pour changer d'avis et retourner votre commande gratuitement</p>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

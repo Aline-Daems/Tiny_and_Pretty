@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\OrderDetailsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\HttpFoundation\Response;
 /**
  * @ORM\Entity(repositoryClass=OrderDetailsRepository::class)
  */

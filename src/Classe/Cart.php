@@ -2,6 +2,7 @@
 
 namespace App\Classe;
 
+use App\Entity\ChoiceSize;
 use App\Entity\Products;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -70,7 +71,11 @@ class Cart
         if ($this->get()) {
 
             foreach ($this->get() as $id => $quantity) {
+
+
                 $product_object = $this->entityManager->getRepository(Products::class)->findOneById($id);
+
+                $Choicesize = $this->entityManager->getRepository(ChoiceSize::class)->findOneById($id);
                 if(!$product_object){
                     $this->delete($id);
                     continue;
@@ -78,7 +83,9 @@ class Cart
                 $cartComplete[] = [
 
                     'product' => $product_object,
-                    'quantity' => $quantity
+                    'quantity' => $quantity,
+                    'Choicesize' => $Choicesize
+
                 ];
             }
         }

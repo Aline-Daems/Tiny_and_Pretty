@@ -1,12 +1,24 @@
-.title{
-  font-family: $titleFontRegular;
-  font-size: 5vh;
+.title-concept{
+  font-family: $TinyFont;
+  font-size: 1.2rem;
   color:grey;
 }
-.presentation{
+.presentation-concept{
   font-family: $textFontRegular;
-  font-size: 2vh;
-  padding-left: calc(100vw/5);
-  line-height: 3vh;
-  color:grey;
+  font-size: 1rem;
+
+}
+.text-valeur{
+  font-family: $textFontRegular;
+  font-size: 1rem;
+}
+.btn-shop{
+  border-radius: 0!important;
+  border-color: white!important;
+  border-width: 0.15em;
+  background-color: transparent!important;
+  padding: 1rem;
+  font-weight: bolder;
+
+
 }

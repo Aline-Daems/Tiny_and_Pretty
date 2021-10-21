@@ -67,12 +67,18 @@ class User implements UserInterface
     private $wishes;
 
 
+
+
+
+
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
         $this->orders = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -302,5 +308,8 @@ class User implements UserInterface
 
         return $this;
     }
+
+
+
 
 }

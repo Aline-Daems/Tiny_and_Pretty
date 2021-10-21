@@ -1,42 +1,150 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Notre concept{% endblock %}
+{% block title %}NOS VALEURS{% endblock %}
 
 {% block content %}
+
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center col-sm-12 mx-sm-auto">
-                <h1 class="title">
-                    QUI SOMMES-NOUS ?
-                </h1>
-                <div class="col-10 text-left pt-5">
-                    <div class="presentation">
-                        <p><i>Tiny and Pretty</i> est née d’une initiative de son fondateur récemment devenu papa. Initialement actif dans le secteur du commerce international, il a eu à cœur de
-                            créer une marque responsable qui soutient l’économie locale et de contribuer à un système de consommation durable pour l’avenir de nos enfants.</p>
+            <div class="col mt-5 mb-5 bg-champ">
 
-                        <p>L’idée du projet est survenue suite à la problématique de la surconsommation et à la migration des industries textiles hors
-                            Europe. En outre, la crise sanitaire a particulièrement touché les petits commerçants et artisans qui n’avaient
-                            pas ou peu de potentiel de vente en ligne. Grâce à notre projet, nous souhaitons solutionner ces deux problématiques. </p>
 
-                        <p> Chez Tiny and Pretty, nous avons à cœur de mettre en avant notre savoir-faire belge en choisissant de faire appel à ces
-                            passionnés des métiers du textile afin qu’ensemble, nous puissions vous proposer une alternative plus responsable tout en
-                            soutenant notre économie locale.</p>
-                        <p>Allant de la création à la sélection des matières premières jusqu’à la confection, nos collections de vêtements sont réalisées
-                            dans nos ateliers belges. Nous mettons un point d’honneur à travailler en circuit court, à choisir des tissus de qualité et
-                            respectueux de l’environnement, ainsi qu’à mettre en avant le savoir-faire de nos couturier(e)s.
+                <img class="champ-desktop" src="{{ asset('assets/img/champ-banniere.webp') }}" alt=""/>
+                <img class="champ-mobile" src="{{ asset('assets/img/champMobile.webp') }}" alt=""/>
 
-                        </p>
-                        <p>Enfin, pour permettre à nos clients de centraliser leurs achats mais aussi pour offrir plus de visibilité à de talentueux
-                            créateurs, nous avons pensé le site comme un espace collaboratif où vous trouverez des accessoires sélectionnés par nos soins
-                            en adéquation avec les valeurs de notre <i>pretty world.</i>
-                        </p>
-                    </div>
+                <div class="filter">
+                </div>
+                <div class="filter_text">
+                    <h3 class="title-bg-champ">NOS VALEURS</h3>
+                    <p class="text-bg-champ">Allant de la création à la sélection des matières premières jusqu
+                        ’à la confection, nos collections de vêtements
+                        sont réalisées dans nos ateliers belges. Nous mettons un point d’honneur à travailler en circuit
+                        court, à choisir
+                        des tissus de qualité et respectueux de l’environnement, ainsi qu
+                        ’à mettre en avant le savoir-faire de nos couturier(e)s.
+                    </p>
                 </div>
 
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="img-valeur  col-lg-6 col-md-6 col-sm-12 text-right">
+                <img class="img-fluid" src="{{ asset('assets/img/atelier-design-creation-vetement.webp') }}"
+                     alt=""/>
+            </div>
+            <div class="text-valeur  pt-5 col-lg-6 col-md-6 col-sm-12 text-left">
+                <h2 class="title-concept">
+                    Design
+                </h2>
+                <p>Nous faisons chaque choix en pensant à nos minis et à notre planète.
+                    Nous voulons ouvrir la voie à un avenir plus conscient qui privilégie la
+                    qualité à la quantité.</p>
+                <p>
+                    Toutes les pièces de nos collections sont imaginées et conçues à la
+                    commande pour être aimées encore et encore, puis transmise à
+                    d’autres minis, grâce à leur design intemporel, minimaliste, durable et
+                    tellement doux. Des styles classiques et pratiques qui peuvent être
+                    portés en toute occasion</p>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="img-valeur  col-lg-6 col-md-6 col-sm-12 text-right">
+                <img class="img-fluid" src="{{ asset('assets/img/ciseaux-fil-metre-couture.webp') }}"
+                     alt=""/>
+            </div>
+            <div class="text-valeur  pt-5 col-lg-6 col-md-6 col-sm-12 text-left">
+                <h2 class="title-concept">
+                    Qualités
+                </h2>
+                <p>
+                    Notre engagement envers les minis et la planète dont ils hériteront
+                    est inscrit dans chaque pièce que nous confectionnons.</p>
+                <p>
+                    Afin de contribuer à un modèle de consommation plus responsable,
+                    nos matières premières sont sélectionnées avec soin et bénéficient
+                    des certifications OEKO-TEX ou GOTS.</p>
+                <p>
+                    Cette certification d’excellence, très sélective, garantit que les textiles
+                    sont biologiques, mais pas seulement : elle intègre toutes les étapes
+                    de transformation textile et certifie que le processus de
+                    transformation respecte des critères environnementaux et sociaux.
+                </p>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="img-valeur  col-lg-6 col-md-6 col-sm-12 text-right">
+                <img class="img-fluid" src="{{ asset('assets/img/mains-couture-savoir-faire.webp') }}"
+                     alt=""/>
+            </div>
+            <div class="text-valeur  pt-5 col-lg-6 col-md-6 col-sm-12 text-left">
+                <h2 class="title-concept">
+                    Savoir-faire
+                </h2>
+                <p>
+                    La fabrication artisanale est une étape essentielle pour garantir une
+                    qualité supérieure. Toutes nos pièces sont imaginées puis fabriquées
+                    en Belgique par une couturière unique et possèdent ainsi leur propre
+                    histoire. Alors que la majorité des marques de puériculture
+                    délocalisent, notre marque s’engage à réduire considérablement son
+                    empreinte carbone et à soutenir l’économie locale.</p>
+                <p>
+                    Grâce à notre circuit de production, nous sommes en mesure de nous
+                    assurer que la conception des vêtements et accessoires se fait dans
+                    des conditions de travail dignes et respectueuses des travailleurs.
+                </p>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="img-valeur  col-lg-6 col-md-6 col-sm-12 text-right">
+                <img class="img-fluid" src="{{ asset('assets/img/fil-de-laine-verts-bleu.webp') }}"
+                     alt=""/>
+            </div>
+            <div class="text-valeur  pt-5 col-lg-6 col-md-6 col-sm-12 text-left">
+                <h2 class="title-concept">
+                    Transparence
+                </h2>
+                <p>
+                    Nos pièces sont confectionnées à la commande, ce qui nous permet
+                    de limiter le gaspillage en produisant exactement le nombre de pièces
+                    dont nous avons besoin. Nos produits sont également distribués sans
+                    intermédiaires, uniquement en ligne.</p>
+                <p>
+                    En travaillant de manière directe ainsi qu’en réduisant les frais de
+                    production et de stockage, nous sommes en mesure de vous
+                    proposer articles de haute qualité à des prix plus justes.
+                </p>
+            </div>
+        </div>
+    </div>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col mt-5 mb-5 bg-champ">
+
+
+                <img class="champ-desktop" src="{{ asset('assets/img/lin-bio-coton-gros-plan-trame-tissu.webp') }}"
+                     alt=""/>
+                <img class="champ-mobile"
+                     src="{{ asset('assets/img/lin-bio-coton-gros-plan-trame-tissu-mobile.webp') }}" alt=""/>
+                <div class="filter_text">
+
+                    <p class="text-bg-champ">Tiny & Pretty confectionne à la commande des articles de haute qualité au
+                        design intemporel,
+                        tout en respectant l'environnement. Nos pièces sont produites de manière artisanale en utilisant
+                        des tissus naturels, certifiés OEKO-tex et provenant de fournisseurs européens à taille humaine.
+
+                    </p>
+                    <button type="button" class="btn-shop btn-outline-secondary text-white mt-lg-5 mt-md-3 mt-sm-1">
+                        DÉCOUVRIR L'E-SHOP
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 

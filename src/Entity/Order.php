@@ -68,11 +68,9 @@ class Order
      */
     private $state;
 
-
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
-
     }
 
     public function getTotal()

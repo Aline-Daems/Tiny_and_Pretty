@@ -106,15 +106,19 @@ if (window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     window.location.href === "https://127.0.0.1:8000/login"
     ||
     window.location.href === "https://127.0.0.1:8000/conditions/generales"
-    && $(window).width() > 999
+
+    && $(window).width() > 768
 ) {
-    console.log('display none le mobile nav');
+    $('.simple-nav-mobile').css({'display': 'none'});
+    console.log('grand ecran');
+    console.log($(window).width());
     $('.hideHeaderJS').css({'display': 'none'});
     $('#search-formJS').replaceWith(icones);
-  //  $('.simple-nav-mobile').css({'display': 'none'});
+
 
 }
-if ($(window).width() < 768
+if ($(window).width() <= 768
+
 &&
     window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
     ||
@@ -132,6 +136,25 @@ if ($(window).width() < 768
 
 ){
     $('.simple-nav-mobile').css({'display': 'block'});
+    console.log($(window).width());
+    console.log('petit ecran');
+}
+if (  window.location.href === "https://127.0.0.1:8000/login"
+    ||
+    window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
+    ||
+    window.location.href === "https://127.0.0.1:8000/faq"
+    ||
+    window.location.href === "https://127.0.0.1:8000/tailles"
+    ||
+    window.location.href === "https://127.0.0.1:8000/contact/user"
+    ||
+    window.location.href === "https://127.0.0.1:8000/livraisons/et/retours"
+    ||
+    window.location.href === "https://127.0.0.1:8000/conditions/generales"
+    && $(window).width() > 768){
+    $('.simple-nav-mobile').css({'display': 'none'});
+    console.log('LOGIN');
 }
 
 //////////////////////////////////////////////////////////////////
@@ -191,6 +214,8 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
         //validé par NicoBoss
      items: 4,
         nav: true,
+        navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+        rewindNav : true,
         navSpeed: 3000,
         smartSpeed: 1000,
        // autoplayTimeout: 1000,
@@ -202,19 +227,23 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
         responsiveClass:true,
         responsive: {
          0: {
-             items: 1
+             items: 1,
+             nav: false
          },
           768: {
              items: 2,
-              margin: 10
+              margin: 10,
+              nav: false
           },
           980: {
              items: 3,
-              margin: 10
+              margin: 10,
+              nav: false
           },
             1240: {
                 items: 4,
-                margin: 10
+                margin: 10,
+                nav: true
             }
         }
     });
@@ -223,6 +252,8 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
 $('#indispensables').owlCarousel({
     items: 4,
     nav: true,
+    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+    rewindNav : true,
     navSpeed: 3000,
     smartSpeed: 1000,
     // autoplayTimeout: 1000,
@@ -234,25 +265,31 @@ $('#indispensables').owlCarousel({
     responsiveClass:true,
     responsive: {
         0: {
-            items: 1
+            items: 1,
+            nav: false
         },
         768: {
             items: 2,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         980: {
             items: 3,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         1240: {
             items: 4,
-            margin: 5
+            margin: 10,
+            nav: true
         }
     }
 });
 $('#automne').owlCarousel({
     items: 4,
     nav: true,
+    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+    rewindNav : true,
     navSpeed: 3000,
     smartSpeed: 1000,
     // autoplayTimeout: 1000,
@@ -264,19 +301,23 @@ $('#automne').owlCarousel({
     responsiveClass:true,
     responsive: {
         0: {
-            items: 1
+            items: 1,
+            nav: false
         },
         768: {
             items: 2,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         980: {
             items: 3,
-            margin: 30
+            margin: 10,
+            nav: false
         },
         1240: {
             items: 4,
-            margin: 5
+            margin: 10,
+            nav: true
         }
     }
 });

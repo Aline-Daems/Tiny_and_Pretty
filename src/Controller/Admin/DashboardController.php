@@ -7,6 +7,7 @@ use App\Entity\Colors;
 use App\Entity\Mode;
 use App\Entity\Carrier;
 use App\Entity\Maison;
+use App\Entity\Newsletter;
 use App\Entity\Order;
 use App\Entity\Products;
 use App\Entity\Sizes;
@@ -50,6 +51,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Taille', 'fas fa-ruler', Sizes::class);
         yield MenuItem::linkToCrud('Couleur', 'fas fa-palette', Colors::class);
         yield MenuItem::linkToCrud('Transport', 'fas fa-truck', Carrier::class);
+        yield MenuItem::linkToCrud('Newsletter', 'fas fa-envelope', Newsletter::class);
 
     }
 }
