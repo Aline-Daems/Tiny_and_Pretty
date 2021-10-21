@@ -37,7 +37,9 @@
                         </div>
                         <div class="col-8 my-auto description-product ">
                             {{ product.product.name }} <br/>
-                            <small> {{ product.product.subtitle }}</small>
+                            <span><small> {{ product.product.subtitle }}</small></span>
+                            <span><small> {{ app.session.get('sizes') }}</small></span>
+                            <span><small> {{ app.session.get('colors') }}</small></span>
                         </div>
                         <div class="col-2 my-auto ">
                             x {{ product.quantity }}
