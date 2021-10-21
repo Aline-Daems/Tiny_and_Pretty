@@ -81,6 +81,7 @@ class OrderController extends AbstractController
             $order->setCreatedAt($date);
             $order->setCarrierName($carriers->getName());
             $order->setCarrierPrice($carriers->getPrice());
+
             $order->setDelivery($delivery_content);
             $order->setState(0);
 
@@ -100,10 +101,16 @@ class OrderController extends AbstractController
                 $orderDetails->setColor($color);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
+                if ($orderDetails->getTotal() > 50 ){
+
+                    $order->setCarrierPrice(0);
+                }
+
                 $this->entityManager->persist($orderDetails);
 
 
             }
+
 
             $this->entityManager->flush();
 

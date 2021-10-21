@@ -3,9 +3,9 @@
 namespace App\Form;
 
 use App\Data\SearchData;
-use App\Entity\Boy;
+use App\Entity\Kids;
 use App\Entity\Category;
-use App\Entity\Maison;
+use App\Entity\House;
 use App\Entity\Products;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SearchForm extends AbstractType
+class SearchHouse extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -30,7 +30,7 @@ class SearchForm extends AbstractType
            ->add('house', EntityType::class, [
                'label' => false,
                'required' => false,
-               'class' => Maison::class,
+               'class' => House::class,
                'expanded' => true,
                'multiple' => true
 

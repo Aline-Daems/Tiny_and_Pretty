@@ -10,18 +10,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BoyController extends AbstractController
+class KidsController extends AbstractController
 {
-    #[Route('/boy', name: 'productsBoys')]
+    #[Route('/kids', name: 'productsKids')]
     public function index(ProductsRepository $repository, request $request): Response
     {
         $data = new searchData();
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
-        $productsBoy = $repository->findSearchBoy($data);
+        $productsKids = $repository->findSearchKids($data);
 
-        return $this->render('product/boys/productsBoys.html.twig', [
-            'productsBoys' => $productsBoy,
+        return $this->render('product/Kids/productsKids.html.twig', [
+            'productsKids' => $productsKids,
             'form' => $form->createView(),
         ]);
     }

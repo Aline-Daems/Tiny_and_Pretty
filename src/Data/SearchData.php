@@ -2,10 +2,11 @@
 
 namespace App\Data;
 
-use App\Entity\Mode;
-use App\Entity\Boy;
+use App\Entity\baby;
+use App\Entity\Kids;
 use App\Entity\Category;
-use App\Entity\Maison;
+use App\Entity\House;
+use App\Entity\Size;
 use App\Entity\Toys;
 
 class SearchData
@@ -17,27 +18,27 @@ class SearchData
     public $maison = '';
 
     /**
-     * @var Maison[]
+     * @var House[]
      */
     public $house = [];
 
     /**
      * @var string
      */
-    public $garcon = '';
+    public $enfant = '';
 
     /**
-     * @var Boy[]
+     * @var Kids[]
      */
-    public $boys = [];
+    public $Kids = [];
 
     /**
      * @var string
      */
-    public $mode = '';
+    public $baby = '';
 
     /**
-     * @var Mode[]
+     * @var baby[]
      */
 
     public $fashions = [];

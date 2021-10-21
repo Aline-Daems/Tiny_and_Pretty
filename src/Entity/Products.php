@@ -61,22 +61,22 @@ class Products
     private $category;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Mode::class, inversedBy="products")
+     * @ORM\ManyToMany(targetEntity=baby::class, inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $mode;
+    private $baby;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Maison::class, inversedBy="products")
+     * @ORM\ManyToMany(targetEntity=House::class, inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $maison;
+    private $house;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Boy::class, inversedBy="products")
+     * @ORM\ManyToMany(targetEntity=Kids::class, inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $boy;
+    private $kids;
 
     /**
      * @ORM\ManyToMany(targetEntity=Toys::class, inversedBy="products")
@@ -153,11 +153,10 @@ class Products
 
     public function __construct()
     {
-
         $this->category = new ArrayCollection();
-        $this->mode = new ArrayCollection();
-        $this->maison = new ArrayCollection();
-        $this->boy = new ArrayCollection();
+        $this->baby = new ArrayCollection();
+        $this->house = new ArrayCollection();
+        $this->kids = new ArrayCollection();
         $this->toys = new ArrayCollection();
         $this->pictures = new ArrayCollection();
         $this->favoris = new ArrayCollection();
@@ -261,46 +260,46 @@ class Products
     }
 
     /**
-     * @return Collection|Mode[]
+     * @return Collection|baby[]
      */
-    public function getMode(): Collection
+    public function getBaby(): Collection
     {
-        return $this->mode;
+        return $this->baby;
     }
 
-    public function setMode(?Mode $mode): self
+    public function setBaby(?baby $baby): self
     {
-        $this->mode = $mode;
+        $this->baby = $baby;
 
         return $this;
     }
 
     /**
-     * @return Collection|Maison[]
+     * @return Collection|House[]
      */
-    public function getMaison(): Collection
+    public function getHouse(): Collection
     {
-        return $this->maison;
+        return $this->house;
     }
 
-    public function setMaison(?Maison $maison): self
+    public function setHouse(?House $house): self
     {
-        $this->maison = $maison;
+        $this->house = $house;
 
         return $this;
     }
 
     /**
-     * @return Collection|Boy[]
+     * @return Collection|Kids[]
      */
-    public function getBoy(): Collection
+    public function getKids(): Collection
     {
-        return $this->boy;
+        return $this->kids;
     }
 
-    public function setBoy(?Boy $boy): self
+    public function setKids(?Kids $kids): self
     {
-        $this->boy = $boy;
+        $this->kids = $kids;
 
         return $this;
     }

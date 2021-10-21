@@ -9,7 +9,7 @@ use App\Entity\User;
 use App\Form\NewsletterType;
 use App\Form\SearchBaby;
 use App\Form\SearchBarType;
-use App\Form\SearchForm;
+use App\Form\SearchHouse;
 use App\Form\SearchToy;
 use App\Repository\ProductsRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -60,28 +60,28 @@ class HomeController extends AbstractController
 
     }
 
-    #[Route('/Mode', name: 'productsBabies')]
-    public function mode(ProductsRepository $repository, request $request): Response
+    #[Route('/baby', name: 'productsBabies')]
+    public function baby(ProductsRepository $repository, request $request): Response
     {
         $data = new searchData();
         $form3 = $this->createForm(SearchBaby::class, $data);
         $form3->handleRequest($request);
         $productsBaby = $repository->findSearchBaby($data);
 
-        return $this->render('product/Mode/productsBabies.html.twig', [
+        return $this->render('product/baby/productsBabies.html.twig', [
             'productsBabies' => $productsBaby,
             'form3' => $form3->createView()
         ]);
     }
 
-    #[Route('/maison', name: 'productsGirl')]
+    #[Route('/House', name: 'productsGirl')]
     public function home(ProductsRepository $repository, request $request): Response
     {
         $data = new searchData();
-        $form2 = $this->createForm(SearchForm::class, $data);
+        $form2 = $this->createForm(SearchHouse::class, $data);
         $form2->handleRequest($request);
         $productsGirl = $repository->findSearch($data);
-        return $this->render('product/maison/productsGirl.html.twig', [
+        return $this->render('product/House/productsHouse.html.twig', [
             'productsGirl' => $productsGirl,
             'form2' => $form2->createView()
         ]);

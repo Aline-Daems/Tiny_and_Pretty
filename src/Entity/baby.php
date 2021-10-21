@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=BabyRepository::class)
  */
-class Mode
+class baby
 {
     /**
      * @ORM\Id
