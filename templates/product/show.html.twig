@@ -8,7 +8,8 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 mt-5">
                 <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('show') }}"
-                     alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
+                     width="500" height="500"  alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
+
 
             </div>
 
@@ -253,29 +254,8 @@
 
                             </a>
 
-                            <div class="card-body">
-                                {# CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
-                                    <a href="{{ path('products-wish', {'id': product.id}) }}"
-                                       class="js-wish">
-                                        {% if app.user and product.isWishByUser(app.user) %}
 
 
-
-                                            <div class="icon-wrapper liked">
-                                                <i class="far fa-heart "></i>
-                                            </div>
-
-                                        {% else %}
-
-
-                                            <div class="icon-wrapper unliked">
-                                                <i class="far fa-heart"></i>
-                                            </div>
-
-                                        {% endif %}
-
-                                    </a>
-                                </div> #}
                                 <div class="descriptionBest">
                                     <div class="product-line-green">
                                         <p class="product-text card-title">

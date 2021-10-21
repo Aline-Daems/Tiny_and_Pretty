@@ -231,6 +231,9 @@ z-index: 999!important;
   filter : brightness(50%);
 
 }
+.insta{
+  padding-top: 5rem;
+}
 
 blockquote{
 font-family: $textFontRegular;
@@ -490,6 +493,7 @@ position: absolute;
   width: 80%;
   .ourFirstImg{
     width: 80%;
+    height: auto;
   }
 }
 
@@ -567,12 +571,12 @@ position: absolute;
 }
 
 .reseau {
-  font-size: 5vh;
+ width: 2.7em;
 
 }
 
 .logoreseau {
-  color: dimgrey;
+  padding: 3.5em;
 
 }
 .newsletter{
@@ -614,20 +618,24 @@ position: absolute;
 }
 .champ-desktop{
  width: 100%;
+  height: auto;
 }
 .champ-mobile{
   display: none;
 }
 .paiement{
-  width: 10vh;
+  width: 12vh;
+  height: auto;
   color: dimgrey!important;
 }
 .livraison{
-  width: 10vh;
+  width: 12vh;
+  height: auto;
   color: dimgrey!important;
 }
 .retour{
-  width: 10vh;
+  width: 12vh;
+  height: auto;
   color: dimgrey!important;
 }
 .title-conditions{

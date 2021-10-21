@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Boutique de vêtements enfants et bébés en ligne eco-responsable oeko-tex produits belges">
     <meta name="author" content="Infinity">
-    <meta name="generator" content="Jekyll v4.1.1">
+   <!-- <meta name="generator" content="Jekyll v4.1.1">-->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/favicon/android-chrome-192x192.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/android-chrome-512x512.png') }}">
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//db.onlinewebfonts.com/c/66ae19bb5728f9b5c1f5a892355b9eff?family=Stars+From+Our+Eyes" rel="stylesheet" type="text/css"/>
-
     <link rel="stylesheet"  href="{{ asset('assets/css/owl-carousel/owl.carousel.css') }}" />
 
     <!-- Facebook Pixel Code -->
@@ -38,13 +35,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
- <!-- <link href="{{ asset('assets/css/all.css') }}" rel="stylesheet">-->
     <link rel="stylesheet" href="{{ asset('assets/css/boutique.css') }}">
-
-    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.2.1.slim.min.js">
-
-    {% block javascript %}
-    {% endblock %}
 
 </head>
 <body>
@@ -117,16 +108,17 @@
 
     </footer>
 
-
+{% block javascript %}
+{% endblock %}
 
 {#</div>#}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
 <script src="{{ asset ('assets/js/owl-carousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset ('assets/js/bootstrap.bundle.js') }}"></script>
-<script src="{{ asset ('assets/js/all.js') }}"></script>
+
 <script type= "module" src="{{ asset ('assets/js/script.js') }}"></script>
-<script  type= "module" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
 </body>
 
