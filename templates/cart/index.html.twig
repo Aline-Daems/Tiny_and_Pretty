@@ -59,8 +59,8 @@
     <div class=" validation text-center d-flex flex-column mb-5 pb-5">
       <div class="p-2" ><p><span><b>Nombre de produit(s): </b> {{ cart|length }}</span></p> </div>
         <div class="p-2" > <b>Total de mon panier</b> {{ ((total / 100)|number_format(2,',', '.')) }} €</div>
-        <div class="p-2" > <a href="{{ path('order') }}" type="btn" class="btn text-white validate mt-3 pt-5">Valider mon panier</a></div>
-        <div class="p-2" > <a href="{{ path('home') }}" type="btn" class="btn text-white validate mt-3 pt-5">Continuer mes achats</a></div>
+        <div class="p-2" > <a href="{{ path('order') }}" type="btn" class="btn text-white validate mt-3">Valider mon panier</a></div>
+        <div class="p-2" > <a href="{{ path('home') }}" type="btn" class="btn text-white validate mt-3">Continuer mes achats</a></div>
     </div>
     {% else %}
     <hr>

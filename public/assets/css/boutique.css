@@ -1179,7 +1179,8 @@ header {
 }*/
 .vignette-dropdown {
   width: 10%;
-  height: 10% !important; }
+  height: 10% !important;
+  padding-top: 3% !important; }
 
 /*
 .bag-count{
@@ -1225,7 +1226,8 @@ header {
 .categories-nav {
   border-bottom-style: solid;
   border-bottom-color: #f0edda;
-  border-bottom-width: 0.002rem; }
+  border-bottom-width: 0.002rem;
+  width: 80%; }
 
 @media screen and (max-width: 480px) {
   .header-container {
@@ -1511,7 +1513,8 @@ header {
   .img_atelier {
     width: 80% !important; } }
 .empty {
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif; }
 
 .title_cart {
   font-family: Quicksand, sans-serif;

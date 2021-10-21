@@ -188,6 +188,7 @@ font-size: 1.3125em;
 .vignette-dropdown{
   width: 10%;
   height: 10%!important;
+  padding-top: 3%!important;
 }
 /*
 .bag-count{
@@ -237,6 +238,7 @@ font-size: 1.3125em;
   border-bottom-style: solid;
   border-bottom-color: $grey;
   border-bottom-width: 0.002rem;
+  width: 80%;
 }
 @media screen and (max-width: 480px){
   .header-container{
