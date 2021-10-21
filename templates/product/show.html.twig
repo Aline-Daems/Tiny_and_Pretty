@@ -9,9 +9,11 @@
             <div class="col-md-4 col-sm-12 mt-5">
                 <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('show') }}"
                      alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
-
+                {% for picture in product.pictures %}
+                    <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('thumb') }}"
+                         alt="{{ product.name }}" class="img-fluid zoomimg mt-5 ">
+                {% endfor %}
             </div>
-
 
             <div class="col-md-6 col-sm-12 my-auto aside-description ml-auto mr-auto">
                 <div class="col">

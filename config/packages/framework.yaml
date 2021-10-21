@@ -12,8 +12,8 @@ framework:
         save_path: '%kernel.project_dir%/var/sessions'
         cookie_secure: auto
         cookie_samesite: lax
-        cookie_lifetime: 604800
-        gc_maxlifetime: 604800
+        cookie_lifetime: 2419200
+        gc_maxlifetime: 2419200
         sid_bits_per_character: 5
 
 
