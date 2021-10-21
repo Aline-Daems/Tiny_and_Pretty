@@ -52,7 +52,7 @@
 
                         </div>
                         <div class="col-8 my-auto">
-                            {{ product.product.name }} <br/>
+                            {{ product.product.name }} {{ app.session.get('sizes') }} {{ app.session.get('colors') }}<br/>
                             <small>
                                 {{ product.product.subtitle }} <br/>
                                 x {{ product.quantity }}</small>
