@@ -55,7 +55,7 @@ $(document).ready(function () {
 
     if ($(window).width() > 999){
         console.log('>999');
-    $('#logo-show').css({'display': 'none'});
+    $('#logo-show').css({'visibility': 'hidden'});
     $(window).scroll(function () {
 
         let headerH = $('.header-container').outerHeight(true);
@@ -72,7 +72,7 @@ $(document).ready(function () {
         else {
             console.log('else');
             $('#home-banner').css({'position': 'static', 'top': '0px'});
-            $('#logo-show').css({'display': 'none'});
+            $('#logo-show').css({'visibility': 'hidden'});
         }
 
 

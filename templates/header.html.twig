@@ -16,7 +16,7 @@
 
         <!-- navigation supérieure -->
 
-        <nav class="navbar navbar-expand-md  navbar-light justify-content-between navSup">
+        <nav class="navbar navbar-expand-md  navbar-light justify-content-between navSup pl-5">
             <a class="navbar-brand" href="{{ path('home') }}">
                 <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
                      class="logo-img-header-One img-fluid"/>
@@ -46,7 +46,10 @@
                     </li>#}
 {#                    <button type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>#}
                 </ul>
-
+                <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
 
                {# <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
@@ -238,6 +241,10 @@
                            aria-label="Search">
                     <i class="fas fa-search" aria-hidden="true"></i>
                 </form>#}
+                <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
                 <div id="iconesJS">
                     {% if app.user %}
                         <div class="nav-icones pl-5 pt-sm-5 pt-md-5 text-sm-center text-md-center">
@@ -319,7 +326,10 @@
                         <a class="nav-link link-headOne mr-3" href="{{ path('comingsoon') }}">DEUXIÈME VIE</a>
                     </li>
                 </ul>
-
+                <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
               {#  <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm mt-5 mb-3">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
                            aria-label="Search">
