@@ -70,7 +70,7 @@ class Carrier
     public function getPrice(): ?float
     {
 
-        return $this->price / 100;
+        return $this->price /100;
 
     }
 
