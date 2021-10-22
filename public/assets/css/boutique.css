@@ -391,7 +391,7 @@ h1, h3, h5, p {
 .box {
   width: 80%; }
   .box .ourFirstImg {
-    width: 80%;
+    width: 50%;
     height: auto; }
 
 .boxtext p {
@@ -511,7 +511,7 @@ h1, h3, h5, p {
 .text-conditions {
   font-family: "Open Sans", sans-serif; }
 
-@media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+@media only screen and (min-device-width: 320px) and (max-device-height: 897px) {
   .champ-desktop {
     display: none; }
 
