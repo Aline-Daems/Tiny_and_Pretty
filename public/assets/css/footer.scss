@@ -74,12 +74,12 @@ footer{
 
 
 }
-@media (min-width: 320px) and (max-width: 897px){
+@media (min-width: 320px) and (max-width: 927px){
   footer{
     height: 1000px;
-    bottom: -18rem!important;
+    bottom: -17rem!important;
 
- //   background-color: #770088;
+   //background-color: #770088;
     //.footer-size{
     //  height: 0.2%;
     //
@@ -90,7 +90,7 @@ footer{
   }
 }
 
-///IPad 11''
+
 @media (min-width: 320px) and (max-width: 897px) and (orientation: landscape) {
   footer{
     height: 500px;
@@ -127,20 +127,30 @@ footer{
 }
 @media (min-width: 1024px) and (max-width: 2000px)  {
   footer{
-   // height: 515px;
-  //  background-color: red;
-    bottom: -6rem;
+ //  height: 525px;
+ //   background-color: red;
+   top: 66vh!important;
     .logo-img img{
-      width: 100%!important;
-
-    }
-    .footer-size{
-      height: 50%;}
+      width: 75%!important;
+    }}
+  #logo-show{
+    width: 40%;
+  //  background-color: #00bb00;
   }
+
  /* .footer-size{
     height: 50%;
 
   }*/
 
 }
-
+@media only screen and (min-width: 1440px) and (orientation: landscape){
+  footer{
+    top: 68vh;
+    .logo-img img{
+      width: 80%!important;
+    }}
+  .logo-img-header {
+    width: 100%;
+  }
+}

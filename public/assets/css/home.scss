@@ -647,7 +647,7 @@ position: absolute;
 
 
 
-@media only screen and (min-device-width: 320px) and (max-device-height: 897px) {
+@media only screen and (min-device-width: 320px) and (max-device-height: 926px) {
 
   .champ-desktop{
     display: none;
@@ -863,9 +863,13 @@ padding: 0;
   }}
   .box {
  //   width: 50vw;
- //   height: 45vh;
+    height: 45%;
 
-    //background-color: yellow!important;
+  //  background-color: yellow!important;
+    .ourFirstImg{
+      width: 100%;
+      height: auto;
+    }
   }
   .category{
     padding-left: 6vw;
