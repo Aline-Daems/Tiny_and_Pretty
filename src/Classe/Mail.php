@@ -93,6 +93,7 @@ class Mail
                     'Variables' => [
                         'content' => $content,
 
+
                     ]
                 ]
             ]
