@@ -65,7 +65,7 @@ $(document).ready(function () {
         if (scrollVal >= headerH) {
             console.log('scroll');
             $('#home-banner').css({'position': 'fixed', 'top': '0px'});
-            $('#logo-show').css({'display': 'block'});
+            $('#logo-show').css({'visibility': 'visible'});
             $('.dropdown-menu').css({'top': '90%'});
         }
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
         console.log('<=998');
         $('.header-container').css({'display': 'none'});
         $('#home-banner').css({'position': 'fixed', 'top': '0px'});
-        $('#logo-show').css({'display': 'block'});
+        $('#logo-show').css({'visibility': 'visible'});
         $('.dropdown-menu').css({'top': '90%'});
     }
 
