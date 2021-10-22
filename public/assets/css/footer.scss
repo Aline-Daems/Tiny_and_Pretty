@@ -127,20 +127,26 @@ footer{
 }
 @media (min-width: 1024px) and (max-width: 2000px)  {
   footer{
-   // height: 515px;
+ //  height: 525px;
   //  background-color: red;
-    bottom: -6rem;
+   top: 80vh;
     .logo-img img{
       width: 100%!important;
+    }}
 
-    }
-    .footer-size{
-      height: 50%;}
-  }
  /* .footer-size{
     height: 50%;
 
   }*/
 
 }
-
+@media only screen and (min-width: 1440px) and (orientation: landscape){
+  footer{
+    top: 68vh;
+    .logo-img img{
+      width: 80%!important;
+    }}
+  .logo-img-header {
+    width: 100%;
+  }
+}

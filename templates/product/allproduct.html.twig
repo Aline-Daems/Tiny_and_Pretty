@@ -9,12 +9,12 @@
             {% for  product in products %}
                 <div class="item col-md-2">
                     <div class="card mb-2">
-                        <a href="{{ path('product', {'slug':product.slug}) }}">
+                        <a class="link-product" href="{{ path('product', {'slug':product.slug}) }}">
 
                             <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
                                  alt="{{ product.name }}" class="card-img-top img-fluid">
 
-                        </a>
+
 
                         <div class="card-body">
 
@@ -37,6 +37,7 @@
 
                             </div>
                         </div>
+                        </a>
                     </div>
                 </div>
 
