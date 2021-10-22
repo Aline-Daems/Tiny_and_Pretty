@@ -1655,10 +1655,10 @@ footer a:hover, a:active {
     height: 3rem;
     margin-right: 1rem;
     margin-top: 2rem; } }
-@media (min-width: 320px) and (max-width: 897px) {
+@media (min-width: 320px) and (max-width: 927px) {
   footer {
     height: 1000px;
-    bottom: -18rem !important; }
+    bottom: -17rem !important; }
     footer .logo-img img {
       width: 40% !important; } }
 @media (min-width: 320px) and (max-width: 897px) and (orientation: landscape) {

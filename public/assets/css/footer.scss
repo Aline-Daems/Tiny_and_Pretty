@@ -74,12 +74,12 @@ footer{
 
 
 }
-@media (min-width: 320px) and (max-width: 897px){
+@media (min-width: 320px) and (max-width: 927px){
   footer{
     height: 1000px;
-    bottom: -18rem!important;
+    bottom: -17rem!important;
 
- //   background-color: #770088;
+   //background-color: #770088;
     //.footer-size{
     //  height: 0.2%;
     //
@@ -90,7 +90,7 @@ footer{
   }
 }
 
-///IPad 11''
+
 @media (min-width: 320px) and (max-width: 897px) and (orientation: landscape) {
   footer{
     height: 500px;
