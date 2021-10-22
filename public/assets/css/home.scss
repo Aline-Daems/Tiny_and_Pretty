@@ -492,7 +492,7 @@ position: absolute;
 .box{
   width: 80%;
   .ourFirstImg{
-    width: 80%;
+    width: 50%;
     height: auto;
   }
 }
@@ -647,7 +647,7 @@ position: absolute;
 
 
 
-@media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+@media only screen and (min-device-width: 320px) and (max-device-height: 897px) {
 
   .champ-desktop{
     display: none;
