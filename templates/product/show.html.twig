@@ -242,11 +242,8 @@
     </div>
 
 
-    <div class="container">
-        <h3 class="separator text-center mb-5 mt-5">MIX & MATCH</h3>
-    </div>
-    <div class="box-carousel">
-        <div class="owl-carousel" id="nouveautes">
+    <div class="box-carousel justify-content-center mb-5 mt-5">
+        <div class="owl-carousel" id="automne">
 
             {% for product in productN %}
             {% if product.isNew == true %}
@@ -254,35 +251,57 @@
                 <div class="card mb-2">
                     <a href="{{ path('product', {'slug':product.slug}) }}">
 
-                        <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
-                             alt="{{ product.name }}" class="card-img-top img-fluid">
+                                <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                                     width="300" height="300"  alt="{{ product.name }}" class="card-img-top img-fluid">
 
-                    </a>
+                            </a>
 
-
-                    <div class="descriptionBest">
-                        <div class="product-line-green">
-                            <p class="product-text card-title">
-                                <span>{{ product.name }}</span></p>
-                            <p class="product-description card-text"><span
-                                        class="product-subtitle"> {{ product.subtitle }} </span>
-                            </p>
+                            <div class="card-body">
+                                {# CHANGER LA CLASSE DU ICON-WRAPPER POUR POSITION CONVIENT DANS SHOW<div>
+                                    <a href="{{ path('products-wish', {'id': product.id}) }}"
+                                       class="js-wish">
+                                        {% if app.user and product.isWishByUser(app.user) %}
 
 
-                            <p class="product-price-text card-text"><span
-                                        class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
-                                <button type="button" class="container-fluid profite">JE LE
-                                    VEUX
-                                </button>
-                            </p>
+
+                                            <div class="icon-wrapper liked">
+                                                <i class="far fa-heart "></i>
+                                            </div>
+
+                                        {% else %}
+
+
+                                            <div class="icon-wrapper unliked">
+                                                <i class="far fa-heart"></i>
+                                            </div>
+
+                                        {% endif %}
+
+                                    </a>
+                                </div> #}
+                                <div class="descriptionBest">
+                                    <div class="product-line-green">
+                                        <p class="product-text card-title">
+                                            <span>{{ product.name }}</span></p>
+                                        <p class="product-description card-text"><span
+                                                    class="product-subtitle"> {{ product.subtitle }} </span>
+                                        </p>
+
+
+                                        <p class="product-price-text card-text"><span
+                                                    class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                            <button type="button" class="container-fluid profite">JE LE
+                                                VEUX
+                                            </button>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-
                     </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
-
 {% endblock %}

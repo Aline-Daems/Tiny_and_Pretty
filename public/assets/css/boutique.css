@@ -828,6 +828,9 @@ h1, h3, h5, p {
   margin-bottom: 3vh;
 }
 
+.link-product {
+  color: black !important; }
+
 .content-layout {
   padding-top: 3vw !important;
 }
