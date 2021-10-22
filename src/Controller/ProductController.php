@@ -57,11 +57,6 @@ class ProductController extends AbstractController
             $session->set('colors', $color);
 
         }
-        if($formC->isSubmitted() && $formC->isValid()){
-
-
-
-        }
 
         if (!$product) {
             return $this->redirectToRoute('home');

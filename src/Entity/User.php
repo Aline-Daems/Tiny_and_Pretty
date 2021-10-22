@@ -63,6 +63,7 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Wish::class, mappedBy="user")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $wishes;
 

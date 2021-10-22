@@ -129,7 +129,8 @@ class Products
     private $topImageFile;
 
     /**
-     * @ORM\OneToMany(targetEntity=Wish::class, mappedBy="product")
+     * @ORM\OneToMany(targetEntity=Wish::class, mappedBy="product", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $wishes;
 
