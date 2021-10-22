@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Colors;
 use App\Entity\Products;
 use App\Entity\Sizes;
 use Doctrine\ORM\EntityRepository;
@@ -27,6 +28,23 @@ class SizeType extends AbstractType
                         ->from(Products::class ,'p')
                         ->join('p.sizes', 'ps')
                         ->where('ps.id = s.id')
+                        ;
+
+                }
+
+            ])
+
+            ->add('colors', EntityType::class, [
+                'mapped'=> false,
+                'class' => Colors::class,
+                'multiple' => false,
+                'expanded' => true,
+                'query_builder'=> function(EntityRepository $er) {
+                    return $er->createQueryBuilder('c')
+                        ->select('c')
+                        ->from(Products::class ,'p')
+                        ->join('p.colors', 'pc')
+                        ->where('pc.id = c.id')
                         ;
 
                 }

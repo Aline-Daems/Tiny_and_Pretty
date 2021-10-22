@@ -53,11 +53,14 @@ class ProductController extends AbstractController
            $size = $form->get('sizes')->getData();
 
            $session->set('sizes', $size);
+           $color = $form->get('colors')->getData();
+            $session->set('colors', $color);
+
         }
         if($formC->isSubmitted() && $formC->isValid()){
-            $color = $formC->get('colors')->getData();
 
-            $session->set('colors', $color);
+
+
         }
 
         if (!$product) {

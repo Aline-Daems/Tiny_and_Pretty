@@ -36,6 +36,7 @@ class OrderType extends AbstractType
             ->add('time', DateType::class, [
 
                 'widget'=>'single_text',
+                'label'=>'Avez-vous un jour de préférence pour votre livraison ? '
             ])
 
             ->add('submit', SubmitType::class, [
