@@ -15,7 +15,6 @@
                 {% endfor %}
 
 
-
             </div>
 
             <div class="col-md-6 col-sm-12 my-auto aside-description ml-auto mr-auto">
@@ -28,7 +27,106 @@
                         {{ product.description }}
                     </p>
                 </div>
+                {{ form_start(myform) }}
                 {{ form(myform) }}
+
+                <div id="accordion">
+                    <button
+                            class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
+                            type="button" data-toggle="collapse"
+                            data-target="#collapseOne"
+                            aria-expanded="false"
+                            aria-controls="collapseOne"
+                            style="color:#000005;">
+                        GUIDE DES TAILLES
+                    </button>
+                    <div id="collapseOne" class="collapse">
+                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
+                            <thead>
+                            <tr>
+                                <th scope="col">BÉBÉ</th>
+                                <th scope="col">Taille</th>
+                                <th scope="col">Poids</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <th scope="row">3 MOIS</th>
+                                <td>56-60 cm</td>
+                                <td>4-5 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6 MOIS</th>
+                                <td>60-68 cm</td>
+                                <td>5-6 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9 MOIS</th>
+                                <td>68-74 cm</td>
+                                <td>7-8 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12 MOIS</th>
+                                <td>74 cm</td>
+                                <td>9-10 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18 MOIS</th>
+                                <td>80 cm</td>
+                                <td>10-11 kg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">24 MOIS</th>
+                                <td>86 cm</td>
+                                <td>11-12 kg</td>
+                            </tr>
+                        </table>
+                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
+                            <thead>
+                            <tr>
+                                <th scope="col">ENFANT</th>
+                                <th scope="col">Taille</th>
+                                <th scope="col">Tour de poitrine</th>
+                                <th scope="col">Tour de taille</th>
+                                <th scope="col">Tour de hanche</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">3 ANS</th>
+                                <td>98 cm</td>
+                                <td>57 cm</td>
+                                <td>53 cm</td>
+                                <td>59 cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4 ANS</th>
+                                <td>104 cm</td>
+                                <td>58 cm</td>
+                                <td>54 cm</td>
+                                <td>61 cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5 ANS</th>
+                                <td>110 cm</td>
+                                <td>59 cm</td>
+                                <td>54,5 cm</td>
+                                <td>62,5 cm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6 ANS</th>
+                                <td>116 cm</td>
+                                <td>60 cm</td>
+                                <td>55 cm</td>
+                                <td>64 cm</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                {{ form_end(myform) }}
+                <hr class="col">
 
                 <div class="col mb-5">
                     <!--  <div class="wish-heart col mb-5">-->
@@ -125,10 +223,8 @@
 
                 </div>
 
-                <hr class="col">
 
-
-                {% if product.soldout == false %}
+                {# {% if product.soldout == false %}
                     <button
                             class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
                             type="button" id="js-cart-show">
@@ -140,102 +236,7 @@
                     <button class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
                             style="background-color:#f0cabd;">VICTIME DE SON SUCCÈS
                     </button>
-                {% endif %}
-                <div id="accordion">
-                    <button
-                            class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
-                            type="button" data-toggle="collapse"
-                            data-target="#collapseOne"
-                            aria-expanded="false"
-                            aria-controls="collapseOne"
-                            style="color:#000005;">
-                        GUIDE DES TAILLES
-                    </button>
-                    <div id="collapseOne" class="collapse">
-                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
-                            <thead>
-                            <tr>
-                                <th scope="col">BÉBÉ</th>
-                                <th scope="col">Taille</th>
-                                <th scope="col">Poids</th>
-                            </tr>
-                            </thead>
-                            <tr>
-                                <th scope="row">3 MOIS</th>
-                                <td>56-60 cm</td>
-                                <td>4-5 kg</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6 MOIS</th>
-                                <td>60-68 cm</td>
-                                <td>5-6 kg</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">9 MOIS</th>
-                                <td>68-74 cm</td>
-                                <td>7-8 kg</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">12 MOIS</th>
-                                <td>74 cm</td>
-                                <td>9-10 kg</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">18 MOIS</th>
-                                <td>80 cm</td>
-                                <td>10-11 kg</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">24 MOIS</th>
-                                <td>86 cm</td>
-                                <td>11-12 kg</td>
-                            </tr>
-                        </table>
-                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
-                            <thead>
-                            <tr>
-                                <th scope="col">ENFANT</th>
-                                <th scope="col">Taille</th>
-                                <th scope="col">Tour de poitrine</th>
-                                <th scope="col">Tour de taille</th>
-                                <th scope="col">Tour de hanche</th>
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">3 ANS</th>
-                                <td>98 cm</td>
-                                <td>57 cm</td>
-                                <td>53 cm</td>
-                                <td>59 cm</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4 ANS</th>
-                                <td>104 cm</td>
-                                <td>58 cm</td>
-                                <td>54 cm</td>
-                                <td>61 cm</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5 ANS</th>
-                                <td>110 cm</td>
-                                <td>59 cm</td>
-                                <td>54,5 cm</td>
-                                <td>62,5 cm</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6 ANS</th>
-                                <td>116 cm</td>
-                                <td>60 cm</td>
-                                <td>55 cm</td>
-                                <td>64 cm</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
+                {% endif %} #}
             </div>
         </div>
     </div>
@@ -248,41 +249,40 @@
         <div class="owl-carousel" id="nouveautes">
 
             {% for product in productN %}
-                {% if product.isNew == true %}
-                    <div class="item ">
-                        <div class="card mb-2">
-                            <a href="{{ path('product', {'slug':product.slug}) }}">
+            {% if product.isNew == true %}
+            <div class="item ">
+                <div class="card mb-2">
+                    <a href="{{ path('product', {'slug':product.slug}) }}">
 
-                                <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
-                                     alt="{{ product.name }}" class="card-img-top img-fluid">
+                        <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                             alt="{{ product.name }}" class="card-img-top img-fluid">
 
-                            </a>
-
-
-
-                                <div class="descriptionBest">
-                                    <div class="product-line-green">
-                                        <p class="product-text card-title">
-                                            <span>{{ product.name }}</span></p>
-                                        <p class="product-description card-text"><span
-                                                    class="product-subtitle"> {{ product.subtitle }} </span>
-                                        </p>
+                    </a>
 
 
-                                        <p class="product-price-text card-text"><span
-                                                    class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
-                                            <button type="button" class="container-fluid profite">JE LE
-                                                VEUX
-                                            </button>
-                                        </p>
-                                    </div>
+                    <div class="descriptionBest">
+                        <div class="product-line-green">
+                            <p class="product-text card-title">
+                                <span>{{ product.name }}</span></p>
+                            <p class="product-description card-text"><span
+                                        class="product-subtitle"> {{ product.subtitle }} </span>
+                            </p>
 
-                                </div>
-                            </div>
+
+                            <p class="product-price-text card-text"><span
+                                        class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                <button type="button" class="container-fluid profite">JE LE
+                                    VEUX
+                                </button>
+                            </p>
                         </div>
+
                     </div>
-                {% endif %}
-            {% endfor %}
+                </div>
+            </div>
         </div>
+        {% endif %}
+        {% endfor %}
+    </div>
     </div>
 {% endblock %}
