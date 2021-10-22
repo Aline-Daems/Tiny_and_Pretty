@@ -28,7 +28,9 @@
                         {{ product.description }}
                     </p>
                 </div>
-                {{ form(myform) }}
+                {{ form_start(myform) }}
+                {{ form_row(myform.sizes) }}
+                {{ form_end(myform) }}
                 {{ form(formC) }}
                 <div class="col mb-5">
                     <!--  <div class="wish-heart col mb-5">-->

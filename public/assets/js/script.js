@@ -459,7 +459,7 @@ document.querySelectorAll('a.js-link-color').forEach(function (link) {
 
 
 
-if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"){
+if(window.location.href === "https://test.tinyandpretty.be/qui/sommes/nous"){
 
 
     const el = document.querySelector('#js-brandPage');
@@ -469,6 +469,8 @@ if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"){
 
     }
 }
+
+
 
 
 
