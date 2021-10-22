@@ -15,12 +15,12 @@ body {
 main {
 
   position: relative;
-  z-index: 1;
+  z-index: 2;
   background-color: white;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-bottom: 500px;
-  padding-bottom: 10vh;
+  margin-bottom: 200px;
+  padding-bottom: 5vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
@@ -892,6 +892,20 @@ padding: 0;
 
 
 
+}
+@media only screen and (min-width: 1194px) and (orientation: landscape) {
+  .champ-desktop{
+    display: flex;
+  }
+  .champ-mobile{
+    display: none;
+
+  }
+  .bg-champ{
+    .filter{
+      width:80%;
+      height: 40vh;
+    }}
 }
 
 
