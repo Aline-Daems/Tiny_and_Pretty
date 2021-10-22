@@ -30,19 +30,13 @@ class AllproductController extends AbstractController
         $products = $this->entityManager->getRepository(Products::class)->findAll();
         $productN = $this->entityManager->getRepository(Products::class)->findByIsNew(1);
         $productC = $this->entityManager->getRepository(Products::class)->findByIsCollection(1);
-        $size = $this->entityManager->getRepository(Size::class)->findAll();
-        $choiceSize = $this->entityManager->getRepository(ChoiceSize::class)->findAll();
-        $color = $this->entityManager->getRepository(Color::class)->findAll();
-        $choiceAll = $this->entityManager->getRepository(ChoiceColor::class)->findAll();
+
         return $this->render('product/allproduct.html.twig', [
 
             'products' => $products,
             'productN' => $productN,
             'productC' => $productC,
-            'Size' => $size,
-            'ChoiceSize' => $choiceSize,
-            'color'=> $color,
-            'ChoiceColor'=>$choiceAll
+
         ]);
     }
 }

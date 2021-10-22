@@ -391,7 +391,7 @@ h1, h3, h5, p {
 .box {
   width: 80%; }
   .box .ourFirstImg {
-    width: 50%;
+    width: 80%;
     height: auto; }
 
 .boxtext p {
@@ -1590,7 +1590,7 @@ header {
 footer {
   width: 100%;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   bottom: 0;
   height: 400px;
   background-color: white;
