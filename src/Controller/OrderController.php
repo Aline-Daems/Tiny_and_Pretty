@@ -101,10 +101,9 @@ class OrderController extends AbstractController
                 $orderDetails->setColor($color);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
-                if ($orderDetails->getTotal() > 50 ){
 
-                    $order->setCarrierPrice(0);
-                }
+
+
 
                 $this->entityManager->persist($orderDetails);
 
