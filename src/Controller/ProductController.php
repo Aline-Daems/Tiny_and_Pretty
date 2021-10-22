@@ -46,12 +46,13 @@ class ProductController extends AbstractController
 
         $form = $this->createForm(SizeType::class);
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()){
-           $size = $form->get('sizes')->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $size = $form->get('sizes')->getData();
 
-           $session->set('sizes', $size);
-           $color = $form->get('colors')->getData();
+            $session->set('sizes', $size);
+            $color = $form->get('colors')->getData();
             $session->set('colors', $color);
+            return $this->redirect($this->generateUrl('add_to_cart', array('id' => $product->getId())));
 
         }
 

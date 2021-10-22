@@ -131,7 +131,7 @@
                 {% if product.soldout == false %}
                     <button
                             class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
-                            type="button">
+                            type="button" id="js-cart-show">
                         <a href="{{ path('add_to_cart', {'id': product.id}) }}" style="color:#000005;">
                             <div>AJOUTER AU PANIER</div>
                         </a>
