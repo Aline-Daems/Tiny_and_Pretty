@@ -367,99 +367,12 @@ document.querySelectorAll('a.js-link-color').forEach(function (link) {
 });
 
 
-// function selectElement(){
-//
-//
-//     let size = document.querySelectorAll('#js-size');
-//
-//     size.addEventListener("click", function(){
-//         size.className = 'select-size';
-//         size.classList.add('select-size');
-//
-//
-//    })
-// }
-//
-//
-// let size = document.getElementsByClassName('size-border');
-//
-// document.querySelectorAll('a.js-link-size').forEach(function (linkSize) {
-//
-//
-//     Object.keys(size).sort(linkElement => {
-//
-//         linkSize.addEventListener('click', function Size(event) {
-//
-//
-//             event.preventDefault();
-//             const url = this.href;
-//             fetch(url).then(function (response) {
-//
-//
-//                 console.log(response);
-//
-//                 if (size[linkElement].classList.contains('size-blue')) {
-//                     size[linkElement].classList.add('border-size');
-//                     size[linkElement].classList.remove('size-blue');
-//                     setTimeout(unlikeRemover, 250);
-//
-//
-//                 } else {
-//                     size[linkElement].classList.add('size-blue');
-//                     size[linkElement].classList.remove('border-size');
-//                 }
-//
-//
-//                 function unlikeRemover() {
-//                     size[linkElement].classList.remove('border-size');
-//                 }
-//
-//             });
-//         });
-//     });
-// });
-
-
-
-//  function onClickBtnSize(event) {
-//      event.preventDefault();
-//
-//  }
-// //     const url = this.href
-// //
-// //     let size = this.getElementsByClassName('size-border')
-// //     console.log(size)
-// //     fetch(url).then(function (response) {
-// //
-// //         console.log(response)
-// //         if (size.classList.contains("size-border")) {
-// //             size.classList.add("size-blue")
-// //             size.classList.remove("size-border")
-// //         } else if (size.classList.contains("size-blue")) {
-// //
-// //             size.classList.remove("size-blue")
-// //             size.classList.add("size-border")
-// //         }
-// //     })
-// //
-// //
-// // }
-// //
-// //
-// document.querySelectorAll("#size-link").forEach(function (sizelink) {
-//
-//     sizelink.addEventListener('click', onClickBtnSize);
-//
-//
-// })
-//
-
 //background vert sur NOTRE MARQUE
 
 
 
 
-if(window.location.href === "https://test.tinyandpretty.be/qui/sommes/nous"){
+if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"){
 
 
     const el = document.querySelector('#js-brandPage');
@@ -468,7 +381,16 @@ if(window.location.href === "https://test.tinyandpretty.be/qui/sommes/nous"){
         el.classList.add('shop')
 
     }
+
 }
+if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous") {
+    const element = document.querySelector('#js-shopPage');
+    if (element.classList.contains("shop")) {
+        element.classList.remove("shop")
+        element.classList.add('linkHeadOne')
+    }
+}
+
 
 
 

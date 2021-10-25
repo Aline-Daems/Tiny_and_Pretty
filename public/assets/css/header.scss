@@ -173,52 +173,11 @@ font-size: 1.3125em;
   color: #6C7A4E!important;
 }
 
-/*
-.link-headOne:after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 2px;
-  width: 0%;
-  left: 0px;
-  height: 6px;
-  transition: 0.25s cubic-bezier(0.72,-0.01, 0.19, 0.92);
-  background: $yellow;
-}
-
-.link-headOne:hover:after{
-  width: 100%;
-}*/
 .vignette-dropdown{
   width: 10%;
   height: 10%!important;
   padding-top: 3%!important;
 }
-/*
-.bag-count{
-  position: relative;
-}
-.cercle-bag{
-  width: 1.3rem;
-  height: 1.3rem;
-  background-color: $yellow;
-  border: 0.2rem solid $yellow;
-  border-radius: 50%;
-  position: absolute;
-  top: 100%;
- left: 110%;
-  transform: translate(-50%, -50%);
-}
-.content-bag{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: $textFontRegular;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
- */
 
 /* adds some margin below the link sets  */
 .navbar .dropdown-menu div[class*="p-2"] {
