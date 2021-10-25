@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Classe\Cart;
 use App\Entity\Order;
 use App\Entity\Products;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
@@ -88,6 +87,7 @@ class StripeController extends AbstractController
             'line_items' => [$product_for_stripe],
 
             'mode' => 'payment',
+            'allow_promotion_codes' => true,
 
             'success_url' => $YOUR_DOMAIN . '/commandes/merci/{CHECKOUT_SESSION_ID}',
 
@@ -104,4 +104,6 @@ class StripeController extends AbstractController
         return $response;
 
     }
+
+
 }

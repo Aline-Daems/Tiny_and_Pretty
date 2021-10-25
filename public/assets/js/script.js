@@ -471,6 +471,38 @@ if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"){
 }
 
 
+document.addEventListener('DOMContentLoaded', function(event) {
+    console.log('DOM completamente carregado e analisado');
+    //add event listner
+    document.querySelector('.show-policy').addEventListener('click',showFullPolicy);
+    document.querySelector('.modalCookie_close').addEventListener('click',closeModalCookie);
+    document.querySelector('.btn-modal-ok').addEventListener('click',closeModalCookie);
+    //verifica se o usuario ja visualizou a msg de politica de cookie
+    const cookiepolicyActive = sessionStorage.getItem('cookiepolicy') || false;
+    if (cookiepolicyActive) {
+        console.log('::Politica de Cookie ja foi visualizada::');
+    }else {
+        showModalCookie();
+        sessionStorage.setItem('cookiepolicy', 'O usúario visualizou a modal de Plitica de Cookies.');
+    }
+});
+
+function showModalCookie(){ document.querySelector('.modalCookie_background').classList.remove('hide');
+}
+function closeModalCookie(){
+    document.querySelector('.modalCookie_background').remove();
+}
+
+function showFullPolicy(){
+    document.querySelector('.full-policy').classList.remove('hide');
+}
 
 
+    jQuery(document).ready(function() {
+
+        $('.js-show-code-form').on('click', function(e) {
+            e.preventDefault();
+            $('.js-code-form').show();
+        })
+});
 

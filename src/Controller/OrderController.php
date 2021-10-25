@@ -3,10 +3,15 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
+use App\Entity\Coupon;
+use App\Entity\CouponUsed;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
+use App\Form\CouponType;
 use App\Form\OrderType;
+use Container593VUu6\getStripeControllerService;
 use Doctrine\ORM\EntityManagerInterface;
+use Stripe\StripeClient;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -34,9 +39,13 @@ class OrderController extends AbstractController
         ]);
         $form->handleRequest($request);
 
+
+
         return $this->render('order/index.html.twig', [
             'form' => $form->createView(),
-            'cart' => $cart->getFull()
+            'cart' => $cart->getFull(),
+
+
         ]);
     }
 
@@ -53,8 +62,14 @@ class OrderController extends AbstractController
         $form = $this->createForm(OrderType::class, null, [
             'user' => $this->getUser()
         ]);
-
         $form->handleRequest($request);
+
+
+        $formCoupon = $this->createForm(CouponType::class);
+        $formCoupon->handleRequest($request);
+
+
+
 
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -101,10 +116,7 @@ class OrderController extends AbstractController
                 $orderDetails->setColor($color);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
-                if ($orderDetails->getTotal() > 50 ){
 
-                    $order->setCarrierPrice(0);
-                }
 
                 $this->entityManager->persist($orderDetails);
 
@@ -120,7 +132,8 @@ class OrderController extends AbstractController
                 'cart' => $cart->getFull(),
                 'carrier' => $carriers,
                 'delivery' => $delivery_content,
-                'reference' => $order->getReference()
+                'reference' => $order->getReference(),
+                'FormCoupon' => $formCoupon->createView()
 
 
             ]);

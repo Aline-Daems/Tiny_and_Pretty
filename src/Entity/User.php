@@ -67,7 +67,10 @@ class User implements UserInterface
      */
     private $wishes;
 
-
+    /**
+     * @ORM\OneToMany(targetEntity=CouponUsed::class, mappedBy="user")
+     */
+    private $couponUseds;
 
 
 
@@ -79,6 +82,7 @@ class User implements UserInterface
         $this->orders = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
+        $this->couponUseds = new ArrayCollection();
 
 
     }
@@ -310,6 +314,37 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection|CouponUsed[]
+     */
+    public function getCouponUseds(): Collection
+    {
+        return $this->couponUseds;
+    }
+
+    public function addCouponUsed(CouponUsed $couponUsed): self
+    {
+        if (!$this->couponUseds->contains($couponUsed)) {
+            $this->couponUseds[] = $couponUsed;
+            $couponUsed->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCouponUsed(CouponUsed $couponUsed): self
+    {
+        if ($this->couponUseds->removeElement($couponUsed)) {
+            // set the owning side to null (unless already changed)
+            if ($couponUsed->getUser() === $this) {
+                $couponUsed->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
 
 
 

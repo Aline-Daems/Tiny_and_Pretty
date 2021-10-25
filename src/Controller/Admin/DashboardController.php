@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Colors;
 use App\Entity\baby;
+use App\Entity\Coupon;
 use App\Entity\Kids;
 use App\Entity\Carrier;
 use App\Entity\House;
@@ -53,6 +54,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Couleur', 'fas fa-palette', Colors::class);
         yield MenuItem::linkToCrud('Transport', 'fas fa-truck', Carrier::class);
         yield MenuItem::linkToCrud('Newsletter', 'fas fa-envelope', Newsletter::class);
+        yield MenuItem::linkToCrud('Bon de réduction', 'fas fa-percent', Coupon::class);
 
     }
 }
