@@ -261,23 +261,23 @@ font-size: 1.5em;
 }
 
 
-.liked {
-  color: #FA1965;
-  animation-name: heart-like;
-  animation-duration: 250ms;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  float: right;
-}
-
-.unliked {
-  color: dimgrey!important;
-  animation-name: heart-unlike;
-  animation-duration: 250ms;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  float: right;
-}
+//.liked {
+//  color: #FA1965;
+//  animation-name: heart-like;
+//  animation-duration: 250ms;
+//  animation-iteration-count: 1;
+//  animation-timing-function: linear;
+//  float: right;
+//}
+//
+//.unliked {
+//  color: dimgrey!important;
+//  animation-name: heart-unlike;
+//  animation-duration: 250ms;
+//  animation-iteration-count: 1;
+//  animation-timing-function: linear;
+//  float: right;
+//}
 
 .size-border{
   border: 1px solid black;
