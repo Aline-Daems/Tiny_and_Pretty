@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Colors;
 use App\Entity\Products;
 use App\Entity\Sizes;
 use Doctrine\ORM\EntityRepository;
@@ -17,10 +18,12 @@ class SizeType extends AbstractType
     {
         $builder
             ->add('sizes', EntityType::class, [
+                'required' => true,
+                'label' => 'Taille',
                 'mapped'=> false,
                 'class' => Sizes::class,
                 'multiple' => false,
-                'expanded' => true,
+                'expanded' => false,
                 'query_builder'=> function(EntityRepository $er) {
                     return $er->createQueryBuilder('s')
                         ->select('s')
@@ -32,7 +35,31 @@ class SizeType extends AbstractType
                 }
 
             ])
-            ->add('submit', SubmitType::class);
+
+            ->add('colors', EntityType::class, [
+                'required' => true,
+                'label' => 'Couleurs',
+                'mapped'=> false,
+                'class' => Colors::class,
+                'multiple' => false,
+                'expanded' => false,
+                'query_builder'=> function(EntityRepository $er) {
+                    return $er->createQueryBuilder('c')
+                        ->select('c')
+                        ->from(Products::class ,'p')
+                        ->join('p.colors', 'pc')
+                        ->where('pc.id = c.id')
+                        ;
+
+                }
+
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Ajouter au panier',
+                'attr' => [
+                    'class' => 'btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1 text-uppercase'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

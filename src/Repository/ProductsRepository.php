@@ -85,8 +85,19 @@ class ProductsRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
-
-//Recherche pour la partie Enfants (kids)
+    public function findSearchProduct(SearchData $search):array
+    {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('p.name', 'p');
+        if (!empty($search->name)) {
+            $query = $query
+                ->andWhere('p.name LIKE :name')
+                ->setParameter('name', "%{$search->name}%");
+        }
+        return $query->getQuery()->getResult();
+    }
+//Recherche pour la partie Enfants (kids
 
     public function findSearchKids(SearchData $search):array
     {
@@ -181,31 +192,22 @@ class ProductsRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
-    public function findSizeType(SearchData $search):array
-    {
-        $query = $this
-            ->createQueryBuilder('p')
-            ->select('s', 'p')
-            ->join('p.size', 's');
-        if(!empty($search->taille)) {
-            $query = $query
-                ->andWhere('s.name LIKE :taille')
-                ->setParameter('taille', "%{$search->taille}%");
-        }
-
-        if(!empty($search->size)){
-            $query = $query
-                ->andWhere('s.id IN (:size)')
-                ->setParameter('size', $search->size);
-        }
-        return $query->getQuery()->getResult();
-    }
 
 
     #### Recherche global sur tous les produits via nom, sous titre et description ###
 
-    public function findSearchBar(string $query)
+    public function findSearchBar(SearchData $search)
     {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('n', 'p')
+            ->join('p.name', 'n');
+        if(!empty($search->name)) {
+            $query = $query
+                ->andWhere('p.name LIKE :name')
+                ->setParameter('name', "%{$search->name}%");
+        }
 
+        return $query->getQuery()->getResult();
     }
 }

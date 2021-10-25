@@ -73,7 +73,7 @@ class OrderController extends AbstractController
             $delivery_content .= '<br/>' . $delivery->getPostal() . ' ' . $delivery->getCity();
             $delivery_content .= '<br/>' . $delivery->getCountry();
 
-
+            $time = $form->get('time')->getData();
             $order = new Order();
             $reference = $date->format('dmY') . '' . uniqid();
             $order->setReference($reference);
@@ -81,9 +81,9 @@ class OrderController extends AbstractController
             $order->setCreatedAt($date);
             $order->setCarrierName($carriers->getName());
             $order->setCarrierPrice($carriers->getPrice());
-
             $order->setDelivery($delivery_content);
             $order->setState(0);
+            $order->setTime($time);
 
 
             $this->entityManager->persist($order);
@@ -101,10 +101,9 @@ class OrderController extends AbstractController
                 $orderDetails->setColor($color);
                 $orderDetails->setPrice($product['product']->getPrice());
                 $orderDetails->setTotal($product['product']->getPrice() * $product['quantity']);
-                if ($orderDetails->getTotal() > 50 ){
 
-                    $order->setCarrierPrice(0);
-                }
+
+
 
                 $this->entityManager->persist($orderDetails);
 

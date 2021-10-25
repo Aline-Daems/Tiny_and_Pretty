@@ -63,6 +63,7 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Wish::class, mappedBy="user")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $wishes;
 
@@ -78,6 +79,7 @@ class User implements UserInterface
         $this->orders = new ArrayCollection();
         $this->favoris = new ArrayCollection();
         $this->wishes = new ArrayCollection();
+
 
     }
 

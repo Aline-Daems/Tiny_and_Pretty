@@ -6,9 +6,6 @@ namespace App\Controller;
 use App\Entity\OrderDetails;
 use App\Entity\Products;
 use App\Entity\Wish;
-use App\Form\ColorsPType;
-use App\Form\ColorsType;
-use App\Form\ColorType;
 use App\Form\KolorType;
 use App\Form\SizeType;
 use App\Repository\WishRepository;
@@ -49,15 +46,14 @@ class ProductController extends AbstractController
 
         $form = $this->createForm(SizeType::class);
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()){
-           $size = $form->get('sizes')->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $size = $form->get('sizes')->getData();
 
-           $session->set('sizes', $size);
-        }
-        if($formC->isSubmitted() && $formC->isValid()){
-            $color = $formC->get('colors')->getData();
-
+            $session->set('sizes', $size);
+            $color = $form->get('colors')->getData();
             $session->set('colors', $color);
+            return $this->redirect($this->generateUrl('add_to_cart', array('id' => $product->getId())));
+
         }
 
         if (!$product) {

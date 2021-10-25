@@ -28,7 +28,7 @@ class ProductsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            SlugField::new('slug')->setTargetFieldName('name'),
+            SlugField::new('slug')->setTargetFieldName('name')->hideOnIndex(),
             TextField::new('topImageFile')
                 ->setFormType(VichImageType::class)
                 ->hideOnIndex(),
@@ -47,12 +47,12 @@ class ProductsCrudController extends AbstractCrudController
                 ->setEntryType(PictureType::class),
             TextField::new('Subtitle'),
             TextareaField::new('description'),
-            AssociationField::new('sizes'),
-            AssociationField::new('colors'),
+            AssociationField::new('sizes')->hideOnIndex(),
+            AssociationField::new('colors')->hideOnIndex(),
             BooleanField::new('isBest'),
             BooleanField::new('isNew'),
             BooleanField::new('isCollection'),
-            BooleanField::new('soldOut'),
+            BooleanField::new('soldOut')->hideOnForm()->hideOnIndex(),
             MoneyField::new('price')->setCurrency('EUR'),
             AssociationField::new('baby'),
             AssociationField::new('kids'),
