@@ -928,6 +928,24 @@ ESSAI COEUR 2
 .wish-heart a {
   color: dimgrey; }
 
+.liked {
+  color: #FA1965;
+  animation-name: heart-like;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  float: right !important;
+  margin-right: 100%; }
+
+.unliked {
+  color: dimgrey !important;
+  animation-name: heart-unlike;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  float: right !important;
+  margin-right: 100%; }
+
 .size-border {
   border: 1px solid black; }
 
@@ -1004,6 +1022,9 @@ hr {
 
 #headingOne {
   border: none !important; }
+
+.css-11cewt9 {
+  color: #FFFFFF !important; }
 
 @media only screen and (min-device-width: 960px) and (max-device-width: 2000px) {
   .aside-description {
