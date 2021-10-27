@@ -389,9 +389,9 @@ h1, h3, h5, p {
   width: 1.8rem; }
 
 .box {
-  width: 80%; }
+  width: 60vw; }
   .box .ourFirstImg {
-    width: 80%;
+    width: 100%;
     height: auto; }
 
 .boxtext p {
@@ -694,6 +694,31 @@ h1, h3, h5, p {
 .color-icone {
   width: 1rem; }
 
+.bg-gallery {
+  background-image: url("../img/redish-brown-leaves-showing-the-colors-of-autumn.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: auto; }
+  .bg-gallery .entete {
+    background-color: rgba(159, 205, 255, 0.28);
+    color: white;
+    padding-bottom: 3rem;
+    width: 100vw; }
+
+.box-gallery {
+  width: 90%;
+  height: 85%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 0 auto !important;
+  padding: 2rem; }
+  .box-gallery .thumbnail {
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; }
+  .box-gallery .product-text {
+    font-weight: lighter; }
+
 #js-size .btn-outline-secondary {
   padding: 0 !important;
   margin-top: 3vh;
@@ -934,7 +959,8 @@ ESSAI COEUR 2
   animation-duration: 250ms;
   animation-iteration-count: 1;
   animation-timing-function: linear;
-  float: right; }
+  float: right !important;
+  margin-right: 100%; }
 
 .unliked {
   color: dimgrey !important;
@@ -942,7 +968,8 @@ ESSAI COEUR 2
   animation-duration: 250ms;
   animation-iteration-count: 1;
   animation-timing-function: linear;
-  float: right; }
+  float: right !important;
+  margin-right: 100%; }
 
 .size-border {
   border: 1px solid black; }
@@ -1107,9 +1134,8 @@ header {
   font-weight: bold;
   border-radius: 0.3em;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  margin-top: 5vh !important;
-  margin-bottom: 3vh !important;
-  padding-left: 2vw !important; }
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem !important;
+  padding-left: 3vw !important; }
 
 /*
 .title_drop {
@@ -1186,52 +1212,11 @@ header {
   position: relative;
   color: #6C7A4E !important; }
 
-/*
-.link-headOne:after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 2px;
-  width: 0%;
-  left: 0px;
-  height: 6px;
-  transition: 0.25s cubic-bezier(0.72,-0.01, 0.19, 0.92);
-  background: $yellow;
-}
-
-.link-headOne:hover:after{
-  width: 100%;
-}*/
 .vignette-dropdown {
   width: 10%;
   height: 10% !important;
   padding-top: 3% !important; }
 
-/*
-.bag-count{
-  position: relative;
-}
-.cercle-bag{
-  width: 1.3rem;
-  height: 1.3rem;
-  background-color: $yellow;
-  border: 0.2rem solid $yellow;
-  border-radius: 50%;
-  position: absolute;
-  top: 100%;
- left: 110%;
-  transform: translate(-50%, -50%);
-}
-.content-bag{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: $textFontRegular;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
- */
 /* adds some margin below the link sets  */
 .navbar .dropdown-menu div[class*="p-2"] {
   margin-bottom: 1rem;

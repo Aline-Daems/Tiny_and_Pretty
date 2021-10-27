@@ -4,7 +4,7 @@
         <div class="defile-banner">
             <div class="promo-banner text-center">LIVRAISON OFFERTE DURANT TOUT LE MOIS D'OCTOBRE
                 <span><img
-                            src="{{ asset('assets/img/feuilles-darbres-dautomne.png') }}" alt="Logo Tiny And Pretty"
+                            src="{{ asset('assets/img/citrouille-dhalloween.png') }}" alt="Logo Tiny And Pretty"
                             class="favicon-banner"/></span><span><img
                             src="{{ asset('assets/favicon/favicon-32x32.png') }}" alt="Logo Tiny And Pretty"
                             class="favicon-banner"/></span>
@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav  ml-auto ms-auto mr-auto mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link shop mr-3" href="{{ path("home") }}">E-SHOP</a>
+                        <a id="js-shopPage" class="nav-link shop mr-3" href="{{ path("home") }}">E-SHOP</a>
                     </li>
                     <li class="nav-item">
                         <a id="js-brandPage" class="nav-link  linkHeadOne mr-3" href="{{ path('qui_sommes_nous') }}">LA MARQUE</a>
@@ -48,7 +48,7 @@
                 </ul>
                 <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                  <!--  <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>-->
                 </form>
 
                {# <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
@@ -226,7 +226,7 @@
                         <a class="nav-link px-2 nav-down-text" href="{{ path('productsToy') }}">Les Jouets</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link new-collection p-2" href="{{ path('allproduct') }}">NOUVELLE COLLECTION</a>
+                      <a class="nav-link text-center new-collection" href="{{ relative_path('/allproduct') }}">NEW COLLECTION</a>
                     </li>
                  {#   <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
                         {{ render(controller(
@@ -243,7 +243,7 @@
                 </form>#}
                 <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                  <!--  <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>-->
                 </form>
                 <div id="iconesJS">
                     {% if app.user %}
@@ -322,9 +322,9 @@
                     <li class="nav-item">
                         <a class="nav-link link-headOne mr-3" href="{{ path('qui_sommes_nous') }}">NOTRE MARQUE</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-headOne mr-3" href="{{ path('comingsoon') }}">DEUXIÈME VIE</a>
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link link-headOne mr-3" href="{{ path('comingsoon') }}">DEUXIÈME VIE</a>#}
+{#                    </li>#}
                 </ul>
                 <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

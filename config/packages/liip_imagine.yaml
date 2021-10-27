@@ -26,6 +26,17 @@ liip_imagine:
           # use and setup the "crop" filter
           mode: outband
 
+    basket:
+      quality: 75
+      filters:
+        # use and setup the "thumbnail" filter
+        thumbnail:
+          # set the thumbnail size to "32x32" pixels
+          size: [ 400, 400 ]
+          # crop the input image, if required
+          # use and setup the "crop" filter
+          mode: outband
+
     show:
       quality: 75
       filters:

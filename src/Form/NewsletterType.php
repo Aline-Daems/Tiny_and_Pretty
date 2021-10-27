@@ -26,7 +26,10 @@ class NewsletterType extends AbstractType
 
                 'label' => "C'EST PAR ICI",
                  'attr' => [
-                       'class' => 'btn profite reveal-3 mt-4 mb-3']])
+                       'class' => 'btn profite reveal-3 mt-4 mb-3',
+                        'data-bs-toggle' =>'popover',
+                         'data-bs-content'=>'Merci pour votre inscription ;)'
+                 ]])
 
 
         ;
