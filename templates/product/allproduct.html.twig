@@ -3,7 +3,7 @@
 {% block title %}Tiny and Pretty - Tous nos produits{% endblock %}
 
 {% block content %}
-    <div class="container-fluid mt-5">
+   {# <div class="container-fluid mt-5">
         <div class="row">
 
             {% for  product in products %}
@@ -43,5 +43,43 @@
 
             {% endfor %}
         </div>
+    </div>#}
+    <div class="bg-gallery">
+    <div class="container entete">
+        <h2 class="separator text-center justify-content-center mb-5 pt-5 pb-5">NOTRE NOUVELLE COLLECTION D'AUTOMNE</h2>
+        <p class="text-separator">Tiny & Pretty vous propose ses nouveautés, celles qui vous feront craquer. Un dressing
+            plein d’amour, entre pulls tout doux, robes colorées et accessoires essentiels. </p>
+    </div>
+
+    <!-- Gallery -->
+    <div class="container pt-5 mt-5 justify-content-center text-center">
+        <div class="box-gallery mb-5">
+        <div class="row">
+        {% for  product in products %}
+        {% if product.isNew == true %}
+
+
+            <div class="col-md-4 col-sm-6 mx-auto mt-3">
+               <div class="thumbnail">
+            <a class="link-product" href="{{ path('product', {'slug':product.slug}) }}">
+
+                <img src="{{ vich_uploader_asset(product, 'topImageFile') | imagine_filter('bn') }}"
+                     alt="{{ product.name }}" class=" img-fluid"/>
+
+            </a>
+               </div>
+                <p class="product-text card-title">
+                    <span>{{ product.name }}</span></p>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+
+    </div>
+    <!-- Gallery -->
+        </div>
+    </div>
     </div>
 {% endblock %}

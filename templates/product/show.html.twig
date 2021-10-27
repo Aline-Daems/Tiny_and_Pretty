@@ -26,7 +26,97 @@
                     <p class="description-show overflow-auto">
                         {{ product.description }}
                     </p>
+                    <div class="col mb-5">
+                        <!--  <div class="wish-heart col mb-5">-->
+
+                        <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
+                            {% if app.user and product.isWishByUser(app.user) %}
+                                <!--ESSAI A GARDER
+                                                        <div class="love-icon">
+                                                            <input type="checkbox" id="like-toggle">
+                                                            <label for="like-toggle" class="heart"> </label>
+                                                            <div class="lines">
+                                                                <div class="line"></div>
+                                                                <div class="line"></div>
+                                                                <div class="line"></div>
+                                                                <div class="line"></div>
+                                                                <div class="line"></div>
+                                                                <div class="line"></div>
+                                                            </div>
+                                                            <div class="ring"></div>
+                                                        </div>
+                                                        -->
+
+                                <div class="icon-wrapper liked">
+                                    <i class="fas fa-heart "></i>
+                                    {#                                <img src="{{ asset('assets/img/heart.png') }}" alt="" class="">#}
+                                </div>
+
+
+
+                                <!--  essai coeur 2-->
+                                <!--
+                                <input id="toggle-heart" type="checkbox"/>
+                                <label for="toggle-heart" aria-label="like">❤</label>
+        -->
+                                <!--coeur test 1
+                                <div class="placement">
+                                    <div class="heart"></div>
+                                </div>
+                                -->
+                                <!--
+                        <div class="heart-wish">
+                            <img src="{{ asset('assets/img/like.svg') }}" alt="" class="">
+                        </div>
+                        -->
+
+                            {% else %}
+                                <!--
+                                <div class="love-icon">
+                                    <input type="checkbox" id="like-toggle" />
+                                    <label for="like-toggle" class="heart"> </label>
+                                    <div class="lines">
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                    <div class="ring"></div>
+                                </div>
+                                -->
+
+
+                                <div class="icon-wrapper unliked">
+                                    <i class="far fa-heart"></i>
+                                    {#                                <img src="{{ asset('assets/img/heart.png') }}" alt="" class="">#}
+                                </div>
+
+
+                                <!--    essai coeur 2 -->
+                                <!--
+                              <input id="toggle-heart" type="checkbox"/>
+                              <label for="toggle-heart" aria-label="like">❤</label>
+        -->
+                                <!-- coeur test 1
+                                                      <div class="placement">
+                                                          <div class="heart"></div>
+                                                      </div>
+                                                      -->
+                                <!--   <div class="heart-bold">
+                            <img src="{{ asset('assets/img/heart.svg') }}" alt="" class="">
+
+                        </div>
+                        -->
+
+
+                            {% endif %}
+
+                        </a>
+                    </div>
                 </div>
+
                 {{ form_start(myform) }}
                 {{ form(myform) }}
 
@@ -41,7 +131,7 @@
                         GUIDE DES TAILLES
                     </button>
                     <div id="collapseOne" class="collapse">
-                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
+                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-10 mx-auto my-3">
                             <thead>
                             <tr>
                                 <th scope="col">BÉBÉ</th>
@@ -80,7 +170,7 @@
                                 <td>11-12 kg</td>
                             </tr>
                         </table>
-                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-12 mx-3 my-3">
+                        <table class="table table-bordered table-hover col-md-10 col-lg-10 col-xl-10 col-sm-8 mx-auto my-3">
                             <thead>
                             <tr>
                                 <th scope="col">ENFANT</th>
@@ -128,102 +218,6 @@
                 {{ form_end(myform) }}
                 <hr class="col">
 
-                <div class="col mb-5">
-                    <!--  <div class="wish-heart col mb-5">-->
-
-                    <a href="{{ path('products-wish', {'id': product.id}) }}" class="js-wish">
-                        {% if app.user and product.isWishByUser(app.user) %}
-                            <!--ESSAI A GARDER
-                                                    <div class="love-icon">
-                                                        <input type="checkbox" id="like-toggle">
-                                                        <label for="like-toggle" class="heart"> </label>
-                                                        <div class="lines">
-                                                            <div class="line"></div>
-                                                            <div class="line"></div>
-                                                            <div class="line"></div>
-                                                            <div class="line"></div>
-                                                            <div class="line"></div>
-                                                            <div class="line"></div>
-                                                        </div>
-                                                        <div class="ring"></div>
-                                                    </div>
-                                                    -->
-
-
-
-                            <div class="icon-wrapper liked">
-                                <i class="fas fa-heart "></i>
-                            </div>
-
-
-
-                            <!--  essai coeur 2-->
-                            <!--
-                            <input id="toggle-heart" type="checkbox"/>
-                            <label for="toggle-heart" aria-label="like">❤</label>
-    -->
-                            <!--coeur test 1
-                            <div class="placement">
-                                <div class="heart"></div>
-                            </div>
-                            -->
-                            <!--
-                        <div class="heart-wish">
-                            <img src="{{ asset('assets/img/like.svg') }}" alt="" class="">
-                        </div>
-                        -->
-
-                        {% else %}
-                            <!--
-                            <div class="love-icon">
-                                <input type="checkbox" id="like-toggle" />
-                                <label for="like-toggle" class="heart"> </label>
-                                <div class="lines">
-                                    <div class="line"></div>
-                                    <div class="line"></div>
-                                    <div class="line"></div>
-                                    <div class="line"></div>
-                                    <div class="line"></div>
-                                    <div class="line"></div>
-                                </div>
-                                <div class="ring"></div>
-                            </div>
-                            -->
-
-
-                            <div class="icon-wrapper unliked">
-                                <i class="far fa-heart"></i>
-                            </div>
-
-
-                            <!--    essai coeur 2 -->
-                            <!--
-                          <input id="toggle-heart" type="checkbox"/>
-                          <label for="toggle-heart" aria-label="like">❤</label>
-    -->
-                            <!-- coeur test 1
-                                                  <div class="placement">
-                                                      <div class="heart"></div>
-                                                  </div>
-                                                  -->
-                            <!--   <div class="heart-bold">
-                            <img src="{{ asset('assets/img/heart.svg') }}" alt="" class="">
-
-                        </div>
-                        -->
-
-
-                        {% endif %}
-
-                    </a>
-                </div>
-
-                <div>
-
-
-                </div>
-
-
                 {# {% if product.soldout == false %}
                     <button
                             class="btn btn-outline-secondary outline-show col mt-3 ml-1 mr-1"
@@ -241,7 +235,9 @@
         </div>
     </div>
 
-
+    <div class="container">
+        <h2 class="separator text-center mb-5">L'AUTOMNE</h2>
+    </div>
     <div class="box-carousel justify-content-center mb-5 mt-5">
         <div class="owl-carousel" id="automne">
 
