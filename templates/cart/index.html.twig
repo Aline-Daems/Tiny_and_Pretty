@@ -12,8 +12,7 @@
         </div>
         </div>
         </div>
-{#
-
+        {#
         {% set total = null %}
         {% for product in cart %}
             <div class="container-fluid">
@@ -28,52 +27,48 @@
 
 
             <span class="article_name"><p>{{ product.product.name }}</p></span>
-
-            #}
-{# <div class="col">
+        #}
+        {# <div class="col">
                         <span class="article_name"><small> {{ product.product.subtitle }}</small></span>
                     </div> #}{#
+    <span> {{ app.session.get('sizes') }}</span>
 
 
-           <span> {{ app.session.get('sizes') }}</span>
+     <span>{{ app.session.get('colors') }}</span>
 
 
-            <span>{{ app.session.get('colors') }}</span>
+     <span> <a href="{{ path('decrease_to_cart', {id: product.product.id}) }}">
+                         <img class="mr-3" src="{{ asset('assets/img/remove.webp') }}" height="12px"
+                              alt="Retirer mon produit">
+                     </a></span>
+     <span> {{ product.quantity }}</span>
+     <span>  <a href="{{ path('add_to_cart', {id : product.product.id}) }}">
+                         <img class="ml-3" src="{{ asset('assets/img/plus.webp') }}" height="12px"
+                              alt="Ajouter mon produit">
+                     </a>
+                      </span>
 
 
-            <span> <a href="{{ path('decrease_to_cart', {id: product.product.id}) }}">
-                                <img class="mr-3" src="{{ asset('assets/img/remove.webp') }}" height="12px"
-                                     alt="Retirer mon produit">
-                            </a></span>
-            <span> {{ product.quantity }}</span>
-            <span>  <a href="{{ path('add_to_cart', {id : product.product.id}) }}">
-                                <img class="ml-3" src="{{ asset('assets/img/plus.webp') }}" height="12px"
-                                     alt="Ajouter mon produit">
-                            </a>
-                             </span>
+    <span>{{ (product.product.price / 100)|number_format(2,',', '.') }} €</span>
 
 
-           <span>{{ (product.product.price / 100)|number_format(2,',', '.') }} €</span>
+                   <span>{{ ((product.product.price * product.quantity / 100)|number_format(2,',', '.')) }} €</span>
 
 
-                          <span>{{ ((product.product.price * product.quantity / 100)|number_format(2,',', '.')) }} €</span>
+     <a href="{{ path('delete_to_cart', { 'id' : product.product.id}) }}">
+         <img src="{{ asset('assets/img/delete.png') }}" height="18px"
+              alt="Supprimer mon produit">
+     </a>
 
 
-            <a href="{{ path('delete_to_cart', { 'id' : product.product.id}) }}">
-                <img src="{{ asset('assets/img/delete.png') }}" height="18px"
-                     alt="Supprimer mon produit">
-            </a>
+     {% set total = total +(product.product.price * product.quantity) %}
+ {% endfor %}
+ </div>
+ </div>
+ </div>
+    #}
 
-
-            {% set total = total +(product.product.price * product.quantity) %}
-        {% endfor %}
-        </div>
-        </div>
-        </div>
-
-#}
-
-{#
+        {#
         <table class="table table-striped">
             <thead>
             <tr>
@@ -133,72 +128,121 @@
             </tbody>
         </table>
                     {% set total = total +(product.product.price * product.quantity) %}
-                {% endfor %}#}
-<!--------------------------------------------------------------------------------------------------->
-<div class="container-fluid text-center">
-    <div class="row justify-content-center">
-        <div class="col text-center">
-        <table class="col table table-striped table-responsive col-md-8 mt-3 col-sm-12">
-            <thead>
-            <tr>
+                {% endfor %} #}
+        <!--------------------------------------------------------------------------------------------------->
+        <div class="container-fluid box-basket">
+            <div class="row ">
+                <aside class="col-lg-9">
+                    <div class="card basket">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                            <tr class="small text-uppercase">
 
-                <th scope="col">Article</th>
-                <th scope="col"></th>
-                <th scope="col">Taille</th>
-                <th scope="col">Couleur</th>
-                <th scope="col">Quantité</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Total</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-            {% set total = null %}
-            {% for product in cart %}
-                <tr>
-                    <th>
-                        <img src="{{ vich_uploader_asset(product.product, 'topImageFile') | imagine_filter('bn')}}" alt="{{ product.product.name }}" >
+                                <th scope="col">Article</th>
+                                <th scope="col">Quantité</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col"></th>
 
-                    </th>
-                    <td>
-                        <span class="article_name"><p>{{ product.product.name }}</p></span>
-                        <span class="article_name"><small> {{ product.product.subtitle }}</small></span>
-                    </td>
+                                <th scope="col" class="text-right d-none d-md-block"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% set total = null %}
+                            {% for product in cart %}
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img
+                                                        src="{{ vich_uploader_asset(product.product, 'topImageFile') | imagine_filter('bn') }}"
+                                                        alt="{{ product.product.name }}" class="img-sm"></div>
+                                            <figcaption class="info"><span
+                                                        class="article_name"><p>{{ product.product.name }}</p></span>
+                                                <span class="article_name"><small> {{ product.product.subtitle }}</small></span>
+                                                <p class="text-muted small">TAILLE: {{ app.session.get('sizes') }}</p>
+                                                <p class="text-muted small">COULEUR: {{ app.session.get('colors') }}</p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
 
-                    <td>
-                        {{ app.session.get('sizes') }}
-                    </td>
-                    <td>
-                        {{ app.session.get('colors') }}
-                    </td>
-                    <td><a href="{{ path('decrease_to_cart', {id: product.product.id}) }}">
-                            <img class="mr-3" src="{{ asset('assets/img/remove.webp') }}" height="12px" alt="Retirer mon produit">
-                        </a>
-                        {{ product.quantity }}
-                        <a href="{{ path('add_to_cart', {id : product.product.id}) }}">
-                            <img class="ml-3" src="{{ asset('assets/img/plus.webp') }}" height="12px" alt="Ajouter mon produit">
-                        </a>
-                    </td>
-                    <td>{{ (product.product.price / 100)|number_format(2,',', '.') }} €</td>
-                    <td>{{ ((product.product.price * product.quantity / 100)|number_format(2,',', '.')) }} €</td>
-                    <td>
-                        <a href="{{ path('delete_to_cart', { 'id' : product.product.id}) }}">
-                            <img src="{{ asset('assets/img/delete.png') }}" height="18px" alt="Supprimer mon produit">
-                        </a>
-                    </td>
-                </tr>
-                {% set total = total +(product.product.price * product.quantity) %}
-            {% endfor %}
-            </tbody>
-        </table>
+                                    <td><a href="{{ path('decrease_to_cart', {id: product.product.id}) }}">
+                                            <img class="mr-3" src="{{ asset('assets/img/remove.webp') }}" height="12px"
+                                                 alt="Retirer mon produit">
+                                        </a>
+                                        {{ product.quantity }}
+                                        <a href="{{ path('add_to_cart', {id : product.product.id}) }}">
+                                            <img class="ml-3" src="{{ asset('assets/img/plus.webp') }}" height="12px"
+                                                 alt="Ajouter mon produit">
+                                        </a>
+                                    </td>
+
+                                    <td>
+                                        <div class="price-wrap">
+                                        <span>  <p><var class="price-basket">{{ ((product.product.price * product.quantity / 100)|number_format(2,',', '.')) }}
+                                                €</var></p> </span>
+                                         <span> <p><small class="text-muted">{{ (product.product.price / 100)|number_format(2,',', '.') }}
+                                                €</small></p> </span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!----------------------------------------------------------------------------------------------------->
+
+                                {% set total = total +(product.product.price * product.quantity) %}
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </aside>
+                <aside class="col-lg-3">
+                   {# <div class="card  mb-3">
+                      #}{#  <div class="card-body-aside">
+                            <form>
+                                <div class="form-group"> <label>Have coupon?</label>
+                                    <div class="input-group"> <input type="text" class="form-control coupon" name="" placeholder="Coupon code"> <span class="input-group-append"> <button class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+                                </div>
+                            </form>
+                        </div>#}{#
+                    </div>#}
+                    <div class="card basket">
+                        <div class="card-body-aside">
+                            <dl class="dlist-align">
+                                <dt>Montant:</dt>
+                                <dd class="text-right ml-3">{{ ((total / 100)|number_format(2,',', '.')) }} €</dd>
+                            </dl>
+                           {# <dl class="dlist-align">
+                                <dt>Discount:</dt>
+                                <dd class="text-right text-danger ml-3">- $10.00</dd>
+                            </dl>#}
+                            <hr>
+                            <dl class="dlist-align">
+                                <dt>Total:</dt>
+                                <dd class="text-right text-dark b ml-3"><strong>{{ ((total / 100)|number_format(2,',', '.')) }} €</strong></dd>
+                            </dl>
+
+                         <button type="button" class="validate-basket mt-3">  <a href="{{ path('order') }}" type="btn" class="btn text-white validate p-1">Valider
+                                    mon panier</a></button>
+                            <button type="button" class="validate-basket mt-3"> <a href="{{ path('home') }}" type="btn" class="btn text-white validate p-1">Continuer
+                                    mes achats</a></button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
-    </div>
-</div>
+
+
+      {#  <td>
+            <a href="{{ path('delete_to_cart', { 'id' : product.product.id}) }}">
+                <img src="{{ asset('assets/img/delete.png') }}" height="18px" alt="Supprimer mon produit">
+            </a>
+        </td>
+        </tr>
+
+        <!---------------------------------------------------------------------------------------------->
 
         <div class="container text-center">
         <div class="row">
         <div class=" col validation text-center d-flex flex-column mb-5 pb-5">
-            {# <div class="p-2" ><p><span><b>Nombre de produit(s): </b> {{ cart|length }}</span></p> </div> #}
+            #}{# <div class="p-2" ><p><span><b>Nombre de produit(s): </b> {{ cart|length }}</span></p> </div> #}{#
             <div class="p-2"><b>Total de mon panier</b> {{ ((total / 100)|number_format(2,',', '.')) }} €</div>
             <div class="p-2"><a href="{{ path('order') }}" type="btn" class="btn text-white validate mt-3">Valider
                     mon panier</a></div>
@@ -211,5 +255,6 @@
     {% endif %}
     </div>
     </div>
-    </div>
+    </div>#}
+    {% endif %}
 {% endblock %}
