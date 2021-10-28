@@ -215,7 +215,7 @@ header {
     display: none;
   }
   .logo-img-header {
-    background-color: #00bb00;
+ //   background-color: #00bb00;
     width: 50%;
     margin: auto 0;
   }
@@ -232,10 +232,10 @@ header {
 
   .nav-icones{
     //padding: 5%;
-    background-color: blue!important;
+  //  background-color: blue!important;
     .icones-nav{
       margin-left: 20%;
-      background-color: yellow!important;
+   //   background-color: yellow!important;
     }
   }
 
@@ -254,7 +254,7 @@ header {
     height: auto;
   }*/
   .logo-img-header{
-    background-color: blue;
+  //  background-color: blue;
   }
   .icones-nav {
     width: 1.5rem;
@@ -289,9 +289,21 @@ header {
     height: auto;
   }*/
   .logo-img-header{
-    background-color: red;
+ //   background-color: red;
     width: 50%;
+    margin: auto 0;
   }
+  .navbar-collapse .nav-item .dropdown{
+    padding-top: 2% !important;
+    padding-bottom: 2%!important;
+
+  }
+  .new-collection{
+    width: 80vw!important;
+    padding: 5%!important;
+    margin: 5%!important;
+  }
+
   .navbar .dropdown:hover .dropdown-menu,
   .navbar .dropdown .dropdown-menu:hover {
     display: block;
@@ -351,7 +363,7 @@ header {
     margin-top: 0!important;
   }
   .logo-img-header{
-    background-color: yellow;
+  //  background-color: yellow;
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
