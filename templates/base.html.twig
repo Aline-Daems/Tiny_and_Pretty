@@ -70,9 +70,9 @@
                     </ul>
                 </div>
                 <div class="  col-sm col-md col-lg col-xl col-xxl">
-                    <ul>
-                        <li class="list-footer"><h6>Commandes</h6></li>
-                        <li class="list-footer"><a class="link_footer"href="">Suivi de commande</a></li>
+                    <ul><a href="{{ path('account_order') }}"     style="color:#a9bf7a;">
+
+                        <li class="list-footer"><a class="link_footer"href="{{ path('account_order') }}">Suivi de commande</a></li>
                         <li class="list-footer"><a class="link_footer"href="{{ path('livraisons_et_retours') }}">Livraisons & retours</a></li>
                         <li class="list-footer"><a class="link_footer"href="{{ path('paiement_securise') }}">Paiement sécurisé</a></li>
                     </ul>
