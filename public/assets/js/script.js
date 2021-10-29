@@ -220,7 +220,6 @@ document.querySelectorAll('a.js-wish').forEach(function (link) {
         smartSpeed: 1000,
        // autoplayTimeout: 1000,
         autoplaySpeed: 9000,
-       // navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
         loop: true,
         autoplay: true,
         lazyLoad: true,
