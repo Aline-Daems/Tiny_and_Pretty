@@ -34,13 +34,13 @@ header {
   font-weight: bold;
 }
 .defile-banner > div {
-  height: 2%;
+  height: 1.5%;
   display: inline-block; /* important */
   white-space: nowrap; /* important */
   animation: defilement-rtl 20s infinite linear; /* défilement */
   cursor: pointer;
   padding: 5px 0 3px 80%;
-  line-height: 2%;
+  line-height: 1.5%;
 
 }
 
@@ -194,9 +194,12 @@ header {
 
 .navbar .dropdown-menu {
   font-family: $titleFontRegular;
-  font-size: 1rem;
+  font-size: 1.2rem;
   position: absolute;
   width: 80vw;
+
+  margin-top: -1.3rem!important;
+
 }
 .little-drop {
   left: 2vw !important;
