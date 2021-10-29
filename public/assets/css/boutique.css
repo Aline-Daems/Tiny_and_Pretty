@@ -1207,7 +1207,7 @@ header {
   height: auto; }
 
 .icones-nav {
-  width: 1.5rem; }
+  width: 1rem !important; }
 
 .linkHeadOne {
   position: relative;
@@ -1410,7 +1410,7 @@ header {
       //   width: 15%;
     }*/
   .icones-nav {
-    width: 1.5rem; }
+    width: 1rem; }
 
   .nav-icones {
     margin-left: 1vw; }
