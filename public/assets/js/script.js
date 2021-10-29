@@ -372,9 +372,9 @@ document.querySelectorAll('a.js-link-color').forEach(function (link) {
 
 
 
-if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
+if(window.location.href === "https://test.tinyandpretty.be/qui/sommes/nous"
 ||
-    window.location.href === "https://127.0.0.1:8000/concept"
+    window.location.href === "https://test.tinyandpretty.be/concept"
 ){
 
 
@@ -387,9 +387,9 @@ if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
 
 }
 // shop devient clair quand il est sur cette page
-if(window.location.href === "https://127.0.0.1:8000/qui/sommes/nous"
+if(window.location.href === "https://test.tinyandpretty.be/qui/sommes/nous"
     ||
-    window.location.href === "https://127.0.0.1:8000/concept") {
+    window.location.href === "https://test.tinyandpretty.be/concept") {
     const element = document.querySelector('#js-shopPage');
     if (element.classList.contains("shop")) {
         element.classList.remove("shop")
