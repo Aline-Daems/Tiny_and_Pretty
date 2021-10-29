@@ -4,7 +4,7 @@
         <div class="defile-banner">
             <div class="promo-banner text-center">LIVRAISON OFFERTE DURANT TOUT LE MOIS D'OCTOBRE
                 <span><img
-                            src="{{ asset('assets/img/citrouille-dhalloween.png') }}" alt="Logo Tiny And Pretty"
+                            src="{{ asset('assets/img/citrouille-dhalloween.png') }}" alt="pictogramme de saison mois de novembre citrouille"
                             class="favicon-banner"/></span><span><img
                             src="{{ asset('assets/favicon/favicon-32x32.png') }}" alt="Logo Tiny And Pretty"
                             class="favicon-banner"/></span>
@@ -17,7 +17,7 @@
         <!-- navigation supérieure -->
 
         <nav class="navbar navbar-expand-md  navbar-light justify-content-between navSup pl-5">
-            <a class="navbar-brand" href="{{ path('home') }}">
+            <a class="navbar-brand-high" href="{{ path('home') }}">
                 <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
                      class="logo-img-header-One img-fluid"/>
             </a>
@@ -46,16 +46,16 @@
                     </li>#}
 {#                    <button type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>#}
                 </ul>
-                <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
+             {#   <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                   <!--  <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>-->
-                </form>
+                </form>#}
 
-               {# <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
+                <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
                            aria-label="Search">
                     <i class="fas fa-search" aria-hidden="true"></i>
-                </form>#}
+                </form>
 
 
             </div>
@@ -67,8 +67,8 @@
     <div id="home-banner" class="hideHeaderJS">
 
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="{{ path('home') }}">
-                <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO .webp') }}" alt="Logo Tiny And Pretty"
+            <a class="navbar-brand-down" href="{{ path('home') }}">
+                <img src="{{ asset('assets/img/Tiny x Pretty - OFFICIAL LOGO-header2 .webp') }}" alt="Logo Tiny And Pretty"
                      class="logo-img-header img-fluid" id="logo-show"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -85,7 +85,7 @@
                         </a>
 
 
-                        <div class="dropdown-menu text-left" aria-labelledby="navbarDropdown" data-boundary="overflow">
+                        <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdown" data-boundary="overflow">
                             <!--   <a href="{{ relative_path('/baby') }}"><h5
                                         class="text-center mt-5 mb-5 title_drop reveal-1">VÊTEMENTS</h5>
                             </a>
@@ -236,25 +236,25 @@
                     </form>#}
                 </ul>
 
-             {#   <form id="search-formJS" class="form-inline d-flex justify-content-center md-form form-sm">
+                <form id="search-down-sformJS" class="form-inline d-flex justify-content-center md-form form-sm">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Recherche"
                            aria-label="Search">
                     <i class="fas fa-search" aria-hidden="true"></i>
-                </form>#}
-                <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
+                </form>
+              {#  <form id="search-formJS" class="form-inline md-form form-sm my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                   <!--  <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>-->
-                </form>
+                </form>#}
                 <div id="iconesJS">
                     {% if app.user %}
                         <div class="nav-icones pl-5 pt-sm-5 pt-md-5 text-sm-center text-md-center">
 
                             <li class="nav-item">
-                                <a class="nav-link pr-2" href="{{ path('account') }}">
+                                <a class="nav-link px-sm-4 px-md-4 px-lg-4" href="{{ path('account') }}">
                                     <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
-                                    <p class="float-right">{{ app.user.firstname }}</p>
+                                    <p class="float-right text-black">{{ app.user.firstname }}</p>
                                 </a>
-                                <a class="nav-link px-2" href="{{ path('cart') }}">
+                                <a class="nav-linkpx-sm-4 px-md-4 px-lg-4" href="{{ path('cart') }}">
                                     <div class="bag-count">
                                         <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
 
@@ -265,29 +265,29 @@
 
                                     </div>
                                 </a>
-                                <a class="nav-link px-2" href="">
+                                <a class="nav-linkpx-sm-4 px-md-4 px-lg-4" href="">
                                     <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
                                 </a>
 
 
-                                <a class="nav-link px-2" href="{{ path('app_logout') }}">
+                                <a class="nav-link px-sm-4 px-md-4 px-lg-4" href="{{ path('app_logout') }}">
                                     <img class="icones-nav" src="{{ asset('assets/img/logout.svg') }}">
                                 </a>
                             </li>
 
                         </div>
                     {% else %}
-                        <div class="nav-icones-down pl-0">
+                        <div class="nav-icones-down pl-0 pr-0">
                             <li class="nav-item">
-                                <a class="nav-link px-4 pl-0" href="{{ path('app_login') }}">
+                                <a class="nav-link px-sm-4 px-md-4 px-lg-4 " href="{{ path('app_login') }}">
                                     <img class="icones-nav" src="{{ asset('assets/img/user.svg') }}">
                                 </a>
-                                <a href="" class="nav-link px-4 ">
+                                <a href="" class="nav-link px-sm-4 px-md-4 px-lg-4 ">
                                     <img class="icones-nav" src="{{ asset('assets/img/heart.svg') }}">
                                 </a>
 
 
-                                <a href="{{ path('cart') }}" class="nav-link px-4">
+                                <a href="{{ path('cart') }}" class="nav-link ">
                                     <img class="icones-nav" src="{{ asset('assets/img/bag.svg') }}">
                                 </a>
 
