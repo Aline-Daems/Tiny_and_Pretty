@@ -66,6 +66,15 @@ text-transform: uppercase;
   font-size: 0.8em!important;
   .profite{
     font-size: 1.3em!important;
+    background-color: $green;
+    box-shadow: .050em .050em .050em #aaaaaa;
+   // font-size: 0.8rem;
+    color: white;
+    border: none;
+    float: right;
+    border-radius: 5%;
+    margin-top: 1rem;
+
   }
 }
 
@@ -408,9 +417,15 @@ z-index: -6;
 }
 .product-price-text{
   .profite{
-    font-size: 0.8125em;
-    font-family: $textFontRegular;
-    font-weight: bolder;
+    background-color: $green;
+    box-shadow: .050em .050em .050em #aaaaaa;
+    font-size: 0.8rem;
+    color: white;
+    border: none;
+    float: right;
+    border-radius: 5%;
+    margin-top: 1rem;
+
   }
 }
 .bg-champ{

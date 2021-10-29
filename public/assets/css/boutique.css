@@ -54,7 +54,14 @@ main {
 .card-text {
   font-size: 0.8em !important; }
   .card-text .profite {
-    font-size: 1.3em !important; }
+    font-size: 1.3em !important;
+    background-color: #a9b97a;
+    box-shadow: .050em .050em .050em #aaaaaa;
+    color: white;
+    border: none;
+    float: right;
+    border-radius: 5%;
+    margin-top: 1rem; }
 
 .owl-carousel .owl-nav {
   overflow: hidden;
@@ -334,9 +341,14 @@ h1, h3, h5, p {
   font-size: 1.375em; }
 
 .product-price-text .profite {
-  font-size: 0.8125em;
-  font-family: "Open Sans", sans-serif;
-  font-weight: bolder; }
+  background-color: #a9b97a;
+  box-shadow: .050em .050em .050em #aaaaaa;
+  font-size: 0.8rem;
+  color: white;
+  border: none;
+  float: right;
+  border-radius: 5%;
+  margin-top: 1rem; }
 
 .bg-champ {
   position: relative;

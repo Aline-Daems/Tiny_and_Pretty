@@ -78,9 +78,11 @@
 
                                         <p class="product-price-text card-text"><span
                                                     class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                            <a href="{{ path('product', {'slug':product.slug}) }}">
                                             <button type="button" class="container-fluid profite">JE LE
                                                 VEUX
                                             </button>
+                                            </a>
                                         </p>
                                     </div>
 
@@ -204,9 +206,11 @@
 
                                                 <p class="product-price-text card-text"><span
                                                             class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                                    <a href="{{ path('product', {'slug':product.slug}) }}">
                                                     <button type="button" class="container-fluid profite">JE LE
                                                         VEUX
                                                     </button>
+                                                    </a>
                                                 </p>
                                             </div>
 
@@ -303,9 +307,11 @@
 
                                         <p class="product-price-text card-text"><span
                                                     class="product-price "> {{ (product.price / 100)|number_format(2,',', '.') }} € </span>
+                                            <a href="{{ path('product', {'slug':product.slug}) }}">
                                             <button type="button" class="container-fluid profite">JE LE
                                                 VEUX
                                             </button>
+                                            </a>
                                         </p>
                                     </div>
 
